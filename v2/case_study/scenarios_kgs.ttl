@@ -501,246 +501,246 @@ hi-s2:ExecRLExplain hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 # Scientific Paper and Use Case -- SCENARIO 3
 #################################################################
 
-hi-s:Scenario3HIGroupDeliberation a hi:ScientificPaper ;
-    hi:describesUseCase hi-s:UseCaseGroupDeliberationHI .
+hi-s3:Scenario3HIGroupDeliberation a hi:ScientificPaper ;
+    hi:describesUseCase hi-s3:UseCaseGroupDeliberationHI .
 
-hi-s:UseCaseGroupDeliberationHI a hi:UseCase ;
-    hi:inDomain hi-s:DomainLawAndPolicy ;
-    hi:introducesHITeam hi-s:HITeamGroupDeliberation .
+hi-s3:UseCaseGroupDeliberationHI a hi:UseCase ;
+    hi:inDomain hi-s3:DomainLawAndPolicy ;
+    hi:introducesHITeam hi-s3:HITeamGroupDeliberation .
 
-hi-s:DomainLawAndPolicy a hi:Domain ;
+hi-s3:DomainLawAndPolicy a hi:Domain ;
     rdfs:label "Law and Public Policy"@en .
 
 #################################################################
 # HI Team, Goal, Context, Ethical Constraints
 #################################################################
 
-hi-s:HITeamGroupDeliberation a hi:HITeam ;
-    hi:hasGoal hi-s:GoalFairAccurateVerdict ;
-    hi:hasMember    hi-s:AIDeliberationAssistant , 
-                    hi-s:HumanJuror1 , 
-                    hi-s:HumanJuror2 ;
-    hi:operatesInContext hi-s:ContextJuryDeliberation .
+hi-s3:HITeamGroupDeliberation a hi:HITeam ;
+    hi:hasGoal hi-s3:GoalFairAccurateVerdict ;
+    hi:hasMember    hi-s3:AIDeliberationAssistant , 
+                    hi-s3:HumanJuror1 , 
+                    hi-s3:HumanJuror2 ;
+    hi:operatesInContext hi-s3:ContextJuryDeliberation .
 
-hi-s:GoalFairAccurateVerdict a hi:Goal ;
-    hi:requiresTask hi-s:TaskAssessCommunicationAccuracy ,
-                    hi-s:TaskDecideIntervention ,
-                    hi-s:TaskExplainDecision .
+hi-s3:GoalFairAccurateVerdict a hi:Goal ;
+    hi:requiresTask hi-s3:TaskAssessCommunicationAccuracy ,
+                    hi-s3:TaskDecideIntervention ,
+                    hi-s3:TaskExplainDecision .
 
-hi-s:ContextJuryDeliberation a hi:Context ;
-    hi:exhibitsPhenomenon hi-s:PhenomenonGroupthink ,
-                          hi-s:PhenomenonTrustShift ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintAvoidUndueInfluence ,
-                            hi-s:EthicalConstraintFairness ,
-                            hi-s:EthicalConstraintTransparency .
+hi-s3:ContextJuryDeliberation a hi:Context ;
+    hi:exhibitsPhenomenon hi-s3:PhenomenonGroupthink ,
+                          hi-s3:PhenomenonTrustShift ;
+    hi:hasEthicalConstraint hi-s3:EthicalConstraintAvoidUndueInfluence ,
+                            hi-s3:EthicalConstraintFairness ,
+                            hi-s3:EthicalConstraintTransparency .
 
-hi-s:EthicalConstraintAvoidUndueInfluence a hi:EthicalConstraint .
-hi-s:EthicalConstraintFairness            a hi:EthicalConstraint .
-hi-s:EthicalConstraintTransparency        a hi:EthicalConstraint .
+hi-s3:EthicalConstraintAvoidUndueInfluence a hi:EthicalConstraint .
+hi-s3:EthicalConstraintFairness            a hi:EthicalConstraint .
+hi-s3:EthicalConstraintTransparency        a hi:EthicalConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s:RoleAIAdvisor a dul:Role ; 
+hi-s3:RoleAIAdvisor a dul:Role ; 
     rdfs:label "AI Deliberation Advisor"@en .
 
-hi-s:RoleJuror a dul:Role ; 
+hi-s3:RoleJuror a dul:Role ; 
     rdfs:label "Juror"@en .
 
 #################################################################
 # Agents
 #################################################################
 
-hi-s:AIDeliberationAssistant a hi:ArtificialAgent ;
-    hi:hasRole hi-s:RoleAIAdvisor ;
-    hi:hasCapability hi-s:CapabilityBayesianReasoning ,
-                     hi-s:CapabilityMetaAnalysis ,
-                     hi-s:CapabilityExplanation ;
-    hi:performsExecution hi-s:ExecAssessAccuracy ,
-                         hi-s:ExecDecideIntervention ,
-                         hi-s:ExecExplainDecision ;
-    hi:usesMethod hi-s:MethodBayesianLogic ,
-                  hi-s:MethodMetaAnalyticalScoring .
+hi-s3:AIDeliberationAssistant a hi:ArtificialAgent ;
+    hi:hasRole hi-s3:RoleAIAdvisor ;
+    hi:hasCapability hi-s3:CapabilityBayesianReasoning ,
+                     hi-s3:CapabilityMetaAnalysis ,
+                     hi-s3:CapabilityExplanation ;
+    hi:performsExecution hi-s3:ExecAssessAccuracy ,
+                         hi-s3:ExecDecideIntervention ,
+                         hi-s3:ExecExplainDecision ;
+    hi:usesMethod hi-s3:MethodBayesianLogic ,
+                  hi-s3:MethodMetaAnalyticalScoring .
 
-hi-s:HumanJuror1 a hi:HumanAgent ;
-    hi:hasRole hi-s:RoleJuror ;
-    hi:hasCapability hi-s:CapabilitySelfReporting ;
-    hi:performsExecution hi-s:ExecProvideStatements1 .
+hi-s3:HumanJuror1 a hi:HumanAgent ;
+    hi:hasRole hi-s3:RoleJuror ;
+    hi:hasCapability hi-s3:CapabilitySelfReporting ;
+    hi:performsExecution hi-s3:ExecProvideStatements1 .
 
-hi-s:HumanJuror2 a hi:HumanAgent ;
-    hi:hasRole hi-s:RoleJuror ;
-    hi:hasCapability hi-s:CapabilitySelfReporting ;
-    hi:performsExecution hi-s:ExecProvideStatements2 .
+hi-s3:HumanJuror2 a hi:HumanAgent ;
+    hi:hasRole hi-s3:RoleJuror ;
+    hi:hasCapability hi-s3:CapabilitySelfReporting ;
+    hi:performsExecution hi-s3:ExecProvideStatements2 .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s:CapabilityBayesianReasoning a hi:Capability ; 
-    hi:allowsTask hi-s:TaskAssessCommunicationAccuracy .
+hi-s3:CapabilityBayesianReasoning a hi:Capability ; 
+    hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
 
-hi-s:CapabilityMetaAnalysis a hi:Capability ; 
-    hi:allowsTask hi-s:TaskAssessCommunicationAccuracy .
+hi-s3:CapabilityMetaAnalysis a hi:Capability ; 
+    hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
 
-hi-s:CapabilityExplanation a hi:Capability ; 
-    hi:allowsTask hi-s:TaskExplainDecision .
+hi-s3:CapabilityExplanation a hi:Capability ; 
+    hi:allowsTask hi-s3:TaskExplainDecision .
 
-hi-s:CapabilitySelfReporting a hi:Capability ; 
-    hi:allowsTask hi-s:TaskProvideStatements .
+hi-s3:CapabilitySelfReporting a hi:Capability ; 
+    hi:allowsTask hi-s3:TaskProvideStatements .
 
 #################################################################
 # Tasks
 #################################################################
 
-hi-s:TaskAssessCommunicationAccuracy a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityBayesianReasoning .
+hi-s3:TaskAssessCommunicationAccuracy a hi:Task ;
+    hi:requiresCapability hi-s3:CapabilityBayesianReasoning .
 
-hi-s:TaskDecideIntervention a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityBayesianReasoning .
+hi-s3:TaskDecideIntervention a hi:Task ;
+    hi:requiresCapability hi-s3:CapabilityBayesianReasoning .
 
-hi-s:TaskExplainDecision a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityExplanation .
+hi-s3:TaskExplainDecision a hi:Task ;
+    hi:requiresCapability hi-s3:CapabilityExplanation .
 
-hi-s:TaskProvideStatements a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySelfReporting .
+hi-s3:TaskProvideStatements a hi:Task ;
+    hi:requiresCapability hi-s3:CapabilitySelfReporting .
 
 #################################################################
 # Methods
 #################################################################
 
-hi-s:MethodBayesianLogic a dul:Method ;
+hi-s3:MethodBayesianLogic a dul:Method ;
     rdfs:comment "Bayesian logic as meta-analytical framework for evaluating individual/collective communication accuracy."@en .
 
-hi-s:MethodMetaAnalyticalScoring a dul:Method ;
+hi-s3:MethodMetaAnalyticalScoring a dul:Method ;
     rdfs:comment "Aggregates juror statements likelihoods and reliability to decide justified intervention."@en .
 
 #################################################################
 # Task Executions
 #################################################################
 
-hi-s:ExecAssessAccuracy a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskAssessCommunicationAccuracy ;
-    hi:performedBy hi-s:AIDeliberationAssistant ;
-    hi:usesMethod hi-s:MethodBayesianLogic ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:ExecAssessAccuracy a hi:TaskExecution ;
+    hi:realizesTask hi-s3:TaskAssessCommunicationAccuracy ;
+    hi:performedBy hi-s3:AIDeliberationAssistant ;
+    hi:usesMethod hi-s3:MethodBayesianLogic ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:ExecDecideIntervention a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskDecideIntervention ;
-    hi:performedBy hi-s:AIDeliberationAssistant ;
-    hi:usesMethod hi-s:MethodMetaAnalyticalScoring ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:ExecDecideIntervention a hi:TaskExecution ;
+    hi:realizesTask hi-s3:TaskDecideIntervention ;
+    hi:performedBy hi-s3:AIDeliberationAssistant ;
+    hi:usesMethod hi-s3:MethodMetaAnalyticalScoring ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:ExecExplainDecision a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainDecision ;
-    hi:performedBy hi-s:AIDeliberationAssistant ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:ExecExplainDecision a hi:TaskExecution ;
+    hi:realizesTask hi-s3:TaskExplainDecision ;
+    hi:performedBy hi-s3:AIDeliberationAssistant ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:ExecProvideStatements1 a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskProvideStatements ;
-    hi:performedBy hi-s:HumanJuror1 ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:ExecProvideStatements1 a hi:TaskExecution ;
+    hi:realizesTask hi-s3:TaskProvideStatements ;
+    hi:performedBy hi-s3:HumanJuror1 ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:ExecProvideStatements2 a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskProvideStatements ;
-    hi:performedBy hi-s:HumanJuror2 ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:ExecProvideStatements2 a hi:TaskExecution ;
+    hi:realizesTask hi-s3:TaskProvideStatements ;
+    hi:performedBy hi-s3:HumanJuror2 ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 #################################################################
 # Interaction (deliberation + explanation)
 #################################################################
 
-hi-s:InteractionGroupDeliberation a hi:Interaction ;
-    hi:performedBy  hi-s:AIDeliberationAssistant , 
-                    hi-s:HumanJuror1 , 
-                    hi-s:HumanJuror2 ;
-    hi:hasInteractionIntent hi-s:IntentDeliberate ;
-    hi:usesInteractionModality hi-s:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:InteractionGroupDeliberation a hi:Interaction ;
+    hi:performedBy  hi-s3:AIDeliberationAssistant , 
+                    hi-s3:HumanJuror1 , 
+                    hi-s3:HumanJuror2 ;
+    hi:hasInteractionIntent hi-s3:IntentDeliberate ;
+    hi:usesInteractionModality hi-s3:ModalityVerbalDialogue ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:InteractionExplainConditions a hi:Interaction ;
-    hi:performedBy  hi-s:AIDeliberationAssistant , 
-                    hi-s:HumanJuror1 , 
-                    hi-s:HumanJuror2 ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
-    hi:usesInteractionModality hi-s:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s:GoalFairAccurateVerdict .
+hi-s3:InteractionExplainConditions a hi:Interaction ;
+    hi:performedBy  hi-s3:AIDeliberationAssistant , 
+                    hi-s3:HumanJuror1 , 
+                    hi-s3:HumanJuror2 ;
+    hi:hasInteractionIntent hi-s3:IntentExplain ;
+    hi:usesInteractionModality hi-s3:ModalityVerbalDialogue ;
+    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s:IntentDeliberate a hi:InteractionIntent .
+hi-s3:IntentDeliberate a hi:InteractionIntent .
 
-hi-s:IntentExplain    a hi:InteractionIntent .
+hi-s3:IntentExplain    a hi:InteractionIntent .
 
-hi-s:ModalityVerbalDialogue a hi:InteractionModality .
+hi-s3:ModalityVerbalDialogue a hi:InteractionModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
-hi-s:PhenomenonGroupthink a hi:AgentRelatedPhenomenon ;
+hi-s3:PhenomenonGroupthink a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Conformity pressures biasing juror judgments."@en .
 
-hi-s:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
+hi-s3:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Trust variation in AI depending on transparency and accuracy of intervention."@en .
 
-hi-s:BiasConfirmation a hi:Bias ;
+hi-s3:BiasConfirmation a hi:Bias ;
     rdfs:comment "Selective attention to evidence consistent with prior beliefs."@en .
 
-hi-s:FeedbackInterventionRationale a hi:Feedback ;
+hi-s3:FeedbackInterventionRationale a hi:Feedback ;
     rdfs:comment "Explanation of conditions under which the AI assumes responsibility to act."@en .
 
 #################################################################
 # Experiment, Evaluation, Hypotheses, and Metrics
 #################################################################
 
-hi-s:ExperimentDeliberationSupport a hi:Experiment ;
-    hi:testsMetric hi-s:MetricFairOutcomeAccuracy ;
-    hi:testsMetric hi-s:MetricUndueInfluenceRate ;
-    hi:testsMetric hi-s:MetricExplanationClarity .
+hi-s3:ExperimentDeliberationSupport a hi:Experiment ;
+    hi:testsMetric hi-s3:MetricFairOutcomeAccuracy ;
+    hi:testsMetric hi-s3:MetricUndueInfluenceRate ;
+    hi:testsMetric hi-s3:MetricExplanationClarity .
 
-hi-s:EvaluationAIInterventionImpact a hi:Evaluation ;
-    hi:usesMetric hi-s:MetricFairOutcomeAccuracy ;
-    hi:usesMetric hi-s:MetricUndueInfluenceRate ;
-    hi:usesMetric hi-s:MetricExplanationClarity ;
-    hi:hasExperiment hi-s:ExperimentDeliberationSupport ;
-    hi:hasNullHypothesis hi-s:NullHypothesisNoBenefitOrInfluence ;
-    hi:hasAlternativeHypothesis hi-s:AlternativeHypothesisFairnessWithoutUndueInfluence .
+hi-s3:EvaluationAIInterventionImpact a hi:Evaluation ;
+    hi:usesMetric hi-s3:MetricFairOutcomeAccuracy ;
+    hi:usesMetric hi-s3:MetricUndueInfluenceRate ;
+    hi:usesMetric hi-s3:MetricExplanationClarity ;
+    hi:hasExperiment hi-s3:ExperimentDeliberationSupport ;
+    hi:hasNullHypothesis hi-s3:NullHypothesisNoBenefitOrInfluence ;
+    hi:hasAlternativeHypothesis hi-s3:AlternativeHypothesisFairnessWithoutUndueInfluence .
 
-hi-s:MetricFairOutcomeAccuracy a hi:Metric ;
+hi-s3:MetricFairOutcomeAccuracy a hi:Metric ;
     rdfs:comment "Accuracy of group decision relative to ground-truth or expert benchmark."@en .
 
-hi-s:MetricUndueInfluenceRate a hi:Metric ;
+hi-s3:MetricUndueInfluenceRate a hi:Metric ;
     rdfs:comment "Frequency of AI-caused shifts attributable to influence beyond justified intervention."@en .
 
-hi-s:MetricExplanationClarity a hi:Metric ;
+hi-s3:MetricExplanationClarity a hi:Metric ;
     rdfs:comment "Human-rated clarity of conditions and rationale for AI interventions."@en .
 
-hi-s:NullHypothesisNoBenefitOrInfluence a hi:NullHypothesis ;
+hi-s3:NullHypothesisNoBenefitOrInfluence a hi:NullHypothesis ;
     rdfs:comment "AI intervention does not improve outcomes and/or increases undue influence."@en .
 
-hi-s:AlternativeHypothesisFairnessWithoutUndueInfluence a hi:AlternativeHypothesis ;
+hi-s3:AlternativeHypothesisFairnessWithoutUndueInfluence a hi:AlternativeHypothesis ;
     rdfs:comment "Bayesian meta-analysis improves fairness/accuracy while keeping undue influence low."@en .
 
 #################################################################
 # Linking evaluations to executions (traceability)
 #################################################################
 
-hi-s:ExecAssessAccuracy     hi:evaluatedBy hi-s:EvaluationAIInterventionImpact .
+hi-s3:ExecAssessAccuracy     hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
 
-hi-s:ExecDecideIntervention hi:evaluatedBy hi-s:EvaluationAIInterventionImpact .
+hi-s3:ExecDecideIntervention hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
 
-hi-s:ExecExplainDecision    hi:evaluatedBy hi-s:EvaluationAIInterventionImpact .
+hi-s3:ExecExplainDecision    hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
 
 #################################################################
 # Influence 
 #################################################################
 
-hi-s:ContextJuryDeliberation hi:influences hi-s:EvaluationAIInterventionImpact .
+hi-s3:ContextJuryDeliberation hi:influences hi-s3:EvaluationAIInterventionImpact .
 
-hi-s:PhenomenonGroupthink    hi:influences hi-s:GoalFairAccurateVerdict .
+hi-s3:PhenomenonGroupthink    hi:influences hi-s3:GoalFairAccurateVerdict .
 
-hi-s:BiasConfirmation        hi:influences hi-s:TaskAssessCommunicationAccuracy .
+hi-s3:BiasConfirmation        hi:influences hi-s3:TaskAssessCommunicationAccuracy .
 
-hi-s:FeedbackInterventionRationale hi:influences hi-s:ExecDecideIntervention.
+hi-s3:FeedbackInterventionRationale hi:influences hi-s3:ExecDecideIntervention.
 
 
 
@@ -749,166 +749,166 @@ hi-s:FeedbackInterventionRationale hi:influences hi-s:ExecDecideIntervention.
 # Scientific Paper and Use Case -- SCENARIO 4
 #################################################################
 
-hi-s:ScientificPaperTutoringHI a hi:ScientificPaper ;
-    hi:describesUseCase hi-s:UseCaseAutonomousTutoring .
+hi:ScientificPaperTutoringHI a hi:ScientificPaper ;
+    hi:describesUseCase hi:UseCaseAutonomousTutoring .
 
-hi-s:UseCaseAutonomousTutoring a hi:UseCase ;
-    hi:inDomain hi-s:DomainEducation ;
-    hi:introducesHITeam hi-s:HITeamTutoring .
+hi:UseCaseAutonomousTutoring a hi:UseCase ;
+    hi:inDomain hi:DomainEducation ;
+    hi:introducesHITeam hi:HITeamTutoring .
 
-hi-s:DomainEducation a hi:Domain ;
+hi:DomainEducation a hi:Domain ;
     rdfs:label "Education and Learning Technologies"@en .
 
 #################################################################
 # Team, Goal, Context, Ethical Constraints
 #################################################################
 
-hi-s:HITeamTutoring a hi:HITeam ;
-    hi:hasGoal hi-s:GoalEffectiveLearning ;
-    hi:hasMember hi-s:AITutor , hi-s:HumanLearner ;
-    hi:operatesInContext hi-s:ContextOnlineLearning .
+hi:HITeamTutoring a hi:HITeam ;
+    hi:hasGoal hi:GoalEffectiveLearning ;
+    hi:hasMember hi:AITutor , hi:HumanLearner ;
+    hi:operatesInContext hi:ContextOnlineLearning .
 
-hi-s:GoalEffectiveLearning a hi:Goal ;
-    hi:requiresTask hi-s:TaskReconstructTrajectory ,
-                    hi-s:TaskRecommendResources ,
-                    hi-s:TaskSemanticReasoning ,
-                    hi-s:TaskBayesianInference ,
-                    hi-s:TaskExplainRecommendations .
+hi:GoalEffectiveLearning a hi:Goal ;
+    hi:requiresTask hi:TaskReconstructTrajectory ,
+                    hi:TaskRecommendResources ,
+                    hi:TaskSemanticReasoning ,
+                    hi:TaskBayesianInference ,
+                    hi:TaskExplainRecommendations .
 
-hi-s:ContextOnlineLearning a hi:Context ;
-    hi:exhibitsPhenomenon hi-s:PhenomenonTrustShift ,
-                          hi-s:PhenomenonKnowledgeMismatch ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ,
-                            hi-s:EthicalConstraintTransparency ,
-                            hi-s:EthicalConstraintAutonomy ;
+hi:ContextOnlineLearning a hi:Context ;
+    hi:exhibitsPhenomenon hi:PhenomenonTrustShift ,
+                          hi:PhenomenonKnowledgeMismatch ;
+    hi:hasEthicalConstraint hi:EthicalConstraintPrivacy ,
+                            hi:EthicalConstraintTransparency ,
+                            hi:EthicalConstraintAutonomy ;
     rdfs:comment "Personalized e-learning setting integrating user histories and public KGs."@en .
 
-hi-s:EthicalConstraintPrivacy      a hi:EthicalConstraint .
-hi-s:EthicalConstraintTransparency a hi:EthicalConstraint .
-hi-s:EthicalConstraintAutonomy     a hi:EthicalConstraint .
+hi:EthicalConstraintPrivacy      a hi:EthicalConstraint .
+hi:EthicalConstraintTransparency a hi:EthicalConstraint .
+hi:EthicalConstraintAutonomy     a hi:EthicalConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s:RoleTutor  a dul:Role ; rdfs:label "Autonomous Tutor"@en .
+hi:RoleTutor  a dul:Role ; rdfs:label "Autonomous Tutor"@en .
 
-hi-s:RoleLearner a dul:Role ; rdfs:label "Learner"@en .
+hi:RoleLearner a dul:Role ; rdfs:label "Learner"@en .
 
 #################################################################
 # Agents
 #################################################################
 
-hi-s:AITutor a hi:ArtificialAgent ;
-    hi:hasRole hi-s:RoleTutor ;
-    hi:hasCapability hi-s:CapabilityBayesianReasoning ,
-                     hi-s:CapabilitySemanticReasoning ,
-                     hi-s:CapabilityKGQuery ,
-                     hi-s:CapabilityExplanation ;
-    hi:performsExecution hi-s:ExecReconstructTrajectory ,
-                         hi-s:ExecBayesianModeling ,
-                         hi-s:ExecSemanticReasoning ,
-                         hi-s:ExecRecommendResources ,
-                         hi-s:ExecExplainRecommendations ;
-    hi:usesMethod hi-s:MethodBayesianInference ,
-                  hi-s:MethodKGQuerying ,
-                  hi-s:MethodSemanticLinking .
+hi:AITutor a hi:ArtificialAgent ;
+    hi:hasRole hi:RoleTutor ;
+    hi:hasCapability hi:CapabilityBayesianReasoning ,
+                     hi:CapabilitySemanticReasoning ,
+                     hi:CapabilityKGQuery ,
+                     hi:CapabilityExplanation ;
+    hi:performsExecution hi:ExecReconstructTrajectory ,
+                         hi:ExecBayesianModeling ,
+                         hi:ExecSemanticReasoning ,
+                         hi:ExecRecommendResources ,
+                         hi:ExecExplainRecommendations ;
+    hi:usesMethod hi:MethodBayesianInference ,
+                  hi:MethodKGQuerying ,
+                  hi:MethodSemanticLinking .
 
-hi-s:HumanLearner a hi:HumanAgent ;
-    hi:hasRole hi-s:RoleLearner ;
-    hi:hasCapability hi-s:CapabilitySelfReporting ;
-    hi:performsExecution hi-s:ExecProvideLearningHistory .
+hi:HumanLearner a hi:HumanAgent ;
+    hi:hasRole hi:RoleLearner ;
+    hi:hasCapability hi:CapabilitySelfReporting ;
+    hi:performsExecution hi:ExecProvideLearningHistory .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s:CapabilityBayesianReasoning   a hi:Capability ; hi:allowsTask hi-s:TaskBayesianInference .
-hi-s:CapabilitySemanticReasoning   a hi:Capability ; hi:allowsTask hi-s:TaskSemanticReasoning .
-hi-s:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskKGQuery .
-hi-s:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi-s:TaskExplainRecommendations .
-hi-s:CapabilitySelfReporting       a hi:Capability ; hi:allowsTask hi-s:TaskReconstructTrajectory .
+hi:CapabilityBayesianReasoning   a hi:Capability ; hi:allowsTask hi:TaskBayesianInference .
+hi:CapabilitySemanticReasoning   a hi:Capability ; hi:allowsTask hi:TaskSemanticReasoning .
+hi:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskKGQuery .
+hi:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi:TaskExplainRecommendations .
+hi:CapabilitySelfReporting       a hi:Capability ; hi:allowsTask hi:TaskReconstructTrajectory .
 
 #################################################################
 # Tasks
 #################################################################
 
-hi-s:TaskReconstructTrajectory
+hi:TaskReconstructTrajectory
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySelfReporting ;
+    hi:requiresCapability hi:CapabilitySelfReporting ;
     rdfs:comment "Reconstruct learner's educational trajectory as a personalized narrative."@en .
 
-hi-s:TaskRecommendResources
+hi:TaskRecommendResources
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySemanticReasoning .
+    hi:requiresCapability hi:CapabilitySemanticReasoning .
 
-hi-s:TaskSemanticReasoning
+hi:TaskSemanticReasoning
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySemanticReasoning .
+    hi:requiresCapability hi:CapabilitySemanticReasoning .
 
-hi-s:TaskBayesianInference
+hi:TaskBayesianInference
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityBayesianReasoning .
+    hi:requiresCapability hi:CapabilityBayesianReasoning .
 
 hi:TaskKGQuery
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityKGQuery .
+    hi:requiresCapability hi:CapabilityKGQuery .
 
-hi-s:TaskExplainRecommendations
+hi:TaskExplainRecommendations
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityExplanation .
+    hi:requiresCapability hi:CapabilityExplanation .
 
 #################################################################
 # Methods
 #################################################################
 
-hi-s:MethodBayesianInference a dul:Method ; rdfs:comment "Probabilistic modeling of interests and prior knowledge."@en .
-hi-s:MethodKGQuerying        a dul:Method ; rdfs:comment "Query public KGs (e.g., WordNet, Wikidata) for background knowledge."@en .
-hi-s:MethodSemanticLinking   a dul:Method ; rdfs:comment "Reason over semantic relatedness between educational topics."@en .
+hi:MethodBayesianInference a dul:Method ; rdfs:comment "Probabilistic modeling of interests and prior knowledge."@en .
+hi:MethodKGQuerying        a dul:Method ; rdfs:comment "Query public KGs (e.g., WordNet, Wikidata) for background knowledge."@en .
+hi:MethodSemanticLinking   a dul:Method ; rdfs:comment "Reason over semantic relatedness between educational topics."@en .
 
 #################################################################
 # Task Executions
 #################################################################
 
-hi-s:ExecProvideLearningHistory
+hi:ExecProvideLearningHistory
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskReconstructTrajectory ;
-    hi:performedBy hi-s:HumanLearner ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskReconstructTrajectory ;
+    hi:performedBy hi:HumanLearner ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
-hi-s:ExecReconstructTrajectory
+hi:ExecReconstructTrajectory
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskReconstructTrajectory ;
-    hi:performedBy hi-s:AITutor ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskReconstructTrajectory ;
+    hi:performedBy hi:AITutor ;
+    hi:usesMethod hi:MethodKGQuerying ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
-hi-s:ExecBayesianModeling
+hi:ExecBayesianModeling
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskBayesianInference ;
-    hi:performedBy hi-s:AITutor ;
-    hi:usesMethod hi-s:MethodBayesianInference ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskBayesianInference ;
+    hi:performedBy hi:AITutor ;
+    hi:usesMethod hi:MethodBayesianInference ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
-hi-s:ExecSemanticReasoning
+hi:ExecSemanticReasoning
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskSemanticReasoning ;
-    hi:performedBy hi-s:AITutor ;
-    hi:usesMethod hi-s:MethodSemanticLinking ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskSemanticReasoning ;
+    hi:performedBy hi:AITutor ;
+    hi:usesMethod hi:MethodSemanticLinking ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
-hi-s:ExecRecommendResources
+hi:ExecRecommendResources
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskRecommendResources ;
-    hi:performedBy hi-s:AITutor ;
-    hi:usesMethod hi-s:MethodSemanticLinking ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskRecommendResources ;
+    hi:performedBy hi:AITutor ;
+    hi:usesMethod hi:MethodSemanticLinking ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
 hi:ExecExplainRecommendations
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainRecommendations ;
-    hi:performedBy hi-s:AITutor ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:realizesTask hi:TaskExplainRecommendations ;
+    hi:performedBy hi:AITutor ;
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
 #################################################################
 # Interaction (explanation to learner)
@@ -916,23 +916,23 @@ hi:ExecExplainRecommendations
 
 hi:InteractionExplainRecommendations
     a hi:Interaction ;
-    hi:performedBy hi-s:AITutor , hi-s:HumanLearner ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
+    hi:performedBy hi:AITutor , hi:HumanLearner ;
+    hi:hasInteractionIntent hi:IntentExplain ;
     hi:usesInteractionModality hi:ModalityTextChat ;
-    hi:towardsGoal hi-s:GoalEffectiveLearning .
+    hi:towardsGoal hi:GoalEffectiveLearning .
 
-hi-s:IntentExplain   a hi:InteractionIntent .
+hi:IntentExplain   a hi:InteractionIntent .
 hi:ModalityTextChat a hi:InteractionModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
-hi-s:PhenomenonTrustShift
+hi:PhenomenonTrustShift
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Trust varies with transparency and recommendation quality."@en .
 
-hi-s:PhenomenonKnowledgeMismatch
+hi:PhenomenonKnowledgeMismatch
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Mismatch between assumed prior knowledge and actual learner understanding."@en .
 
@@ -948,13 +948,13 @@ hi:ExperimentTutoringRelevance
     a hi:Experiment ;
     hi:testsMetric hi:MetricRecommendationRelevance ;
     hi:testsMetric hi:MetricLearningGain ;
-    hi:testsMetric hi-s:MetricExplanationClarity .
+    hi:testsMetric hi:MetricExplanationClarity .
 
 hi:EvaluationTutorImpact
     a hi:Evaluation ;
     hi:usesMetric hi:MetricRecommendationRelevance ;
     hi:usesMetric hi:MetricLearningGain ;
-    hi:usesMetric hi-s:MetricExplanationClarity ;
+    hi:usesMetric hi:MetricExplanationClarity ;
     hi:hasExperiment hi:ExperimentTutoringRelevance ;
     hi:hasNullHypothesis hi:NullHypothesisNoBenefitOverBaseline ;
     hi:hasAlternativeHypothesis hi:AlternativeHypothesisBayesPlusSemanticImprovesOutcomes .
@@ -967,7 +967,7 @@ hi:MetricLearningGain
     a hi:Metric ;
     rdfs:comment "Improvement in assessed knowledge after recommendations."@en .
 
-hi-s:MetricExplanationClarity
+hi:MetricExplanationClarity
     a hi:Metric ;
     rdfs:comment "Human-rated clarity/transparency of tutor explanations."@en .
 
@@ -983,9 +983,9 @@ hi:AlternativeHypothesisBayesPlusSemanticImprovesOutcomes
 # Influence links
 #################################################################
 
-hi-s:ContextOnlineLearning            hi:influences hi:EvaluationTutorImpact .
-hi-s:PhenomenonTrustShift             hi:influences hi-s:GoalEffectiveLearning .
-hi:FeedbackRecommendationRationale  hi:influences hi-s:ExecRecommendResources .
+hi:ContextOnlineLearning            hi:influences hi:EvaluationTutorImpact .
+hi:PhenomenonTrustShift             hi:influences hi:GoalEffectiveLearning .
+hi:FeedbackRecommendationRationale  hi:influences hi:ExecRecommendResources .
 
 
 #################################################################
@@ -1014,9 +1014,9 @@ hi:HITeamDiagnosis
     hi:hasGoal hi:GoalAccurateTrustworthyDiagnosis ;
     hi:hasMember hi:AIDiagnosticAssistant , hi:HumanClinician ;
     hi:operatesInContext hi:ContextClinicalConsultation ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ,
-                            hi-s:EthicalConstraintFairness ,
-                            hi-s:EthicalConstraintTransparency .
+    hi:hasEthicalConstraint hi:EthicalConstraintPrivacy ,
+                            hi:EthicalConstraintFairness ,
+                            hi:EthicalConstraintTransparency .
 
 hi:GoalAccurateTrustworthyDiagnosis
     a hi:Goal ;
@@ -1028,13 +1028,13 @@ hi:GoalAccurateTrustworthyDiagnosis
 hi:ContextClinicalConsultation
     a hi:Context ;
     hi:exhibitsPhenomenon hi:PhenomenonDataMismatch ,
-                          hi-s:PhenomenonTrustShift ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ;
+                          hi:PhenomenonTrustShift ;
+    hi:hasEthicalConstraint hi:EthicalConstraintPrivacy ;
     rdfs:comment "Clinical setting using patient history and symptom data from a knowledge graph."@en .
 
-hi-s:EthicalConstraintPrivacy      a hi:EthicalConstraint .
-hi-s:EthicalConstraintFairness     a hi:EthicalConstraint .
-hi-s:EthicalConstraintTransparency a hi:EthicalConstraint .
+hi:EthicalConstraintPrivacy      a hi:EthicalConstraint .
+hi:EthicalConstraintFairness     a hi:EthicalConstraint .
+hi:EthicalConstraintTransparency a hi:EthicalConstraint .
 
 #################################################################
 # Roles
@@ -1051,20 +1051,20 @@ hi:AIDiagnosticAssistant
     a hi:ArtificialAgent ;
     hi:hasRole hi:RoleAIDiagnosisAdvisor ;
     hi:hasCapability hi:CapabilityEmbeddingReasoning ,
-                     hi-s:CapabilityKGQuery ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilityKGQuery ,
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecSymptomEmbedding ,
                          hi:ExecCandidateGeneration ,
                          hi:ExecExplainAI ;
     hi:usesMethod hi:MethodEmbeddingBasedReasoning ,
-                  hi-s:MethodKGQuerying ,
-                  hi-s:MethodPostHocExplanation .
+                  hi:MethodKGQuerying ,
+                  hi:MethodPostHocExplanation .
 
 hi:HumanClinician
     a hi:HumanAgent ;
     hi:hasRole hi:RoleClinician ;
     hi:hasCapability hi:CapabilityClinicalJudgment ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecHypothesisComparison ,
                          hi:ExecExplainHuman .
 
@@ -1073,8 +1073,8 @@ hi:HumanClinician
 #################################################################
 
 hi:CapabilityEmbeddingReasoning  a hi:Capability ; hi:allowsTask hi:TaskSymptomAnalysis .
-hi-s:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskSymptomAnalysis .
-hi-s:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi:TaskExplainReasoning .
+hi:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskSymptomAnalysis .
+hi:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi:TaskExplainReasoning .
 hi:CapabilityClinicalJudgment    a hi:Capability ; hi:allowsTask hi:TaskHypothesisComparison .
 
 #################################################################
@@ -1095,15 +1095,15 @@ hi:TaskHypothesisComparison
 
 hi:TaskExplainReasoning
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityExplanation .
+    hi:requiresCapability hi:CapabilityExplanation .
 
 #################################################################
 # Methods
 #################################################################
 
 hi:MethodEmbeddingBasedReasoning a dul:Method ; rdfs:comment "Embedding-based pattern discovery over patient KG."@en .
-hi-s:MethodKGQuerying              a dul:Method ; rdfs:comment "Query prior medical knowledge graphs for structured evidence."@en .
-hi-s:MethodPostHocExplanation      a dul:Method ; rdfs:comment "Explain diagnostic suggestions and decision paths."@en .
+hi:MethodKGQuerying              a dul:Method ; rdfs:comment "Query prior medical knowledge graphs for structured evidence."@en .
+hi:MethodPostHocExplanation      a dul:Method ; rdfs:comment "Explain diagnostic suggestions and decision paths."@en .
 
 #################################################################
 # Task Executions
@@ -1133,7 +1133,7 @@ hi:ExecExplainAI
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskExplainReasoning ;
     hi:performedBy hi:AIDiagnosticAssistant ;
-    hi:usesMethod hi-s:MethodPostHocExplanation ;
+    hi:usesMethod hi:MethodPostHocExplanation ;
     hi:towardsGoal hi:GoalAccurateTrustworthyDiagnosis .
 
 hi:ExecExplainHuman
@@ -1149,12 +1149,12 @@ hi:ExecExplainHuman
 hi:InteractionJointExplanation
     a hi:Interaction ;
     hi:performedBy hi:AIDiagnosticAssistant , hi:HumanClinician ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
-    hi:usesInteractionModality hi-s:ModalityVerbalDialogue ;
+    hi:hasInteractionIntent hi:IntentExplain ;
+    hi:usesInteractionModality hi:ModalityVerbalDialogue ;
     hi:towardsGoal hi:GoalAccurateTrustworthyDiagnosis .
 
-hi-s:IntentExplain a hi:Intentionality .
-hi-s:ModalityVerbalDialogue a hi:InteractionModality .
+hi:IntentExplain a hi:Intentionality .
+hi:ModalityVerbalDialogue a hi:InteractionModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
@@ -1164,7 +1164,7 @@ hi:PhenomenonDataMismatch
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Conflicts between KG-derived suggestions and clinician observations."@en .
 
-hi-s:PhenomenonTrustShift
+hi:PhenomenonTrustShift
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Trust evolves with clarity and reliability of joint reasoning."@en .
 
@@ -1184,13 +1184,13 @@ hi:ExperimentHybridDiagnosis
     a hi:Experiment ;
     hi:testsMetric hi:MetricDiagnosticAccuracy ;
     hi:testsMetric hi:MetricTimeToDiagnosis ;
-    hi:testsMetric hi-s:MetricExplanationClarity .
+    hi:testsMetric hi:MetricExplanationClarity .
 
 hi:EvaluationHybridVsSolo
     a hi:Evaluation ;
     hi:usesMetric hi:MetricDiagnosticAccuracy ;
     hi:usesMetric hi:MetricTimeToDiagnosis ;
-    hi:usesMetric hi-s:MetricExplanationClarity ;
+    hi:usesMetric hi:MetricExplanationClarity ;
     hi:hasExperiment hi:ExperimentHybridDiagnosis ;
     hi:hasNullHypothesis hi:NullHypothesisNoHybridBenefit ;
     hi:hasAlternativeHypothesis hi:AlternativeHypothesisHybridImprovesAccuracyAndTrust .
@@ -1203,7 +1203,7 @@ hi:MetricTimeToDiagnosis
     a hi:Metric ;
     rdfs:comment "Elapsed time to reach a shared diagnostic conclusion."@en .
 
-hi-s:MetricExplanationClarity
+hi:MetricExplanationClarity
     a hi:Metric ;
     rdfs:comment "Human-rated clarity and usefulness of explanations."@en .
 
@@ -1220,7 +1220,7 @@ hi:AlternativeHypothesisHybridImprovesAccuracyAndTrust
 #################################################################
 
 hi:ContextClinicalConsultation hi:influences hi:EvaluationHybridVsSolo .
-hi-s:PhenomenonTrustShift        hi:influences hi:GoalAccurateTrustworthyDiagnosis .
+hi:PhenomenonTrustShift        hi:influences hi:GoalAccurateTrustworthyDiagnosis .
 hi:BiasDiagnosticAnchoring     hi:influences hi:TaskHypothesisComparison .
 
 hi:ExecSymptomEmbedding     hi:evaluatedBy hi:EvaluationHybridVsSolo .
@@ -1257,9 +1257,9 @@ hi:HITeamCampusEnergy
     hi:hasMember hi:AIBuildingA , hi:AIBuildingB , hi:HumanGridOperator ;
     hi:operatesInContext hi:ContextSmartCampus ;
     hi:hasEthicalConstraint hi:EthicalConstraintSustainability ,
-                            hi-s:EthicalConstraintFairness ,
+                            hi:EthicalConstraintFairness ,
                             hi:EthicalConstraintUserComfort ,
-                            hi-s:EthicalConstraintTransparency .
+                            hi:EthicalConstraintTransparency .
 
 hi:GoalFairEfficientHeating
     a hi:Goal ;
@@ -1267,19 +1267,19 @@ hi:GoalFairEfficientHeating
                     hi:TaskLearnEnergyBehavior ,
                     hi:TaskNegotiateAllocation ,
                     hi:TaskCoordinateWithOperator ,
-                    hi-s:TaskExplainDecision .
+                    hi:TaskExplainDecision .
 
 hi:ContextSmartCampus
     a hi:Context ;
     hi:exhibitsPhenomenon hi:PhenomenonLoadVariability ,
                           hi:PhenomenonCoLearningDynamics ,
-                          hi-s:PhenomenonTrustShift ;
+                          hi:PhenomenonTrustShift ;
     hi:hasEthicalConstraint hi:EthicalConstraintSustainability .
 
 hi:EthicalConstraintSustainability a hi:EthicalConstraint .
-hi-s:EthicalConstraintFairness       a hi:EthicalConstraint .
+hi:EthicalConstraintFairness       a hi:EthicalConstraint .
 hi:EthicalConstraintUserComfort    a hi:EthicalConstraint .
-hi-s:EthicalConstraintTransparency   a hi:EthicalConstraint .
+hi:EthicalConstraintTransparency   a hi:EthicalConstraint .
 
 #################################################################
 # Roles
@@ -1297,37 +1297,37 @@ hi:AIBuildingA
     hi:hasRole hi:RoleBuildingAgent ;
     hi:hasCapability hi:CapabilityPatternLearning ,
                      hi:CapabilityNegotiation ,
-                     hi-s:CapabilityKGQuery ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilityKGQuery ,
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecALearnOccupancy ,
                          hi:ExecALearnEnergyBehavior ,
                          hi:ExecANegotiate ,
                          hi:ExecAExplain ;
     hi:usesMethod hi:MethodCoLearning ,
                   hi:MethodNegotiationProtocol ,
-                  hi-s:MethodKGQuerying .
+                  hi:MethodKGQuerying .
 
 hi:AIBuildingB
     a hi:ArtificialAgent ;
     hi:hasRole hi:RoleBuildingAgent ;
     hi:hasCapability hi:CapabilityPatternLearning ,
                      hi:CapabilityNegotiation ,
-                     hi-s:CapabilityKGQuery ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilityKGQuery ,
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecBLearnOccupancy ,
                          hi:ExecBLearnEnergyBehavior ,
                          hi:ExecBNegotiate ,
                          hi:ExecBExplain ;
     hi:usesMethod hi:MethodCoLearning ,
                   hi:MethodNegotiationProtocol ,
-                  hi-s:MethodKGQuerying .
+                  hi:MethodKGQuerying .
 
 hi:HumanGridOperator
     a hi:HumanAgent ;
     hi:hasRole hi:RoleGridOperator ;
     hi:hasCapability hi:CapabilityOperatorCoordination ,
-                     hi-s:CapabilitySelfReporting ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilitySelfReporting ,
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecCoordinateWithOperator ,
                          hi:ExecExplainOperator .
 
@@ -1337,10 +1337,10 @@ hi:HumanGridOperator
 
 hi:CapabilityPatternLearning     a hi:Capability ; hi:allowsTask hi:TaskLearnOccupancy .
 hi:CapabilityNegotiation         a hi:Capability ; hi:allowsTask hi:TaskNegotiateAllocation .
-hi-s:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskLearnEnergyBehavior .
-hi-s:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi-s:TaskExplainDecision .
+hi:CapabilityKGQuery             a hi:Capability ; hi:allowsTask hi:TaskLearnEnergyBehavior .
+hi:CapabilityExplanation         a hi:Capability ; hi:allowsTask hi:TaskExplainDecision .
 hi:CapabilityOperatorCoordination a hi:Capability ; hi:allowsTask hi:TaskCoordinateWithOperator .
-hi-s:CapabilitySelfReporting       a hi:Capability ; hi:allowsTask hi:TaskCoordinateWithOperator .
+hi:CapabilitySelfReporting       a hi:Capability ; hi:allowsTask hi:TaskCoordinateWithOperator .
 
 #################################################################
 # Tasks
@@ -1352,7 +1352,7 @@ hi:TaskLearnOccupancy
 
 hi:TaskLearnEnergyBehavior
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityKGQuery .
+    hi:requiresCapability hi:CapabilityKGQuery .
 
 hi:TaskNegotiateAllocation
     a hi:Task ;
@@ -1362,9 +1362,9 @@ hi:TaskCoordinateWithOperator
     a hi:Task ;
     hi:requiresCapability hi:CapabilityOperatorCoordination .
 
-hi-s:TaskExplainDecision
+hi:TaskExplainDecision
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityExplanation .
+    hi:requiresCapability hi:CapabilityExplanation .
 
 #################################################################
 # Methods
@@ -1372,7 +1372,7 @@ hi-s:TaskExplainDecision
 
 hi:MethodCoLearning          a dul:Method ; rdfs:comment "Collaborative co-learning of occupancy and consumption patterns."@en .
 hi:MethodNegotiationProtocol a dul:Method ; rdfs:comment "Protocol to deliberate and agree on fair energy allocation."@en .
-hi-s:MethodKGQuerying          a dul:Method ; rdfs:comment "Query background knowledge (e.g., building metadata/constraints)."@en .
+hi:MethodKGQuerying          a dul:Method ; rdfs:comment "Query background knowledge (e.g., building metadata/constraints)."@en .
 
 #################################################################
 # Task Executions
@@ -1396,14 +1396,14 @@ hi:ExecALearnEnergyBehavior
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskLearnEnergyBehavior ;
     hi:performedBy hi:AIBuildingA ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
+    hi:usesMethod hi:MethodKGQuerying ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
 hi:ExecBLearnEnergyBehavior
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskLearnEnergyBehavior ;
     hi:performedBy hi:AIBuildingB ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
+    hi:usesMethod hi:MethodKGQuerying ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
 hi:ExecANegotiate
@@ -1428,19 +1428,19 @@ hi:ExecCoordinateWithOperator
 
 hi:ExecAExplain
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainDecision ;
+    hi:realizesTask hi:TaskExplainDecision ;
     hi:performedBy hi:AIBuildingA ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
 hi:ExecBExplain
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainDecision ;
+    hi:realizesTask hi:TaskExplainDecision ;
     hi:performedBy hi:AIBuildingB ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
 hi:ExecExplainOperator
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainDecision ;
+    hi:realizesTask hi:TaskExplainDecision ;
     hi:performedBy hi:HumanGridOperator ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
@@ -1458,12 +1458,12 @@ hi:InteractionEnergyNegotiation
 hi:InteractionExplainPlans
     a hi:Interaction ;
     hi:performedBy hi:AIBuildingA , hi:AIBuildingB , hi:HumanGridOperator ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
+    hi:hasInteractionIntent hi:IntentExplain ;
     hi:usesInteractionModality hi:ModalityDashboard ;
     hi:towardsGoal hi:GoalFairEfficientHeating .
 
 hi:IntentNegotiate a hi:Intentionality .
-hi-s:IntentExplain   a hi:Intentionality .
+hi:IntentExplain   a hi:Intentionality .
 hi:ModalityNetworkProtocol a hi:InteractionModality .
 hi:ModalityDashboard       a hi:InteractionModality .
 
@@ -1557,8 +1557,8 @@ hi:HITeamVirtualMuseum
     hi:hasGoal hi:GoalEnhancedVisitorLearning ;
     hi:hasMember hi:AIVirtualGuide , hi:HumanVisitor ;
     hi:operatesInContext hi:ContextVirtualExhibition ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ,
-                            hi-s:EthicalConstraintTransparency ,
+    hi:hasEthicalConstraint hi:EthicalConstraintPrivacy ,
+                            hi:EthicalConstraintTransparency ,
                             hi:EthicalConstraintAccessibility .
 
 hi:GoalEnhancedVisitorLearning
@@ -1568,17 +1568,17 @@ hi:GoalEnhancedVisitorLearning
                     hi:TaskComputeSimilarity ,
                     hi:TaskRecommendArtifacts ,
                     hi:TaskAnswerQuestions ,
-                    hi-s:TaskExplainRecommendations .
+                    hi:TaskExplainRecommendations .
 
 hi:ContextVirtualExhibition
     a hi:Context ;
     hi:exhibitsPhenomenon hi:PhenomenonEngagementShift ,
-                          hi-s:PhenomenonKnowledgeMismatch ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ;
+                          hi:PhenomenonKnowledgeMismatch ;
+    hi:hasEthicalConstraint hi:EthicalConstraintPrivacy ;
     rdfs:comment "VR-based exhibition where user inputs are multimodal; KG supports retrieval and reasoning."@en .
 
-hi-s:EthicalConstraintPrivacy       a hi:EthicalConstraint .
-hi-s:EthicalConstraintTransparency  a hi:EthicalConstraint .
+hi:EthicalConstraintPrivacy       a hi:EthicalConstraint .
+hi:EthicalConstraintTransparency  a hi:EthicalConstraint .
 hi:EthicalConstraintAccessibility a hi:EthicalConstraint .
 
 #################################################################
@@ -1596,25 +1596,25 @@ hi:AIVirtualGuide
     a hi:ArtificialAgent ;
     hi:hasRole hi:RoleVirtualGuide ;
     hi:hasCapability hi:CapabilityMultimodalInterpretation ,
-                     hi-s:CapabilitySemanticReasoning ,
-                     hi-s:CapabilityKGQuery ,
+                     hi:CapabilitySemanticReasoning ,
+                     hi:CapabilityKGQuery ,
                      hi:CapabilityEmbeddingReasoning ,
-                     hi-s:CapabilityExplanation ;
+                     hi:CapabilityExplanation ;
     hi:performsExecution hi:ExecInterpretInput ,
                          hi:ExecSemanticRetrieval ,
                          hi:ExecComputeSimilarity ,
                          hi:ExecRecommendArtifacts ,
                          hi:ExecAnswerQuestions ,
-                         hi-s:ExecExplainRecommendations ;
+                         hi:ExecExplainRecommendations ;
     hi:usesMethod hi:MethodVRInputParsing ,
-                  hi-s:MethodKGQuerying ,
-                  hi-s:MethodSemanticLinking ,
+                  hi:MethodKGQuerying ,
+                  hi:MethodSemanticLinking ,
                   hi:MethodEmbeddingSimilarity .
 
 hi:HumanVisitor
     a hi:HumanAgent ;
     hi:hasRole hi:RoleVisitor ;
-    hi:hasCapability hi-s:CapabilitySelfReporting ;
+    hi:hasCapability hi:CapabilitySelfReporting ;
     hi:performsExecution hi:ExecProvideProfile .
 
 #################################################################
@@ -1622,11 +1622,11 @@ hi:HumanVisitor
 #################################################################
 
 hi:CapabilityMultimodalInterpretation a hi:Capability ; hi:allowsTask hi:TaskInterpretMultimodalInput .
-hi-s:CapabilitySemanticReasoning        a hi:Capability ; hi:allowsTask hi:TaskSemanticRetrieval .
-hi-s:CapabilityKGQuery                  a hi:Capability ; hi:allowsTask hi:TaskSemanticRetrieval .
+hi:CapabilitySemanticReasoning        a hi:Capability ; hi:allowsTask hi:TaskSemanticRetrieval .
+hi:CapabilityKGQuery                  a hi:Capability ; hi:allowsTask hi:TaskSemanticRetrieval .
 hi:CapabilityEmbeddingReasoning       a hi:Capability ; hi:allowsTask hi:TaskComputeSimilarity .
-hi-s:CapabilityExplanation              a hi:Capability ; hi:allowsTask hi-s:TaskExplainRecommendations .
-hi-s:CapabilitySelfReporting            a hi:Capability ; hi:allowsTask hi:TaskInterpretMultimodalInput .
+hi:CapabilityExplanation              a hi:Capability ; hi:allowsTask hi:TaskExplainRecommendations .
+hi:CapabilitySelfReporting            a hi:Capability ; hi:allowsTask hi:TaskInterpretMultimodalInput .
 
 #################################################################
 # Tasks
@@ -1638,7 +1638,7 @@ hi:TaskInterpretMultimodalInput
 
 hi:TaskSemanticRetrieval
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySemanticReasoning .
+    hi:requiresCapability hi:CapabilitySemanticReasoning .
 
 hi:TaskComputeSimilarity
     a hi:Task ;
@@ -1646,23 +1646,23 @@ hi:TaskComputeSimilarity
 
 hi:TaskRecommendArtifacts
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySemanticReasoning .
+    hi:requiresCapability hi:CapabilitySemanticReasoning .
 
 hi:TaskAnswerQuestions
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilitySemanticReasoning .
+    hi:requiresCapability hi:CapabilitySemanticReasoning .
 
-hi-s:TaskExplainRecommendations
+hi:TaskExplainRecommendations
     a hi:Task ;
-    hi:requiresCapability hi-s:CapabilityExplanation .
+    hi:requiresCapability hi:CapabilityExplanation .
 
 #################################################################
 # Methods
 #################################################################
 
 hi:MethodVRInputParsing     a dul:Method ; rdfs:comment "Interpret VR-based multimodal inputs (gesture, gaze, speech)."@en .
-hi-s:MethodKGQuerying         a dul:Method ; rdfs:comment "Query cultural heritage KGs (e.g., Wikidata/WordNet) for facts/links."@en .
-hi-s:MethodSemanticLinking    a dul:Method ; rdfs:comment "Reason over topic relatedness for recommendations/answers."@en .
+hi:MethodKGQuerying         a dul:Method ; rdfs:comment "Query cultural heritage KGs (e.g., Wikidata/WordNet) for facts/links."@en .
+hi:MethodSemanticLinking    a dul:Method ; rdfs:comment "Reason over topic relatedness for recommendations/answers."@en .
 hi:MethodEmbeddingSimilarity a dul:Method ; rdfs:comment "Compute vector-based semantic similarity between artifacts."@en .
 
 #################################################################
@@ -1686,7 +1686,7 @@ hi:ExecSemanticRetrieval
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskSemanticRetrieval ;
     hi:performedBy hi:AIVirtualGuide ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
+    hi:usesMethod hi:MethodKGQuerying ;
     hi:towardsGoal hi:GoalEnhancedVisitorLearning .
 
 hi:ExecComputeSimilarity
@@ -1700,19 +1700,19 @@ hi:ExecRecommendArtifacts
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskRecommendArtifacts ;
     hi:performedBy hi:AIVirtualGuide ;
-    hi:usesMethod hi-s:MethodSemanticLinking ;
+    hi:usesMethod hi:MethodSemanticLinking ;
     hi:towardsGoal hi:GoalEnhancedVisitorLearning .
 
 hi:ExecAnswerQuestions
     a hi:TaskExecution ;
     hi:realizesTask hi:TaskAnswerQuestions ;
     hi:performedBy hi:AIVirtualGuide ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
+    hi:usesMethod hi:MethodKGQuerying ;
     hi:towardsGoal hi:GoalEnhancedVisitorLearning .
 
 hi:ExecExplainRecommendations
     a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplainRecommendations ;
+    hi:realizesTask hi:TaskExplainRecommendations ;
     hi:performedBy hi:AIVirtualGuide ;
     hi:towardsGoal hi:GoalEnhancedVisitorLearning .
 
@@ -1747,7 +1747,7 @@ hi:PhenomenonEngagementShift
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Visitor engagement varies with relevance and adaptivity of guidance."@en .
 
-hi-s:PhenomenonKnowledgeMismatch
+hi:PhenomenonKnowledgeMismatch
     a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Misalignment between assumed prior knowledge and actual visitor understanding."@en .
 
@@ -1764,14 +1764,14 @@ hi:ExperimentVRGuideEffectiveness
     hi:testsMetric hi:MetricRecommendationRelevance ;
     hi:testsMetric hi:MetricAnswerAccuracy ;
     hi:testsMetric hi:MetricEngagementTime ;
-    hi:testsMetric hi-s:MetricExplanationClarity .
+    hi:testsMetric hi:MetricExplanationClarity .
 
 hi:EvaluationVRGuideImpact
     a hi:Evaluation ;
     hi:usesMetric hi:MetricRecommendationRelevance ;
     hi:usesMetric hi:MetricAnswerAccuracy ;
     hi:usesMetric hi:MetricEngagementTime ;
-    hi:usesMetric hi-s:MetricExplanationClarity ;
+    hi:usesMetric hi:MetricExplanationClarity ;
     hi:hasExperiment hi:ExperimentVRGuideEffectiveness ;
     hi:hasNullHypothesis hi:NullHypothesisNoBenefitOverBaseline ;
     hi:hasAlternativeHypothesis hi:AlternativeHypothesisMultimodalKGEmbeddingsImproveExperience .
@@ -1779,7 +1779,7 @@ hi:EvaluationVRGuideImpact
 hi:MetricRecommendationRelevance a hi:Metric ; rdfs:comment "Match between suggestions and inferred visitor interests."@en .
 hi:MetricAnswerAccuracy         a hi:Metric ; rdfs:comment "Correctness of answers to visitor questions."@en .
 hi:MetricEngagementTime         a hi:Metric ; rdfs:comment "Time spent interacting with exhibits/recommendations."@en .
-hi-s:MetricExplanationClarity     a hi:Metric ; rdfs:comment "Visitor-rated clarity of recommendation/answer rationale."@en .
+hi:MetricExplanationClarity     a hi:Metric ; rdfs:comment "Visitor-rated clarity of recommendation/answer rationale."@en .
 
 hi:NullHypothesisNoBenefitOverBaseline
     a hi:NullHypothesis ;
@@ -1799,7 +1799,7 @@ hi:FeedbackRecommendationRationale    hi:influences hi:ExecRecommendArtifacts .
 
 hi:ExecRecommendArtifacts  hi:evaluatedBy hi:EvaluationVRGuideImpact .
 hi:ExecAnswerQuestions     hi:evaluatedBy hi:EvaluationVRGuideImpact .
-hi-s:ExecExplainRecommendations hi:evaluatedBy hi:EvaluationVRGuideImpact .
+hi:ExecExplainRecommendations hi:evaluatedBy hi:EvaluationVRGuideImpact .
 
 
 
