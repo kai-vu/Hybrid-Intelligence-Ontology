@@ -3,13 +3,13 @@
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix hi-s1:   <http://www.example/w3id.org/hi-ontology/scenarios/1> .
-@prefix hi-s2:   <http://www.example/w3id.org/hi-ontology/scenarios/2> .
-@prefix hi-s3:   <http://www.example/w3id.org/hi-ontology/scenarios/3> .
-@prefix hi-s4:   <http://www.example/w3id.org/hi-ontology/scenarios/4> .
-@prefix hi-s5:   <http://www.example/w3id.org/hi-ontology/scenarios/5> .
-@prefix hi-s6:   <http://www.example/w3id.org/hi-ontology/scenarios/6> .
-@prefix hi-s7:   <http://www.example/w3id.org/hi-ontology/scenarios/7> .
+@prefix hi-s1:  <http://www.example/w3id.org/hi-ontology/scenarios/1> .
+@prefix hi-s2:  <http://www.example/w3id.org/hi-ontology/scenarios/2> .
+@prefix hi-s3:  <http://www.example/w3id.org/hi-ontology/scenarios/3> .
+@prefix hi-s4:  <http://www.example/w3id.org/hi-ontology/scenarios/4> .
+@prefix hi-s5:  <http://www.example/w3id.org/hi-ontology/scenarios/5> .
+@prefix hi-s6:  <http://www.example/w3id.org/hi-ontology/scenarios/6> .
+@prefix hi-s7:  <http://www.example/w3id.org/hi-ontology/scenarios/7> .
 
 #################################################################
 # Scientific Paper and Use Case -- SCENARIO 1
