@@ -138,6 +138,7 @@ hi-s1:TaskExplanation a hi:Task ;
 #################################################################
 
 hi-s1:MethodArgumentationReasoning a dul:Method ;
+    rdfs:label "Argumentation-based Reasoning Method."@en ;
     rdfs:comment "Argumentation-based reasoning used by the assistant to evaluate conflicting data sources."@en .
 
 #################################################################
@@ -197,21 +198,28 @@ hi-s1:FeedbackTrustReport a hi:Feedback ;
 #################################################################
 
 hi-s1:ExperimentTransparencyTrust a hi:Experiment ;
+    rdfs:label "Experiment on Transparency Impact on User Trust."@en ;
+    rdfs:comment "Experiment to assess how explanations affect user trust under data inconsistencies."@en ;
     hi:testsMetric hi-s1:MetricTrustPreservation .
 
 hi-s1:EvaluationTransparencyImpact a hi:Evaluation ;
+    rdfs:label "Evaluation of Transparency Impact on User Trust."@en ;
+    rdfs:comment "Evaluates how providing explanations affects user trust and satisfaction, especially under data inconsistencies."@en ;
     hi:usesMetric hi-s1:MetricTrustPreservation ;
     hi:hasExperiment hi-s1:ExperimentTransparencyTrust ;
     hi:hasNullHypothesis hi-s1:NullHypothesisNoTrustChange ;
     hi:hasAlternativeHypothesis hi-s1:AlternativeHypothesisTransparencyImprovesTrust .
 
 hi-s1:MetricTrustPreservation a hi:Metric ;
+    rdfs:label "Trust Preservation Metric."@en ;
     rdfs:comment "Quantifies user trust retention when explanations are provided versus when hidden."@en .
 
 hi-s1:NullHypothesisNoTrustChange a hi:NullHypothesis ;
+    rdfs:label "Null Hypothesis of No Trust Change."@en ;
     rdfs:comment "Transparency in explanations does not significantly affect user trust or satisfaction."@en .
 
 hi-s1:AlternativeHypothesisTransparencyImprovesTrust a hi:AlternativeHypothesis ;
+    rdfs:label "Alternative Hypothesis that Transparency Improves Trust."@en ;
     rdfs:comment "Providing transparent reasoning improves user trust even under occasional errors or data mismatches."@en .
 
 #################################################################
