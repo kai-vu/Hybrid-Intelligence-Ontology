@@ -1,22 +1,28 @@
 @prefix hi:     <http://www.example/w3id.org/hi-ontology#> .
-@prefix hi-s:   <http://www.example/w3id.org/hi-ontology/scenarios/> .
 @prefix dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix hi-s1:   <http://www.example/w3id.org/hi-ontology/scenarios/1> .
+@prefix hi-s2:   <http://www.example/w3id.org/hi-ontology/scenarios/2> .
+@prefix hi-s3:   <http://www.example/w3id.org/hi-ontology/scenarios/3> .
+@prefix hi-s4:   <http://www.example/w3id.org/hi-ontology/scenarios/4> .
+@prefix hi-s5:   <http://www.example/w3id.org/hi-ontology/scenarios/5> .
+@prefix hi-s6:   <http://www.example/w3id.org/hi-ontology/scenarios/6> .
+@prefix hi-s7:   <http://www.example/w3id.org/hi-ontology/scenarios/7> .
 
 #################################################################
 # Scientific Paper and Use Case -- SCENARIO 1
 #################################################################
 
-hi-s:HIScenarioPersonalAssistant a hi:ScientificPaper ;
-    hi:describesUseCase hi-s:UseCasePersonalAssistantHI .
+hi-s1:HIScenarioPersonalAssistant a hi:ScientificPaper ;
+    hi:describesUseCase hi-s1:UseCasePersonalAssistantHI .
 
-hi-s:UseCasePersonalAssistantHI a hi:UseCase ;
-    hi:inDomain hi-s:DomainHealthAndLifestyle ;
-    hi:introducesHITeam hi-s:HITeamPersonalAssistant .
+hi-s1:UseCasePersonalAssistantHI a hi:UseCase ;
+    hi:inDomain hi-s1:DomainHealthAndLifestyle ;
+    hi:introducesHITeam hi-s1:HITeamPersonalAssistant .
 
-hi-s:DomainHealthAndLifestyle a hi:Domain ;
+hi-s1:DomainHealthAndLifestyle a hi:Domain ;
     rdfs:label "Health and Lifestyle"@en ;
     rdfs:comment "Domain covering personal health, wellness, and daily activity monitoring."@en .
 
@@ -24,194 +30,197 @@ hi-s:DomainHealthAndLifestyle a hi:Domain ;
 # HI Team, Goal, Context, and Ethical Constraints
 #################################################################
 
-hi-s:HITeamPersonalAssistant a hi:HITeam ;
-    hi:hasGoal hi-s:GoalUserWellbeing ;
-    hi:hasMember hi-s:AIAssistant , hi-s:HumanUser ;
-    hi:operatesInContext hi-s:ContextHealthMonitoring ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ,
-                            hi-s:EthicalConstraintAutonomy ,
-                            hi-s:EthicalConstraintTransparency .
+hi-s1:HITeamPersonalAssistant a hi:HITeam ;
+    hi:hasGoal hi-s1:GoalUserWellbeing ;
+    hi:hasMember hi-s1:AIAssistant , hi-s1:HumanUser ;
+    hi:operatesInContext hi-s1:ContextHealthMonitoring ;
+    hi:hasEthicalConstraint hi-s1:EthicalConstraintPrivacy ,
+                            hi-s1:EthicalConstraintAutonomy ,
+                            hi-s1:EthicalConstraintTransparency .
 
-hi-s:GoalUserWellbeing a hi:Goal ;
+hi-s1:GoalUserWellbeing a hi:Goal ;
     rdfs:label "User Wellbeing Goal."@en ;
     rdfs:comment "Maintain and improve user health habits through monitoring and personalized feedback."@en ;
-    hi:requiresTask hi-s:TaskDataCollection , 
-                    hi-s:TaskConflictResolution , 
-                    hi-s:TaskExplanation .
+    hi:requiresTask hi-s1:TaskDataCollection , 
+                    hi-s1:TaskConflictResolution , 
+                    hi-s1:TaskExplanation .
 
-hi-s:ContextHealthMonitoring a hi:Context ;
-    hi:exhibitsPhenomenon hi-s:PhenomenonSensorNoise ,
-                          hi-s:PhenomenonDataMismatch ,
-                          hi-s:PhenomenonTrustShift ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintPrivacy ;
+hi-s1:ContextHealthMonitoring a hi:Context ;
+    hi:exhibitsPhenomenon hi-s1:PhenomenonSensorNoise ,
+                          hi-s1:PhenomenonDataMismatch ,
+                          hi-s1:PhenomenonTrustShift ;
+    hi:hasEthicalConstraint hi-s1:EthicalConstraintPrivacy ;
     rdfs:comment "Context where user reports, sensor readings, and contextual data interact to support healthy habit maintenance."@en .
 
-hi-s:EthicalConstraintPrivacy a hi:EthicalConstraint ;
+hi-s1:EthicalConstraintPrivacy a hi:EthicalConstraint ;
+    rdfs:label "Privacy Constraint."@en ;
     rdfs:comment "User data must be collected and processed respecting privacy and consent."@en .
 
-hi-s:EthicalConstraintAutonomy a hi:EthicalConstraint ;
+hi-s1:EthicalConstraintAutonomy a hi:EthicalConstraint ;
+    rdfs:label "Autonomy Constraint."@en ;
     rdfs:comment "The assistant must respect user autonomy in lifestyle decisions."@en .
 
-hi-s:EthicalConstraintTransparency a hi:EthicalConstraint ;
+hi-s1:EthicalConstraintTransparency a hi:EthicalConstraint ;
+    rdfs:label "Transparency Constraint."@en ;
     rdfs:comment "The assistant must explain reasoning processes clearly and understandably to the user."@en .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s:RoleAssistantSystem a dul:Role ;
+hi-s1:RoleAssistantSystem a dul:Role ;
     rdfs:label "Personal Assistant System Role."@en .
 
-hi-s:RoleUser a dul:Role ;
+hi-s1:RoleUser a dul:Role ;
     rdfs:label "Human User Role."@en .
 
 #################################################################
 # Agents
 #################################################################
 
-hi-s:AIAssistant a hi:ArtificialAgent ;
+hi-s1:AIAssistant a hi:ArtificialAgent ;
     rdfs:label "AI Assistant"@en ;
-    hi:hasRole hi-s:RoleAssistantSystem ;
-    hi:hasCapability    hi-s:CapabilitySensing , 
-                        hi-s:CapabilityReasoning , 
-                        hi-s:CapabilityExplanation ;
-    hi:performsExecution    hi-s:ExecutionConflictResolution , 
-                            hi-s:ExecutionExplanation ;
-    hi:usesMethod hi-s:MethodArgumentationReasoning .
+    hi:hasRole hi-s1:RoleAssistantSystem ;
+    hi:hasCapability    hi-s1:CapabilitySensing , 
+                        hi-s1:CapabilityReasoning , 
+                        hi-s1:CapabilityExplanation ;
+    hi:performsExecution    hi-s1:ExecutionConflictResolution , 
+                            hi-s1:ExecutionExplanation ;
+    hi:usesMethod hi-s1:MethodArgumentationReasoning .
 
-hi-s:HumanUser a hi:HumanAgent ;
+hi-s1:HumanUser a hi:HumanAgent ;
     rdfs:label "Human User"@en ;
-    hi:hasRole hi-s:RoleUser ;
-    hi:hasCapability hi-s:CapabilitySelfReporting ;
-    hi:performsExecution hi-s:ExecutionDataCollection .
+    hi:hasRole hi-s1:RoleUser ;
+    hi:hasCapability hi-s1:CapabilitySelfReporting ;
+    hi:performsExecution hi-s1:ExecutionDataCollection .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s:CapabilitySensing a hi:Capability ;
+hi-s1:CapabilitySensing a hi:Capability ;
     rdfs:label "Sensing Capability"@en ;
-    hi:allowsTask hi-s:TaskDataCollection .
+    hi:allowsTask hi-s1:TaskDataCollection .
 
-hi-s:CapabilitySelfReporting a hi:Capability ;
+hi-s1:CapabilitySelfReporting a hi:Capability ;
     rdfs:label "Self-Reporting Capability"@en ;
-    hi:allowsTask hi-s:TaskDataCollection .
+    hi:allowsTask hi-s1:TaskDataCollection .
 
-hi-s:CapabilityReasoning a hi:Capability ;
+hi-s1:CapabilityReasoning a hi:Capability ;
     rdfs:label "Reasoning Capability"@en ;
-    hi:allowsTask hi-s:TaskConflictResolution .
+    hi:allowsTask hi-s1:TaskConflictResolution .
 
-hi-s:CapabilityExplanation a hi:Capability ;
+hi-s1:CapabilityExplanation a hi:Capability ;
     rdfs:label "Explanation Capability"@en ;
-    hi:allowsTask hi-s:TaskExplanation .
+    hi:allowsTask hi-s1:TaskExplanation .
 
 #################################################################
 # Tasks
 #################################################################
 
-hi-s:TaskDataCollection a hi:Task ;
+hi-s1:TaskDataCollection a hi:Task ;
     rdfs:label "Data Collection Task"@en ;
-    hi:requiresCapability hi-s:CapabilitySensing ;
+    hi:requiresCapability hi-s1:CapabilitySensing ;
     rdfs:comment "Collect user self-reports and sensor data (e.g., steps, sleep, diet)."@en .
 
-hi-s:TaskConflictResolution a hi:Task ;
+hi-s1:TaskConflictResolution a hi:Task ;
     rdfs:label "Conflict Resolution Task"@en ;
-    hi:requiresCapability hi-s:CapabilityReasoning ;
+    hi:requiresCapability hi-s1:CapabilityReasoning ;
     rdfs:comment "Identify and reconcile inconsistencies between user input and sensor data."@en .
 
-hi-s:TaskExplanation a hi:Task ;
+hi-s1:TaskExplanation a hi:Task ;
     rdfs:label "Explanation Task"@en ;
-    hi:requiresCapability hi-s:CapabilityExplanation ;
+    hi:requiresCapability hi-s1:CapabilityExplanation ;
     rdfs:comment "Provide transparent explanations to maintain user trust and engagement."@en .
 
 #################################################################
 # Methods
 #################################################################
 
-hi-s:MethodArgumentationReasoning a dul:Method ;
+hi-s1:MethodArgumentationReasoning a dul:Method ;
     rdfs:comment "Argumentation-based reasoning used by the assistant to evaluate conflicting data sources."@en .
 
 #################################################################
 # Task Executions
 #################################################################
 
-hi-s:ExecutionDataCollection a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskDataCollection ;
-    hi:performedBy hi-s:HumanUser ;
-    hi:towardsGoal hi-s:GoalUserWellbeing .
+hi-s1:ExecutionDataCollection a hi:TaskExecution ;
+    hi:realizesTask hi-s1:TaskDataCollection ;
+    hi:performedBy hi-s1:HumanUser ;
+    hi:towardsGoal hi-s1:GoalUserWellbeing .
 
-hi-s:ExecutionConflictResolution a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskConflictResolution ;
-    hi:performedBy hi-s:AIAssistant ;
-    hi:usesMethod hi-s:MethodArgumentationReasoning ;
-    hi:towardsGoal hi-s:GoalUserWellbeing .
+hi-s1:ExecutionConflictResolution a hi:TaskExecution ;
+    hi:realizesTask hi-s1:TaskConflictResolution ;
+    hi:performedBy hi-s1:AIAssistant ;
+    hi:usesMethod hi-s1:MethodArgumentationReasoning ;
+    hi:towardsGoal hi-s1:GoalUserWellbeing .
 
-hi-s:ExecutionExplanation a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplanation ;
-    hi:performedBy hi-s:AIAssistant ;
-    hi:towardsGoal hi-s:GoalUserWellbeing .
+hi-s1:ExecutionExplanation a hi:TaskExecution ;
+    hi:realizesTask hi-s1:TaskExplanation ;
+    hi:performedBy hi-s1:AIAssistant ;
+    hi:towardsGoal hi-s1:GoalUserWellbeing .
 
 #################################################################
 # Interaction (multi-agent exchange)
 #################################################################
 
-hi-s:InteractionExplainDecision a hi:Interaction ;
-    hi:performedBy hi-s:AIAssistant , hi-s:HumanUser ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
-    hi:usesInteractionModality hi-s:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s:GoalUserWellbeing .
+hi-s1:InteractionExplainDecision a hi:Interaction ;
+    hi:performedBy hi-s1:AIAssistant , hi-s1:HumanUser ;
+    hi:hasInteractionIntent hi-s1:IntentExplain ;
+    hi:usesInteractionModality hi-s1:ModalityVerbalDialogue ;
+    hi:towardsGoal hi-s1:GoalUserWellbeing .
 
-hi-s:IntentExplain a hi:InteractionIntent ;
+hi-s1:IntentExplain a hi:InteractionIntent ;
     rdfs:comment "Intent to explain system reasoning or decisions to the human user."@en .
 
-hi-s:ModalityVerbalDialogue a hi:InteractionModality ;
+hi-s1:ModalityVerbalDialogue a hi:InteractionModality ;
     rdfs:comment "Spoken or text-based communication through voice or chat interface."@en .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
-hi-s:PhenomenonSensorNoise a hi:AgentRelatedPhenomenon ;
+hi-s1:PhenomenonSensorNoise a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Sensor inaccuracies due to device limitations or contextual interference."@en .
 
-hi-s:PhenomenonDataMismatch a hi:AgentRelatedPhenomenon ;
+hi-s1:PhenomenonDataMismatch a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Mismatch between user reports and sensor data (e.g., user claims good sleep, smartwatch shows interruptions)."@en .
 
-hi-s:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
+hi-s1:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Variation in user trust in the assistant, depending on previous explanations and perceived accuracy."@en .
 
-hi-s:FeedbackTrustReport a hi:Feedback ;
+hi-s1:FeedbackTrustReport a hi:Feedback ;
     rdfs:comment "Feedback given to user to adjust understanding of data and maintain trust."@en .
 
 #################################################################
 # Experiment, Evaluation, Hypotheses, and Metrics
 #################################################################
 
-hi-s:ExperimentTransparencyTrust a hi:Experiment ;
-    hi:testsMetric hi-s:MetricTrustPreservation .
+hi-s1:ExperimentTransparencyTrust a hi:Experiment ;
+    hi:testsMetric hi-s1:MetricTrustPreservation .
 
-hi-s:EvaluationTransparencyImpact a hi:Evaluation ;
-    hi:usesMetric hi-s:MetricTrustPreservation ;
-    hi:hasExperiment hi-s:ExperimentTransparencyTrust ;
-    hi:hasNullHypothesis hi-s:NullHypothesisNoTrustChange ;
-    hi:hasAlternativeHypothesis hi-s:AlternativeHypothesisTransparencyImprovesTrust .
+hi-s1:EvaluationTransparencyImpact a hi:Evaluation ;
+    hi:usesMetric hi-s1:MetricTrustPreservation ;
+    hi:hasExperiment hi-s1:ExperimentTransparencyTrust ;
+    hi:hasNullHypothesis hi-s1:NullHypothesisNoTrustChange ;
+    hi:hasAlternativeHypothesis hi-s1:AlternativeHypothesisTransparencyImprovesTrust .
 
-hi-s:MetricTrustPreservation a hi:Metric ;
+hi-s1:MetricTrustPreservation a hi:Metric ;
     rdfs:comment "Quantifies user trust retention when explanations are provided versus when hidden."@en .
 
-hi-s:NullHypothesisNoTrustChange a hi:NullHypothesis ;
+hi-s1:NullHypothesisNoTrustChange a hi:NullHypothesis ;
     rdfs:comment "Transparency in explanations does not significantly affect user trust or satisfaction."@en .
 
-hi-s:AlternativeHypothesisTransparencyImprovesTrust a hi:AlternativeHypothesis ;
+hi-s1:AlternativeHypothesisTransparencyImprovesTrust a hi:AlternativeHypothesis ;
     rdfs:comment "Providing transparent reasoning improves user trust even under occasional errors or data mismatches."@en .
 
 #################################################################
 # Influence relations (context → evaluation)
 #################################################################
 
-hi-s:ContextHealthMonitoring hi:influences hi-s:EvaluationTransparencyImpact .
-hi-s:PhenomenonTrustShift hi:influences hi-s:GoalUserWellbeing .
-hi-s:FeedbackTrustReport hi:influences hi-s:HumanUser .
+hi-s1:ContextHealthMonitoring hi:influences hi-s1:EvaluationTransparencyImpact .
+hi-s1:PhenomenonTrustShift hi:influences hi-s1:GoalUserWellbeing .
+hi-s1:FeedbackTrustReport hi:influences hi-s1:HumanUser .
 
 
 
@@ -221,270 +230,270 @@ hi-s:FeedbackTrustReport hi:influences hi-s:HumanUser .
 # Scientific Paper and Use Case -- SCENARIO 2
 #################################################################
 
-hi-s:ScientificPaperTiddi2022Manipulation a hi:ScientificPaper ;
-    hi:describesUseCase hi-s:UseCaseCollaborativeManipulation .
+hi-s2:ScientificPaperTiddi2022Manipulation a hi:ScientificPaper ;
+    hi:describesUseCase hi-s2:UseCaseCollaborativeManipulation .
 
-hi-s:UseCaseCollaborativeManipulation a hi:UseCase ;
-    hi:inDomain hi-s:DomainIndustrialAndServiceRobotics ;
-    hi:introducesHITeam hi-s:HITeamCollabManipulation .
+hi-s2:UseCaseCollaborativeManipulation a hi:UseCase ;
+    hi:inDomain hi-s2:DomainIndustrialAndServiceRobotics ;
+    hi:introducesHITeam hi-s2:HITeamCollabManipulation .
 
-hi-s:DomainIndustrialAndServiceRobotics a hi:Domain ;
+hi-s2:DomainIndustrialAndServiceRobotics a hi:Domain ;
     rdfs:label "Industrial and Service Robotics"@en .
 
 #################################################################
 # HI Team, Goal, Context, Ethical Constraints
 #################################################################
 
-hi-s:HITeamCollabManipulation a hi:HITeam ;
-    hi:hasGoal hi-s:GoalSafeToolRetrieval ;
-    hi:hasMember hi-s:RobotManipulator , hi-s:HumanTechnician ;
-    hi:operatesInContext hi-s:ContextWorkspaceManipulation ;
-    hi:hasEthicalConstraint hi-s:EthicalConstraintSafety ,
-                            hi-s:EthicalConstraintTransparency .
+hi-s2:HITeamCollabManipulation a hi:HITeam ;
+    hi:hasGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:hasMember hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
+    hi:operatesInContext hi-s2:ContextWorkspaceManipulation ;
+    hi:hasEthicalConstraint hi-s2:EthicalConstraintSafety ,
+                            hi-s2:EthicalConstraintTransparency .
 
-hi-s:GoalSafeToolRetrieval a hi:Goal ;
-    hi:requiresTask hi-s:TaskUnlockCabinet , 
-                    hi-s:TaskOpenCabinet , 
-                    hi-s:TaskRetrieveTool .
+hi-s2:GoalSafeToolRetrieval a hi:Goal ;
+    hi:requiresTask hi-s2:TaskUnlockCabinet , 
+                    hi-s2:TaskOpenCabinet , 
+                    hi-s2:TaskRetrieveTool .
 
-hi-s:ContextWorkspaceManipulation a hi:Context ;
-    hi:exhibitsPhenomenon hi-s:PhenomenonRiskExposure ,
-                          hi-s:PhenomenonSkillComplementarity .
+hi-s2:ContextWorkspaceManipulation a hi:Context ;
+    hi:exhibitsPhenomenon hi-s2:PhenomenonRiskExposure ,
+                          hi-s2:PhenomenonSkillComplementarity .
 
-hi-s:EthicalConstraintSafety a hi:EthicalConstraint ;
+hi-s2:EthicalConstraintSafety a hi:EthicalConstraint ;
     rdfs:comment "Minimize human physical risk during manipulation."@en .
 
-hi-s:EthicalConstraintTransparency a hi:EthicalConstraint ;
+hi-s2:EthicalConstraintTransparency a hi:EthicalConstraint ;
     rdfs:comment "Explain system behavior in risky or unexpected situations."@en .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s:RoleRiskOperator a dul:Role ;
+hi-s2:RoleRiskOperator a dul:Role ;
     rdfs:label "Risk Operator (Heavy/Confined Operations)"@en .
 
-hi-s:RoleFineManipulator a dul:Role ;
+hi-s2:RoleFineManipulator a dul:Role ;
     rdfs:label "Fine Manipulation Specialist"@en .
 
 #################################################################
 # Agents
 #################################################################
 
-hi-s:RobotManipulator a hi:ArtificialAgent ;
-    hi:hasRole hi-s:RoleRiskOperator ;
-    hi:hasCapability hi-s:CapabilityHeavyLifting ,
-                     hi-s:CapabilityConfinedReach ,
-                     hi-s:CapabilityRLPolicyLearning ,
-                     hi-s:CapabilityExplanation ,
-                     hi-s:CapabilityKGQuery ;
-    hi:performsExecution hi-s:ExecHeavyLift ,
-                         hi-s:ExecConfinedReach ,
-                         hi-s:ExecOpenCabinet ,
-                         hi-s:ExecRLExplain ;
-    hi:usesMethod hi-s:MethodReinforcementLearning ,
-                  hi-s:MethodKGQuerying ,
-                  hi-s:MethodPostHocExplanation .
+hi-s2:RobotManipulator a hi:ArtificialAgent ;
+    hi:hasRole hi-s2:RoleRiskOperator ;
+    hi:hasCapability hi-s2:CapabilityHeavyLifting ,
+                     hi-s2:CapabilityConfinedReach ,
+                     hi-s2:CapabilityRLPolicyLearning ,
+                     hi-s2:CapabilityExplanation ,
+                     hi-s2:CapabilityKGQuery ;
+    hi:performsExecution hi-s2:ExecHeavyLift ,
+                         hi-s2:ExecConfinedReach ,
+                         hi-s2:ExecOpenCabinet ,
+                         hi-s2:ExecRLExplain ;
+    hi:usesMethod hi-s2:MethodReinforcementLearning ,
+                  hi-s2:MethodKGQuerying ,
+                  hi-s2:MethodPostHocExplanation .
 
-hi-s:HumanTechnician a hi:HumanAgent ;
-    hi:hasRole hi-s:RoleFineManipulator ;
-    hi:hasCapability hi-s:CapabilityFineDexterity ,
-                     hi-s:CapabilitySituationalAwareness ,
-                     hi-s:CapabilitySelfReporting ;
-    hi:performsExecution hi-s:ExecUnlockCabinet ,
-                         hi-s:ExecUnlockCabinet ,
-                         hi-s:ExecUserFeedback .
+hi-s2:HumanTechnician a hi:HumanAgent ;
+    hi:hasRole hi-s2:RoleFineManipulator ;
+    hi:hasCapability hi-s2:CapabilityFineDexterity ,
+                     hi-s2:CapabilitySituationalAwareness ,
+                     hi-s2:CapabilitySelfReporting ;
+    hi:performsExecution hi-s2:ExecUnlockCabinet ,
+                         hi-s2:ExecUnlockCabinet ,
+                         hi-s2:ExecUserFeedback .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s:CapabilityHeavyLifting a hi:Capability ; 
-    hi:allowsTask hi-s:TaskHeavyLift .
+hi-s2:CapabilityHeavyLifting a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskHeavyLift .
 
-hi-s:CapabilityConfinedReach a hi:Capability ; 
-    hi:allowsTask hi-s:TaskHeavyLift .
+hi-s2:CapabilityConfinedReach a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskHeavyLift .
 
-hi-s:CapabilityRLPolicyLearning a hi:Capability ; 
-    hi:allowsTask hi-s:TaskPolicyLearning .
+hi-s2:CapabilityRLPolicyLearning a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskPolicyLearning .
 
-hi-s:CapabilityExplanation a hi:Capability ; 
-    hi:allowsTask hi-s:TaskExplanation .
+hi-s2:CapabilityExplanation a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskExplanation .
 
-hi-s:CapabilityKGQuery a hi:Capability ; 
-    hi:allowsTask hi-s:TaskKnowledgeQuery .
+hi-s2:CapabilityKGQuery a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskKnowledgeQuery .
 
-hi-s:CapabilityFineDexterity a hi:Capability ; 
-    hi:allowsTask hi-s:TaskFineInsertion .
+hi-s2:CapabilityFineDexterity a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskFineInsertion .
 
-hi-s:CapabilitySituationalAwareness a hi:Capability ; 
-    hi:allowsTask hi-s:TaskSituationalAssessment .
+hi-s2:CapabilitySituationalAwareness a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskSituationalAssessment .
 
-hi-s:CapabilitySelfReporting a hi:Capability ; 
-    hi:allowsTask hi-s:TaskDataCollection .
+hi-s2:CapabilitySelfReporting a hi:Capability ; 
+    hi:allowsTask hi-s2:TaskDataCollection .
 
 #################################################################
 # Tasks (decomposition of the manipulation sequence)
 #################################################################
 
-hi-s:TaskUnlockCabinet a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityFineDexterity .
+hi-s2:TaskUnlockCabinet a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityFineDexterity .
 
-hi-s:TaskOpenCabinet a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityConfinedReach .
+hi-s2:TaskOpenCabinet a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityConfinedReach .
 
-hi-s:TaskRetrieveTool a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityHeavyLifting .
+hi-s2:TaskRetrieveTool a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityHeavyLifting .
 
-hi-s:TaskFineInsertion a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityFineDexterity .
+hi-s2:TaskFineInsertion a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityFineDexterity .
 
-hi-s:TaskHeavyLift a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityHeavyLifting .
+hi-s2:TaskHeavyLift a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityHeavyLifting .
 
-hi-s:TaskHeavyLift a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityConfinedReach .
+hi-s2:TaskHeavyLift a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityConfinedReach .
 
-hi-s:TaskSituationalAssessment a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilitySituationalAwareness .
+hi-s2:TaskSituationalAssessment a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilitySituationalAwareness .
 
-hi-s:TaskDataCollection  a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilitySelfReporting .
+hi-s2:TaskDataCollection  a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilitySelfReporting .
 
-hi-s:TaskPolicyLearning a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityRLPolicyLearning .
+hi-s2:TaskPolicyLearning a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityRLPolicyLearning .
 
-hi-s:TaskKnowledgeQuery a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityKGQuery .
+hi-s2:TaskKnowledgeQuery a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityKGQuery .
 
-hi-s:TaskExplanation a hi:Task ; 
-    hi:requiresCapability hi-s:CapabilityExplanation .
+hi-s2:TaskExplanation a hi:Task ; 
+    hi:requiresCapability hi-s2:CapabilityExplanation .
 
 #################################################################
 # Methods
 #################################################################
 
-hi-s:MethodReinforcementLearning a dul:Method ; 
+hi-s2:MethodReinforcementLearning a dul:Method ; 
     rdfs:comment "Learning action sequences without predefined task models."@en .
 
-hi-s:MethodKGQuerying a dul:Method ; 
+hi-s2:MethodKGQuerying a dul:Method ; 
     rdfs:comment "Query prior knowledge to support low-level policy decisions."@en .
 
-hi-s:MethodPostHocExplanation a dul:Method ; 
+hi-s2:MethodPostHocExplanation a dul:Method ; 
     rdfs:comment "Generate explanations for risky/unexpected behaviors."@en .
 
 #################################################################
 # Task Executions (who did what, how, and towards which goal)
 #################################################################
 
-hi-s:ExecUnlockCabinet a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskUnlockCabinet ;
-    hi:performedBy hi-s:HumanTechnician ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecUnlockCabinet a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskUnlockCabinet ;
+    hi:performedBy hi-s2:HumanTechnician ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:ExecOpenCabinet a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskOpenCabinet ;
-    hi:performedBy hi-s:RobotManipulator ;
-    hi:usesMethod hi-s:MethodKGQuerying ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecOpenCabinet a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskOpenCabinet ;
+    hi:performedBy hi-s2:RobotManipulator ;
+    hi:usesMethod hi-s2:MethodKGQuerying ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:ExecConfinedReach a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskHeavyLift ;
-    hi:performedBy hi-s:RobotManipulator ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecConfinedReach a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskHeavyLift ;
+    hi:performedBy hi-s2:RobotManipulator ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:ExecHeavyLift a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskHeavyLift ;
-    hi:performedBy hi-s:RobotManipulator ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecHeavyLift a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskHeavyLift ;
+    hi:performedBy hi-s2:RobotManipulator ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:ExecUnlockCabinet a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskFineInsertion ;
-    hi:performedBy hi-s:HumanTechnician ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecUnlockCabinet a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskFineInsertion ;
+    hi:performedBy hi-s2:HumanTechnician ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:ExecRLExplain a hi:TaskExecution ;
-    hi:realizesTask hi-s:TaskExplanation ;
-    hi:performedBy hi-s:RobotManipulator ;
-    hi:usesMethod hi-s:MethodPostHocExplanation ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:ExecRLExplain a hi:TaskExecution ;
+    hi:realizesTask hi-s2:TaskExplanation ;
+    hi:performedBy hi-s2:RobotManipulator ;
+    hi:usesMethod hi-s2:MethodPostHocExplanation ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
 #################################################################
 # Interaction (coordination + explanation)
 #################################################################
 
-hi-s:InteractionExplainRisk a hi:Interaction ;
-    hi:performedBy hi-s:RobotManipulator , hi-s:HumanTechnician ;
-    hi:hasInteractionIntent hi-s:IntentExplain ;
-    hi:usesInteractionModality hi-s:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s:GoalSafeToolRetrieval .
+hi-s2:InteractionExplainRisk a hi:Interaction ;
+    hi:performedBy hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
+    hi:hasInteractionIntent hi-s2:IntentExplain ;
+    hi:usesInteractionModality hi-s2:ModalityVerbalDialogue ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s:IntentExplain a hi:InteractionIntent ;
+hi-s2:IntentExplain a hi:InteractionIntent ;
     rdfs:comment "Explain planned behavior in risky/unexpected situations."@en .
 
-hi-s:ModalityVerbalDialogue a hi:InteractionModality ;
+hi-s2:ModalityVerbalDialogue a hi:InteractionModality ;
     rdfs:comment "Spoken or chat interface for explanations and clarifications."@en .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
-hi-s:PhenomenonRiskExposure a hi:AgentRelatedPhenomenon ;
+hi-s2:PhenomenonRiskExposure a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Potential for harm, especially during heavy lifting or confined reach."@en .
 
-hi-s:PhenomenonSkillComplementarity a hi:AgentRelatedPhenomenon ;
+hi-s2:PhenomenonSkillComplementarity a hi:AgentRelatedPhenomenon ;
     rdfs:comment "Differential strengths: robot handles risky operations, human handles fine dexterity."@en .
 
-hi-s:FeedbackExplanationMessage a hi:Feedback ;
+hi-s2:FeedbackExplanationMessage a hi:Feedback ;
     rdfs:comment "System feedback to human explaining current plan and safety rationale."@en .
 
 #################################################################
 # Experiment, Evaluation, Hypotheses, and Metrics
 #################################################################
 
-hi-s:ExperimentRLwithKG a hi:Experiment ;
-    hi:testsMetric hi-s:MetricTaskSuccessRate ;
-    hi:testsMetric hi-s:MetricSafetyCompliance ;
-    hi:testsMetric hi-s:MetricExplanationClarity .
+hi-s2:ExperimentRLwithKG a hi:Experiment ;
+    hi:testsMetric hi-s2:MetricTaskSuccessRate ;
+    hi:testsMetric hi-s2:MetricSafetyCompliance ;
+    hi:testsMetric hi-s2:MetricExplanationClarity .
 
-hi-s:EvaluationRLKGImpact a hi:Evaluation ;
-    hi:usesMetric hi-s:MetricTaskSuccessRate ;
-    hi:usesMetric hi-s:MetricSafetyCompliance ;
-    hi:usesMetric hi-s:MetricExplanationClarity ;
-    hi:hasExperiment hi-s:ExperimentRLwithKG ;
-    hi:hasNullHypothesis hi-s:NullHypothesisNoBenefitFromKG ;
-    hi:hasAlternativeHypothesis hi-s:AlternativeHypothesisKGImprovesSafetyAndEfficiency .
+hi-s2:EvaluationRLKGImpact a hi:Evaluation ;
+    hi:usesMetric hi-s2:MetricTaskSuccessRate ;
+    hi:usesMetric hi-s2:MetricSafetyCompliance ;
+    hi:usesMetric hi-s2:MetricExplanationClarity ;
+    hi:hasExperiment hi-s2:ExperimentRLwithKG ;
+    hi:hasNullHypothesis hi-s2:NullHypothesisNoBenefitFromKG ;
+    hi:hasAlternativeHypothesis hi-s2:AlternativeHypothesisKGImprovesSafetyAndEfficiency .
 
-hi-s:MetricTaskSuccessRate a hi:Metric ;
+hi-s2:MetricTaskSuccessRate a hi:Metric ;
     rdfs:comment "Fraction of manipulation sequences completed successfully."@en .
 
-hi-s:MetricSafetyCompliance a hi:Metric ;
+hi-s2:MetricSafetyCompliance a hi:Metric ;
     rdfs:comment "Incidents avoided / constraints respected during risky operations."@en .
 
-hi-s:MetricExplanationClarity a hi:Metric ;
+hi-s2:MetricExplanationClarity a hi:Metric ;
     rdfs:comment "Human-rated clarity/utility of robot explanations."@en .
 
-hi-s:NullHypothesisNoBenefitFromKG a hi:NullHypothesis ;
+hi-s2:NullHypothesisNoBenefitFromKG a hi:NullHypothesis ;
     rdfs:comment "KG support does not improve success, safety, or explanations compared to RL alone."@en .
 
-hi-s:AlternativeHypothesisKGImprovesSafetyAndEfficiency a hi:AlternativeHypothesis ;
+hi-s2:AlternativeHypothesisKGImprovesSafetyAndEfficiency a hi:AlternativeHypothesis ;
     rdfs:comment "KG support improves success rate and safety, with clearer explanations."@en .
 
 #################################################################
 # Linking evaluations to execution
 #################################################################
 
-hi-s:ExecHeavyLift hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecHeavyLift hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
-hi-s:ExecConfinedReach hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecConfinedReach hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
-hi-s:ExecUnlockCabinet hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecUnlockCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
-hi-s:ExecUnlockCabinet hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecUnlockCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
-hi-s:ExecOpenCabinet hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecOpenCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
-hi-s:ExecRLExplain hi:evaluatedBy hi-s:EvaluationRLKGImpact .
+hi-s2:ExecRLExplain hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
 
 
 
