@@ -71,7 +71,7 @@ hi-s:RoleUser a dul:Role ;
 
 hi-s:AIAssistant a hi:ArtificialAgent ;
     rdfs:label "AI Assistant"@en ;
-    dul:isClassifiedBy hi-s:RoleAssistantSystem ;
+    hi:hasRole hi-s:RoleAssistantSystem ;
     hi:hasCapability    hi-s:CapabilitySensing , 
                         hi-s:CapabilityReasoning , 
                         hi-s:CapabilityExplanation ;
@@ -81,7 +81,7 @@ hi-s:AIAssistant a hi:ArtificialAgent ;
 
 hi-s:HumanUser a hi:HumanAgent ;
     rdfs:label "Human User"@en ;
-    dul:isClassifiedBy hi-s:RoleUser ;
+    hi:hasRole hi-s:RoleUser ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi-s:ExecutionDataCollection .
 
@@ -272,7 +272,7 @@ hi-s:RoleFineManipulator a dul:Role ;
 #################################################################
 
 hi-s:RobotManipulator a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi-s:RoleRiskOperator ;
+    hi:hasRole hi-s:RoleRiskOperator ;
     hi:hasCapability hi-s:CapabilityHeavyLifting ,
                      hi-s:CapabilityConfinedReach ,
                      hi-s:CapabilityRLPolicyLearning ,
@@ -287,7 +287,7 @@ hi-s:RobotManipulator a hi:ArtificialAgent ;
                   hi-s:MethodPostHocExplanation .
 
 hi-s:HumanTechnician a hi:HumanAgent ;
-    dul:isClassifiedBy hi-s:RoleFineManipulator ;
+    hi:hasRole hi-s:RoleFineManipulator ;
     hi:hasCapability hi-s:CapabilityFineDexterity ,
                      hi-s:CapabilitySituationalAwareness ,
                      hi-s:CapabilitySelfReporting ;
@@ -544,7 +544,7 @@ hi-s:RoleJuror a dul:Role ;
 #################################################################
 
 hi-s:AIDeliberationAssistant a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi-s:RoleAIAdvisor ;
+    hi:hasRole hi-s:RoleAIAdvisor ;
     hi:hasCapability hi-s:CapabilityBayesianReasoning ,
                      hi-s:CapabilityMetaAnalysis ,
                      hi-s:CapabilityExplanation ;
@@ -555,12 +555,12 @@ hi-s:AIDeliberationAssistant a hi:ArtificialAgent ;
                   hi-s:MethodMetaAnalyticalScoring .
 
 hi-s:HumanJuror1 a hi:HumanAgent ;
-    dul:isClassifiedBy hi-s:RoleJuror ;
+    hi:hasRole hi-s:RoleJuror ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi-s:ExecProvideStatements1 .
 
 hi-s:HumanJuror2 a hi:HumanAgent ;
-    dul:isClassifiedBy hi-s:RoleJuror ;
+    hi:hasRole hi-s:RoleJuror ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi-s:ExecProvideStatements2 .
 
@@ -791,7 +791,7 @@ hi-s:RoleLearner a dul:Role ; rdfs:label "Learner"@en .
 #################################################################
 
 hi-s:AITutor a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi-s:RoleTutor ;
+    hi:hasRole hi-s:RoleTutor ;
     hi:hasCapability hi-s:CapabilityBayesianReasoning ,
                      hi-s:CapabilitySemanticReasoning ,
                      hi-s:CapabilityKGQuery ,
@@ -806,7 +806,7 @@ hi-s:AITutor a hi:ArtificialAgent ;
                   hi-s:MethodSemanticLinking .
 
 hi-s:HumanLearner a hi:HumanAgent ;
-    dul:isClassifiedBy hi-s:RoleLearner ;
+    hi:hasRole hi-s:RoleLearner ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi-s:ExecProvideLearningHistory .
 
@@ -1040,7 +1040,7 @@ hi:RoleClinician          a dul:Role ; rdfs:label "Clinician"@en .
 
 hi:AIDiagnosticAssistant
     a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi:RoleAIDiagnosisAdvisor ;
+    hi:hasRole hi:RoleAIDiagnosisAdvisor ;
     hi:hasCapability hi:CapabilityEmbeddingReasoning ,
                      hi-s:CapabilityKGQuery ,
                      hi-s:CapabilityExplanation ;
@@ -1053,7 +1053,7 @@ hi:AIDiagnosticAssistant
 
 hi:HumanClinician
     a hi:HumanAgent ;
-    dul:isClassifiedBy hi:RoleClinician ;
+    hi:hasRole hi:RoleClinician ;
     hi:hasCapability hi:CapabilityClinicalJudgment ,
                      hi-s:CapabilityExplanation ;
     hi:performsExecution hi:ExecHypothesisComparison ,
@@ -1285,7 +1285,7 @@ hi:RoleGridOperator  a dul:Role ; rdfs:label "Human Grid Operator"@en .
 
 hi:AIBuildingA
     a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi:RoleBuildingAgent ;
+    hi:hasRole hi:RoleBuildingAgent ;
     hi:hasCapability hi:CapabilityPatternLearning ,
                      hi:CapabilityNegotiation ,
                      hi-s:CapabilityKGQuery ,
@@ -1300,7 +1300,7 @@ hi:AIBuildingA
 
 hi:AIBuildingB
     a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi:RoleBuildingAgent ;
+    hi:hasRole hi:RoleBuildingAgent ;
     hi:hasCapability hi:CapabilityPatternLearning ,
                      hi:CapabilityNegotiation ,
                      hi-s:CapabilityKGQuery ,
@@ -1315,7 +1315,7 @@ hi:AIBuildingB
 
 hi:HumanGridOperator
     a hi:HumanAgent ;
-    dul:isClassifiedBy hi:RoleGridOperator ;
+    hi:hasRole hi:RoleGridOperator ;
     hi:hasCapability hi:CapabilityOperatorCoordination ,
                      hi-s:CapabilitySelfReporting ,
                      hi-s:CapabilityExplanation ;
@@ -1585,7 +1585,7 @@ hi:RoleVisitor      a dul:Role ; rdfs:label "Visitor"@en .
 
 hi:AIVirtualGuide
     a hi:ArtificialAgent ;
-    dul:isClassifiedBy hi:RoleVirtualGuide ;
+    hi:hasRole hi:RoleVirtualGuide ;
     hi:hasCapability hi:CapabilityMultimodalInterpretation ,
                      hi-s:CapabilitySemanticReasoning ,
                      hi-s:CapabilityKGQuery ,
@@ -1604,7 +1604,7 @@ hi:AIVirtualGuide
 
 hi:HumanVisitor
     a hi:HumanAgent ;
-    dul:isClassifiedBy hi:RoleVisitor ;
+    hi:hasRole hi:RoleVisitor ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi:ExecProvideProfile .
 
