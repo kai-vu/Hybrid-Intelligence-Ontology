@@ -3,6 +3,7 @@
 @prefix dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 
 #################################################################
 # Scientific Paper and Use Case -- SCENARIO 1
@@ -32,6 +33,8 @@ hi-s:HITeamPersonalAssistant a hi:HITeam ;
                             hi-s:EthicalConstraintTransparency .
 
 hi-s:GoalUserWellbeing a hi:Goal ;
+    rdfs:label "User Wellbeing Goal."@en ;
+    rdfs:comment "Maintain and improve user health habits through monitoring and personalized feedback."@en ;
     hi:requiresTask hi-s:TaskDataCollection , 
                     hi-s:TaskConflictResolution , 
                     hi-s:TaskExplanation .
@@ -67,6 +70,7 @@ hi-s:RoleUser a dul:Role ;
 #################################################################
 
 hi-s:AIAssistant a hi:ArtificialAgent ;
+    rdfs:label "AI Assistant"@en ;
     dul:isClassifiedBy hi-s:RoleAssistantSystem ;
     hi:hasCapability    hi-s:CapabilitySensing , 
                         hi-s:CapabilityReasoning , 
@@ -76,6 +80,7 @@ hi-s:AIAssistant a hi:ArtificialAgent ;
     hi:usesMethod hi-s:MethodArgumentationReasoning .
 
 hi-s:HumanUser a hi:HumanAgent ;
+    rdfs:label "Human User"@en ;
     dul:isClassifiedBy hi-s:RoleUser ;
     hi:hasCapability hi-s:CapabilitySelfReporting ;
     hi:performsExecution hi-s:ExecutionDataCollection .
@@ -85,15 +90,19 @@ hi-s:HumanUser a hi:HumanAgent ;
 #################################################################
 
 hi-s:CapabilitySensing a hi:Capability ;
+    rdfs:label "Sensing Capability"@en ;
     hi:allowsTask hi-s:TaskDataCollection .
 
 hi-s:CapabilitySelfReporting a hi:Capability ;
+    rdfs:label "Self-Reporting Capability"@en ;
     hi:allowsTask hi-s:TaskDataCollection .
 
 hi-s:CapabilityReasoning a hi:Capability ;
+    rdfs:label "Reasoning Capability"@en ;
     hi:allowsTask hi-s:TaskConflictResolution .
 
 hi-s:CapabilityExplanation a hi:Capability ;
+    rdfs:label "Explanation Capability"@en ;
     hi:allowsTask hi-s:TaskExplanation .
 
 #################################################################
@@ -101,14 +110,17 @@ hi-s:CapabilityExplanation a hi:Capability ;
 #################################################################
 
 hi-s:TaskDataCollection a hi:Task ;
+    rdfs:label "Data Collection Task"@en ;
     hi:requiresCapability hi-s:CapabilitySensing ;
     rdfs:comment "Collect user self-reports and sensor data (e.g., steps, sleep, diet)."@en .
 
 hi-s:TaskConflictResolution a hi:Task ;
+    rdfs:label "Conflict Resolution Task"@en ;
     hi:requiresCapability hi-s:CapabilityReasoning ;
     rdfs:comment "Identify and reconcile inconsistencies between user input and sensor data."@en .
 
 hi-s:TaskExplanation a hi:Task ;
+    rdfs:label "Explanation Task"@en ;
     hi:requiresCapability hi-s:CapabilityExplanation ;
     rdfs:comment "Provide transparent explanations to maintain user trust and engagement."@en .
 

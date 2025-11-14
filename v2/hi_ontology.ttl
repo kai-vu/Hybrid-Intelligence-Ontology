@@ -54,6 +54,13 @@ _:org a schema:Organization ;
 # HI Object Properties
 #################################################################
 
+
+###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasRole
+hi:hasRole  a owl:ObjectProperty ;
+            rdfs:subPropertyOf dul:isClassifiedBy ;
+            rdfs:domain hi:Agent ;
+            rdfs:range dul:Role .
+
 ###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#allowsTask
 hi:allowsTask a owl:ObjectProperty ;
               rdfs:domain hi:Capability ;
@@ -295,14 +302,7 @@ hi:usesMetric a owl:ObjectProperty ;
               rdfs:domain hi:Evaluation ;
               rdfs:range hi:Metric .
 
-#################################################################
-# Reused Object Properties
-#################################################################
 
-###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy
-dul:isClassifiedBy a owl:ObjectProperty ;
-                   rdfs:domain hi:Agent ;
-                   rdfs:range dul:Role .
 
 #################################################################
 # HI Classes
@@ -585,7 +585,7 @@ foaf:Person a owl:Class .
  ] .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "If an HI team exists and has a member agent, then the agent must be classified by some Role (dul:isClassifiedBy)." ;
+   rdfs:comment "If an HI team exists and has a member agent, then the agent must be classified by some Role (hi:hasRole)." ;
    rdfs:label "Rule 1 — Team membership implies having a role" ;
    a swrl:Imp ;
    swrl:body [ a swrl:AtomList ;
@@ -604,7 +604,7 @@ foaf:Person a owl:Class .
              ] ;
    swrl:head [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate dul:isClassifiedBy ;
+                           swrl:propertyPredicate hi:hasRole ;
                            swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
                            swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/role>
                          ] ;
