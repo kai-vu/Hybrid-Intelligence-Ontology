@@ -1,4 +1,4 @@
-@prefix hi:       <http://www.example/w3id.org/hi-ontology#> .
+@prefix hi:       <https://w3id.org/hi-ontology#> .
 @prefix dc:       <http://purl.org/dc/elements/1.1/> .
 @prefix dul:      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
@@ -12,7 +12,7 @@
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 
 
-<http://www.example/w3id.org/hi-ontology#>  a owl:Ontology ;
+<https://w3id.org/hi-ontology#>  a owl:Ontology ;
     dc:title "The Hybrid Intelligence (HI) Ontology"@en ;
     dc:description "Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena."@en ;
     dc:creator [
@@ -55,20 +55,20 @@ _:org a schema:Organization ;
 #################################################################
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasRole
+###  https://w3id.org/hi-ontology#hasRole
 hi:hasRole  a owl:ObjectProperty ;
             rdfs:subPropertyOf dul:isClassifiedBy ;
             rdfs:domain hi:Agent ;
             rdfs:range dul:Role .
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#allowsTask
+###  https://w3id.org/hi-ontology#allowsTask
 hi:allowsTask a owl:ObjectProperty ;
               rdfs:domain hi:Capability ;
               rdfs:range hi:Task ;
               rdfs:comment "A capability enables or allows a task to be performed."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#assignedToTask
+###  https://w3id.org/hi-ontology#assignedToTask
 hi:assignedToTask a owl:ObjectProperty ;
                   rdfs:domain hi:Agent ;
                   rdfs:range hi:Task ;
@@ -78,14 +78,14 @@ hi:assignedToTask a owl:ObjectProperty ;
                   rdfs:comment "Agent formally assigned to perform a task (inferred from executions)."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#describesUseCase
+###  https://w3id.org/hi-ontology#describesUseCase
 hi:describesUseCase a owl:ObjectProperty ;
                     rdfs:domain hi:ScientificPaper ;
                     rdfs:range hi:UseCase ;
                     rdfs:comment "A paper describing a specific use case or scenario."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#eligibleForTask
+###  https://w3id.org/hi-ontology#eligibleForTask
 hi:eligibleForTask a owl:ObjectProperty ;
                    rdfs:subPropertyOf hi:assignedToTask ;
                    rdfs:domain hi:Agent ;
@@ -93,14 +93,14 @@ hi:eligibleForTask a owl:ObjectProperty ;
                    rdfs:comment "Agent eligible for a task based on membership and capabilities (policy-level notion)."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#evaluatedBy
+###  https://w3id.org/hi-ontology#evaluatedBy
 hi:evaluatedBy a owl:ObjectProperty ;
                rdfs:domain hi:TaskExecution ;
                rdfs:range hi:Evaluation ;
                rdfs:comment "Execution is evaluated by a defined evaluation."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#executesTask
+###  https://w3id.org/hi-ontology#executesTask
 hi:executesTask a owl:ObjectProperty ;
                 rdfs:subPropertyOf hi:assignedToTask ;
                 rdfs:domain hi:Agent ;
@@ -111,74 +111,74 @@ hi:executesTask a owl:ObjectProperty ;
                 rdfs:comment "Agent executes a task (derivable from Agent→Execution→Task)."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#exhibitsPhenomenon
+###  https://w3id.org/hi-ontology#exhibitsPhenomenon
 hi:exhibitsPhenomenon a owl:ObjectProperty ;
                       rdfs:domain hi:Context ;
                       rdfs:range hi:AgentRelatedPhenomenon ;
                       rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasAlternativeHypothesis
+###  https://w3id.org/hi-ontology#hasAlternativeHypothesis
 hi:hasAlternativeHypothesis a owl:ObjectProperty ;
                             rdfs:domain hi:Evaluation ;
                             rdfs:range hi:AlternativeHypothesis .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasCapability
+###  https://w3id.org/hi-ontology#hasCapability
 hi:hasCapability a owl:ObjectProperty ;
                  rdfs:domain hi:Agent ;
                  rdfs:range hi:Capability ;
                  rdfs:comment "Agent possesses a capability."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasEthicalConstraint
+###  https://w3id.org/hi-ontology#hasEthicalConstraint
 hi:hasEthicalConstraint a owl:ObjectProperty ;
                         rdfs:domain hi:Context ;
                         rdfs:range hi:EthicalConstraint ;
                         rdfs:comment "Ethical constraints that apply in a given context."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasExperiment
+###  https://w3id.org/hi-ontology#hasExperiment
 hi:hasExperiment a owl:ObjectProperty ;
                  rdfs:domain hi:Evaluation ;
                  rdfs:range hi:Experiment .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasGoal
+###  https://w3id.org/hi-ontology#hasGoal
 hi:hasGoal a owl:ObjectProperty ;
            rdfs:domain hi:HITeam ;
            rdfs:range hi:Goal ;
            rdfs:comment "An HI team pursues one or more goals."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasInteractionIntent
+###  https://w3id.org/hi-ontology#hasInteractionIntent
 hi:hasInteractionIntent a owl:ObjectProperty ;
                         rdfs:domain hi:Interaction ;
                         rdfs:range hi:Intentionality ;
                         rdfs:comment "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasMember
+###  https://w3id.org/hi-ontology#hasMember
 hi:hasMember a owl:ObjectProperty ;
              rdfs:domain hi:HITeam ;
              rdfs:range hi:Agent ;
              rdfs:comment "Specifies agents that are members of an HI team."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#hasNullHypothesis
+###  https://w3id.org/hi-ontology#hasNullHypothesis
 hi:hasNullHypothesis a owl:ObjectProperty ;
                      rdfs:domain hi:Evaluation ;
                      rdfs:range hi:NullHypothesis .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#inDomain
+###  https://w3id.org/hi-ontology#inDomain
 hi:inDomain a owl:ObjectProperty ;
             rdfs:domain hi:UseCase ;
             rdfs:range hi:Domain ;
             rdfs:comment "Links a use case to its domain of application."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#influencedBy
+###  https://w3id.org/hi-ontology#influencedBy
 hi:influencedBy a owl:ObjectProperty ;
                 rdfs:range [ a owl:Class ;
                              owl:unionOf ( hi:AgentRelatedPhenomenon
@@ -188,7 +188,7 @@ hi:influencedBy a owl:ObjectProperty ;
                 rdfs:comment "Indicates that an entity is influenced by a phenomenon or ethical constraint."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#influencedByEthicalConstraint
+###  https://w3id.org/hi-ontology#influencedByEthicalConstraint
 hi:influencedByEthicalConstraint a owl:ObjectProperty ;
                                  rdfs:domain [ a owl:Class ;
                                                owl:unionOf ( dul:Method
@@ -204,20 +204,20 @@ hi:influencedByEthicalConstraint a owl:ObjectProperty ;
                                  rdfs:comment "Direct influence of an ethical constraint on agents, executions, methods, or evaluations."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#introducesHITeam
+###  https://w3id.org/hi-ontology#introducesHITeam
 hi:introducesHITeam a owl:ObjectProperty ;
                     rdfs:domain hi:UseCase ;
                     rdfs:range hi:HITeam ;
                     rdfs:comment "A use case introduces a hybrid intelligence team."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#operatesInContext
+###  https://w3id.org/hi-ontology#operatesInContext
 hi:operatesInContext a owl:ObjectProperty ;
                      rdfs:domain hi:Agent ;
                      rdfs:range hi:Context .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#performedBy
+###  https://w3id.org/hi-ontology#performedBy
 hi:performedBy a owl:ObjectProperty ;
                owl:inverseOf hi:performsExecution ;
                rdfs:domain hi:TaskExecution ;
@@ -225,14 +225,14 @@ hi:performedBy a owl:ObjectProperty ;
                rdfs:comment "Execution performed by an agent."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#performsExecution
+###  https://w3id.org/hi-ontology#performsExecution
 hi:performsExecution a owl:ObjectProperty ;
                      rdfs:domain hi:Agent ;
                      rdfs:range hi:TaskExecution ;
                      rdfs:comment "Agent that performs a specific task execution."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#realizedBy
+###  https://w3id.org/hi-ontology#realizedBy
 hi:realizedBy a owl:ObjectProperty ;
               owl:inverseOf hi:realizesTask ;
               rdfs:domain hi:Task ;
@@ -240,54 +240,54 @@ hi:realizedBy a owl:ObjectProperty ;
               rdfs:comment "A task is realized through a task execution."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#realizesTask
+###  https://w3id.org/hi-ontology#realizesTask
 hi:realizesTask a owl:ObjectProperty ;
                 rdfs:domain hi:TaskExecution ;
                 rdfs:range hi:Task ;
                 rdfs:comment "Task execution realizes a task."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#requiresCapability
+###  https://w3id.org/hi-ontology#requiresCapability
 hi:requiresCapability a owl:ObjectProperty ;
                       rdfs:domain hi:Task ;
                       rdfs:range hi:Capability ;
                       rdfs:comment "A task requires certain capabilities to be accomplished."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#requiresTask
+###  https://w3id.org/hi-ontology#requiresTask
 hi:requiresTask a owl:ObjectProperty ;
                 rdfs:domain hi:Goal ;
                 rdfs:range hi:Task ;
                 rdfs:comment "A goal requires one or more tasks to be fulfilled."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#testsMetric
+###  https://w3id.org/hi-ontology#testsMetric
 hi:testsMetric a owl:ObjectProperty ;
                rdfs:domain hi:Experiment ;
                rdfs:range hi:Metric .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#towardsGoal
+###  https://w3id.org/hi-ontology#towardsGoal
 hi:towardsGoal a owl:ObjectProperty ;
                rdfs:domain hi:TaskExecution ;
                rdfs:range hi:Goal .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#usesInteractionModality
+###  https://w3id.org/hi-ontology#usesInteractionModality
 hi:usesInteractionModality a owl:ObjectProperty ;
                            rdfs:domain hi:Interaction ;
                            rdfs:range hi:InteractionModality ;
                            rdfs:comment "Modality/channel used during the interaction."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#usesMethod
+###  https://w3id.org/hi-ontology#usesMethod
 hi:usesMethod a owl:ObjectProperty ;
               rdfs:domain hi:TaskExecution ;
               rdfs:range dul:Method ;
               rdfs:comment "Execution makes use of a specific method."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#usesMethodByAgent
+###  https://w3id.org/hi-ontology#usesMethodByAgent
 hi:usesMethodByAgent a owl:ObjectProperty ;
                      rdfs:domain hi:Agent ;
                      rdfs:range dul:Method ;
@@ -297,7 +297,7 @@ hi:usesMethodByAgent a owl:ObjectProperty ;
                      rdfs:comment "Inferred: an agent uses a method via the executions it performs."@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#usesMetric
+###  https://w3id.org/hi-ontology#usesMetric
 hi:usesMetric a owl:ObjectProperty ;
               rdfs:domain hi:Evaluation ;
               rdfs:range hi:Metric .
@@ -308,7 +308,7 @@ hi:usesMetric a owl:ObjectProperty ;
 # HI Classes
 #################################################################
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Goal
+###  https://w3id.org/hi-ontology#Goal
 hi:Goal a owl:Class ;
          rdfs:subClassOf dul:Goal ,
               [ a owl:Restriction ;
@@ -320,83 +320,83 @@ hi:Goal a owl:Class ;
          rdfs:label "Goal"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Agent
+###  https://w3id.org/hi-ontology#Agent
 hi:Agent a owl:Class, dul:Entity ;
          rdfs:comment "An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system."@en ;
          rdfs:label "Agent"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#AgentRelatedPhenomenon
+###  https://w3id.org/hi-ontology#AgentRelatedPhenomenon
 hi:AgentRelatedPhenomenon a owl:Class ;
                           rdfs:comment "Human or system phenomena affecting performance or decision-making, such as bias or feedback."@en ;
                           rdfs:label "Agent-related Phenomenon"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#AlternativeHypothesis
+###  https://w3id.org/hi-ontology#AlternativeHypothesis
 hi:AlternativeHypothesis a owl:Class ;
                          rdfs:subClassOf hi:Hypothesis ;
                          rdfs:comment "The hypothesis positing an effect or difference."@en ;
                          rdfs:label "Alternative Hypothesis (H1)"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#ArtificialAgent
+###  https://w3id.org/hi-ontology#ArtificialAgent
 hi:ArtificialAgent a owl:Class ;
                    rdfs:subClassOf hi:Agent ;
                    rdfs:comment "An artificial or computational agent (robot, software, etc.) collaborating with human agents."@en ;
                    rdfs:label "Artificial Agent"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Bias
+###  https://w3id.org/hi-ontology#Bias
 hi:Bias a owl:Class ;
         rdfs:subClassOf hi:AgentRelatedPhenomenon ;
         rdfs:comment "Systematic deviation in decision-making or evaluation, exhibited by agents or datasets."@en ;
         rdfs:label "Bias"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Capability
+###  https://w3id.org/hi-ontology#Capability
 hi:Capability a owl:Class ;
               rdfs:comment "A skill, competence, or functional capacity that allows an agent to perform or enable a task."@en ;
               rdfs:label "Capability"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Context
+###  https://w3id.org/hi-ontology#Context
 hi:Context a owl:Class ;
            rdfs:comment "Situational conditions (environmental, cultural, cognitive) under which tasks and evaluations occur."@en ;
            rdfs:label "Context"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Domain
+###  https://w3id.org/hi-ontology#Domain
 hi:Domain a owl:Class ;
           rdfs:comment "The subject area or discipline in which a Use Case or research scenario belongs."@en ;
           rdfs:label "Domain"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#EthicalConstraint
+###  https://w3id.org/hi-ontology#EthicalConstraint
 hi:EthicalConstraint a owl:Class ;
                      rdfs:comment "Normative condition constraining agent behavior, tasks, or evaluations within a context."@en ;
                      rdfs:label "Ethical Constraint"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Evaluation
+###  https://w3id.org/hi-ontology#Evaluation
 hi:Evaluation a owl:Class ;
               rdfs:comment "A process of assessing the quality or outcome of executions, methods, or goals."@en ;
               rdfs:label "Evaluation"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Experiment
+###  https://w3id.org/hi-ontology#Experiment
 hi:Experiment a owl:Class ;
               rdfs:comment "An empirical setup linked to an evaluation that tests metrics and hypotheses."@en ;
               rdfs:label "Experiment"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Feedback
+###  https://w3id.org/hi-ontology#Feedback
 hi:Feedback a owl:Class ;
             rdfs:subClassOf hi:AgentRelatedPhenomenon ;
             rdfs:comment "Information returned to an agent that influences subsequent actions or learning."@en ;
             rdfs:label "Feedback"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#HITeam
+###  https://w3id.org/hi-ontology#HITeam
 hi:HITeam a owl:Class ;
           rdfs:subClassOf [ a owl:Restriction ;
                             owl:onProperty hi:hasMember ;
@@ -412,7 +412,7 @@ hi:HITeam a owl:Class ;
           rdfs:label "HI Team"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#HumanAgent
+###  https://w3id.org/hi-ontology#HumanAgent
 hi:HumanAgent a owl:Class ;
               rdfs:subClassOf hi:Agent ,
                               foaf:Person ;
@@ -420,19 +420,19 @@ hi:HumanAgent a owl:Class ;
               rdfs:label "Human Agent"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Hypothesis
+###  https://w3id.org/hi-ontology#Hypothesis
 hi:Hypothesis a owl:Class ;
               rdfs:comment "A proposed explanation or assumption tested by experiments."@en ;
               rdfs:label "Hypothesis"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Intentionality
+###  https://w3id.org/hi-ontology#Intentionality
 hi:Intentionality a owl:Class ;
                   rdfs:comment "Communicative/social intent (explaining, requesting, negotiating, instructing...)."@en ;
                   rdfs:label "Interaction Intentionality"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Interaction
+###  https://w3id.org/hi-ontology#Interaction
 hi:Interaction a owl:Class ;
                rdfs:subClassOf hi:TaskExecution ,
                                [ a owl:Restriction ;
@@ -444,32 +444,32 @@ hi:Interaction a owl:Class ;
                rdfs:label "Interaction"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#InteractionModality
+###  https://w3id.org/hi-ontology#InteractionModality
 hi:InteractionModality a owl:Class ;
                        rdfs:comment "Channel or medium of interaction (verbal dialog, gesture, symbolic messages, haptic, etc.)."@en ;
                        rdfs:label "Interaction Modality"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Metric
+###  https://w3id.org/hi-ontology#Metric
 hi:Metric a owl:Class ;
           rdfs:comment "A measurable criterion used to quantify performance or outcomes in an evaluation."@en ;
           rdfs:label "Metric"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#NullHypothesis
+###  https://w3id.org/hi-ontology#NullHypothesis
 hi:NullHypothesis a owl:Class ;
                   rdfs:subClassOf hi:Hypothesis ;
                   rdfs:comment "The default hypothesis positing no effect or difference."@en ;
                   rdfs:label "Null Hypothesis (H0)"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#ScientificPaper
+###  https://w3id.org/hi-ontology#ScientificPaper
 hi:ScientificPaper a owl:Class ;
                    rdfs:comment "A written document describing a Use Case, domain, or experimental configuration."@en ;
                    rdfs:label "Scientific Paper"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#Task
+###  https://w3id.org/hi-ontology#Task
 hi:Task a owl:Class ;
         rdfs:subClassOf [ a owl:Restriction ;
                           owl:onProperty hi:requiresCapability ;
@@ -480,13 +480,13 @@ hi:Task a owl:Class ;
         rdfs:label "Task"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#TaskExecution
+###  https://w3id.org/hi-ontology#TaskExecution
 hi:TaskExecution a owl:Class ;
                  rdfs:comment "The realization or performance of a specific task by an agent using a method."@en ;
                  rdfs:label "Task Execution"@en .
 
 
-###  http://www.semanticweb.org/francescaurgese/ontologies/2025/10/hybrid_intelligence#UseCase
+###  https://w3id.org/hi-ontology#UseCase
 hi:UseCase a owl:Class ;
            rdfs:comment "A structured situation describing a specific hybrid intelligence scenario (previously 'Scenario')."@en ;
            rdfs:label "Use Case"@en .
@@ -514,19 +514,19 @@ foaf:Person a owl:Class .
 # HI Rules
 #################################################################
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/team> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/goal> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/goal> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/task> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/agent> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/cap> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/cap> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/role> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/role> a swrl:Variable .
 
-<http://www.semanticweb.org/francescaurgese/ontologies/2025/10/exec> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/exec> a swrl:Variable .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." ;
@@ -535,37 +535,37 @@ foaf:Person a owl:Class .
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:ClassAtom ;
                            swrl:classPredicate hi:HITeam ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
                          ] ;
                rdf:rest [ a swrl:AtomList ;
                           rdf:first [ a swrl:IndividualPropertyAtom ;
                                       swrl:propertyPredicate hi:hasGoal ;
-                                      swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team> ;
-                                      swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/goal>
+                                      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+                                      swrl:argument2 <https://w3id.org/hi-ontology/rules/goal>
                                     ] ;
                           rdf:rest [ a swrl:AtomList ;
                                      rdf:first [ a swrl:IndividualPropertyAtom ;
                                                  swrl:propertyPredicate hi:requiresTask ;
-                                                 swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/goal> ;
-                                                 swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                                                 swrl:argument1 <https://w3id.org/hi-ontology/rules/goal> ;
+                                                 swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                                                ] ;
                                      rdf:rest [ a swrl:AtomList ;
                                                 rdf:first [ a swrl:IndividualPropertyAtom ;
                                                             swrl:propertyPredicate hi:hasMember ;
-                                                            swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team> ;
-                                                            swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent>
+                                                            swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+                                                            swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
                                                           ] ;
                                                 rdf:rest [ a swrl:AtomList ;
                                                            rdf:first [ a swrl:IndividualPropertyAtom ;
                                                                        swrl:propertyPredicate hi:hasCapability ;
-                                                                       swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                                                                       swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/cap>
+                                                                       swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                                                                       swrl:argument2 <https://w3id.org/hi-ontology/rules/cap>
                                                                      ] ;
                                                            rdf:rest [ a swrl:AtomList ;
                                                                       rdf:first [ a swrl:IndividualPropertyAtom ;
                                                                                   swrl:propertyPredicate hi:allowsTask ;
-                                                                                  swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/cap> ;
-                                                                                  swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                                                                                  swrl:argument1 <https://w3id.org/hi-ontology/rules/cap> ;
+                                                                                  swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                                                                                 ] ;
                                                                       rdf:rest rdf:nil
                                                                     ]
@@ -577,8 +577,8 @@ foaf:Person a owl:Class .
    swrl:head [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:eligibleForTask ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                          ] ;
                rdf:rest rdf:nil
              ]
@@ -591,13 +591,13 @@ foaf:Person a owl:Class .
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:ClassAtom ;
                            swrl:classPredicate hi:HITeam ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
                          ] ;
                rdf:rest [ a swrl:AtomList ;
                           rdf:first [ a swrl:IndividualPropertyAtom ;
                                       swrl:propertyPredicate hi:hasMember ;
-                                      swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/team> ;
-                                      swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent>
+                                      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+                                      swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
                                     ] ;
                           rdf:rest rdf:nil
                         ]
@@ -605,8 +605,8 @@ foaf:Person a owl:Class .
    swrl:head [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:hasRole ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/role>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/role>
                          ] ;
                rdf:rest rdf:nil
              ]
@@ -619,14 +619,14 @@ foaf:Person a owl:Class .
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:assignedToTask ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                          ] ;
                rdf:rest [ a swrl:AtomList ;
                           rdf:first [ a swrl:IndividualPropertyAtom ;
                                       swrl:propertyPredicate hi:realizedBy ;
-                                      swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task> ;
-                                      swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/exec>
+                                      swrl:argument1 <https://w3id.org/hi-ontology/rules/task> ;
+                                      swrl:argument2 <https://w3id.org/hi-ontology/rules/exec>
                                     ] ;
                           rdf:rest rdf:nil
                         ]
@@ -634,8 +634,8 @@ foaf:Person a owl:Class .
    swrl:head [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:performedBy ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/exec> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/exec> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
                          ] ;
                rdf:rest rdf:nil
              ]
@@ -648,16 +648,16 @@ foaf:Person a owl:Class .
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:eligibleForTask ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                          ] ;
                rdf:rest rdf:nil
              ] ;
    swrl:head [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate hi:assignedToTask ;
-                           swrl:argument1 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/agent> ;
-                           swrl:argument2 <http://www.semanticweb.org/francescaurgese/ontologies/2025/10/task>
+                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
                          ] ;
                rdf:rest rdf:nil
              ]
