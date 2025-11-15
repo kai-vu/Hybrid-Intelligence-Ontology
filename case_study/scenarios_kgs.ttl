@@ -1086,11 +1086,13 @@ hi-s4:FeedbackRecommendationRationale a hi:Feedback ;
 #################################################################
 
 hi-s4:ExperimentTutoringRelevance a hi:Experiment ;
+    hi:hasExperimentType hint:OnlineTutoringExperiment ;
     hi:testsMetric hi-s4:MetricRecommendationRelevance ;
     hi:testsMetric hi-s4:MetricLearningGain ;
     hi:testsMetric hi-s4:MetricExplanationClarity .
 
 hi-s4:EvaluationTutorImpact a hi:Evaluation ;
+    hi:hasEvaluationType hint:TutorImpactEvaluation ;
     hi:usesMetric hi-s4:MetricRecommendationRelevance ;
     hi:usesMetric hi-s4:MetricLearningGain ;
     hi:usesMetric hi-s4:MetricExplanationClarity ;
@@ -1099,12 +1101,15 @@ hi-s4:EvaluationTutorImpact a hi:Evaluation ;
     hi:hasAlternativeHypothesis hi-s4:AlternativeHypothesisBayesPlusSemanticImprovesOutcomes .
 
 hi-s4:MetricRecommendationRelevance a hi:Metric ;
+    hi:hasMetricType hint:RecommendationRelevanceMetric ;
     rdfs:comment "Match between recommendations and learner interests/needs."@en .
 
 hi-s4:MetricLearningGain a hi:Metric ;
+    hi:hasMetricType hint:LearningGainMetric ;
     rdfs:comment "Improvement in assessed knowledge after recommendations."@en .
 
 hi-s4:MetricExplanationClarity a hi:Metric ;
+    hi:hasMetricType hint:ExplanationClarityMetric ;
     rdfs:comment "Human-rated clarity/transparency of tutor explanations."@en .
 
 hi-s4:NullHypothesisNoBenefitOverBaseline a hi:NullHypothesis ;
@@ -1132,10 +1137,12 @@ hi-s5:ScientificPaperGueret2022Diagnostic a hi:ScientificPaper ;
     hi:describesUseCase hi-s5:UseCaseHybridMedicalDiagnosis .
 
 hi-s5:UseCaseHybridMedicalDiagnosis a hi:UseCase ;
+    hi:hasUseCaseType hint:MedicalDiagnosisUseCase ;
     hi:inDomain hi-s5:DomainMedicalDiagnosis ;
     hi:introducesHITeam hi-s5:HITeamDiagnosis .
 
 hi-s5:DomainMedicalDiagnosis a hi:Domain ;
+    hi:hasDomainType hint:MedicalDomain ;
     rdfs:label "Medical Diagnosis"@en .
 
 #################################################################
@@ -1151,31 +1158,38 @@ hi-s5:HITeamDiagnosis a hi:HITeam ;
                             hi-s5:EthicalConstraintTransparency .
 
 hi-s5:GoalAccurateTrustworthyDiagnosis a hi:Goal ;
+    hi:hasGoalType hint:AccurateTrustworthyDiagnosisGoal ;
     hi:requiresTask hi-s5:TaskSymptomAnalysis ,
                     hi-s5:TaskCandidateGeneration ,
                     hi-s5:TaskHypothesisComparison ,
                     hi-s5:TaskExplainReasoning .
 
 hi-s5:ContextClinicalConsultation a hi:Context ;
+    hi:hasContextType hint:ClinicalConsultationContext ;
     hi:exhibitsPhenomenon hi-s5:PhenomenonDataMismatch ,
                           hi-s5:PhenomenonTrustShift ;
     hi:hasEthicalConstraint hi-s5:EthicalConstraintPrivacy ;
     rdfs:comment "Clinical setting using patient history and symptom data from a knowledge graph."@en .
 
-hi-s5:EthicalConstraintPrivacy      a hi:EthicalConstraint .
+hi-s5:EthicalConstraintPrivacy      a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:PrivacyConstraint .
 
-hi-s5:EthicalConstraintFairness     a hi:EthicalConstraint .
+hi-s5:EthicalConstraintFairness     a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:FairnessConstraint .
 
-hi-s5:EthicalConstraintTransparency a hi:EthicalConstraint .
+hi-s5:EthicalConstraintTransparency a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:TransparencyConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s5:RoleAIDiagnosisAdvisor a dul:Role ; 
+hi-s5:RoleAIDiagnosisAdvisor a dul:Role ;
+    hi:hasRoleType hint:AIAdvisorRole ;
     rdfs:label "AI Diagnosis Advisor"@en .
 
 hi-s5:RoleClinician          a dul:Role ; 
+    hi:hasRoleType  hint:ClinicianRole ;
     rdfs:label "Clinician"@en .
 
 #################################################################
@@ -1206,15 +1220,19 @@ hi-s5:HumanClinician a hi:HumanAgent ;
 #################################################################
 
 hi-s5:CapabilityEmbeddingReasoning  a hi:Capability ; 
+    hi:hasCapabilityType hint:EmbeddingReasoningCapability ;
     hi:allowsTask hi-s5:TaskSymptomAnalysis .
 
 hi-s5:CapabilityKGQuery             a hi:Capability ; 
+    hi:hasCapabilityType hint:KnowledgeGraphQueryingCapability ;
     hi:allowsTask hi-s5:TaskSymptomAnalysis .
 
 hi-s5:CapabilityExplanation         a hi:Capability ; 
+    hi:hasCapabilityType hint:ExplainingCapability ;
     hi:allowsTask hi-s5:TaskExplainReasoning .
 
 hi-s5:CapabilityClinicalJudgment    a hi:Capability ; 
+    hi:hasCapabilityType hint:ClinicalJudgmentCapability ;
     hi:allowsTask hi-s5:TaskHypothesisComparison .
 
 #################################################################
@@ -1222,15 +1240,19 @@ hi-s5:CapabilityClinicalJudgment    a hi:Capability ;
 #################################################################
 
 hi-s5:TaskSymptomAnalysis a hi:Task ;
+    hi:hasTaskType hint:SymptomAnalysisTask ;
     hi:requiresCapability hi-s5:CapabilityEmbeddingReasoning .
 
 hi-s5:TaskCandidateGeneration a hi:Task ;
+    hi:hasTaskType hint:CandidateHypothesisGenerationTask ;
     hi:requiresCapability hi-s5:CapabilityEmbeddingReasoning .
 
 hi-s5:TaskHypothesisComparison a hi:Task ;
+    hi:hasTaskType hint:HypothesisComparisonTask ;
     hi:requiresCapability hi-s5:CapabilityClinicalJudgment .
 
 hi-s5:TaskExplainReasoning a hi:Task ;
+    hi:hasTaskType hint:ExplanationTask ;
     hi:requiresCapability hi-s5:CapabilityExplanation .
 
 #################################################################
@@ -1238,12 +1260,15 @@ hi-s5:TaskExplainReasoning a hi:Task ;
 #################################################################
 
 hi-s5:MethodEmbeddingBasedReasoning a dul:Method ; 
+    hi:hasMethodType hint:SemanticEmbeddingMethod ;
     rdfs:comment "Embedding-based pattern discovery over patient KG."@en .
 
 hi-s5:MethodKGQuerying              a dul:Method ; 
+    hi:hasMethodType hint:KnowledgeGraphQueryMethod ;
     rdfs:comment "Query prior medical knowledge graphs for structured evidence."@en .
 
 hi-s5:MethodPostHocExplanation      a dul:Method ; 
+    hi:hasMethodType hint:PostHocExplanationMethod ;
     rdfs:comment "Explain diagnostic suggestions and decision paths."@en .
 
 #################################################################
@@ -1251,29 +1276,34 @@ hi-s5:MethodPostHocExplanation      a dul:Method ;
 #################################################################
 
 hi-s5:ExecSymptomEmbedding a hi:TaskExecution ;
+    hi:hasExecutionType hint:SemanticEmbeddingTaskExecution ;
     hi:realizesTask hi-s5:TaskSymptomAnalysis ;
     hi:performedBy hi-s5:AIDiagnosticAssistant ;
     hi:usesMethod hi-s5:MethodEmbeddingBasedReasoning ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
 
 hi-s5:ExecCandidateGeneration a hi:TaskExecution ;
+    hi:hasExecutionType hint:CandidateHypothesisGenerationTaskExecution ;
     hi:realizesTask hi-s5:TaskCandidateGeneration ;
     hi:performedBy hi-s5:AIDiagnosticAssistant ;
     hi:usesMethod hi-s5:MethodEmbeddingBasedReasoning ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
 
 hi-s5:ExecHypothesisComparison a hi:TaskExecution ;
+    hi:hasExecutionType hint:HypothesisComparisonTaskExecution ;
     hi:realizesTask hi-s5:TaskHypothesisComparison ;
     hi:performedBy hi-s5:HumanClinician ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
 
 hi-s5:ExecExplainAI a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s5:TaskExplainReasoning ;
     hi:performedBy hi-s5:AIDiagnosticAssistant ;
     hi:usesMethod hi-s5:MethodPostHocExplanation ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
 
 hi-s5:ExecExplainHuman a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s5:TaskExplainReasoning ;
     hi:performedBy hi-s5:HumanClinician ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
@@ -1288,24 +1318,30 @@ hi-s5:InteractionJointExplanation a hi:Interaction ;
     hi:usesInteractionModality hi-s5:ModalityVerbalDialogue ;
     hi:towardsGoal hi-s5:GoalAccurateTrustworthyDiagnosis .
 
-hi-s5:IntentExplain a hi:Intentionality .
+hi-s5:IntentExplain a hi:Intentionality ;
+    hi:hasInteractionIntentType hint:ExplanationIntent .
 
-hi-s5:ModalityVerbalDialogue a hi:InteractionModality .
+hi-s5:ModalityVerbalDialogue a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:VerbalDialogueModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
 hi-s5:PhenomenonDataMismatch a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:DataMismatchPhenomenon ;
     rdfs:comment "Conflicts between KG-derived suggestions and clinician observations."@en .
 
 hi-s5:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:TrustShiftPhenomenon ;
     rdfs:comment "Trust evolves with clarity and reliability of joint reasoning."@en .
 
 hi-s5:BiasDiagnosticAnchoring a hi:Bias ;
+    hi:hasPhenomenonType hint:DiagnosisAnchoringPhenomenon ;
     rdfs:comment "Anchoring on an initial hypothesis may bias comparisons."@en .
 
 hi-s5:FeedbackExplanationNotes a hi:Feedback ;
+    hi:hasFeedbackType hint:ExplanationMessageFeedback ;
     rdfs:comment "Messages clarifying AI reasoning and clinician justification."@en .
 
 #################################################################
@@ -1313,11 +1349,13 @@ hi-s5:FeedbackExplanationNotes a hi:Feedback ;
 #################################################################
 
 hi-s5:ExperimentHybridDiagnosis a hi:Experiment ;
+    hi:hasExperimentType hint:DiagnosisExperiment ;
     hi:testsMetric hi-s5:MetricDiagnosticAccuracy ;
     hi:testsMetric hi-s5:MetricTimeToDiagnosis ;
     hi:testsMetric hi-s5:MetricExplanationClarity .
 
 hi-s5:EvaluationHybridVsSolo a hi:Evaluation ;
+    hi:hasEvaluationType hint:Evaluation ;
     hi:usesMetric hi-s5:MetricDiagnosticAccuracy ;
     hi:usesMetric hi-s5:MetricTimeToDiagnosis ;
     hi:usesMetric hi-s5:MetricExplanationClarity ;
@@ -1326,12 +1364,15 @@ hi-s5:EvaluationHybridVsSolo a hi:Evaluation ;
     hi:hasAlternativeHypothesis hi-s5:AlternativeHypothesisHybridImprovesAccuracyAndTrust .
 
 hi-s5:MetricDiagnosticAccuracy a hi:Metric ;
+    hi:hasMetricType hint:DiagnosisAccuracyMetric ;
     rdfs:comment "Correctness of final diagnosis vs. ground truth/expert adjudication."@en .
 
 hi-s5:MetricTimeToDiagnosis a hi:Metric ;
+    hi:hasMetricType hint:TimeMetric ;
     rdfs:comment "Elapsed time to reach a shared diagnostic conclusion."@en .
 
 hi-s5:MetricExplanationClarity a hi:Metric ;
+    hi:hasMetricType hint:ExplanationClarityMetric ;
     rdfs:comment "Human-rated clarity and usefulness of explanations."@en .
 
 hi-s5:NullHypothesisNoHybridBenefit a hi:NullHypothesis ;
@@ -1371,10 +1412,12 @@ hi-s6:ScientificPaperMeyer2022CampusEnergy a hi:ScientificPaper ;
     hi:describesUseCase hi-s6:UseCaseCampusEnergyNegotiation .
 
 hi-s6:UseCaseCampusEnergyNegotiation a hi:UseCase ;
+    hi:hasUseCaseType hint:EnergyNegotiationUseCase ;
     hi:inDomain hi-s6:DomainSmartCampusEnergy ;
     hi:introducesHITeam hi-s6:HITeamCampusEnergy .
 
 hi-s6:DomainSmartCampusEnergy a hi:Domain ;
+    hi:hasDomainType hint:SmartCampusDomain ;
     rdfs:label "Smart Campus Energy Management"@en .
 
 #################################################################
@@ -1391,6 +1434,7 @@ hi-s6:HITeamCampusEnergy a hi:HITeam ;
                             hi-s6:EthicalConstraintTransparency .
 
 hi-s6:GoalFairEfficientHeating a hi:Goal ;
+    hi:hasGoalType hint:FairEfficientHeatingGoal ;
     hi:requiresTask hi-s6:TaskLearnOccupancy ,
                     hi-s6:TaskLearnEnergyBehavior ,
                     hi-s6:TaskNegotiateAllocation ,
@@ -1398,27 +1442,34 @@ hi-s6:GoalFairEfficientHeating a hi:Goal ;
                     hi-s6:TaskExplainDecision .
 
 hi-s6:ContextSmartCampus a hi:Context ;
+    hi:hasContextType hint:SmartCampusContext ;
     hi:exhibitsPhenomenon hi-s6:PhenomenonLoadVariability ,
                           hi-s6:PhenomenonCoLearningDynamics ,
                           hi-s6:PhenomenonTrustShift ;
     hi:hasEthicalConstraint hi-s6:EthicalConstraintSustainability .
 
-hi-s6:EthicalConstraintSustainability a hi:EthicalConstraint .
+hi-s6:EthicalConstraintSustainability a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:SustainabilityConstraint .
 
-hi-s6:EthicalConstraintFairness       a hi:EthicalConstraint .
+hi-s6:EthicalConstraintFairness       a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:FairnessConstraint .
 
-hi-s6:EthicalConstraintUserComfort    a hi:EthicalConstraint .
+hi-s6:EthicalConstraintUserComfort    a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:UserComfortConstraint .
 
-hi-s6:EthicalConstraintTransparency   a hi:EthicalConstraint .
+hi-s6:EthicalConstraintTransparency   a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:TransparencyConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
 hi-s6:RoleBuildingAgent a dul:Role ; 
+    hi:hasRoleType hint:BuilderRole ;
     rdfs:label "Building Energy Agent"@en .
 
 hi-s6:RoleGridOperator  a dul:Role ; 
+    hi:hasRoleType hint:GridOperatorRole ;
     rdfs:label "Human Grid Operator"@en .
 
 #################################################################
@@ -1466,21 +1517,27 @@ hi-s6:HumanGridOperator a hi:HumanAgent ;
 #################################################################
 
 hi-s6:CapabilityPatternLearning     a hi:Capability ; 
+    hi:hasCapabilityType hint:PatternLearningCapability ;
     hi:allowsTask hi-s6:TaskLearnOccupancy .
 
 hi-s6:CapabilityNegotiation         a hi:Capability ; 
+    hi:hasCapabilityType hint:NegotiationCapability ;
     hi:allowsTask hi-s6:TaskNegotiateAllocation .
 
 hi-s6:CapabilityKGQuery             a hi:Capability ; 
+    hi:hasCapabilityType hint:KnowledgeGraphQueryingCapability ;
     hi:allowsTask hi-s6:TaskLearnEnergyBehavior .
 
 hi-s6:CapabilityExplanation         a hi:Capability ; 
+    hi:hasCapabilityType hint:ExplainingCapability ;
     hi:allowsTask hi-s6:TaskExplainDecision .
 
 hi-s6:CapabilityOperatorCoordination a hi:Capability ; 
+    hi:hasCapabilityType hint:OperatorCoordinationCapability ;
     hi:allowsTask hi-s6:TaskCoordinateWithOperator .
 
 hi-s6:CapabilitySelfReporting       a hi:Capability ; 
+    hi:hasCapabilityType hint:SelfReportingCapability ;
     hi:allowsTask hi-s6:TaskCoordinateWithOperator .
 
 #################################################################
@@ -1488,18 +1545,23 @@ hi-s6:CapabilitySelfReporting       a hi:Capability ;
 #################################################################
 
 hi-s6:TaskLearnOccupancy a hi:Task ;
+    hi:hasTaskType hint:LearnOccupancyTask ;
     hi:requiresCapability hi-s6:CapabilityPatternLearning .
 
 hi-s6:TaskLearnEnergyBehavior a hi:Task ;
+    hi:hasTaskType hint:LearnEnergyBehaviorTask ;
     hi:requiresCapability hi-s6:CapabilityKGQuery .
 
 hi-s6:TaskNegotiateAllocation a hi:Task ;
+    hi:hasTaskType hint:AllocationNegotationTask ;
     hi:requiresCapability hi-s6:CapabilityNegotiation .
 
 hi-s6:TaskCoordinateWithOperator a hi:Task ;
+    hi:hasTaskType hint:OperatorCoordinationTask ;
     hi:requiresCapability hi-s6:CapabilityOperatorCoordination .
 
 hi-s6:TaskExplainDecision a hi:Task ;
+    hi:hasTaskType hint:ExplanationTask ;
     hi:requiresCapability hi-s6:CapabilityExplanation .
 
 #################################################################
@@ -1507,12 +1569,15 @@ hi-s6:TaskExplainDecision a hi:Task ;
 #################################################################
 
 hi-s6:MethodCoLearning          a dul:Method ; 
+    hi:hasMethodType hint:CooperativeLearningMethod ;
     rdfs:comment "Collaborative co-learning of occupancy and consumption patterns."@en .
 
 hi-s6:MethodNegotiationProtocol a dul:Method ; 
+    hi:hasMethodType hint:ProtocolNegotiationMethod ;
     rdfs:comment "Protocol to deliberate and agree on fair energy allocation."@en .
 
 hi-s6:MethodKGQuerying          a dul:Method ; 
+    hi:hasMethodType hint:KnowledgeGraphQueryMethod ;
     rdfs:comment "Query background knowledge (e.g., building metadata/constraints)."@en .
 
 #################################################################
@@ -1520,57 +1585,67 @@ hi-s6:MethodKGQuerying          a dul:Method ;
 #################################################################
 
 hi-s6:ExecALearnOccupancy a hi:TaskExecution ;
+    hi:hasExecutionType hint:LearnOccupancyTaskExecution ;
     hi:realizesTask hi-s6:TaskLearnOccupancy ;
     hi:performedBy hi-s6:AIBuildingA ;
     hi:usesMethod hi-s6:MethodCoLearning ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecBLearnOccupancy a hi:TaskExecution ;
+    hi:hasExecutionType hint:LearnOccupancyTaskExecution ;
     hi:realizesTask hi-s6:TaskLearnOccupancy ;
     hi:performedBy hi-s6:AIBuildingB ;
     hi:usesMethod hi-s6:MethodCoLearning ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecALearnEnergyBehavior a hi:TaskExecution ;
+    hi:hasExecutionType hint:LearnEnergyBehaviorTaskExecution ;
     hi:realizesTask hi-s6:TaskLearnEnergyBehavior ;
     hi:performedBy hi-s6:AIBuildingA ;
     hi:usesMethod hi-s6:MethodKGQuerying ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecBLearnEnergyBehavior a hi:TaskExecution ;
+    hi:hasExecutionType hint:LearnEnergyBehaviorTaskExecution ;
     hi:realizesTask hi-s6:TaskLearnEnergyBehavior ;
     hi:performedBy hi-s6:AIBuildingB ;
     hi:usesMethod hi-s6:MethodKGQuerying ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecANegotiate a hi:TaskExecution ;
+    hi:hasExecutionType hint:NegotiationTaskExecution ;
     hi:realizesTask hi-s6:TaskNegotiateAllocation ;
     hi:performedBy hi-s6:AIBuildingA ;
     hi:usesMethod hi-s6:MethodNegotiationProtocol ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecBNegotiate a hi:TaskExecution ;
+    hi:hasExecutionType hint:NegotiationTaskExecution ;
     hi:realizesTask hi-s6:TaskNegotiateAllocation ;
     hi:performedBy hi-s6:AIBuildingB ;
     hi:usesMethod hi-s6:MethodNegotiationProtocol ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecCoordinateWithOperator a hi:TaskExecution ;
+    hi:hasExecutionType hint:CoordinationTaskExecution ;
     hi:realizesTask hi-s6:TaskCoordinateWithOperator ;
     hi:performedBy hi-s6:HumanGridOperator ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecAExplain a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s6:TaskExplainDecision ;
     hi:performedBy hi-s6:AIBuildingA ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecBExplain a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s6:TaskExplainDecision ;
     hi:performedBy hi-s6:AIBuildingB ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
 hi-s6:ExecExplainOperator a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s6:TaskExplainDecision ;
     hi:performedBy hi-s6:HumanGridOperator ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
@@ -1591,25 +1666,32 @@ hi-s6:InteractionExplainPlans a hi:Interaction ;
     hi:usesInteractionModality hi-s6:ModalityDashboard ;
     hi:towardsGoal hi-s6:GoalFairEfficientHeating .
 
-hi-s6:IntentNegotiate a hi:Intentionality .
+hi-s6:IntentNegotiate a hi:Intentionality ;
+    hi:hasInteractionIntentType hint:NegotiationIntent .
 
-hi-s6:IntentExplain   a hi:Intentionality .
+hi-s6:IntentExplain   a hi:Intentionality ;
+    hi:hasInteractionIntentType hint:ExplanationIntent .
 
-hi-s6:ModalityNetworkProtocol a hi:InteractionModality .
+hi-s6:ModalityNetworkProtocol a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:NetworkProtocolModality .
 
-hi-s6:ModalityDashboard       a hi:InteractionModality .
+hi-s6:ModalityDashboard       a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:DashboardModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
 hi-s6:PhenomenonLoadVariability a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:LoadVariabilityPhenomenon ;
     rdfs:comment "Changing occupancy/movement patterns driving fluctuating heating demand."@en .
 
 hi-s6:PhenomenonCoLearningDynamics a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:CooperativeLearningDynamicsPhenomenon ;
     rdfs:comment "Mutual model refinement across building agents."@en .
 
 hi-s6:FeedbackAllocationRationale a hi:Feedback ;
+    hi:hasFeedbackType hint:AllocationRationaleFeedback ;
     rdfs:comment "Messages explaining why a specific allocation is fair/efficient."@en .
 
 #################################################################
@@ -1617,12 +1699,14 @@ hi-s6:FeedbackAllocationRationale a hi:Feedback ;
 #################################################################
 
 hi-s6:ExperimentCampusEnergyAllocation a hi:Experiment ;
+    hi:hasExperimentType hint:CampusEnergyAllocationExperiment ;
     hi:testsMetric hi-s6:MetricEnergyEfficiency ;
     hi:testsMetric hi-s6:MetricUserComfortScore ;
     hi:testsMetric hi-s6:MetricFairnessIndex ;
     hi:testsMetric hi-s6:MetricCO2Reduction .
 
 hi-s6:EvaluationNegotiationImpact a hi:Evaluation ;
+    hi:hasEvaluationType hint:NegotationImpactEvaluation ;
     hi:usesMetric hi-s6:MetricEnergyEfficiency ;
     hi:usesMetric hi-s6:MetricUserComfortScore ;
     hi:usesMetric hi-s6:MetricFairnessIndex ;
@@ -1632,15 +1716,19 @@ hi-s6:EvaluationNegotiationImpact a hi:Evaluation ;
     hi:hasAlternativeHypothesis hi-s6:AlternativeHypothesisCoLearningImprovesFairnessAndEfficiency .
 
 hi-s6:MetricEnergyEfficiency  a hi:Metric ; 
+    hi:hasMetricType hint:EnergyEfficiencyMetric ;
     rdfs:comment "Energy used per comfort unit (lower is better)."@en .
 
 hi-s6:MetricUserComfortScore  a hi:Metric ; 
+    hi:hasMetricType hint:UserComfortMetric ;
     rdfs:comment "Occupant comfort rating for heating outcomes."@en .
 
 hi-s6:MetricFairnessIndex     a hi:Metric ; 
+    hi:hasMetricType hint:FairOutcomeMetric ;
     rdfs:comment "Equity across buildings in allocation over time."@en .
 
-hi:MetricCO2Reduction      a hi:Metric ; 
+hi-s6:MetricCO2Reduction      a hi:Metric ; 
+    hi:hasMetricType hint:CO2ReductionMetric ;
     rdfs:comment "Estimated CO₂ emissions reduction vs. baseline."@en .
 
 hi-s6:NullHypothesisNoBenefitOverBaseline a hi:NullHypothesis ;
@@ -1676,10 +1764,12 @@ hi-s7:ScientificPaperLibbi2022VirtualMuseum a hi:ScientificPaper ;
     hi:describesUseCase hi-s7:UseCaseVirtualMuseumGuide .
 
 hi-s7:UseCaseVirtualMuseumGuide a hi:UseCase ;
+    hi:hasUseCaseType hint:VirtualMuseumGuideUseCase ;
     hi:inDomain hi-s7:DomainDigitalMuseums ;
     hi:introducesHITeam hi-s7:HITeamVirtualMuseum .
 
 hi-s7:DomainDigitalMuseums a hi:Domain ;
+    hi:hasDomainType hint:DigitalMuseumDomain ;
     rdfs:label "Digital Museums and Cultural Heritage"@en .
 
 #################################################################
@@ -1695,6 +1785,7 @@ hi-s7:HITeamVirtualMuseum a hi:HITeam ;
                             hi-s7:EthicalConstraintAccessibility .
 
 hi-s7:GoalEnhancedVisitorLearning a hi:Goal ;
+    hi:hasGoalType hint:EnhancedVisitorGoal ;
     hi:requiresTask hi-s7:TaskInterpretMultimodalInput ,
                     hi-s7:TaskSemanticRetrieval ,
                     hi-s7:TaskComputeSimilarity ,
@@ -1703,25 +1794,31 @@ hi-s7:GoalEnhancedVisitorLearning a hi:Goal ;
                     hi-s7:TaskExplainRecommendations .
 
 hi-s7:ContextVirtualExhibition a hi:Context ;
+    hi:hasContextType hint:VirtualExhibitionContext ;
     hi:exhibitsPhenomenon hi-s7:PhenomenonEngagementShift ,
                           hi-s7:PhenomenonKnowledgeMismatch ;
     hi:hasEthicalConstraint hi-s7:EthicalConstraintPrivacy ;
     rdfs:comment "VR-based exhibition where user inputs are multimodal; KG supports retrieval and reasoning."@en .
 
-hi-s7:EthicalConstraintPrivacy       a hi:EthicalConstraint .
+hi-s7:EthicalConstraintPrivacy       a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:PrivacyConstraint .
 
-hi-s7:EthicalConstraintTransparency  a hi:EthicalConstraint .
+hi-s7:EthicalConstraintTransparency  a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:TransparencyConstraint .
 
-hi-s7:EthicalConstraintAccessibility a hi:EthicalConstraint .
+hi-s7:EthicalConstraintAccessibility a hi:EthicalConstraint ;
+    hi:hasConstraintType hint:AccessibilityConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
 hi-s7:RoleVirtualGuide a dul:Role ; 
+    hi:hasRoleType hint:VirtualGuideRole ;
     rdfs:label "Virtual Guide"@en .
 
 hi-s7:RoleVisitor      a dul:Role ; 
+    hi:hasRoleType hint:VisitorRole ;
     rdfs:label "Visitor"@en .
 
 #################################################################
@@ -1756,21 +1853,27 @@ hi-s7:HumanVisitor a hi:HumanAgent ;
 #################################################################
 
 hi-s7:CapabilityMultimodalInterpretation a hi:Capability ; 
+    hi:hasCapabilityType hint:MultimodalInterpretationCapability ;
     hi:allowsTask hi-s7:TaskInterpretMultimodalInput .
 
 hi-s7:CapabilitySemanticReasoning        a hi:Capability ; 
+    hi:hasCapabilityType hint:SemanticReasoningCapability ;
     hi:allowsTask hi-s7:TaskSemanticRetrieval .
 
 hi-s7:CapabilityKGQuery                  a hi:Capability ; 
+    hi:hasCapabilityType hint:KnowledgeGraphQueryingCapability ;
     hi:allowsTask hi-s7:TaskSemanticRetrieval .
 
 hi-s7:CapabilityEmbeddingReasoning       a hi:Capability ; 
+    hi:hasCapabilityType hint:EmbeddingReasoningCapability ;
     hi:allowsTask hi-s7:TaskComputeSimilarity .
 
 hi-s7:CapabilityExplanation              a hi:Capability ; 
+    hi:hasCapabilityType hint:ExplainingCapability ;
     hi:allowsTask hi-s7:TaskExplainRecommendations .
 
 hi-s7:CapabilitySelfReporting            a hi:Capability ; 
+    hi:hasCapabilityType hint:SelfReportingCapability ;
     hi:allowsTask hi-s7:TaskInterpretMultimodalInput .
 
 #################################################################
@@ -1778,21 +1881,27 @@ hi-s7:CapabilitySelfReporting            a hi:Capability ;
 #################################################################
 
 hi-s7:TaskInterpretMultimodalInput a hi:Task ;
+    hi:hasTaskType hint:MultimodalInputInterpretationTask ;
     hi:requiresCapability hi-s7:CapabilityMultimodalInterpretation .
 
 hi-s7:TaskSemanticRetrieval a hi:Task ;
+    hi:hasTaskType hint:SemanticReasoningTask ;
     hi:requiresCapability hi-s7:CapabilitySemanticReasoning .
 
 hi-s7:TaskComputeSimilarity a hi:Task ;
+    hi:hasTaskType hint:SemanticReasoningTask ;
     hi:requiresCapability hi-s7:CapabilityEmbeddingReasoning .
 
 hi-s7:TaskRecommendArtifacts a hi:Task ;
+    hi:hasTaskType hint:RecommendResourcesTask ;
     hi:requiresCapability hi-s7:CapabilitySemanticReasoning .
 
 hi-s7:TaskAnswerQuestions a hi:Task ;
+    hi:hasTaskType hint:QuestionAnsweringTask ;
     hi:requiresCapability hi-s7:CapabilitySemanticReasoning .
 
 hi-s7:TaskExplainRecommendations a hi:Task ;
+    hi:hasTaskType hint:ExplanationTask ;
     hi:requiresCapability hi-s7:CapabilityExplanation .
 
 #################################################################
@@ -1800,15 +1909,19 @@ hi-s7:TaskExplainRecommendations a hi:Task ;
 #################################################################
 
 hi-s7:MethodVRInputParsing     a dul:Method ; 
+    hi:hasMethodType hint:VirtualRealityInputParsingMethod ;
     rdfs:comment "Interpret VR-based multimodal inputs (gesture, gaze, speech)."@en .
 
 hi-s7:MethodKGQuerying         a dul:Method ; 
+    hi:hasMethodType hint:KnowledgeGraphQueryMethod ;
     rdfs:comment "Query cultural heritage KGs (e.g., Wikidata/WordNet) for facts/links."@en .
 
 hi-s7:MethodSemanticLinking    a dul:Method ; 
+    hi:hasMethodType hint:SemanticLinkingMethod ;
     rdfs:comment "Reason over topic relatedness for recommendations/answers."@en .
 
 hi-s7:MethodEmbeddingSimilarity a dul:Method ; 
+    hi:hasMethodType hint:SemanticEmbeddingMethod ;
     rdfs:comment "Compute vector-based semantic similarity between artifacts."@en .
 
 #################################################################
@@ -1816,41 +1929,48 @@ hi-s7:MethodEmbeddingSimilarity a dul:Method ;
 #################################################################
 
 hi-s7:ExecProvideProfile a hi:TaskExecution ;
+    hi:hasExecutionType hint:ProvideProfileTaskExecution ;
     hi:realizesTask hi-s7:TaskInterpretMultimodalInput ;
     hi:performedBy hi-s7:HumanVisitor ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
 hi-s7:ExecInterpretInput a hi:TaskExecution ;
+    hi:hasExecutionType hint:InterpretInputTaskExecution ;
     hi:realizesTask hi-s7:TaskInterpretMultimodalInput ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:usesMethod hi-s7:MethodVRInputParsing ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
 hi-s7:ExecSemanticRetrieval a hi:TaskExecution ;
+    hi:hasExecutionType hint:SemanticReasoningTaskExecution ;
     hi:realizesTask hi-s7:TaskSemanticRetrieval ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:usesMethod hi-s7:MethodKGQuerying ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
 hi-s7:ExecComputeSimilarity a hi:TaskExecution ;
+    hi:hasExecutionType hint:SemanticEmbeddingTaskExecution ;
     hi:realizesTask hi-s7:TaskComputeSimilarity ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:usesMethod hi-s7:MethodEmbeddingSimilarity ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
 hi-s7:ExecRecommendArtifacts a hi:TaskExecution ;
+    hi:hasExecutionType hint:RecommendResourcesTaskExecution ;
     hi:realizesTask hi-s7:TaskRecommendArtifacts ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:usesMethod hi-s7:MethodSemanticLinking ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
-hi-s7:ExecAnswerQuestions a hi:TaskExecution ;
+hi-s7:ExecAnswerQuestions a hi:TaskExecution ;  
+    hi:hasExecutionType hint:QuestionAnsweringTaskExecution ;
     hi:realizesTask hi-s7:TaskAnswerQuestions ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:usesMethod hi-s7:MethodKGQuerying ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
 hi-s7:ExecExplainRecommendations a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s7:TaskExplainRecommendations ;
     hi:performedBy hi-s7:AIVirtualGuide ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
@@ -1871,25 +1991,32 @@ hi-s7:InteractionQA a hi:Interaction ;
     hi:usesInteractionModality hi-s7:ModalityVoiceChat ;
     hi:towardsGoal hi-s7:GoalEnhancedVisitorLearning .
 
-hi-s7:IntentGuide  a hi:Intentionality .
+hi-s7:IntentGuide  a hi:Intentionality ;
+    hi:hasInteractionIntentType hint:GuideIntent .
 
-hi-s7:IntentAnswer a hi:Intentionality .
+hi-s7:IntentAnswer a hi:Intentionality ;
+    hi:hasInteractionIntentType hint:AnswerIntent .
 
-hi-s7:ModalityVRInteraction a hi:InteractionModality .
+hi-s7:ModalityVRInteraction a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:VirtualRealityModality .
 
-hi-s7:ModalityVoiceChat     a hi:InteractionModality .
+hi-s7:ModalityVoiceChat     a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:VoiceChatModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
 hi-s7:PhenomenonEngagementShift a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:EngagementShiftPhenomenon ;
     rdfs:comment "Visitor engagement varies with relevance and adaptivity of guidance."@en .
 
 hi-s7:PhenomenonKnowledgeMismatch a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:KnowledgeMismatchPhenomenon ;
     rdfs:comment "Misalignment between assumed prior knowledge and actual visitor understanding."@en .
 
 hi-s7:FeedbackRecommendationRationale a hi:Feedback ;
+    hi:hasFeedbackType hint:RecommendationRationaleFeedback ;
     rdfs:comment "Explanation of why certain artifacts were recommended or linked."@en .
 
 #################################################################
@@ -1897,12 +2024,14 @@ hi-s7:FeedbackRecommendationRationale a hi:Feedback ;
 #################################################################
 
 hi-s7:ExperimentVRGuideEffectiveness a hi:Experiment ;
+    hi:hasExperimentType hint:VirtualRealityEffectivenessExperiment ;
     hi:testsMetric hi-s7:MetricRecommendationRelevance ;
     hi:testsMetric hi-s7:MetricAnswerAccuracy ;
     hi:testsMetric hi-s7:MetricEngagementTime ;
     hi:testsMetric hi-s7:MetricExplanationClarity .
 
 hi-s7:EvaluationVRGuideImpact a hi:Evaluation ;
+    hi:hasEvaluationType hint:VirtualRealityImpactEvaluation ;
     hi:usesMetric hi-s7:MetricRecommendationRelevance ;
     hi:usesMetric hi-s7:MetricAnswerAccuracy ;
     hi:usesMetric hi-s7:MetricEngagementTime ;
@@ -1912,15 +2041,19 @@ hi-s7:EvaluationVRGuideImpact a hi:Evaluation ;
     hi:hasAlternativeHypothesis hi-s7:AlternativeHypothesisMultimodalKGEmbeddingsImproveExperience .
 
 hi-s7:MetricRecommendationRelevance a hi:Metric ; 
+    hi:hasMetricType hint:RecommendationRelevanceMetric ;
     rdfs:comment "Match between suggestions and inferred visitor interests."@en .
 
 hi-s7:MetricAnswerAccuracy         a hi:Metric ; 
+    hi:hasMetricType hint:AnswerAccuracyMetric ;
     rdfs:comment "Correctness of answers to visitor questions."@en .
 
 hi-s7:MetricEngagementTime         a hi:Metric ; 
+    hi:hasMetricType hint:EngagementTimeMetric ;
     rdfs:comment "Time spent interacting with exhibits/recommendations."@en .
 
 hi-s7:MetricExplanationClarity     a hi:Metric ; 
+    hi:hasMetricType hint:ExplanationClarityMetric ;
     rdfs:comment "Visitor-rated clarity of recommendation/answer rationale."@en .
 
 hi-s7:NullHypothesisNoBenefitOverBaseline a hi:NullHypothesis ;

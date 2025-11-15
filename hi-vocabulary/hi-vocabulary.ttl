@@ -135,7 +135,7 @@ hint:EducationDomain a skos:Concept ;
     skos:definition "A domain focused on educational systems and learning processes."@en ;
     skos:broader hint:Domain .
 
-hint:MedicalDiagnosisDomain a skos:Concept ;
+hint:MedicalDomain a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Medical Diagnosis Domain"@en ;
     skos:definition "A domain centered around medical diagnosis and healthcare."@en ;
@@ -188,6 +188,24 @@ hint:EffectiveLeaningGoal a skos:Concept ;
     skos:definition "A goal focused on promoting effective learning and knowledge acquisition."@en ;
     skos:broader hint:Goal .
 
+hint:AccurateTrustworthyDiagnosisGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Accurate and Trustworthy Diagnosis"@en ;
+    skos:definition "A goal aimed at ensuring accurate and trustworthy diagnosis."@en ;
+    skos:broader hint:Goal .
+
+hint:FairEfficientHeatingGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Fair Efficient Heating Goal"@en ;
+    skos:definition "A goal aimed at fair and efficient heating."@en ;
+    skos:broader hint:Goal .
+
+hint:EnhancedVisitorGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Enhanced Visitor Goal"@en ;
+    skos:definition "A goal aimed at enhancing visitors."@en ;
+    skos:broader hint:Goal .
+
 
 ############################################################
 # Context Terms
@@ -222,6 +240,24 @@ hint:OnlineLearningContext a skos:Concept ;
     skos:prefLabel "Online Learning Context"@en ;
     skos:definition "A context where Hybrid Intelligence systems support online learning and educational activities."@en ;
     skos:broader hint:Context . 
+
+hint:ClinicalConsultationContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Clinical Consultation Context"@en ;
+    skos:definition "A context where Hybrid Intelligence systems support clinical consulation."@en ;
+    skos:broader hint:Context .
+
+hint:SmartCampusContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Smart Campus Context"@en ;
+    skos:definition "A context involving a smart campus."@en ;
+    skos:broader hint:Context .
+
+hint:VirtualExhibitionContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Exhibition Context"@en ;
+    skos:definition "A context involving a virtual exhibition."@en ;
+    skos:broader hint:Context .
 
 
 ############################################################
@@ -278,6 +314,24 @@ hint:FairnessConstraint a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Fairness Constraint"@en ;
     skos:definition "A constraint that promotes fairness and equity in the operation of the Hybrid Intelligence system."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:SustainabilityConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Sustainability Constraint"@en ;
+    skos:definition "A constraint that promotes sustainability."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:UserComfortConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "User Comfort Constraint"@en ;
+    skos:definition "A constraint that promotes user comfort."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:AccessibilityConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Accessibility Constraint"@en ;
+    skos:definition "A constraint that promotes user accessibility."@en ;
     skos:broader hint:EthicalConstraint .
 
 
@@ -337,6 +391,36 @@ hint:LearnerRole a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Learner Role"@en ;
     skos:definition "A role where the agent represents the learner engaging with educational content."@en ;
+    skos:broader hint:Role .
+
+hint:ClinicianRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Clinician Role"@en ;
+    skos:definition "A role where the agent represents the clinician."@en ;
+    skos:broader hint:Role .
+
+hint:BuilderRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Builder Role"@en ;
+    skos:definition "A role where the agent represents the builder."@en ;
+    skos:broader hint:Role .
+
+hint:GridOperatorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Grid Operator Role"@en ;
+    skos:definition "A role where the agent represents the grid operator."@en ;
+    skos:broader hint:Role .
+
+hint:VirtualGuideRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Guide Role"@en ;
+    skos:definition "A role where the agent represents the virtual guide."@en ;
+    skos:broader hint:Role .
+
+hint:VisitorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Visitor Role"@en ;
+    skos:definition "A role where the agent represents the visitor."@en ;
     skos:broader hint:Role .
 
 
@@ -658,6 +742,60 @@ hint:BayesianInferenceTask a skos:Concept ;
     skos:definition "A task that involves performing inference using Bayesian probability principles."@en ;
     skos:broader hint:Task .
 
+hint:SymptomAnalysisTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Symptom Analysis Task"@en ;
+    skos:definition "A task that involves analysing the symptoms."@en ;
+    skos:broader hint:Task .
+
+hint:CandidateHypothesisGenerationTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Candidate Hypothesis Generation Task"@en ;
+    skos:definition "A task that involves generating candidate hypothesis."@en ;
+    skos:broader hint:Task .
+
+hint:HypothesisComparisonTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Hypothesis Comparison Task"@en ;
+    skos:definition "A task that involves comparing hypothesis."@en ;
+    skos:broader hint:Task .
+
+hint:LearnOccupancyTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Learn Occupancy Task"@en ;
+    skos:definition "A task that involves learning occupancy."@en ;
+    skos:broader hint:Task .
+
+hint:LearnEnergyBehaviorTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Learn Energy Behavior Task"@en ;
+    skos:definition "A task that involves learning energy behavior."@en ;
+    skos:broader hint:Task .
+
+hint:AllocationNegotationTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Allocation Negotiation Task"@en ;
+    skos:definition "A task that involves negotiation of energy allocation."@en ;
+    skos:broader hint:Task .
+
+hint:OperatorCoordinationTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Operator Coordination Task"@en ;
+    skos:definition "A task that involves coordination with operator."@en ;
+    skos:broader hint:Task .
+
+hint:MultimodalInputInterpretationTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Multimodal Input Interpretation Task"@en ;
+    skos:definition "A task that involves the interpretation of multimodal input."@en ;
+    skos:broader hint:Task .
+
+hint:QuestionAnsweringTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Question Answering Task"@en ;
+    skos:definition "A task that involves answering questions."@en ;
+    skos:broader hint:Task .
+
 
 ############################################################
 # Methods Terms
@@ -687,7 +825,7 @@ hint:KnowledgeGraphQueryMethod a skos:Concept ;
     skos:definition "A method that involves querying knowledge graphs for information retrieval."@en ;
     skos:broader hint:Method .
 
-hint:MethodPostHocExplanationMethod a skos:Concept ;
+hint:PostHocExplanationMethod a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Post-hoc Explanation Method"@en ;
     skos:definition "A method that provides explanations for decisions or actions after they have been made."@en ;
@@ -705,11 +843,36 @@ hint:MetaAnalysisScoringMethod a skos:Concept ;
     skos:definition "A method that uses meta-analysis techniques to score and evaluate information from multiple sources."@en ;
     skos:broader hint:Method .
 
-hi:SemanticLinkingMethod a skos:Concept ;
+hint:SemanticLinkingMethod a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Semantic Linking Method"@en ;
     skos:definition "A method that establishes semantic links between different pieces of information."@en ;
     skos:broader hint:Method .
+
+hint:SemanticEmbeddingMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Semantic Embedding Method"@en ;
+    skos:definition "A method that involves the use of semantic embeddings."@en ;
+    skos:broader hint:Method .
+
+hint:CooperativeLearningMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Cooperative Learning Method"@en ;
+    skos:definition "A method that involves cooperative learning."@en ;
+    skos:broader hint:Method .
+
+hint:ProtocolNegotiationMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Protocol Negotiation Method"@en ;
+    skos:definition "A method that involves negotiation of protocols."@en ;
+    skos:broader hint:Method .
+
+hint:VirtualRealityInputParsingMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Reality Input Parsinf Method"@en ;
+    skos:definition "A method that involves parsing virtual reality input."@en ;
+    skos:broader hint:Method .
+
 
 ############################################################
 # Task Execution Terms
@@ -817,6 +980,66 @@ hint:RecommendResourcesTaskExecution a skos:Concept ;
     skos:definition "The execution of a recommend resources task."@en ;
     skos:broader hint:TaskExecution .
 
+hint:SemanticEmbeddingTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Semantic Embedding Task Execution"@en ;
+    skos:definition "The execution of a semantic embedding task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:CandidateHypothesisGenerationTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Candidate Hypothesis Generation Task Execution"@en ;
+    skos:definition "The execution of a candidate hypothesis generation task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:HypothesisComparisonTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Hypothesis Comparison Task Execution"@en ;
+    skos:definition "The execution of a hypothesis comparison task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:LearnOccupancyTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Learn Occupancy Task Execution"@en ;
+    skos:definition "The execution of an occupancy learning task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:LearnEnergyBehaviorTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Learn Energy Behavior Task Execution"@en ;
+    skos:definition "The execution of an energy behavior learning task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:NegotiationTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Negotiation Task Execution"@en ;
+    skos:definition "The execution of a negotiation task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:CoordinationTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Coordination Task Execution"@en ;
+    skos:definition "The execution of a coordination task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ProvideProfileTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Provide Profile Task Execution"@en ;
+    skos:definition "The execution of providing a profile."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:InterpretInputTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Interpret Input Task Execution"@en ;
+    skos:definition "The execution of interpreting the input."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:QuestionAnsweringTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Question Answering Task Execution"@en ;
+    skos:definition "The execution of question answering."@en ;
+    skos:broader hint:TaskExecution .
+
 
 ############################################################
 # Interaction Terms
@@ -851,6 +1074,24 @@ hint:DeliberationIntent a skos:Concept ;
     skos:definition "An intent centered around group deliberation and decision-making during interactions."@en ;
     skos:broader hint:InteractionIntent .
 
+hint:NegotiationIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Negotiation Intent"@en ;
+    skos:definition "An intent centered around negotiation."@en ;
+    skos:broader hint:InteractionIntent .
+
+hint:GuideIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Guide Intent"@en ;
+    skos:definition "An intent centered around guiding."@en ;
+    skos:broader hint:InteractionIntent .
+
+hint:AnswerIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Answer Intent"@en ;
+    skos:definition "An intent centered around answering."@en ;
+    skos:broader hint:InteractionIntent .
+
 
 # Interaction Modality
 ############################################################
@@ -871,8 +1112,33 @@ hint:VerbalDialogueModality a skos:Concept ;
 hint:TextChatModality a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Text Chat Modality"@en ;
-    skos:definition "An Interaction modality that involved a text chat."@en ;
+    skos:definition "An interaction modality that involves a text chat."@en ;
     skos:broader hint:InteractionModality .
+
+hint:NetworkProtocolModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Network Protocol Modality"@en ;
+    skos:definition "An interaction modality that involves network protocol."@en ;
+    skos:broader hint:InteractionModality .
+
+hint:DashboardModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Dashboard Modality"@en ;
+    skos:definition "An interaction modality that involves a dashboard."@en ;
+    skos:broader hint:InteractionModality .
+
+hint:VirtualRealityModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Reality Modality"@en ;
+    skos:definition "An interaction modality that involves virtual Realier."@en ;
+    skos:broader hint:InteractionModality .
+
+hint:VoiceChatModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Voice Chat Modality"@en ;
+    skos:definition "An interaction modality that involves voice char."@en ;
+    skos:broader hint:InteractionModality .
+
 
 ############################################################
 # Phenomenon Terms
@@ -924,6 +1190,30 @@ hint:KnowledgeMismatchPhenomenon a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Knowledge Mismatch Phenomenon"@en ;
     skos:definition "A phenomenon where there is a discrepancy or inconsistency between the knowledge possessed by different agents or systems."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:DiagnosisAnchoringPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Diagnosis Anchoring Phenomenon"@en ;
+    skos:definition "A phenomenon where there is a diagnosis to be anchored."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:LoadVariabilityPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Load Variability Phenomenon"@en ;
+    skos:definition "A phenomenon where there is a load variability."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:CooperativeLearningDynamicsPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Cooperative Learning Dynamics Phenomenon"@en ;
+    skos:definition "A phenomenon where there are cooperative learning dynamics."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:EngagementShiftPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Engagement Shift Phenomenon"@en ;
+    skos:definition "A phenomenon where there is engagement shift."@en ;
     skos:broader hint:Phenomenon .
 
 
@@ -978,6 +1268,12 @@ hint:RecommendationRationaleFeedback a skos:Concept ;
     skos:prefLabel "Feedback concerning the rational behind a recommendation."@en ;
     skos:broader hint:Feedback .
 
+hint:AllocationRationaleFeedback a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Allocation Rationale Feedback"@en ;
+    skos:definition "Feedback concerning an allocation rationale."@en ;
+    skos:broader hint:Feedback .
+
 
 ############################################################
 # Experiment Terms
@@ -1006,7 +1302,31 @@ hint:DeliberationSupportExperiment a skos:Concept ;
     skos:prefLabel "Deliberation Support Experiment"@en ;
     skos:definition "An experiment focused on assessing the support provided by Hybrid Intelligence systems during group deliberation processes."@en ;
     skos:broader hint:Experiment .
-    
+
+hint:OnlineTutoringExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Online Tutoring Experiment"@en ;
+    skos:definition "An experiment designed to assess online tutoring."@en ;
+    skos:broader hint:Experiment .
+
+hint:DiagnosisExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Diagnosis Experiment"@en ;
+    skos:definition "An experiment designed to give a diagnosis."@en ;
+    skos:broader hint:Experiment .
+
+hint:CampusEnergyAllocationExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Campus Energy Allocation Experiment"@en ;
+    skos:definition "An experiment designed to allocate energy in a campus."@en ;
+    skos:broader hint:Experiment .
+
+hint:VirtualRealityEffectivenessExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Reality Effectiveness Experiment"@en ;
+    skos:definition "An experiment designed to measure the effectiveness of virtual reality."@en ;
+    skos:broader hint:Experiment .
+
 
 ############################################################
 # Evaluation Terms
@@ -1034,6 +1354,24 @@ hint:AIInterventionImpactEvaluation a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "AI Intervention Impact Evaluation"@en ;
     skos:definition "An evaluation that measures the impact of AI interventions on user decision-making and outcomes."@en ;
+    skos:broader hint:Evaluation .
+
+hint:TutorImpactEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Tutor Impact Evaluation"@en ;
+    skos:definition "An evaluation that measures the impact of an AI online tutor."@en ;
+    skos:broader hint:Evaluation .
+
+hint:NegotationImpactEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Negotation Impact Evaluation"@en ;
+    skos:definition "An evaluation that measures the impact of a negotiation."@en ;
+    skos:broader hint:Evaluation .
+
+hint:VirtualRealityImpactEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Reality Impact Evaluation"@en ;
+    skos:definition "An evaluation that measures the impact of a virtual reality."@en ;
     skos:broader hint:Evaluation .
 
 
@@ -1083,3 +1421,62 @@ hint:UndueInfluenceMetric a skos:Concept ;
     skos:definition "A metric that quantifies the level of undue influence exerted by Hybrid Intelligence systems over users."@en ;
     skos:broader hint:Metric .  
 
+hint:RecommendationRelevanceMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Recommendation Relevance Metric"@en ;
+    skos:definition "A metric that quantifies the relevance of recommendations."@en ;
+    skos:broader hint:Metric .
+
+hint:LearningGainMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Learning Gain Metric"@en ;
+    skos:definition "A metric that quantifies the learning gain."@en ;
+    skos:broader hint:Metric .
+
+hint:DiagnosisAccuracyMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Diagnosis Accuracy Metric"@en ;
+    skos:definition "A metric that quantifies the accuracy of a diagnosis."@en ;
+    skos:broader hint:Metric .
+
+hint:TimeMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Time Metric"@en ;
+    skos:definition "A metric that quantifies the time."@en ;
+    skos:broader hint:Metric .
+
+hint:EnergyEfficiencyMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Energy Efficiency Metric"@en ;
+    skos:definition "A metric that quantifies energy efficiency."@en ;
+    skos:broader hint:Metric .
+
+hint:UserComfortMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "User Comfort Metric"@en ;
+    skos:definition "A metric that quantifies the user comfort."@en ;
+    skos:broader hint:Metric .
+
+hint:EnergyEfficiencyMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Energy Efficiency Metric"@en ;
+    skos:definition "A metric that quantifies energy efficiency."@en ;
+    skos:broader hint:Metric .
+
+hint:CO2ReductionMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "CO2 Reduction Metric"@en ;
+    skos:definition "A metric that quantifies the CO2 reduction."@en ;
+    skos:broader hint:Metric .
+
+hint:AnswerAccuracyMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Answer Accuracy Metric"@en ;
+    skos:definition "A metric that quantifies the accuracy of an answer."@en ;
+    skos:broader hint:Metric .
+
+hint:EngagementTimeMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Engagement Time Metric"@en ;
+    skos:definition "A metric that quantifies the engagement time."@en ;
+    skos:broader hint:Metric .
