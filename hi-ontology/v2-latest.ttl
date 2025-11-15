@@ -149,6 +149,13 @@ hi:exhibitsPhenomenon a owl:ObjectProperty ;
                       rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
 
 
+###  https://w3id.org/hi-ontology#hasBiasType
+hi:hasBiasType a owl:ObjectProperty ;
+    rdfs:domain hi:Bias ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a bias to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#hasPhenomenonType
 hi:hasPhenomenonType a owl:ObjectProperty ;
     rdfs:domain hi:AgentRelatedPhenomenon ;

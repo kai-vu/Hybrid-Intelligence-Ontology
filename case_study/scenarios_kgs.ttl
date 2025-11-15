@@ -572,10 +572,12 @@ hi-s3:Scenario3HIGroupDeliberation a hi:ScientificPaper ;
     hi:describesUseCase hi-s3:UseCaseGroupDeliberationHI .
 
 hi-s3:UseCaseGroupDeliberationHI a hi:UseCase ;
+    hi:hasUseCaseType hint:GroupDeliberationUseCase ;
     hi:inDomain hi-s3:DomainLawAndPolicy ;
     hi:introducesHITeam hi-s3:HITeamGroupDeliberation .
 
 hi-s3:DomainLawAndPolicy a hi:Domain ;
+    hi:hasDomainType hint:LawAndPolicyDomain ;
     rdfs:label "Law and Public Policy"@en .
 
 #################################################################
@@ -590,29 +592,38 @@ hi-s3:HITeamGroupDeliberation a hi:HITeam ;
     hi:operatesInContext hi-s3:ContextJuryDeliberation .
 
 hi-s3:GoalFairAccurateVerdict a hi:Goal ;
+    hi:hasGoalType hint:FairAccurateVerdictGoal ;
     hi:requiresTask hi-s3:TaskAssessCommunicationAccuracy ,
                     hi-s3:TaskDecideIntervention ,
                     hi-s3:TaskExplainDecision .
 
 hi-s3:ContextJuryDeliberation a hi:Context ;
+    hi:hasContextType hint:JuryDeliberationContext ;
     hi:exhibitsPhenomenon hi-s3:PhenomenonGroupthink ,
                           hi-s3:PhenomenonTrustShift ;
     hi:hasEthicalConstraint hi-s3:EthicalConstraintAvoidUndueInfluence ,
                             hi-s3:EthicalConstraintFairness ,
                             hi-s3:EthicalConstraintTransparency .
 
-hi-s3:EthicalConstraintAvoidUndueInfluence a hi:EthicalConstraint .
-hi-s3:EthicalConstraintFairness            a hi:EthicalConstraint .
-hi-s3:EthicalConstraintTransparency        a hi:EthicalConstraint .
+hi-s3:EthicalConstraintAvoidUndueInfluence a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:UndueInfluenceConstraint .
+
+hi-s3:EthicalConstraintFairness            a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:FairnessConstraint .
+
+hi-s3:EthicalConstraintTransparency        a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:TransparencyConstraint.
 
 #################################################################
 # Roles
 #################################################################
 
 hi-s3:RoleAIAdvisor a dul:Role ; 
+    hi:hasRoleType hint:AIAdvisorRole ;
     rdfs:label "AI Deliberation Advisor"@en .
 
-hi-s3:RoleJuror a dul:Role ; 
+hi-s3:RoleJuror a dul:Role ;
+    hi:hasRoleType hint:JurorRole ;
     rdfs:label "Juror"@en .
 
 #################################################################
@@ -645,15 +656,19 @@ hi-s3:HumanJuror2 a hi:HumanAgent ;
 #################################################################
 
 hi-s3:CapabilityBayesianReasoning a hi:Capability ; 
+    hi:hasCapabilityType hint:BayesianReasoningCapability ;
     hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
 
 hi-s3:CapabilityMetaAnalysis a hi:Capability ; 
+    hi:hasCapabilityType hint:MetaAnalysisCapability ;
     hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
 
 hi-s3:CapabilityExplanation a hi:Capability ; 
+    hi:hasCapabilityType hint:ExplainingCapability ;
     hi:allowsTask hi-s3:TaskExplainDecision .
 
 hi-s3:CapabilitySelfReporting a hi:Capability ; 
+    hi:hasCapabilityType hint:SelfReportingCapability ;
     hi:allowsTask hi-s3:TaskProvideStatements .
 
 #################################################################
@@ -661,15 +676,19 @@ hi-s3:CapabilitySelfReporting a hi:Capability ;
 #################################################################
 
 hi-s3:TaskAssessCommunicationAccuracy a hi:Task ;
+    hi:hasTaskType hint:AssessCommunicationAccuracyTask ;
     hi:requiresCapability hi-s3:CapabilityBayesianReasoning .
 
 hi-s3:TaskDecideIntervention a hi:Task ;
+    hi:hasTaskType hint:DecideInterventionTask ;
     hi:requiresCapability hi-s3:CapabilityBayesianReasoning .
 
 hi-s3:TaskExplainDecision a hi:Task ;
+    hi:hasTaskType hint:ExplainDecisionTask ;
     hi:requiresCapability hi-s3:CapabilityExplanation .
 
 hi-s3:TaskProvideStatements a hi:Task ;
+    hi:hasTaskType hint:ProvideStatementsTask ;
     hi:requiresCapability hi-s3:CapabilitySelfReporting .
 
 #################################################################
@@ -677,9 +696,11 @@ hi-s3:TaskProvideStatements a hi:Task ;
 #################################################################
 
 hi-s3:MethodBayesianLogic a dul:Method ;
+    hi:hasMethodType hint:BayesianLogicMethod ;
     rdfs:comment "Bayesian logic as meta-analytical framework for evaluating individual/collective communication accuracy."@en .
 
 hi-s3:MethodMetaAnalyticalScoring a dul:Method ;
+    hi:hasMethodType hint:MetaAnalysisScoringMethod ;
     rdfs:comment "Aggregates juror statements likelihoods and reliability to decide justified intervention."@en .
 
 #################################################################
@@ -687,28 +708,33 @@ hi-s3:MethodMetaAnalyticalScoring a dul:Method ;
 #################################################################
 
 hi-s3:ExecAssessAccuracy a hi:TaskExecution ;
+    hi:hasExecutionType hint:AssessAccuracyTaskExecution ;
     hi:realizesTask hi-s3:TaskAssessCommunicationAccuracy ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
     hi:usesMethod hi-s3:MethodBayesianLogic ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecDecideIntervention a hi:TaskExecution ;
+    hi:hasExecutionType hint:DecideInterventionTaskExecution ; 
     hi:realizesTask hi-s3:TaskDecideIntervention ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
     hi:usesMethod hi-s3:MethodMetaAnalyticalScoring ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecExplainDecision a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s3:TaskExplainDecision ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecProvideStatements1 a hi:TaskExecution ;
+    hi:hasExecutionType hint:ProvideStatementsTaskExecution ;
     hi:realizesTask hi-s3:TaskProvideStatements ;
     hi:performedBy hi-s3:HumanJuror1 ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecProvideStatements2 a hi:TaskExecution ;
+    hi:hasExecutionType hint:ProvideStatementsTaskExecution ;
     hi:realizesTask hi-s3:TaskProvideStatements ;
     hi:performedBy hi-s3:HumanJuror2 ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
@@ -733,26 +759,33 @@ hi-s3:InteractionExplainConditions a hi:Interaction ;
     hi:usesInteractionModality hi-s3:ModalityVerbalDialogue ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s3:IntentDeliberate a hi:InteractionIntent .
+hi-s3:IntentDeliberate a hi:InteractionIntent ;
+    hi:hasInteractionIntentType hint:DeliberationIntent.
 
-hi-s3:IntentExplain    a hi:InteractionIntent .
+hi-s3:IntentExplain    a hi:InteractionIntent ;
+    hi:hasInteractionIntentType hint:ExplanationIntent.
 
-hi-s3:ModalityVerbalDialogue a hi:InteractionModality .
+hi-s3:ModalityVerbalDialogue a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:VerbalDialogueModality.
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
 hi-s3:PhenomenonGroupthink a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:GroupthinkPhenomenon ;
     rdfs:comment "Conformity pressures biasing juror judgments."@en .
 
 hi-s3:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:TrustShiftPhenomenon ;   
     rdfs:comment "Trust variation in AI depending on transparency and accuracy of intervention."@en .
 
 hi-s3:BiasConfirmation a hi:Bias ;
+    hi:hasBiasType hint:ConfirmationBias ;
     rdfs:comment "Selective attention to evidence consistent with prior beliefs."@en .
 
 hi-s3:FeedbackInterventionRationale a hi:Feedback ;
+    hi:hasFeedbackType hint:InterventionRationaleFeedback ;
     rdfs:comment "Explanation of conditions under which the AI assumes responsibility to act."@en .
 
 #################################################################
@@ -760,11 +793,13 @@ hi-s3:FeedbackInterventionRationale a hi:Feedback ;
 #################################################################
 
 hi-s3:ExperimentDeliberationSupport a hi:Experiment ;
+    hi:hasExperimentType hint:DeliberationSupportExperiment ;
     hi:testsMetric hi-s3:MetricFairOutcomeAccuracy ;
     hi:testsMetric hi-s3:MetricUndueInfluenceRate ;
     hi:testsMetric hi-s3:MetricExplanationClarity .
 
 hi-s3:EvaluationAIInterventionImpact a hi:Evaluation ;
+    hi:hasEvaluationType hint:AIInterventionImpactEvaluation ;
     hi:usesMetric hi-s3:MetricFairOutcomeAccuracy ;
     hi:usesMetric hi-s3:MetricUndueInfluenceRate ;
     hi:usesMetric hi-s3:MetricExplanationClarity ;
@@ -773,12 +808,15 @@ hi-s3:EvaluationAIInterventionImpact a hi:Evaluation ;
     hi:hasAlternativeHypothesis hi-s3:AlternativeHypothesisFairnessWithoutUndueInfluence .
 
 hi-s3:MetricFairOutcomeAccuracy a hi:Metric ;
+    hi:hasMetricType hint:FairOutcomeAccuracyMetric ;
     rdfs:comment "Accuracy of group decision relative to ground-truth or expert benchmark."@en .
 
 hi-s3:MetricUndueInfluenceRate a hi:Metric ;
+    hi:hasMetricType hint:UndueInfluenceRateMetric ;
     rdfs:comment "Frequency of AI-caused shifts attributable to influence beyond justified intervention."@en .
 
 hi-s3:MetricExplanationClarity a hi:Metric ;
+    hi:hasMetricType hint:ExplanationClarityMetric ;
     rdfs:comment "Human-rated clarity of conditions and rationale for AI interventions."@en .
 
 hi-s3:NullHypothesisNoBenefitOrInfluence a hi:NullHypothesis ;

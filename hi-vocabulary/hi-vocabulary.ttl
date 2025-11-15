@@ -176,6 +176,12 @@ hint:SafeRetrievalGoal a skos:Concept ;
     skos:definition "A goal aimed at ensuring the safe retrieval of objects or information."@en ;
     skos:broader hint:Goal .
 
+hint:FairAccurateVerdictGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Fair and Accurate Verdict Goal"@en ;
+    skos:definition "A goal that emphasizes fairness and accuracy in decision-making processes."@en ;
+    skos:broader hint:Goal .
+
 
 ############################################################
 # Context Terms
@@ -198,6 +204,13 @@ hint:WorkspaceManipulationContext a skos:Concept ;
     skos:prefLabel "Workspace Manipulation Context"@en ;
     skos:definition "A context where Hybrid Intelligence systems assist in manipulating objects within a workspace."@en ;
     skos:broader hint:Context .
+
+hint:JuryDeliberationContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Jury Deliberation Context"@en ;
+    skos:definition "A context involving group deliberation and decision-making in a jury setting."@en ;
+    skos:broader hint:Context .
+
 
 ############################################################
 # Constraint Terms
@@ -243,6 +256,18 @@ hint:SafetyConstraint a skos:Concept ;
     skos:definition "A constraint that ensures the safety of users and the environment."@en ;
     skos:broader hint:EthicalConstraint .
 
+hint:UndueInfluenceConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Avoid Undue Influence Constraint"@en ;
+    skos:definition "A constraint that prevents the Hybrid Intelligence system from exerting undue influence over users."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:FairnessConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Fairness Constraint"@en ;
+    skos:definition "A constraint that promotes fairness and equity in the operation of the Hybrid Intelligence system."@en ;
+    skos:broader hint:EthicalConstraint .
+
 
 ############################################################
 # Role Terms
@@ -276,6 +301,18 @@ hint:FineManipulatorRole a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Fine Manipulator Role"@en ;
     skos:definition "A role where the agent performs precise manipulation tasks within the Hybrid Intelligence system."@en ;
+    skos:broader hint:Role .
+
+hint:AIAdvisorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "AI Advisor Role"@en ;
+    skos:definition "A role where the agent provides advice and recommendations to human users."@en ;
+    skos:broader hint:Role .
+
+hint:JurorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Juror Role"@en ;
+    skos:definition "A role where the agent participates in jury deliberation and decision-making processes."@en ;
     skos:broader hint:Role .
 
 
@@ -378,6 +415,30 @@ hint:KnowledgeQueryTask a skos:Concept ;
     skos:definition "A task that involves querying knowledge graphs or databases for information."@en ;
     skos:broader hint:Task .
 
+hint:AssessCommunicationAccuracy a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Assess Communication Accuracy Task"@en ;
+    skos:definition "A task that involves assessing the accuracy of communication between agents."@en ;
+    skos:broader hint:Task .
+
+hint:DecideInterventionTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Decide Intervention Task"@en ;
+    skos:definition "A task that involves deciding on appropriate interventions based on situational assessments."@en ;
+    skos:broader hint:Task .
+
+hint:ExplainDecisionTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Explain Decision Task"@en ;
+    skos:definition "A task that involves providing explanations for decisions made by the Hybrid Intelligence system."@en ;
+    skos:broader hint:Task .
+
+hint:ProvideStatementTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Provide Statement Task"@en ;
+    skos:definition "A task that involves providing statements or reports about observations or actions."@en ;
+    skos:broader hint:Task .
+
 
 ############################################################
 # Methods Terms
@@ -411,6 +472,18 @@ hint:MethodPostHocExplanationMethod a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Post-hoc Explanation Method"@en ;
     skos:definition "A method that provides explanations for decisions or actions after they have been made."@en ;
+    skos:broader hint:Method .
+    
+hint:BayesianLogicMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Bayesian Logic"@en ;
+    skos:definition "A method that applies Bayesian logic for reasoning under uncertainty."@en ;
+    skos:broader hint:Method .
+
+hint:MetaAnalysisScoringMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Meta-Analysis Scoring Method"@en ;
+    skos:definition "A method that uses meta-analysis techniques to score and evaluate information from multiple sources."@en ;
     skos:broader hint:Method .
 
 
@@ -472,6 +545,24 @@ hint:ReinforcementLearningExplanationTaskExecution a skos:Concept ;
     skos:definition "The execution of a reinforcement learning task."@en ;
     skos:broader hint:TaskExecution .
 
+hint:AssessAccuracyTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Assess Communication Accuracy Task Execution"@en ;
+    skos:definition "The execution of an assess communication accuracy task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:DecideInterventionTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Decide Intervention Task Execution"@en ;
+    skos:definition "The execution of a decide intervention task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ProvideStatementTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Provide Statement Task Execution"@en ;
+    skos:definition "The execution of a provide statement task."@en ;
+    skos:broader hint:TaskExecution .
+
 
 ############################################################
 # Interaction Terms
@@ -484,7 +575,7 @@ hint:Interaction a skos:Concept ;
     skos:exactMatch hi:Interaction .
 
 
-# Interaction Internt
+# Interaction Intent
 ############################################################
 
 hint:InteractionIntent a skos:Concept ;
@@ -498,6 +589,12 @@ hint:ExplanationIntent a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Explanation Intent"@en ;
     skos:definition "An intent focused on providing explanations or justifications during interactions."@en ;
+    skos:broader hint:InteractionIntent .
+
+hint:DeliberationIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Deliberation Intent"@en ;
+    skos:definition "An intent centered around group deliberation and decision-making during interactions."@en ;
     skos:broader hint:InteractionIntent .
 
 
@@ -559,6 +656,29 @@ hint:SkillsComplementarityPhenomenon a skos:Concept ;
     skos:definition "A phenomenon where the skills of different agents complement each other within the Hybrid Intelligence system."@en ;
     skos:broader hint:Phenomenon .
 
+hint:GroupThinkingPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Group Thinking Phenomenon"@en ;
+    skos:definition "A phenomenon where group dynamics influence the thinking and decision-making processes of agents."@en ;
+    skos:broader hint:Phenomenon .
+
+
+############################################################
+# Bias Terms
+############################################################
+
+hint:Bias a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Bias"@en ;
+    skos:definition "A systematic deviation or prejudice that affects the performance or behavior of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Bias .
+
+hint:ConfirmationBias a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Confirmation Bias"@en ;
+    skos:definition "A bias where agents favor information that confirms their preexisting beliefs or hypotheses."@en ;
+    skos:broader hint:Bias .
+
 
 ############################################################
 # Feedback Terms
@@ -582,8 +702,15 @@ hint:ExplanationMessageFeedback a skos:Concept ;
     skos:definition "Feedback regarding the quality and effectiveness of explanation messages provided by Hybrid Intelligence systems."@en ;
     skos:broader hint:Feedback .
 
+hint:InterventionRationaleFeedback a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Intervention Rationale Feedback"@en ;
+    skos:definition "Feedback concerning the rationale behind interventions made by Hybrid Intelligence systems."@en ;
+    skos:broader hint:Feedback .
+
+
 ############################################################
-# Cability Terms
+# Capability Terms
 ############################################################
 
 hint:Capability a skos:Concept ;
@@ -780,6 +907,12 @@ hint:ReinforcementLearningWithKnowledgeGraphsExperiment a skos:Concept ;
     skos:prefLabel "Reinforcement Learning with Knowledge Graphs Experiment"@en ;
     skos:definition "An experiment that evaluates the effectiveness of combining reinforcement learning with knowledge graph querying in Hybrid Intelligence systems."@en ;
     skos:broader hint:Experiment .
+
+hint:DeliberationSupportExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Deliberation Support Experiment"@en ;
+    skos:definition "An experiment focused on assessing the support provided by Hybrid Intelligence systems during group deliberation processes."@en ;
+    skos:broader hint:Experiment .
     
 
 ############################################################
@@ -802,6 +935,12 @@ hint:ReinforcementLearningWithKnowledgeGraphEvaluation a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Reinforcement Learning with Knowledge Graph Evaluation"@en ;
     skos:definition "An evaluation that assesses the integration of reinforcement learning and knowledge graph querying in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Evaluation .
+
+hint:AIInterventionImpactEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "AI Intervention Impact Evaluation"@en ;
+    skos:definition "An evaluation that measures the impact of AI interventions on user decision-making and outcomes."@en ;
     skos:broader hint:Evaluation .
 
 
@@ -838,3 +977,16 @@ hint:ExplanationClarityMetric a skos:Concept ;
     skos:prefLabel "Explanation Clarity Metric"@en ;
     skos:definition "A metric that assesses the clarity and comprehensibility of explanations provided by Hybrid Intelligence systems."@en ;
     skos:broader hint:Metric .
+
+hint:FairOutcomeMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;          
+    skos:prefLabel "Fair Outcome Metric"@en ;
+    skos:definition "A metric that measures the fairness of outcomes produced by Hybrid Intelligence systems."@en ;
+    skos:broader hint:Metric .
+
+hint:UndueInfluenceMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;          
+    skos:prefLabel "Undue Influence Metric"@en ;
+    skos:definition "A metric that quantifies the level of undue influence exerted by Hybrid Intelligence systems over users."@en ;
+    skos:broader hint:Metric .  
+
