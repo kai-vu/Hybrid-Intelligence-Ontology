@@ -415,7 +415,7 @@ hi-s2:TaskPolicyLearning a hi:Task ;
     hi:requiresCapability hi-s2:CapabilityRLPolicyLearning .
 
 hi-s2:TaskKnowledgeQuery a hi:Task ; 
-    hi:hasTaskType hint:KnowledgeQueryTask ;
+    hi:hasTaskType hint:KnowledgeGraphQueryTask ;
     hi:requiresCapability hi-s2:CapabilityKGQuery .
 
 hi-s2:TaskExplanation a hi:Task ; 
@@ -684,7 +684,7 @@ hi-s3:TaskDecideIntervention a hi:Task ;
     hi:requiresCapability hi-s3:CapabilityBayesianReasoning .
 
 hi-s3:TaskExplainDecision a hi:Task ;
-    hi:hasTaskType hint:ExplainDecisionTask ;
+    hi:hasTaskType hint:ExplanationTask ;
     hi:requiresCapability hi-s3:CapabilityExplanation .
 
 hi-s3:TaskProvideStatements a hi:Task ;
@@ -858,10 +858,12 @@ hi-s4:ScientificPaperTutoringHI a hi:ScientificPaper ;
     hi:describesUseCase hi-s4:UseCaseAutonomousTutoring .
 
 hi-s4:UseCaseAutonomousTutoring a hi:UseCase ;
+    hi:hasUseCaseType hint:AutonomousTutoringUseCase ;
     hi:inDomain hi-s4:DomainEducation ;
     hi:introducesHITeam hi-s4:HITeamTutoring .
 
 hi-s4:DomainEducation a hi:Domain ;
+    hi:hasDomainType hint:EducationDomain ;
     rdfs:label "Education and Learning Technologies"@en .
 
 #################################################################
@@ -874,6 +876,7 @@ hi-s4:HITeamTutoring a hi:HITeam ;
     hi:operatesInContext hi-s4:ContextOnlineLearning .
 
 hi-s4:GoalEffectiveLearning a hi:Goal ;
+    hi:hasGoalType hint:EffectiveLeaningGoal ;
     hi:requiresTask hi-s4:TaskReconstructTrajectory ,
                     hi-s4:TaskRecommendResources ,
                     hi-s4:TaskSemanticReasoning ,
@@ -881,6 +884,7 @@ hi-s4:GoalEffectiveLearning a hi:Goal ;
                     hi-s4:TaskExplainRecommendations .
 
 hi-s4:ContextOnlineLearning a hi:Context ;
+    hi:hasContextType hint:OnlineLearningContext ;
     hi:exhibitsPhenomenon hi-s4:PhenomenonTrustShift ,
                           hi-s4:PhenomenonKnowledgeMismatch ;
     hi:hasEthicalConstraint hi-s4:EthicalConstraintPrivacy ,
@@ -888,17 +892,26 @@ hi-s4:ContextOnlineLearning a hi:Context ;
                             hi-s4:EthicalConstraintAutonomy ;
     rdfs:comment "Personalized e-learning setting integrating user histories and public KGs."@en .
 
-hi-s4:EthicalConstraintPrivacy      a hi:EthicalConstraint .
-hi-s4:EthicalConstraintTransparency a hi:EthicalConstraint .
-hi-s4:EthicalConstraintAutonomy     a hi:EthicalConstraint .
+hi-s4:EthicalConstraintPrivacy      a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:PrivacyConstraint .
+
+hi-s4:EthicalConstraintTransparency a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:TransparencyConstraint .
+
+hi-s4:EthicalConstraintAutonomy     a hi:EthicalConstraint ;
+    hi:hasConstraintType    hint:AutonomyConstraint .
 
 #################################################################
 # Roles
 #################################################################
 
-hi-s4:RoleTutor  a dul:Role ; rdfs:label "Autonomous Tutor"@en .
+hi-s4:RoleTutor  a dul:Role ; 
+    hi:hasRoleType hint:TutorRole ;
+    rdfs:label "Autonomous Tutor"@en .
 
-hi-s4:RoleLearner a dul:Role ; rdfs:label "Learner"@en .
+hi-s4:RoleLearner a dul:Role ; 
+    hi:hasRoleType hint:LearnerRole ;
+    rdfs:label "Learner"@en .
 
 #################################################################
 # Agents
@@ -929,18 +942,23 @@ hi-s4:HumanLearner a hi:HumanAgent ;
 #################################################################
 
 hi-s4:CapabilityBayesianReasoning   a hi:Capability ; 
+    hi:hasCapabilityType hint:BayesianReasoningCapability ;
     hi:allowsTask hi-s4:TaskBayesianInference .
 
 hi-s4:CapabilitySemanticReasoning   a hi:Capability ; 
+    hi:hasCapabilityType hint:SemanticReasoningCapability ;
     hi:allowsTask hi-s4:TaskSemanticReasoning .
 
 hi-s4:CapabilityKGQuery             a hi:Capability ; 
+    hi:hasCapabilityType hint:KnowledgeGraphQueryingCapability ;
     hi:allowsTask hi-s4:TaskKGQuery .
 
 hi-s4:CapabilityExplanation         a hi:Capability ; 
+    hi:hasCapabilityType hint:ExplainingCapability ;
     hi:allowsTask hi-s4:TaskExplainRecommendations .
 
 hi-s4:CapabilitySelfReporting       a hi:Capability ; 
+    hi:hasCapabilityType hint:SelfReportingCapability ;
     hi:allowsTask hi-s4:TaskReconstructTrajectory .
 
 #################################################################
@@ -952,18 +970,23 @@ hi-s4:TaskReconstructTrajectory a hi:Task ;
     rdfs:comment "Reconstruct learner's educational trajectory as a personalized narrative."@en .
 
 hi-s4:TaskRecommendResources a hi:Task ;
+    hi:hasTaskType hint:RecommendResourcesTask ;
     hi:requiresCapability hi-s4:CapabilitySemanticReasoning .
 
 hi-s4:TaskSemanticReasoning a hi:Task ;
+    hi:hasTaskType hint:SemanticReasoningTask ;
     hi:requiresCapability hi-s4:CapabilitySemanticReasoning .
 
 hi-s4:TaskBayesianInference a hi:Task ;
+    hi:hasTaskType hint:BayesianInferenceTask ;
     hi:requiresCapability hi-s4:CapabilityBayesianReasoning .
 
 hi:TaskKGQuery a hi:Task ;
+    hi:hasTaskType hint:KnowledgeGraphQueryTask ;
     hi:requiresCapability hi-s4:CapabilityKGQuery .
 
 hi-s4:TaskExplainRecommendations a hi:Task ;
+    hi:hasTaskType hint:ExplanationTask ;
     hi:requiresCapability hi-s4:CapabilityExplanation .
 
 #################################################################
@@ -971,12 +994,15 @@ hi-s4:TaskExplainRecommendations a hi:Task ;
 #################################################################
 
 hi-s4:MethodBayesianInference a dul:Method ; 
+    hi:hasMethodType hint:BayesianLogicMethod ;
     rdfs:comment "Probabilistic modeling of interests and prior knowledge."@en .
 
 hi-s4:MethodKGQuerying        a dul:Method ; 
+    hi:hasMethodType hint:KnowledgeGraphQueryMethod ;
     rdfs:comment "Query public KGs (e.g., WordNet, Wikidata) for background knowledge."@en .
 
 hi-s4:MethodSemanticLinking   a dul:Method ; 
+    hi:hasMethodType hint:SemanticLinkingMethod ;
     rdfs:comment "Reason over semantic relatedness between educational topics."@en .
 
 #################################################################
@@ -984,35 +1010,41 @@ hi-s4:MethodSemanticLinking   a dul:Method ;
 #################################################################
 
 hi-s4:ExecProvideLearningHistory a hi:TaskExecution ;
+    hi:hasExecutionType hint:ProvideLearningHistoryTaskExecution ;
     hi:realizesTask hi-s4:TaskReconstructTrajectory ;
     hi:performedBy hi-s4:HumanLearner ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
 hi-s4:ExecReconstructTrajectory a hi:TaskExecution ;
+    hi:hasExecutionType hint:ReconstructTrajectoryTaskExecution ;
     hi:realizesTask hi-s4:TaskReconstructTrajectory ;
     hi:performedBy hi-s4:AITutor ;
     hi:usesMethod hi-s4:MethodKGQuerying ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
 hi-s4:ExecBayesianModeling a hi:TaskExecution ;
+    hi:hasExecutionType hint:BayesianModelingTaskExecution ;
     hi:realizesTask hi-s4:TaskBayesianInference ;
     hi:performedBy hi-s4:AITutor ;
     hi:usesMethod hi-s4:MethodBayesianInference ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
 hi-s4:ExecSemanticReasoning a hi:TaskExecution ;
+    hi:hasExecutionType hint:SemanticReasoningTaskExecution ;
     hi:realizesTask hi-s4:TaskSemanticReasoning ;
     hi:performedBy hi-s4:AITutor ;
     hi:usesMethod hi-s4:MethodSemanticLinking ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
 hi-s4:ExecRecommendResources a hi:TaskExecution ;
+    hi:hasExecutionType hint:RecommendResourcesTaskExecution ;
     hi:realizesTask hi-s4:TaskRecommendResources ;
     hi:performedBy hi-s4:AITutor ;
     hi:usesMethod hi-s4:MethodSemanticLinking ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
 hi-s4:ExecExplainRecommendations a hi:TaskExecution ;
+    hi:hasExecutionType hint:ExplanationTaskExecution ;
     hi:realizesTask hi-s4:TaskExplainRecommendations ;
     hi:performedBy hi-s4:AITutor ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
@@ -1027,21 +1059,26 @@ hi-s4:InteractionExplainRecommendations a hi:Interaction ;
     hi:usesInteractionModality hi-s4:ModalityTextChat ;
     hi:towardsGoal hi-s4:GoalEffectiveLearning .
 
-hi-s4:IntentExplain   a hi:InteractionIntent .
+hi-s4:IntentExplain   a hi:InteractionIntent ;
+    hi:hasInteractionIntentType hint:ExplanationIntent .
 
-hi-s4:ModalityTextChat a hi:InteractionModality .
+hi-s4:ModalityTextChat a hi:InteractionModality ;
+    hi:hasInteractionModalityType hint:TextChatModality .
 
 #################################################################
 # Agent-related Phenomena and Feedback
 #################################################################
 
 hi-s4:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:TrustShiftPhenomenon ;
     rdfs:comment "Trust varies with transparency and recommendation quality."@en .
 
 hi-s4:PhenomenonKnowledgeMismatch a hi:AgentRelatedPhenomenon ;
+    hi:hasPhenomenonType hint:KnowledgeMismatchPhenomenon ;
     rdfs:comment "Mismatch between assumed prior knowledge and actual learner understanding."@en .
 
 hi-s4:FeedbackRecommendationRationale a hi:Feedback ;
+    hi:hasFeedbackType hint:RecommendationRationaleFeedback ;
     rdfs:comment "Tutor feedback explaining why specific resources/topics were suggested."@en .
 
 #################################################################
