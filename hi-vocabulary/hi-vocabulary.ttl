@@ -1,0 +1,840 @@
+@prefix hi:     <https://w3id.org/hi-ontology#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix hint:   <https://w3id.org/hi-thesaurus#> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema:   <http://schema.org/> .
+
+
+hint:HIScheme a skos:ConceptScheme ;
+    dct:title "Hybrid INtelligence Thesaurus (HINT)"@en ;
+    dct:description "A controlled thesaurus of terms to describe Hybrid Intelligence (HI)."@en ;
+    dc:creator [
+        a foaf:Person ;
+        foaf:name "Francesca Urgese" ;
+        schema:identifier [
+            a schema:PropertyValue ;
+            schema:propertyID "ORCID" ;
+            schema:value "0009-0009-0516-1800";
+            foaf:member _:org  
+        ]], [
+        a foaf:Person ;
+        foaf:name "Margherita Martorana" ;
+        schema:identifier [
+            a schema:PropertyValue ;
+            schema:propertyID "ORCID" ;
+            schema:value "0000-0001-8004-0464" ;
+            foaf:member _:org  
+        ]] , [
+        a foaf:Person ;
+        foaf:name "Ilaria Tiddi" ;
+        schema:identifier [
+            a schema:PropertyValue ;
+            schema:propertyID "ORCID" ;
+            schema:value "0000-0001-7116-9338" ;
+            foaf:member _:org  
+        ]] ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2025-11-15"^^xsd:date ;
+    vann:preferredNamespacePrefix "hint";
+    vann:preferredNamespaceUri "https://w3id.org/hi-thesaurus#" ;
+    skos:prefLabel "Hybrid INtelligence Thesaurus"@en ;
+    skos:hasTopConcept ct:Sensing ,
+                       ct:Reasoning ,
+                       ct:Explaining .
+
+_:org a schema:Organization ;
+    schema:name "Knowledge in AI (KAI) Group - Vrije Universiteit Amsterdam" .
+
+
+
+############################################################
+# Use Cases Terms
+############################################################
+
+hint:UseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Use Case"@en ;
+    skos:definition "A specific application or scenario where Hybrid Intelligence systems are employed to achieve particular goals."@en ;
+    skos:exactMatch hi:UseCase .
+
+hint:PersonalAssistantUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Personal Assistant Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems function as personal assistants to support users in various tasks."@en ;
+    skos:broader hint:UseCase .
+
+hint:CollaborativeManipulationUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Collaborative Manipulation Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems collaborate with humans to manipulate objects or environments."@en ;
+    skos:broader hint:UseCase .
+
+hint:GroupDeliberationUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Group Deliberation Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems facilitate group deliberation and decision-making processes."@en ;
+    skos:broader hint:UseCase .
+
+hint:AutonomousTutoringUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Autonomous Tutoring Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems provide autonomous tutoring and educational support to learners."@en ;
+    skos:broader hint:UseCase .
+
+hint:MedicalDiagnosisUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Medical Diagnosis Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems assist in medical diagnosis and healthcare decision-making."@en ;
+    skos:broader hint:UseCase .
+
+hint:EnergyNegotiationUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Energy Negotiation Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems engage in energy negotiation and management tasks."@en ;
+    skos:broader hint:UseCase .
+
+hint:VirtualMuseumGuideUseCase a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Virtual Museum Guide Use Case"@en ;
+    skos:definition "A use case where Hybrid Intelligence systems serve as virtual guides in museum settings."@en ;
+    skos:broader hint:UseCase .
+
+
+############################################################
+# Domains Terms
+############################################################
+
+hint:Domain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Domain"@en ;
+    skos:definition "A specific field or area of application where Hybrid Intelligence systems are utilized."@en ;
+    skos:exactMatch hi:Domain .
+
+hint:HealthAndLifestyleDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Health and Lifestyle Domain"@en ;
+    skos:definition "A domain focused on health, wellness, and lifestyle management."@en ;
+    skos:broader hint:Domain .
+
+hint:IndustrialAndServiceRoboticsDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Industrial and Service Robotics Domain"@en ;
+    skos:definition "A domain involving the use of robotics in industrial and service settings."@en ;
+    skos:broader hint:Domain .
+
+hint:LawAndPolicyDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Law and Policy Domain"@en ;
+    skos:definition "A domain concerned with legal frameworks and policy-making processes."@en ;
+    skos:broader hint:Domain .
+
+hint:EducationDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Education Domain"@en ;
+    skos:definition "A domain focused on educational systems and learning processes."@en ;
+    skos:broader hint:Domain .
+
+hint:MedicalDiagnosisDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Medical Diagnosis Domain"@en ;
+    skos:definition "A domain centered around medical diagnosis and healthcare."@en ;
+    skos:broader hint:Domain .
+
+hint:SmartCampusDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Smart Campus Domain"@en ;
+    skos:definition "A domain involving smart campus environments and technologies."@en ;
+    skos:broader hint:Domain .
+
+hint:DigitalMuseumDomain a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Digital Museum Domain"@en ;
+    skos:definition "A domain focused on digital museum experiences and technologies."@en ;
+    skos:broader hint:Domain .
+
+
+############################################################
+# Goal Terms
+############################################################
+
+hint:Goal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Goal"@en ;
+    skos:definition "An objective or desired outcome that a Hybrid Intelligence system aims to achieve."@en ;
+    skos:exactMatch hi:Goal .
+
+hint:UserWellbeingGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "User Wellbeing Goal"@en ;
+    skos:definition "A goal focused on enhancing the wellbeing and quality of life of users."@en ;
+    skos:broader hint:Goal .
+
+hint:SafeRetrievalGoal a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Safe Retrieval Goal"@en ;
+    skos:definition "A goal aimed at ensuring the safe retrieval of objects or information."@en ;
+    skos:broader hint:Goal .
+
+
+############################################################
+# Context Terms
+############################################################
+
+hint:Context a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Context"@en ;
+    skos:definition "The situational factors and environment in which a Hybrid Intelligence system operates."@en ;
+    skos:exactMatch hi:Context .
+
+hint:HealthMonitoringContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Health Monitoring Context"@en ;
+    skos:definition "A context involving the monitoring of health-related data and activities."@en ;
+    skos:broader hint:Context .
+
+hint:WorkspaceManipulationContext a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Workspace Manipulation Context"@en ;
+    skos:definition "A context where Hybrid Intelligence systems assist in manipulating objects within a workspace."@en ;
+    skos:broader hint:Context .
+
+############################################################
+# Constraint Terms
+############################################################
+
+hint:Constraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Constraint"@en ;
+    skos:definition "A limitation or restriction that influences the operation of a Hybrid Intelligence system."@en .
+
+
+# Ethical constraint
+############################################################
+
+hint:EthicalConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Ethical Constraint"@en ;
+    skos:definition "A constraint that ensures the ethical operation of a Hybrid Intelligence system."@en ;
+    skos:broader hint:Constraint ;
+    skos:exactMatch hi:EthicalConstraint .
+
+hint:PrivacyConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Privacy Constraint"@en ;
+    skos:definition "A constraint that protects user privacy and data confidentiality."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:AutonomyConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Autonomy Constraint"@en ;
+    skos:definition "A constraint that respects user autonomy and decision-making."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:TransparencyConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Transparency Constraint"@en ;
+    skos:definition "A constraint that ensures transparency in the operations and decisions of the Hybrid Intelligence system."@en ;
+    skos:broader hint:EthicalConstraint .
+
+hint:SafetyConstraint a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Safety Constraint"@en ;
+    skos:definition "A constraint that ensures the safety of users and the environment."@en ;
+    skos:broader hint:EthicalConstraint .
+
+
+############################################################
+# Role Terms
+############################################################
+
+hint:Role a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Role"@en ;
+    skos:definition "A specific function or position that an agent assumes within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:Role .
+
+hint:AIAssistantRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "System Assistant Role"@en ;
+    skos:definition "A role where the agent assists the system in performing tasks and achieving goals."@en ;
+    skos:broader hint:Role .
+
+hint:HumanUserRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "User Role"@en ;
+    skos:definition "A role where the agent represents the user interacting with the Hybrid Intelligence system."@en ;
+    skos:broader hint:Role .
+
+hint:RiskOperatorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Risk Operator Role"@en ;
+    skos:definition "A role where the agent is responsible for managing and mitigating risks within the Hybrid Intelligence system."@en ;
+    skos:broader hint:Role .
+
+hint:FineManipulatorRole a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Fine Manipulator Role"@en ;
+    skos:definition "A role where the agent performs precise manipulation tasks within the Hybrid Intelligence system."@en ;
+    skos:broader hint:Role .
+
+
+############################################################
+# Agent Terms
+############################################################
+
+hint:Agent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Agent"@en ;
+    skos:definition "An entity that performs actions or tasks within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:Agent .
+
+hint:ArtificialAgent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Artificial Agent"@en ;
+    skos:definition "An agent that is implemented through artificial means, such as software or robotics."@en ;
+    skos:broader hint:Agent .
+
+hint:HumanAgent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Human Agent"@en ;
+    skos:definition "An agent that is a human being participating in the Hybrid Intelligence system."@en ;
+    skos:broader hint:Agent .
+
+
+############################################################
+# Task Terms
+############################################################
+
+hint:Task a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Task"@en ;
+    skos:definition "A specific activity or operation that a Hybrid Intelligence system performs to achieve its goals."@en ;
+    skos:exactMatch hi:Task .
+
+hint:DataCollectionTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Data Collection Task"@en ;
+    skos:definition "A task involving the gathering of data from various sources."@en ;
+    skos:broader hint:Task .
+
+hint:ConflictResolutionTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Conflict Resolution Task"@en ;
+    skos:definition "A task focused on resolving conflicts or disagreements."@en ;
+    skos:broader hint:Task .
+
+hint:ExplanationTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Explanation Task"@en ;
+    skos:definition "A task that involves providing explanations or justifications for decisions or actions."@en ;
+    skos:broader hint:Task .
+
+hint:UnlockCabinetTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Unlock Cabinet Task"@en ;
+    skos:definition "A task that involves unlocking a cabinet or similar storage unit."@en ;
+    skos:broader hint:Task .
+
+hint:OpenCabinetTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Open Cabinet Task"@en ;
+    skos:definition "A task that involves opening a cabinet or similar storage unit."@en ;
+    skos:broader hint:Task .
+
+hint:RetrieveToolTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Retrieve Tool Task"@en ;
+    skos:definition "A task that involves retrieving a tool from a storage unit or environment."@en ;
+    skos:broader hint:Task .
+
+hint:FineInsertionTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Fine Insertion Task"@en ;
+    skos:definition "A task that involves the precise insertion of an object into a specific location."@en ;
+    skos:broader hint:Task .
+
+hint:HeavyLiftingTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Heavy Lifting Task"@en ;
+    skos:definition "A task that involves lifting or moving heavy objects."@en ;
+    skos:broader hint:Task .
+
+hint:SituationalAssessmentTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Situational Assessment Task"@en ;
+    skos:definition "A task that involves assessing the current situation or environment."@en ;
+    skos:broader hint:Task .
+
+hint:PolicyLearningTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Policy Learning Task"@en ;
+    skos:definition "A task that involves learning optimal policies through reinforcement learning techniques."@en ;
+    skos:broader hint:Task .
+
+hint:KnowledgeQueryTask a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Knowledge Query Task"@en ;
+    skos:definition "A task that involves querying knowledge graphs or databases for information."@en ;
+    skos:broader hint:Task .
+
+
+############################################################
+# Methods Terms
+############################################################
+
+hint:Method a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Method"@en ;
+    skos:definition "A specific approach or technique used by a Hybrid Intelligence system to perform tasks."@en ;
+    skos:exactMatch hi:Method .
+
+hint:ArgumentationReasoningMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Argumentation Reasoning Method"@en ;
+    skos:definition "A reasoning method based on argumentation principles."@en ;
+    skos:broader hint:Method .
+
+hint:ReinforcementLearningMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Reinforcement Learning Method"@en ;
+    skos:definition "A method that uses reinforcement learning techniques to learn optimal policies."@en ;
+    skos:broader hint:Method .
+
+hint:KnowledgeGraphQueryMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Knowledge Graph Query Method"@en ;
+    skos:definition "A method that involves querying knowledge graphs for information retrieval."@en ;
+    skos:broader hint:Method .
+
+hint:MethodPostHocExplanationMethod a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Post-hoc Explanation Method"@en ;
+    skos:definition "A method that provides explanations for decisions or actions after they have been made."@en ;
+    skos:broader hint:Method .
+
+
+############################################################
+# Task Execution Terms
+############################################################
+
+hint:TaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Task Execution"@en ;
+    skos:definition "The process of carrying out a specific task within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:TaskExecution .
+    
+hint:DataCollectionTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Data Collection Task Execution"@en ;
+    skos:definition "The execution of a data collection task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ConflictResolutionTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Conflict Resolution Task Execution"@en ;        
+    skos:definition "The execution of a conflict resolution task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ExplanationTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Explanation Task Execution"@en ;
+    skos:definition "The execution of an explanation task."@en ;
+    skos:broader hint:TaskExecution .   
+
+hint:UnlockCabinetTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Unlock Cabinet Task Execution"@en ;
+    skos:definition "The execution of an unlock cabinet task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:OpenCabinetTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Open Cabinet Task Execution"@en ;
+    skos:definition "The execution of an open cabinet task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ConfinedReachTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Confined Reach Task Execution"@en ;
+    skos:definition "The execution of a confined reach task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:HeavyLiftingTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Heavy Lifting Task Execution"@en ;
+    skos:definition "The execution of a heavy lifting task."@en ;
+    skos:broader hint:TaskExecution .
+
+hint:ReinforcementLearningExplanationTaskExecution a skos:Concept ;
+    skos:inScheme hint:HIScheme ;           
+    skos:prefLabel "Reinforcement Learning Task Execution"@en ;
+    skos:definition "The execution of a reinforcement learning task."@en ;
+    skos:broader hint:TaskExecution .
+
+
+############################################################
+# Interaction Terms
+############################################################
+
+hint:Interaction a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Interaction"@en ;
+    skos:definition "The process of communication or engagement between agents within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:Interaction .
+
+
+# Interaction Internt
+############################################################
+
+hint:InteractionIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Interaction Intent"@en ;
+    skos:definition "A general intent that guides interactions within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:InteractionIntent ;
+    skos:broader hint:Interaction .
+
+hint:ExplanationIntent a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Explanation Intent"@en ;
+    skos:definition "An intent focused on providing explanations or justifications during interactions."@en ;
+    skos:broader hint:InteractionIntent .
+
+
+# Interaction Modality
+############################################################
+
+hint:InteractionModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Interaction Modality"@en ;
+    skos:definition "The mode or channel through which interactions occur within a Hybrid Intelligence system."@en ;
+    skos:exactMatch hi:InteractionModality ;
+    skos:broader hint:Interaction .
+
+
+hint:VerbalDialogueModality a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Verbal Dialogue Modality"@en ;
+    skos:definition "An interaction modality that involves verbal communication."@en ;
+    skos:broader hint:InteractionModality .
+
+
+############################################################
+# Phenomenon Terms
+############################################################
+
+hint:Phenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Phenomenon"@en ;
+    skos:definition "An observable event or occurrence within the context of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Phenomenon .
+
+hint:SensorNoisePhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Sensor Noise Phenomenon"@en ;
+    skos:definition "A phenomenon characterized by random variations or disturbances in sensor data."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:DataMismatchPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Data Mismatch Phenomenon"@en ;
+    skos:definition "A phenomenon where there is a discrepancy or inconsistency between different data sources."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:TrustShiftPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Trust Shift Phenomenon"@en ;
+    skos:definition "A phenomenon involving changes in trust levels towards Hybrid Intelligence systems."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:RiskExposurePhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Risk Exposure Phenomenon"@en ;
+    skos:definition "A phenomenon where agents are exposed to potential risks within the Hybrid Intelligence system."@en ;
+    skos:broader hint:Phenomenon .
+
+hint:SkillsComplementarityPhenomenon a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Skills Complementarity Phenomenon"@en ;
+    skos:definition "A phenomenon where the skills of different agents complement each other within the Hybrid Intelligence system."@en ;
+    skos:broader hint:Phenomenon .
+
+
+############################################################
+# Feedback Terms
+############################################################
+
+hint:Feedback a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Feedback"@en ;
+    skos:definition "Information provided by users or systems that reflects their experiences or evaluations of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Feedback .
+
+hint:TrustReportFeedback a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Trust Report Feedback"@en ;
+    skos:definition "Feedback related to user trust in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Feedback .
+
+hint:ExplanationMessageFeedback a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Explanation Message Feedback"@en ;
+    skos:definition "Feedback regarding the quality and effectiveness of explanation messages provided by Hybrid Intelligence systems."@en ;
+    skos:broader hint:Feedback .
+
+############################################################
+# Cability Terms
+############################################################
+
+hint:Capability a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Capability"@en ;
+    skos:definition "A skill, competence, or functional capacity that allows an agent to perform or enable a task."@en ;
+    skos:exactMatch hi:Capability .
+
+# Cognitive & Reasoning capabilities
+############################################################
+hint:CognitiveReasoningCapability a skos:Concept ;
+    skos:prefLabel "Cognitive & reasoning capability"@en ;
+    skos:broader hint:Capability .
+
+hint:ReasoningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Reasoning capability"@en ;
+    skos:definition "Capability to analyze information, draw conclusions, and make decisions based on data."@en ;
+    skos:broader    hint:CognitiveReasoningCapability .  
+
+hint:BayesianReasoningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Bayesian reasoning capability"@en ;
+    skos:definition "Capability to perform reasoning based on Bayesian probability principles."@en ;
+    skos:broader   hint:CognitiveReasoningCapability .
+
+hint:SemanticReasoningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Semantic reasoning capability"@en ;
+    skos:definition "Capability to perform reasoning based on semantic relationships and ontologies."@en ;
+    skos:broader   hint:CognitiveReasoningCapability .
+
+hint:EmbeddingReasoningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Embedding reasoning capability"@en ;
+    skos:definition "Capability to reason using vector embeddings of data."@en ;
+    skos:broader   hint:CognitiveReasoningCapability .
+
+hint:ClinicalJudgmentCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Clinical judgment capability"@en ;
+    skos:definition "Capability to make informed clinical judgments based on medical knowledge and patient data."@en ;
+    skos:broader   hint:CognitiveReasoningCapability .
+
+
+# Learning & adaptation capabilities
+############################################################
+
+hint:LearningAdaptationCapability a skos:Concept ;
+    skos:prefLabel "Learning & adaptation capability"@en ;
+    skos:broader hint:Capability .
+
+hint:SensingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Sensing capability"@en ;
+    skos:definition "Capability to perceive or detect signals, data, or environmental information."@en ;
+    skos:broader   hint:LearningAdaptationCapability .  
+
+hint:SituationalAwarenessCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Situational awareness capability"@en ;
+    skos:definition "Capability to perceive, comprehend, and project the status of the environment."@en ;
+    skos:broader   hint:LearningAdaptationCapability .
+
+hint:MultimodalInterpretationCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Multimodal interpretation capability"@en ;
+    skos:definition "Capability to interpret information from multiple modalities (e.g., text, images, audio)."@en ;
+    skos:broader   hint:LearningAdaptationCapability .
+
+
+# Communication & explanation capabilities
+############################################################
+
+hint:CommunicationExplanationCapability a skos:Concept ;
+    skos:prefLabel "Communication & explanation capability"@en ;
+    skos:broader hint:Capability .
+
+hint:PatternLearningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Pattern learning capability"@en ;
+    skos:definition "Capability to learn and recognize patterns in data."@en ;
+    skos:broader   hint:CommunicationExplanationCapability .
+
+hint:ReinforcementLearningCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Reinforcement learning policy capability"@en ;
+    skos:definition "Capability to learn optimal policies through reinforcement learning techniques."@en ;
+    skos:broader   hint:CommunicationExplanationCapability .
+
+hint:MetaAnalysisCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Meta-analysis capability"@en ;
+    skos:definition "Capability to conduct meta-analyses by synthesizing data from multiple studies."@en ;
+    skos:broader   hint:CommunicationExplanationCapability .
+
+
+# Perception & sensing capabilities
+############################################################
+
+hint:PerceptionSensingCapability a skos:Concept ;
+    skos:prefLabel "Perception & sensing capability"@en ;
+    skos:broader hint:Capability .
+
+hint:ExplainingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Explaining capability"@en ;
+    skos:definition "Capability to provide explanations or justifications for decisions or actions taken."@en ;
+    skos:broader   hint:PerceptionSensingCapability . 
+
+hint:ReportingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Reporting capability"@en ;
+    skos:definition "Capability to generate and communicate reports or summaries of information."@en ;
+    skos:broader   hint:PerceptionSensingCapability .
+
+hint:SelfReportingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Self-reporting capability"@en ;
+    skos:definition "Capability to autonomously generate reports about one's own status or actions."@en ;
+    skos:broader   hint:PerceptionSensingCapability .
+
+hint:NegotiationCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Negotiation capability"@en ;
+    skos:definition "Capability to engage in negotiation processes to reach agreements."@en ;
+    skos:broader   hint:PerceptionSensingCapability .
+
+hint:OperatorCoordinationCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Operator coordination capability"@en ;
+    skos:definition "Capability to coordinate actions and communications among multiple operators."@en ;
+    skos:broader   hint:PerceptionSensingCapability .
+
+
+# Physical & manipulation capabilities
+############################################################
+
+hint:PhysicalManipulationCapability a skos:Concept ;
+    skos:prefLabel "Physical & manipulation capability"@en ;
+    skos:broader hint:Capability .
+
+hint:FineDexterityCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Fine dexterity capability"@en ;
+    skos:definition "Capability to perform tasks requiring precise and delicate movements."@en ;
+    skos:broader   hint:PhysicalManipulationCapability .    
+
+hint:ConfinedReachingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Confined-reaching capability"@en ;
+    skos:definition "Capability to operate or reach within confined or restricted environments."@en ;
+    skos:broader   hint:PhysicalManipulationCapability .
+
+hint:HeavyLiftingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Heavy-lifting capability"@en ;
+    skos:definition "Capability to handle complex, resource-intensive, or large-scale tasks."@en ;
+    skos:broader   hint:PhysicalManipulationCapability .
+
+
+# Domain-specific expert capabilities
+############################################################
+
+hint:DomainSpecificCapability a skos:Concept ;
+    skos:prefLabel "Domain-specific expert capability"@en ;
+    skos:broader hint:Capability .
+
+hint:KnowledgeGraphQueryingCapability a skos:Concept ;
+    skos:inScheme  hint:Scheme ;
+    skos:prefLabel "Knowledge graph querying capability"@en ;
+    skos:definition "Capability to query and retrieve information from knowledge graphs."@en ;
+    skos:broader   hint:DomainSpecificCapability .
+
+
+############################################################
+# Experiment Terms
+############################################################
+
+hint:Experiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Experiment"@en ;
+    skos:definition "A structured procedure or study conducted to evaluate the performance or behavior of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Experiment .
+
+hint:TransparencyTrustExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Transparency and Trust Experiment"@en ;
+    skos:definition "An experiment designed to assess the impact of transparency on user trust in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Experiment .
+
+hint:ReinforcementLearningWithKnowledgeGraphsExperiment a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Reinforcement Learning with Knowledge Graphs Experiment"@en ;
+    skos:definition "An experiment that evaluates the effectiveness of combining reinforcement learning with knowledge graph querying in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Experiment .
+    
+
+############################################################
+# Evaluation Terms
+############################################################
+
+hint:Evaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Evaluation"@en ;
+    skos:definition "The process of assessing the performance, effectiveness, or impact of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Evaluation .
+
+hint:TransparencyEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Transparency Evaluation"@en ;
+    skos:definition "An evaluation focused on measuring the transparency aspects of Hybrid Intelligence systems."@en ;
+    skos:broader hint:Evaluation .
+
+hint:ReinforcementLearningWithKnowledgeGraphEvaluation a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Reinforcement Learning with Knowledge Graph Evaluation"@en ;
+    skos:definition "An evaluation that assesses the integration of reinforcement learning and knowledge graph querying in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Evaluation .
+
+
+############################################################
+# Metric Terms
+############################################################
+
+hint:Metric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Metric"@en ;
+    skos:definition "A quantitative measure used to evaluate specific aspects of Hybrid Intelligence systems."@en ;
+    skos:exactMatch hi:Metric .
+
+hint:TrustPreservationMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;
+    skos:prefLabel "Trust Preservation Metric"@en ;
+    skos:definition "A metric that quantifies the extent to which user trust is maintained in Hybrid Intelligence systems."@en ;
+    skos:broader hint:Metric .
+
+hint:TaskSuccessRateMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;          
+    skos:prefLabel "Task Success Rate Metric"@en ;
+    skos:definition "A metric that measures the success rate of task completion by Hybrid Intelligence systems."@en ;
+    skos:broader hint:Metric .  
+
+hint:SafetyComplianceMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;          
+    skos:prefLabel "Safety Compliance Metric"@en ;
+    skos:definition "A metric that evaluates the adherence of Hybrid Intelligence systems to safety standards and protocols."@en ;
+    skos:broader hint:Metric .
+
+hint:ExplanationClarityMetric a skos:Concept ;
+    skos:inScheme hint:HIScheme ;          
+    skos:prefLabel "Explanation Clarity Metric"@en ;
+    skos:definition "A metric that assesses the clarity and comprehensibility of explanations provided by Hybrid Intelligence systems."@en ;
+    skos:broader hint:Metric .

@@ -63,6 +63,21 @@ hi:hasRole  a owl:ObjectProperty ;
             rdfs:domain hi:Agent ;
             rdfs:range dul:Role .
 
+
+###  https://w3id.org/hi-ontology#hasAgentType
+hi:hasAgentType a owl:ObjectProperty ;
+    rdfs:domain hi:Agent ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an agent to its type in the HINT thesaurus."@en . 
+
+
+###  https://w3id.org/hi-ontology#hasRoleType
+hi:hasRoleType a owl:ObjectProperty ;
+    rdfs:domain dul:Role ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a role to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#allowsTask
 hi:allowsTask a owl:ObjectProperty ;
               rdfs:domain hi:Capability ;
@@ -87,6 +102,13 @@ hi:describesUseCase a owl:ObjectProperty ;
                     rdfs:comment "A paper describing a specific use case or scenario."@en .
 
 
+###  https://w3id.org/hi-ontology#hasUseCaseType
+hi:hasUseCaseType a owl:ObjectProperty ;
+    rdfs:domain hi:UseCase ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a use case to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#eligibleForTask
 hi:eligibleForTask a owl:ObjectProperty ;
                    rdfs:subPropertyOf hi:assignedToTask ;
@@ -100,6 +122,13 @@ hi:evaluatedBy a owl:ObjectProperty ;
                rdfs:domain hi:TaskExecution ;
                rdfs:range hi:Evaluation ;
                rdfs:comment "Execution is evaluated by a defined evaluation."@en .
+
+
+###  https://w3id.org/hi-ontology#hasEvaluationType
+hi:hasEvaluationType a owl:ObjectProperty ;
+    rdfs:domain hi:Evaluation ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an evaluation to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#executesTask
@@ -120,6 +149,13 @@ hi:exhibitsPhenomenon a owl:ObjectProperty ;
                       rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
 
 
+###  https://w3id.org/hi-ontology#hasPhenomenonType
+hi:hasPhenomenonType a owl:ObjectProperty ;
+    rdfs:domain hi:AgentRelatedPhenomenon ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a phenomenon to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#hasAlternativeHypothesis
 hi:hasAlternativeHypothesis a owl:ObjectProperty ;
                             rdfs:domain hi:Evaluation ;
@@ -133,6 +169,20 @@ hi:hasCapability a owl:ObjectProperty ;
                  rdfs:comment "Agent possesses a capability."@en .
 
 
+###  https://w3id.org/hi-ontology#hasCapabilityType
+hi:hasCapabilityType a owl:ObjectProperty ;
+    rdfs:domain hi:Capability ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a capability to its type in the HINT thesaurus."@en .
+
+
+###  https://w3id.org/hi-ontology#hasFeedbackType
+hi:hasFeedbackType a owl:ObjectProperty ;
+    rdfs:domain hi:Feedback ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links feedback to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#hasEthicalConstraint
 hi:hasEthicalConstraint a owl:ObjectProperty ;
                         rdfs:domain hi:Context ;
@@ -140,10 +190,24 @@ hi:hasEthicalConstraint a owl:ObjectProperty ;
                         rdfs:comment "Ethical constraints that apply in a given context."@en .
 
 
+###  https://w3id.org/hi-ontology#hasConstraintType
+hi:hasConstraintType a owl:ObjectProperty ;
+    rdfs:domain hi:EthicalConstraint ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an ethical constraint to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#hasExperiment
 hi:hasExperiment a owl:ObjectProperty ;
                  rdfs:domain hi:Evaluation ;
                  rdfs:range hi:Experiment .
+
+
+### https://w3id.org/hi-ontology#hasExperimentType
+hi:hasExperimentType a owl:ObjectProperty ;
+    rdfs:domain hi:Experiment ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an experiment to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#hasGoal
@@ -153,11 +217,25 @@ hi:hasGoal a owl:ObjectProperty ;
            rdfs:comment "An HI team pursues one or more goals."@en .
 
 
+###  https://w3id.org/hi-ontology#hasGoalType
+hi:hasGoalType a owl:ObjectProperty ;
+           rdfs:domain hi:Goal ;
+           rdfs:range skos:Concept ;
+           rdfs:comment "Links a goal to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#hasInteractionIntent
 hi:hasInteractionIntent a owl:ObjectProperty ;
                         rdfs:domain hi:Interaction ;
                         rdfs:range hi:Intentionality ;
                         rdfs:comment "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
+
+
+### https://w3id.org/hi-ontology#hasInteractionIntentType
+hi:hasInteractionIntentType a owl:ObjectProperty ;
+    rdfs:domain hi:Intentionality ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an interaction intent to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#hasMember
@@ -178,6 +256,12 @@ hi:inDomain a owl:ObjectProperty ;
             rdfs:domain hi:UseCase ;
             rdfs:range hi:Domain ;
             rdfs:comment "Links a use case to its domain of application."@en .
+
+###  https://w3id.org/hi-ontology#hasDomainType
+hi:hasDomainType a owl:ObjectProperty ;
+    rdfs:domain hi:Domain ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a domain to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#influencedBy
@@ -219,6 +303,13 @@ hi:operatesInContext a owl:ObjectProperty ;
                      rdfs:range hi:Context .
 
 
+###  https://w3id.org/hi-ontology#hasContextType
+hi:hasContextType a owl:ObjectProperty ;
+    rdfs:domain hi:Context ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a context to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#performedBy
 hi:performedBy a owl:ObjectProperty ;
                owl:inverseOf hi:performsExecution ;
@@ -234,12 +325,26 @@ hi:performsExecution a owl:ObjectProperty ;
                      rdfs:comment "Agent that performs a specific task execution."@en .
 
 
+###  https://w3id.org/hi-ontology#hasExecutionType
+hi:hasExecutionType a owl:ObjectProperty ;
+    rdfs:domain hi:TaskExecution ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a task execution to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#realizedBy
 hi:realizedBy a owl:ObjectProperty ;
               owl:inverseOf hi:realizesTask ;
               rdfs:domain hi:Task ;
               rdfs:range hi:TaskExecution ;
               rdfs:comment "A task is realized through a task execution."@en .
+
+
+### https://w3id.org/hi-ontology#hasTaskType
+hi:hasTaskType a owl:ObjectProperty ;
+    rdfs:domain hi:Task ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a task to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#realizesTask
@@ -269,6 +374,13 @@ hi:testsMetric a owl:ObjectProperty ;
                rdfs:range hi:Metric .
 
 
+###  https://w3id.org/hi-ontology#hasMetricType
+hi:hasMetricType a owl:ObjectProperty ;
+    rdfs:domain hi:Metric ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a metric to its type in the HINT thesaurus."@en . 
+
+
 ###  https://w3id.org/hi-ontology#towardsGoal
 hi:towardsGoal a owl:ObjectProperty ;
                rdfs:domain hi:TaskExecution ;
@@ -282,11 +394,25 @@ hi:usesInteractionModality a owl:ObjectProperty ;
                            rdfs:comment "Modality/channel used during the interaction."@en .
 
 
+### https://w3id.org/hi-ontology#hasInteractionModalityType
+hi:hasInteractionModalityType a owl:ObjectProperty ;
+    rdfs:domain hi:InteractionModality ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links an interaction modality to its type in the HINT thesaurus."@en .
+
+
 ###  https://w3id.org/hi-ontology#usesMethod
 hi:usesMethod a owl:ObjectProperty ;
               rdfs:domain hi:TaskExecution ;
               rdfs:range dul:Method ;
               rdfs:comment "Execution makes use of a specific method."@en .
+
+
+### https://w3id.org/hi-ontology#hasMethodType
+hi:hasMethodType a owl:ObjectProperty ;
+    rdfs:domain dul:Method ;
+    rdfs:range  skos:Concept ;
+    rdfs:comment "Links a method to its type in the HINT thesaurus."@en .
 
 
 ###  https://w3id.org/hi-ontology#usesMethodByAgent
@@ -344,6 +470,7 @@ hi:AlternativeHypothesis a owl:Class ;
 ###  https://w3id.org/hi-ontology#ArtificialAgent
 hi:ArtificialAgent a owl:Class ;
                    rdfs:subClassOf hi:Agent ;
+                   hi:hasAgentType hint:ArtificialAgent ;
                    rdfs:comment "An artificial or computational agent (robot, software, etc.) collaborating with human agents."@en ;
                    rdfs:label "Artificial Agent"@en .
 
@@ -418,6 +545,7 @@ hi:HITeam a owl:Class ;
 hi:HumanAgent a owl:Class ;
               rdfs:subClassOf hi:Agent ,
                               foaf:Person ;
+              hi:hasAgentType hint:HumanAgent ;
               rdfs:comment "A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities."@en ;
               rdfs:label "Human Agent"@en .
 
