@@ -1,0 +1,772 @@
+@prefix : <https://w3id.org/hi-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/hi-ontology#> .
+
+<https://w3id.org/hi-ontology#> rdf:type owl:Ontology ;
+                                 <http://purl.org/dc/elements/1.1/creator> _:genid1 ,
+                                                                           _:genid4 ,
+                                                                           _:genid6 ;
+                                 <http://purl.org/dc/elements/1.1/description> "Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena."@en ;
+                                 <http://purl.org/dc/elements/1.1/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                 <http://purl.org/dc/elements/1.1/title> "The Hybrid Intelligence (HI) Ontology"@en ;
+                                 <http://purl.org/dc/terms/created> "2025-10-01"^^xsd:date ;
+                                 <http://purl.org/vocab/vann/preferredNamespacePrefix> "hi" ;
+                                 <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/hi-ontology#" ;
+                                 owl:versionInfo "2.0.0" .
+
+_:genid1 rdf:type <http://xmlns.com/foaf/0.1/Person> ;
+          <http://schema.org/identifier> _:genid2 ;
+          <http://xmlns.com/foaf/0.1/name> "Francesca Urgese" .
+
+_:genid4 rdf:type <http://xmlns.com/foaf/0.1/Person> ;
+          <http://schema.org/identifier> _:genid5 ;
+          <http://xmlns.com/foaf/0.1/name> "Margherita Martorana" .
+
+_:genid6 rdf:type <http://xmlns.com/foaf/0.1/Person> ;
+          <http://schema.org/identifier> _:genid7 ;
+          <http://xmlns.com/foaf/0.1/name> "Ilaria Tiddi" .
+
+_:genid2 rdf:type <http://schema.org/PropertyValue> ;
+          <http://schema.org/propertyID> "ORCID" ;
+          <http://schema.org/value> "0009-0009-0516-1800" ;
+          <http://xmlns.com/foaf/0.1/member> _:genid3 .
+
+_:genid5 rdf:type <http://schema.org/PropertyValue> ;
+          <http://schema.org/propertyID> "ORCID" ;
+          <http://schema.org/value> "0000-0001-8004-0464" ;
+          <http://xmlns.com/foaf/0.1/member> _:genid3 .
+
+_:genid7 rdf:type <http://schema.org/PropertyValue> ;
+          <http://schema.org/propertyID> "ORCID" ;
+          <http://schema.org/value> "0000-0001-7116-9338" ;
+          <http://xmlns.com/foaf/0.1/member> _:genid3 .
+
+_:genid3 rdf:type <http://schema.org/Organization> ;
+          <http://schema.org/name> "Knowledge in AI (KAI) Group - Vrije Universiteit Amsterdam" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/identifier
+<http://schema.org/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/propertyID
+<http://schema.org/propertyID> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/value
+<http://schema.org/value> rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/hi-ontology#allowsTask
+:allowsTask rdf:type owl:ObjectProperty ;
+            rdfs:domain :Capability ;
+            rdfs:range :Task ;
+            rdfs:comment "A capability enables or allows a task to be performed."@en .
+
+
+###  https://w3id.org/hi-ontology#assignedToTask
+:assignedToTask rdf:type owl:ObjectProperty ;
+                rdfs:domain :Agent ;
+                rdfs:range :Task ;
+                owl:propertyChainAxiom ( :performsExecution
+                                         :realizesTask
+                                       ) ;
+                rdfs:comment "Agent formally assigned to perform a task (inferred from executions)."@en .
+
+
+###  https://w3id.org/hi-ontology#describesUseCase
+:describesUseCase rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ScientificPaper ;
+                  rdfs:range :UseCase ;
+                  rdfs:comment "A paper describing a specific use case or scenario."@en .
+
+
+###  https://w3id.org/hi-ontology#eligibleForTask
+:eligibleForTask rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :assignedToTask ;
+                 rdfs:domain :Agent ;
+                 rdfs:range :Task ;
+                 rdfs:comment "Agent eligible for a task based on membership and capabilities (policy-level notion)."@en .
+
+
+###  https://w3id.org/hi-ontology#evaluatedBy
+:evaluatedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :TaskExecution ;
+             rdfs:range :Evaluation ;
+             rdfs:comment "Execution is evaluated by a defined evaluation."@en .
+
+
+###  https://w3id.org/hi-ontology#executesTask
+:executesTask rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :assignedToTask ;
+              rdfs:domain :Agent ;
+              rdfs:range :Task ;
+              owl:propertyChainAxiom ( :performsExecution
+                                       :realizesTask
+                                     ) ;
+              rdfs:comment "Agent executes a task (derivable from Agent→Execution→Task)."@en .
+
+
+###  https://w3id.org/hi-ontology#exhibitsPhenomenon
+:exhibitsPhenomenon rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Context ;
+                    rdfs:range :AgentRelatedPhenomenon ;
+                    rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
+
+
+###  https://w3id.org/hi-ontology#hasAlternativeHypothesis
+:hasAlternativeHypothesis rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Evaluation ;
+                          rdfs:range :AlternativeHypothesis .
+
+
+###  https://w3id.org/hi-ontology#hasCapability
+:hasCapability rdf:type owl:ObjectProperty ;
+               rdfs:domain :Agent ;
+               rdfs:range :Capability ;
+               rdfs:comment "Agent possesses a capability."@en .
+
+
+###  https://w3id.org/hi-ontology#hasEthicalConstraint
+:hasEthicalConstraint rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Context ;
+                      rdfs:range :EthicalConstraint ;
+                      rdfs:comment "Ethical constraints that apply in a given context."@en .
+
+
+###  https://w3id.org/hi-ontology#hasExperiment
+:hasExperiment rdf:type owl:ObjectProperty ;
+               rdfs:domain :Evaluation ;
+               rdfs:range :Experiment .
+
+
+###  https://w3id.org/hi-ontology#hasGoal
+:hasGoal rdf:type owl:ObjectProperty ;
+         rdfs:domain :HITeam ;
+         rdfs:range :Goal ;
+         rdfs:comment "An HI team pursues one or more goals."@en .
+
+
+###  https://w3id.org/hi-ontology#hasInteractionIntent
+:hasInteractionIntent rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Interaction ;
+                      rdfs:range :Intentionality ;
+                      rdfs:comment "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
+
+
+###  https://w3id.org/hi-ontology#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:domain :HITeam ;
+           rdfs:range :Agent ;
+           rdfs:comment "Specifies agents that are members of an HI team."@en .
+
+
+###  https://w3id.org/hi-ontology#hasNullHypothesis
+:hasNullHypothesis rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Evaluation ;
+                   rdfs:range :NullHypothesis .
+
+
+###  https://w3id.org/hi-ontology#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy> ;
+         rdfs:domain :Agent ;
+         rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> .
+
+
+###  https://w3id.org/hi-ontology#inDomain
+:inDomain rdf:type owl:ObjectProperty ;
+          rdfs:domain :UseCase ;
+          rdfs:range :Domain ;
+          rdfs:comment "Links a use case to its domain of application."@en .
+
+
+###  https://w3id.org/hi-ontology#influencedBy
+:influencedBy rdf:type owl:ObjectProperty ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :AgentRelatedPhenomenon
+                                         :EthicalConstraint
+                                       )
+                         ] ;
+              rdfs:comment "Indicates that an entity is influenced by a phenomenon or ethical constraint."@en .
+
+
+###  https://w3id.org/hi-ontology#influencedByEthicalConstraint
+:influencedByEthicalConstraint rdf:type owl:ObjectProperty ;
+                               rdfs:domain [ rdf:type owl:Class ;
+                                             owl:unionOf ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>
+                                                           :Agent
+                                                           :Evaluation
+                                                           :TaskExecution
+                                                         )
+                                           ] ;
+                               rdfs:range :EthicalConstraint ;
+                               owl:propertyChainAxiom ( :operatesInContext
+                                                        :hasEthicalConstraint
+                                                      ) ;
+                               rdfs:comment "Direct influence of an ethical constraint on agents, executions, methods, or evaluations."@en .
+
+
+###  https://w3id.org/hi-ontology#introducesHITeam
+:introducesHITeam rdf:type owl:ObjectProperty ;
+                  rdfs:domain :UseCase ;
+                  rdfs:range :HITeam ;
+                  rdfs:comment "A use case introduces a hybrid intelligence team."@en .
+
+
+###  https://w3id.org/hi-ontology#operatesInContext
+:operatesInContext rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Agent ;
+                   rdfs:range :Context .
+
+
+###  https://w3id.org/hi-ontology#performedBy
+:performedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :performsExecution ;
+             rdfs:domain :TaskExecution ;
+             rdfs:range :Agent ;
+             rdfs:comment "Execution performed by an agent."@en .
+
+
+###  https://w3id.org/hi-ontology#performsExecution
+:performsExecution rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Agent ;
+                   rdfs:range :TaskExecution ;
+                   rdfs:comment "Agent that performs a specific task execution."@en .
+
+
+###  https://w3id.org/hi-ontology#realizedBy
+:realizedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :realizesTask ;
+            rdfs:domain :Task ;
+            rdfs:range :TaskExecution ;
+            rdfs:comment "A task is realized through a task execution."@en .
+
+
+###  https://w3id.org/hi-ontology#realizesTask
+:realizesTask rdf:type owl:ObjectProperty ;
+              rdfs:domain :TaskExecution ;
+              rdfs:range :Task ;
+              rdfs:comment "Task execution realizes a task."@en .
+
+
+###  https://w3id.org/hi-ontology#requiresCapability
+:requiresCapability rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Task ;
+                    rdfs:range :Capability ;
+                    rdfs:comment "A task requires certain capabilities to be accomplished."@en .
+
+
+###  https://w3id.org/hi-ontology#requiresTask
+:requiresTask rdf:type owl:ObjectProperty ;
+              rdfs:domain :Goal ;
+              rdfs:range :Task ;
+              rdfs:comment "A goal requires one or more tasks to be fulfilled."@en .
+
+
+###  https://w3id.org/hi-ontology#testsMetric
+:testsMetric rdf:type owl:ObjectProperty ;
+             rdfs:domain :Experiment ;
+             rdfs:range :Metric .
+
+
+###  https://w3id.org/hi-ontology#towardsGoal
+:towardsGoal rdf:type owl:ObjectProperty ;
+             rdfs:domain :TaskExecution ;
+             rdfs:range :Goal .
+
+
+###  https://w3id.org/hi-ontology#usesInteractionModality
+:usesInteractionModality rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Interaction ;
+                         rdfs:range :InteractionModality ;
+                         rdfs:comment "Modality/channel used during the interaction."@en .
+
+
+###  https://w3id.org/hi-ontology#usesMethod
+:usesMethod rdf:type owl:ObjectProperty ;
+            rdfs:domain :TaskExecution ;
+            rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> ;
+            rdfs:comment "Execution makes use of a specific method."@en .
+
+
+###  https://w3id.org/hi-ontology#usesMethodByAgent
+:usesMethodByAgent rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Agent ;
+                   rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> ;
+                   owl:propertyChainAxiom ( :performsExecution
+                                            :usesMethod
+                                          ) ;
+                   rdfs:comment "Inferred: an agent uses a method via the executions it performs."@en .
+
+
+###  https://w3id.org/hi-ontology#usesMetric
+:usesMetric rdf:type owl:ObjectProperty ;
+            rdfs:domain :Evaluation ;
+            rdfs:range :Metric .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Organization
+<http://schema.org/Organization> rdf:type owl:Class .
+
+
+###  http://schema.org/PropertyValue
+<http://schema.org/PropertyValue> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> rdf:type owl:Class ;
+                                                               rdfs:comment "A technical or procedural means used during task execution or evaluation."@en ;
+                                                               rdfs:label "Method"@en .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> rdf:type owl:Class ;
+                                                             rdfs:comment "A functional or organizational position occupied by an agent within an HI team."@en ;
+                                                             rdfs:label "Role"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+###  https://w3id.org/hi-ontology#Agent
+:Agent rdf:type owl:Class .
+
+
+###  https://w3id.org/hi-ontology#AgentRelatedPhenomenon
+:AgentRelatedPhenomenon rdf:type owl:Class ;
+                        rdfs:comment "Human or system phenomena affecting performance or decision-making, such as bias or feedback."@en ;
+                        rdfs:label "Agent-related Phenomenon"@en .
+
+
+###  https://w3id.org/hi-ontology#AlternativeHypothesis
+:AlternativeHypothesis rdf:type owl:Class ;
+                       rdfs:subClassOf :Hypothesis ;
+                       rdfs:comment "The hypothesis positing an effect or difference."@en ;
+                       rdfs:label "Alternative Hypothesis (H1)"@en .
+
+
+###  https://w3id.org/hi-ontology#ArtificialAgent
+:ArtificialAgent rdf:type owl:Class ;
+                 rdfs:subClassOf :Agent ;
+                 rdfs:comment "An artificial or computational agent (robot, software, etc.) collaborating with human agents."@en ;
+                 rdfs:label "Artificial Agent"@en .
+
+
+###  https://w3id.org/hi-ontology#Bias
+:Bias rdf:type owl:Class ;
+      rdfs:subClassOf :AgentRelatedPhenomenon ;
+      rdfs:comment "Systematic deviation in decision-making or evaluation, exhibited by agents or datasets."@en ;
+      rdfs:label "Bias"@en .
+
+
+###  https://w3id.org/hi-ontology#Capability
+:Capability rdf:type owl:Class ;
+            rdfs:comment "A skill, competence, or functional capacity that allows an agent to perform or enable a task."@en ;
+            rdfs:label "Capability"@en .
+
+
+###  https://w3id.org/hi-ontology#Context
+:Context rdf:type owl:Class ;
+         rdfs:comment "Situational conditions (environmental, cultural, cognitive) under which tasks and evaluations occur."@en ;
+         rdfs:label "Context"@en .
+
+
+###  https://w3id.org/hi-ontology#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:comment "The subject area or discipline in which a Use Case or research scenario belongs."@en ;
+        rdfs:label "Domain"@en .
+
+
+###  https://w3id.org/hi-ontology#EthicalConstraint
+:EthicalConstraint rdf:type owl:Class ;
+                   rdfs:comment "Normative condition constraining agent behavior, tasks, or evaluations within a context."@en ;
+                   rdfs:label "Ethical Constraint"@en .
+
+
+###  https://w3id.org/hi-ontology#Evaluation
+:Evaluation rdf:type owl:Class ;
+            rdfs:comment "A process of assessing the quality or outcome of executions, methods, or goals."@en ;
+            rdfs:label "Evaluation"@en .
+
+
+###  https://w3id.org/hi-ontology#Experiment
+:Experiment rdf:type owl:Class ;
+            rdfs:comment "An empirical setup linked to an evaluation that tests metrics and hypotheses."@en ;
+            rdfs:label "Experiment"@en .
+
+
+###  https://w3id.org/hi-ontology#Feedback
+:Feedback rdf:type owl:Class ;
+          rdfs:subClassOf :AgentRelatedPhenomenon ;
+          rdfs:comment "Information returned to an agent that influences subsequent actions or learning."@en ;
+          rdfs:label "Feedback"@en .
+
+
+###  https://w3id.org/hi-ontology#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :requiresTask ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Task
+                      ] ;
+      rdfs:comment "A desired outcome pursued by an HI team, requiring one or more tasks to be completed."@en ;
+      rdfs:label "Goal"@en .
+
+
+###  https://w3id.org/hi-ontology#HITeam
+:HITeam rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasMember ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :ArtificialAgent
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasMember ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :HumanAgent
+                        ] ;
+        rdfs:comment "A hybrid intelligence team composed of human and artificial agents pursuing a shared goal."@en ;
+        rdfs:label "HI Team"@en .
+
+
+###  https://w3id.org/hi-ontology#HumanAgent
+:HumanAgent rdf:type owl:Class ;
+            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                            :Agent ;
+            rdfs:comment "A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities."@en ;
+            rdfs:label "Human Agent"@en .
+
+
+###  https://w3id.org/hi-ontology#Hypothesis
+:Hypothesis rdf:type owl:Class ;
+            rdfs:comment "A proposed explanation or assumption tested by experiments."@en ;
+            rdfs:label "Hypothesis"@en .
+
+
+###  https://w3id.org/hi-ontology#Intentionality
+:Intentionality rdf:type owl:Class ;
+                rdfs:comment "Communicative/social intent (explaining, requesting, negotiating, instructing...)."@en ;
+                rdfs:label "Interaction Intentionality"@en .
+
+
+###  https://w3id.org/hi-ontology#Interaction
+:Interaction rdf:type owl:Class ;
+             rdfs:subClassOf :TaskExecution ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :performedBy ;
+                               owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Agent
+                             ] ;
+             rdfs:comment "A multi-agent task execution where two or more agents coordinate (verbal, symbolic, or physical) toward a goal."@en ;
+             rdfs:label "Interaction"@en .
+
+
+###  https://w3id.org/hi-ontology#InteractionModality
+:InteractionModality rdf:type owl:Class ;
+                     rdfs:comment "Channel or medium of interaction (verbal dialog, gesture, symbolic messages, haptic, etc.)."@en ;
+                     rdfs:label "Interaction Modality"@en .
+
+
+###  https://w3id.org/hi-ontology#Metric
+:Metric rdf:type owl:Class ;
+        rdfs:comment "A measurable criterion used to quantify performance or outcomes in an evaluation."@en ;
+        rdfs:label "Metric"@en .
+
+
+###  https://w3id.org/hi-ontology#NullHypothesis
+:NullHypothesis rdf:type owl:Class ;
+                rdfs:subClassOf :Hypothesis ;
+                rdfs:comment "The default hypothesis positing no effect or difference."@en ;
+                rdfs:label "Null Hypothesis (H0)"@en .
+
+
+###  https://w3id.org/hi-ontology#ScientificPaper
+:ScientificPaper rdf:type owl:Class ;
+                 rdfs:comment "A written document describing a Use Case, domain, or experimental configuration."@en ;
+                 rdfs:label "Scientific Paper"@en .
+
+
+###  https://w3id.org/hi-ontology#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :requiresCapability ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Capability
+                      ] ;
+      rdfs:comment "A unit of purposeful activity executed by an agent toward achieving a goal."@en ;
+      rdfs:label "Task"@en .
+
+
+###  https://w3id.org/hi-ontology#TaskExecution
+:TaskExecution rdf:type owl:Class ;
+               rdfs:comment "The realization or performance of a specific task by an agent using a method."@en ;
+               rdfs:label "Task Execution"@en .
+
+
+###  https://w3id.org/hi-ontology#UseCase
+:UseCase rdf:type owl:Class ;
+         rdfs:comment "A structured situation describing a specific hybrid intelligence scenario (previously 'Scenario')."@en ;
+         rdfs:label "Use Case"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/hi-ontology#Agent
+:Agent rdf:type owl:NamedIndividual ,
+                <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> .
+
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean
+] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Agent rdfs:comment "An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system."@en ;
+        rdfs:label "Agent"@en .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<https://w3id.org/hi-ontology/rules/team> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/agent> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/role> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/goal> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/task> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/cap> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://w3id.org/hi-ontology/rules/exec> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdfs:comment "If an HI team exists and has a member agent, then the agent must be classified by some Role (hi:hasRole)." ;
+   rdfs:label "Rule 1 — Team membership implies having a role" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :HITeam ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMember ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRole ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/role>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." ;
+   rdfs:label "Rule 2 — Team, Goal, and Capability determine eligibility" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :HITeam ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasGoal ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/goal>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :requiresTask ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/goal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasMember ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasCapability ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/cap>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :allowsTask ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/cap> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :eligibleForTask ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." ;
+   rdfs:label "Rule 4 — Assignment → Performance" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :assignedToTask ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :realizedBy ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/task> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/exec>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :performedBy ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/exec> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "If an agent is eligible for a task, then the agent can be assigned to that task." ;
+   rdfs:label "Rule 3 — Eligibility implies assignment" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :eligibleForTask ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :assignedToTask ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
