@@ -12,6 +12,7 @@
 @prefix swrla:    <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
 @prefix schema:   <http://schema.org/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
 <https://w3id.org/hi-ontology#>  a owl:Ontology ;
@@ -238,10 +239,10 @@ hi:towardsGoal a owl:ObjectProperty ;
 
 ### https://w3id.org/hi-ontology#hasMethodConcept
 hi:hasMethodConcept a owl:ObjectProperty ;
-    rdfs:domain dul:Method ;
+    rdfs:domain hi:TaskExecution ;
     rdfs:range  skos:Concept ;
     rdfs:label "has method concept" ;
-    rdfs:comment "Links a method to a concept in the HINT thesaurus."@en .
+    rdfs:comment "Links a task execution to a method in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#hasInteractionIntentConcept
 hi:hasInteractionIntentConcept a owl:ObjectProperty ;
