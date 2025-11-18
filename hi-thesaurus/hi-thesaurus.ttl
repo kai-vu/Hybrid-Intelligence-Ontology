@@ -1050,6 +1050,8 @@ hint:Interaction a skos:Concept ;
     skos:prefLabel "Interaction"@en ;
     skos:definition "The process of communication or engagement between agents within a Hybrid Intelligence system."@en ;
     skos:exactMatch hi:Interaction .
+	
+	
 
 
 # Interaction Intent
@@ -1225,7 +1227,7 @@ hint:Bias a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Bias"@en ;
     skos:definition "A systematic deviation or prejudice that affects the performance or behavior of Hybrid Intelligence systems."@en ;
-    skos:exactMatch hi:Bias .
+    skos:broader hint:Phenomenon.
 
 hint:ConfirmationBias a skos:Concept ;
     skos:inScheme hint:HIScheme ;
@@ -1242,7 +1244,7 @@ hint:Feedback a skos:Concept ;
     skos:inScheme hint:HIScheme ;
     skos:prefLabel "Feedback"@en ;
     skos:definition "Information provided by users or systems that reflects their experiences or evaluations of Hybrid Intelligence systems."@en ;
-    skos:exactMatch hi:Feedback .
+    skos:broader hint:Phenomenon .
 
 hint:TrustReportFeedback a skos:Concept ;
     skos:inScheme hint:HIScheme ;

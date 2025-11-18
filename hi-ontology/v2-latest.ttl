@@ -130,12 +130,25 @@ hi:hasContextConcept a owl:ObjectProperty ;
     rdfs:comment "Links a context to a concept in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#exhibitsPhenomenonConcept
-hi:exhibitsPhenomenonConcept a owl:ObjectProperty ;
+hi:hasPhenomenonConcept a owl:ObjectProperty ;
     rdfs:domain hi:Context ;
     rdfs:range skos:Concept ;
-    rdfs:label "exhibits phenomenon concept" ;
+    rdfs:label "has phenomenon concept" ;
     rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
 
+###  https://w3id.org/hi-ontology#hasInfluenceOn
+hi:hasInfluenceOn a owl:ObjectProperty ;
+	rdfs:domain hi:Context ;
+	rdfs:range hi:HITeam ;
+	rdfs:label "has influence on" ;
+	rdfs:comment "Relates a contextual condition to the HI team whose actions, collaboration dynamics, or task performance are influenced by that condition. It captures how background phenomena and constraints shape the team's operation in a given use case."@en . 
+
+###  https://w3id.org/hi-ontology#isInfluencedBy
+hi:isInfluencedBy a owl:ObjectProperty ; 
+	owl:inverseOf hi:hasInfluenceOn ;
+	rdfs:label "is influenced by" ;
+	rdfs:comment "Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance."@en . 
+	
 ###  https://w3id.org/hi-ontology#hasRoleConcept
 hi:hasRoleConcept a owl:ObjectProperty ;
     rdfs:domain hi:Agent ;
@@ -202,11 +215,18 @@ hi:performedBy a owl:ObjectProperty ;
     owl:inverseOf hi:performsExecution ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf ( hi:TaskExecution hi:Interaction ) 
+        owl:unionOf ( hi:TaskExecution ) 
     ] ;
     rdfs:range hi:Agent ;
     rdfs:label "performed by" ;
     rdfs:comment "Execution performed by an agent."@en .
+
+###  https://w3id.org/hi-ontology#hasInteractionEpisode	
+hi:hasInteractionEpisode a owl:ObjectProperty ;
+		rdfs:domain hi:TaskExecution ;
+		rdfs:range hi:Interaction ;
+		rdfs:label "has interaction episode"; 
+		rdfs:comment "Identifies moments of interaction (e.g., dialogue, negotiation, or guidance) that unfold within the execution of a task."@en .
 
 ###  https://w3id.org/hi-ontology#towardsGoal
 hi:towardsGoal a owl:ObjectProperty ;
@@ -215,12 +235,6 @@ hi:towardsGoal a owl:ObjectProperty ;
     rdfs:label "towards goal" ;
     rdfs:comment "Task execution towards a goal."@en .
 
-###  https://w3id.org/hi-ontology#usesMethod
-hi:usesMethod a owl:ObjectProperty ;
-    rdfs:domain hi:TaskExecution ;
-    rdfs:range dul:Method ;
-    rdfs:label "uses method" ;
-    rdfs:comment "Execution makes use of a specific method."@en .
 
 ### https://w3id.org/hi-ontology#hasMethodConcept
 hi:hasMethodConcept a owl:ObjectProperty ;
@@ -235,6 +249,13 @@ hi:hasInteractionIntentConcept a owl:ObjectProperty ;
     rdfs:range hi:Intentionality ;
     rdfs:label "has interaction intent concept" ;
     rdfs:comment "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
+	
+###  https://w3id.org/hi-ontology#hasAgentInvolved
+hi:hasAgentInvolved a owl:ObjectProperty ; 
+	rdfs:domain hi:Interaction ;
+	rdfs:range hi:Agent ;
+	rdfs:label "has agent involved" ; 
+	rdfs:comment "Indicates an agent that participates in or contributes to an interaction episode. This property identifies the human or artificial agents involved in the exchange."@en .
 
 ###  https://w3id.org/hi-ontology#hasInteractionModalityConcept
 hi:hasInteractionModalityConcept a owl:ObjectProperty ;
@@ -242,13 +263,6 @@ hi:hasInteractionModalityConcept a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     rdfs:label "has interaction modality concept" ;
     rdfs:comment "Modality/channel used during the interaction."@en .
-
-###  https://w3id.org/hi-ontology#influencedByFeedbackConcept
-hi:influencedByFeedbackConcept a owl:ObjectProperty ;
-    rdfs:domain hi:Agent ; 
-    rdfs:range skos:Concept ;
-    rdfs:label "is influenced by" ;
-    rdfs:comment "An agent is influenced by a feedback concept in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#evaluatedBy
 hi:evaluatedBy a owl:ObjectProperty ;
@@ -264,12 +278,12 @@ hi:hasEvaluationConcept a owl:ObjectProperty ;
     rdfs:label "has evaluation concept" ;
     rdfs:comment "Links an evaluation to a concept in the HINT thesaurus."@en .
 
-###  https://w3id.org/hi-ontology#usesMetric
-hi:usesMetric a owl:ObjectProperty ;
-    rdfs:domain hi:Evaluation ;
-    rdfs:range hi:Metric ;
-    rdfs:label "uses metric" ;
-    rdfs:comment "An evaluation uses certain metrics."@en .
+###  https://w3id.org/hi-ontology#hasEvaluationConcept
+hi:hasMetricConcept a owl:ObjectProperty ;
+	rdfs:domain hi:Evaluation ;
+	rdfs:range skos:Concept ;
+	rdfs:label "has metric concept" ;
+	rdfs:comment "An evaluation uses certain metrics, defined in the HINT thesaurus"@en .
 
 ###  https://w3id.org/hi-ontology#hasExperiment
 hi:hasExperiment a owl:ObjectProperty ;
@@ -282,35 +296,16 @@ hi:hasExperiment a owl:ObjectProperty ;
 hi:hasExperimentConcept a owl:ObjectProperty ;
     rdfs:domain hi:Experiment ;
     rdfs:range  skos:Concept ;
-    rdfs:label "has execution concept" ;
+    rdfs:label "has experiment concept" ;
     rdfs:comment "Links an experiment to a concept in the HINT thesaurus."@en .
+	
+###  https://w3id.org/hi-ontology#hasMetricTested
+hi:hasMetricTested a owl:ObjectProperty ;
+		rdfs:domain hi:Experiment ;
+		rdfs:range skos:Concept ;
+		rdfs:label "has metric tested" ;
+		rdfs:comment "An experiment tests certain metrics, defined in the HINT thesaurus"@en .	
 
-###  https://w3id.org/hi-ontology#testsMetric
-hi:testsMetric a owl:ObjectProperty ;
-    rdfs:domain hi:Experiment ;
-    rdfs:range hi:Metric ;
-    rdfs:label "tests metric" ;
-    rdfs:comment "An experiment tests certain metrics."@en .
-
-###  https://w3id.org/hi-ontology#hasNullHypothesis
-hi:hasNullHypothesis a owl:ObjectProperty ;
-    rdfs:domain hi:Experiment ;
-    rdfs:range hi:NullHypothesis ;
-    rdfs:label "has null hypothesis" ;
-    rdfs:comment "An experiment has a null hypothesis."@en .
-
-###  https://w3id.org/hi-ontology#hasAlternativeHypothesis
-hi:hasAlternativeHypothesis a owl:ObjectProperty ;
-    rdfs:domain hi:Evaluation ;
-    rdfs:range hi:AlternativeHypothesis ;
-    rdfs:label "has alternative hypothesis" ;
-    rdfs:comment "An experiment has an alternative hypothesis."@en .
-
-###  https://w3id.org/hi-ontology#hasMetricConcept
-hi:hasMetricConcept a owl:ObjectProperty ;
-    rdfs:domain hi:Metric ;
-    rdfs:range  skos:Concept ;
-    rdfs:comment "Links a metric to a concept in the HINT thesaurus."@en . 
 
 ###  https://w3id.org/hi-ontology#hasAgentConcept
 hi:hasAgentConcept a owl:ObjectProperty ;
@@ -318,22 +313,24 @@ hi:hasAgentConcept a owl:ObjectProperty ;
     rdfs:range  skos:Concept ;
     rdfs:comment "Links an agent to a concept in the HINT thesaurus."@en . 
 
-###  https://w3id.org/hi-ontology#assignedToTask
-hi:assignedToTask a owl:ObjectProperty ;
-    rdfs:domain hi:Agent ;
-    rdfs:range hi:Task ;
-    owl:propertyChainAxiom ( hi:performsExecution hi:realizesTask ) ;
-    rdfs:label "assigned to task" ; 
-    rdfs:comment "Agent formally assigned to perform a task (inferred from executions)."@en .
+
+###  https://w3id.org/hi-ontology#isAssignedToTask
+hi:iaAssignedToTask a owl:ObjectProperty ;
+	rdfs:subPropertyOf hi:isEligibleForTask ;
+	rdfs:domain hi:Agent ;
+	rdfs:range hi:Task ;
+	owl:propertyChainAxiom ( hi:performsExecution hi:realizesTask ) ;
+	rdfs:label "is assigned to task" ;
+	rdfs:comment "Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task."@en .
 
 ###  https://w3id.org/hi-ontology#eligibleForTask
-hi:eligibleForTask a owl:ObjectProperty ;
-    rdfs:subPropertyOf hi:assignedToTask ;
+hi:isEligibleForTask a owl:ObjectProperty ;
     rdfs:domain hi:Agent ;
     rdfs:range hi:Task ;
-    rdfs:label "eligible for task" ;
-    rdfs:comment "Agent eligible for a task based on membership and capabilities (policy-level notion)."@en .
-
+	owl:propertyChainAxiom ( hi:hasCapability hi:allowsTask ) ;
+    rdfs:label "is eligible for task" ;
+    rdfs:comment "Relates an agent to a task it is eligible to perform, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility."@en .
+	
 ###  https://w3id.org/hi-ontology#executesTask
 hi:executesTask a owl:ObjectProperty ;
     rdfs:subPropertyOf hi:assignedToTask ;
@@ -342,13 +339,6 @@ hi:executesTask a owl:ObjectProperty ;
     owl:propertyChainAxiom ( hi:performsExecution hi:realizesTask ) ;
     rdfs:label "executes task" ;
     rdfs:comment "Agent executes a task (derivable from Agent→Execution→Task)."@en .
-
-###  https://w3id.org/hi-ontology#hasBiasConcept
-hi:hasBiasConcept a owl:ObjectProperty ;
-    rdfs:domain hi:TaskExecution ;
-    rdfs:range  skos:Concept ;
-    rdfs:label "has bias concept" ;
-    rdfs:comment "Links a bias to a concept in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#realizedBy
 hi:realizedBy a owl:ObjectProperty ;
@@ -359,6 +349,23 @@ hi:realizedBy a owl:ObjectProperty ;
     rdfs:comment "A task is realized through a task execution."@en .
 
 
+#################################################################
+# HI Data Properties
+#################################################################
+
+### https://w3id.org/hi-ontology#hasAlternativeHypothesis
+hi:hasAlternativeHypothesis a owl:DatatypeProperty ;
+    rdfs:domain hi:Experiment ;
+    rdfs:range xsd:string ;
+    rdfs:label "has alternative hypothesis"@en ;
+    rdfs:comment "Stores the textual formulation of the alternative hypothesis of an experiment."@en .
+
+### https://w3id.org/hi-ontology#hasNullHypothesis
+hi:hasNullHypothesis a owl:DatatypeProperty ;
+    rdfs:domain hi:Experiment ;
+    rdfs:range xsd:string ;
+    rdfs:label "has null hypothesis"@en ;
+    rdfs:comment "Stores the textual formulation of the null hypothesis of an experiment."@en .
 
 
 #################################################################
@@ -440,9 +447,8 @@ hi:TaskExecution a owl:Class ;
 
 ###  https://w3id.org/hi-ontology#Interaction
 hi:Interaction a owl:Class ;
-    rdfs:subClassOf hi:TaskExecution ,
                     [ a owl:Restriction ;
-                      owl:onProperty hi:performedBy ;
+                      owl:onProperty hi:hasAgentInvolved ;
                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                       owl:onClass hi:Agent
                     ] ;
@@ -459,44 +465,13 @@ hi:Experiment a owl:Class ;
     rdfs:comment "An empirical setup linked to an evaluation that tests metrics and hypotheses."@en ;
     rdfs:label "Experiment"@en .
 
-###  https://w3id.org/hi-ontology#Hypothesis
-hi:Hypothesis a owl:Class ;
-    rdfs:comment "A proposed explanation or assumption tested by experiments."@en ;
-    rdfs:label "Hypothesis"@en .
-
-###  https://w3id.org/hi-ontology#AlternativeHypothesis
-hi:AlternativeHypothesis a owl:Class ;
-    rdfs:subClassOf hi:Hypothesis ;
-    rdfs:comment "The hypothesis positing an effect or difference."@en ;
-    rdfs:label "Alternative Hypothesis (H1)"@en .
-
-###  https://w3id.org/hi-ontology#NullHypothesis
-hi:NullHypothesis a owl:Class ;
-    rdfs:subClassOf hi:Hypothesis ;
-    rdfs:comment "The default hypothesis positing no effect or difference."@en ;
-    rdfs:label "Null Hypothesis (H0)"@en .
-
-###  https://w3id.org/hi-ontology#Metric
-hi:Metric a owl:Class ;
-    rdfs:comment "A measurable criterion used to quantify performance or outcomes in an evaluation."@en ;
-    rdfs:label "Metric"@en .
-
-
-
 
 #################################################################
 # Reused Classes
 #################################################################
 
-###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method
-dul:Method a owl:Class ;
-    rdfs:comment "A technical or procedural means used during task execution or evaluation."@en ;
-    rdfs:label "Method"@en .
-
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person a owl:Class .
-
-
 
 
 #################################################################
@@ -519,7 +494,7 @@ foaf:Person a owl:Class .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." ;
-   rdfs:label "Rule 2 — Team, Goal, and Capability determine eligibility" ;
+   rdfs:label "Rule 1 — Team, Goal, and Capability determine eligibility" ;
    a swrl:Imp ;
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:ClassAtom ;
@@ -574,36 +549,37 @@ foaf:Person a owl:Class .
  ] .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "If an HI team exists and has a member agent, then the agent must be classified by some Role (hi:hasRole)." ;
-   rdfs:label "Rule 1 — Team membership implies having a role" ;
-   a swrl:Imp ;
-   swrl:body [ a swrl:AtomList ;
-               rdf:first [ a swrl:ClassAtom ;
-                           swrl:classPredicate hi:HITeam ;
-                           swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
-                         ] ;
-               rdf:rest [ a swrl:AtomList ;
-                          rdf:first [ a swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate hi:hasMember ;
-                                      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-                                      swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ a swrl:AtomList ;
-               rdf:first [ a swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate hi:hasRole ;
-                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-                           swrl:argument2 <https://w3id.org/hi-ontology/rules/role>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
+    rdfs:comment "If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus."@en ;
+    rdfs:label "Rule 2 — Team membership implies having a role concept"@en ;
+    a swrl:Imp ;
+    swrl:body [ a swrl:AtomList ;
+                rdf:first [ a swrl:ClassAtom ;
+                            swrl:classPredicate hi:HITeam ;
+                            swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
+                          ] ;
+                rdf:rest [ a swrl:AtomList ;
+                           rdf:first [ a swrl:IndividualPropertyAtom ;
+                                       swrl:propertyPredicate hi:hasMember ;
+                                       swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+                                       swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+                                     ] ;
+                           rdf:rest rdf:nil
+                         ]
+              ] ;
+    swrl:head [ a swrl:AtomList ;
+                rdf:first [ a swrl:IndividualPropertyAtom ;
+                            swrl:propertyPredicate hi:hasRoleConcept ;
+                            swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+                            swrl:argument2 <https://w3id.org/hi-ontology/rules/roleConcept>
+                          ] ;
+                rdf:rest rdf:nil
+              ]
+  ] .
+
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." ;
-   rdfs:label "Rule 4 — Assignment → Performance" ;
+   rdfs:label "Rule 3 — Assignment → Performance" ;
    a swrl:Imp ;
    swrl:body [ a swrl:AtomList ;
                rdf:first [ a swrl:IndividualPropertyAtom ;
@@ -630,25 +606,4 @@ foaf:Person a owl:Class .
              ]
  ] .
 
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "If an agent is eligible for a task, then the agent can be assigned to that task." ;
-   rdfs:label "Rule 3 — Eligibility implies assignment" ;
-   a swrl:Imp ;
-   swrl:body [ a swrl:AtomList ;
-               rdf:first [ a swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate hi:eligibleForTask ;
-                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-                         ] ;
-               rdf:rest rdf:nil
-             ] ;
-   swrl:head [ a swrl:AtomList ;
-               rdf:first [ a swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate hi:assignedToTask ;
-                           swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-                           swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
 
