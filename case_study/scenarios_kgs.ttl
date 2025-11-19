@@ -1,5 +1,4 @@
 @prefix hi:     <https://w3id.org/hi-ontology#> .
-@prefix dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,168 +12,200 @@
 @prefix hi-s7:  <https://w3id.org/hi-ontology/scenarios/7> .
 
 #################################################################
-# Scientific Paper and Use Case -- SCENARIO 1
+# USE CASE 1 — Personal Assistant Hybrid Intelligence System
 #################################################################
+
+############################
+# Use Case
+############################
 
 hi-s1:UseCasePersonalAssistantHI a hi:UseCase ;
     hi:hasUseCaseConcept hint:PersonalAssistantUseCase ;
     hi:hasDomainConcept hint:HealthAndLifestyleDomain ;
     hi:hasHITeam hi-s1:HITeamPersonalAssistant .
 
-# HI Team, Goal, Context, and Ethical Constraints
+
+############################
+# HI Team, Context, Goal
+############################
 
 hi-s1:HITeamPersonalAssistant a hi:HITeam ;
     hi:hasGoal hi-s1:GoalUserWellbeing ;
     hi:hasMember hi-s1:AIAssistant , hi-s1:HumanUser ;
-    hi:operatesInContext hi-s1:ContextHealthMonitoring ;
-    hi:hasConstraintConcept hint:PrivacyConstraint ,
-                            hint:AutonomyConstraint ,
-                            hint:TransparencyConstraint .
-
-hi-s1:GoalUserWellbeing a hi:Goal ;
-    rdfs:label "User Wellbeing Goal."@en ;
-    rdfs:comment "Maintain and improve user health habits through monitoring and personalized feedback."@en ;
-    hi:hasGoalConcept hint:UserWellbeingGoal ;
-    hi:hasTask hi-s1:TaskDataCollection , 
-                hi-s1:TaskConflictResolution , 
-                hi-s1:TaskExplanation .
+    hi:operatesInContext hi-s1:ContextHealthMonitoring .
 
 hi-s1:ContextHealthMonitoring a hi:Context ;
     hi:hasContextConcept hint:HealthMonitoringContext ;
-    hi:exhibitsPhenomenonConcept hint:SensorNoisePhenomenon ,
-                                hint:DataMismatchPhenomenon ,
-                                hint:TrustShiftPhenomenon ;
-    hi:hasConstraintConcept hint:PrivacyConstraint ;
-    rdfs:comment "Context where user reports, sensor readings, and contextual data interact to support healthy habit maintenance."@en .
+    hi:hasPhenomenonConcept hint:SensorNoisePhenomenon ,
+                            hint:DataMismatchPhenomenon ,
+                            hint:TrustShiftPhenomenon ;
+    hi:hasConstraintConcept hint:PrivacyConstraint ,
+                            hint:AutonomyConstraint ,
+                            hint:TransparencyConstraint ;
+    hi:hasInfluenceOn hi-s1:HITeamPersonalAssistant ;
+    rdfs:comment "Health-monitoring context involving multimodal data, user reports, and sensor uncertainty."@en .
 
-# Agents and Roles
+hi-s1:GoalUserWellbeing a hi:Goal ;
+    hi:hasGoalConcept hint:UserWellbeingGoal ;
+    hi:hasTask hi-s1:TaskDataCollection ,
+               hi-s1:TaskConflictResolution ,
+               hi-s1:TaskExplanation ;
+    rdfs:comment "Maintain and improve user wellbeing using data fusion, conflict resolution and explanations."@en .
+
+
+############################
+# Agents + Roles + Capabilities
+############################
 
 hi-s1:AIAssistant a hi:ArtificialAgent ;
-    rdfs:label "AI Assistant"@en ;
     hi:hasAgentConcept hint:ArtificialAgent ;
-    hi:hasRoleConcept hint:AIAssistant ;
-    hi:hasCapability    hi-s1:CapabilitySensing , 
-                        hi-s1:CapabilityReasoning , 
-                        hi-s1:CapabilityExplanation ;
-    hi:performsExecution    hi-s1:ExecutionConflictResolution , 
-                            hi-s1:ExecutionExplanation .
+    hi:hasRoleConcept hint:AIAssistantRole ;
+    hi:hasCapability hi-s1:CapabilitySensing ,
+                     hi-s1:CapabilityReasoning ,
+                     hi-s1:CapabilityExplanation ;
+    hi:performsExecution hi-s1:ExecutionConflictResolution ,
+                         hi-s1:ExecutionExplanation .
 
 hi-s1:HumanUser a hi:HumanAgent ;
-    rdfs:label "Human User"@en ;
     hi:hasAgentConcept hint:HumanAgent ;
     hi:hasRoleConcept hint:HumanUserRole ;
     hi:hasCapability hi-s1:CapabilitySelfReporting ;
-    hi:performsExecution hi-s1:ExecutionDataCollection ;
-    hi:influencedByFeedbackConcept hint:TrustReportFeedback.
+    hi:performsExecution hi-s1:ExecutionDataCollection .
 
+
+############################
 # Capabilities
+############################
 
 hi-s1:CapabilitySensing a hi:Capability ;
-    rdfs:label "Sensing Capability"@en ;
     hi:hasCapabilityConcept hint:SensingCapability ;
     hi:allowsTask hi-s1:TaskDataCollection .
 
 hi-s1:CapabilitySelfReporting a hi:Capability ;
-    rdfs:label "Self-Reporting Capability"@en ;
     hi:hasCapabilityConcept hint:SelfReportingCapability ;
     hi:allowsTask hi-s1:TaskDataCollection .
 
 hi-s1:CapabilityReasoning a hi:Capability ;
-    rdfs:label "Reasoning Capability"@en ;
     hi:hasCapabilityConcept hint:ReasoningCapability ;
     hi:allowsTask hi-s1:TaskConflictResolution .
 
 hi-s1:CapabilityExplanation a hi:Capability ;
-    rdfs:label "Explanation Capability"@en ;
     hi:hasCapabilityConcept hint:ExplainingCapability ;
     hi:allowsTask hi-s1:TaskExplanation .
 
+
+############################
 # Tasks
+############################
 
 hi-s1:TaskDataCollection a hi:Task ;
     hi:hasTaskConcept hint:DataCollectionTask ;
-    hi:requiresCapability hi-s1:CapabilitySensing ;
-    rdfs:comment "Collect user self-reports and sensor data (e.g., steps, sleep, diet)."@en .
+    hi:requiresCapability hi-s1:CapabilitySensing , hi-s1:CapabilitySelfReporting ;
+    rdfs:comment "Collect user self-reports and sensor-based activity data."@en .
 
 hi-s1:TaskConflictResolution a hi:Task ;
     hi:hasTaskConcept hint:ConflictResolutionTask ;
     hi:requiresCapability hi-s1:CapabilityReasoning ;
-    rdfs:comment "Identify and reconcile inconsistencies between user input and sensor data."@en .
+    rdfs:comment "Detect and resolve inconsistencies between reported and sensed data."@en .
 
 hi-s1:TaskExplanation a hi:Task ;
     hi:hasTaskConcept hint:ExplanationTask ;
     hi:requiresCapability hi-s1:CapabilityExplanation ;
-    rdfs:comment "Provide transparent explanations to maintain user trust and engagement."@en .
+    rdfs:comment "Provide explanations to maintain trust and engagement."@en .
 
-# Task Executions
+
+############################
+# Task Executions 
+############################
 
 hi-s1:ExecutionDataCollection a hi:TaskExecution ;
     hi:hasExecutionConcept hint:DataCollectionTaskExecution ;
+    hi:hasMethodConcept hint:DataCollectionMethod ;
     hi:realizesTask hi-s1:TaskDataCollection ;
     hi:performedBy hi-s1:HumanUser ;
-    hi:towardsGoal hi-s1:GoalUserWellbeing .
+    hi:towardsGoal hi-s1:GoalUserWellbeing ;
+    hi:evaluatedBy hi-s1:EvaluationDataCollectionQuality .
 
 hi-s1:ExecutionConflictResolution a hi:TaskExecution ;
     hi:hasExecutionConcept hint:ConflictResolutionTaskExecution ;
+    hi:hasMethodConcept hint:ArgumentationReasoningMethod ;
     hi:realizesTask hi-s1:TaskConflictResolution ;
     hi:performedBy hi-s1:AIAssistant ;
-    hi:usesMethod hi-s1:MethodArgumentationReasoning ;
-    hi:towardsGoal hi-s1:GoalUserWellbeing .
+    hi:towardsGoal hi-s1:GoalUserWellbeing ;
+    hi:evaluatedBy hi-s1:EvaluationConflictAccuracy .
 
 hi-s1:ExecutionExplanation a hi:TaskExecution ;
     hi:hasExecutionConcept hint:ExplanationTaskExecution ;
+    hi:hasMethodConcept hint:PostHocExplanationMethod ;
     hi:realizesTask hi-s1:TaskExplanation ;
     hi:performedBy hi-s1:AIAssistant ;
     hi:towardsGoal hi-s1:GoalUserWellbeing ;
-    hi:evaluatedBy hi-s1:EvaluationTransparencyImpact .
+    hi:evaluatedBy hi-s1:EvaluationTransparencyImpact ;
+    hi:hasInteractionEpisode hi-s1:InteractionExplainDecision .
 
-# Methods
 
-hi-s1:MethodArgumentationReasoning a dul:Method ;
-    hi:hasMethodConcept hint:ArgumentationReasoningMethod ;
-    rdfs:comment "Argumentation-based reasoning used by the assistant to evaluate conflicting data sources."@en .
-
-# Interaction (multi-agent exchange)
+############################
+# Interactions
+############################
 
 hi-s1:InteractionExplainDecision a hi:Interaction ;
-    hi:performedBy hi-s1:AIAssistant , hi-s1:HumanUser ;
+    hi:hasAgentInvolved hi-s1:AIAssistant , hi-s1:HumanUser ;
     hi:hasInteractionIntentConcept hint:ExplanationIntent ;
-    hi:hasInteractionModalityConcept hint:VerbalDialogueModality ;
-    hi:towardsGoal hi-s1:GoalUserWellbeing .
+    hi:hasInteractionModalityConcept hint:VerbalDialogueModality .
 
-# Experiment, Evaluation, Hypotheses, and Metrics
+
+############################
+# Evaluations 
+############################
+
+
+hi-s1:EvaluationDataCollectionQuality a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:DataCollectionQualityEvaluation ;
+    hi:hasMetricConcept hint:RecommendationRelevanceMetric ;
+    hi:hasExperiment hi-s1:ExperimentDataCollectionQuality ;
+    rdfs:comment "Evaluates the completeness, reliability, and relevance of collected data."@en .
+
+
+hi-s1:EvaluationConflictAccuracy a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:ConflictResolutionAccuracyEvaluation ;
+    hi:hasMetricConcept hint:FairOutcomeMetric ;
+    hi:hasExperiment hi-s1:ExperimentConflictAccuracy ;
+    rdfs:comment "Evaluates how accurately inconsistencies are identified and resolved."@en .
+
 
 hi-s1:EvaluationTransparencyImpact a hi:Evaluation ;
     hi:hasEvaluationConcept hint:TransparencyEvaluation ;
-    rdfs:comment "Evaluates how providing explanations affects user trust and satisfaction, especially under data inconsistencies."@en ;
-    hi:usesMetric hi-s1:MetricTrustPreservation ;
-    hi:hasExperiment hi-s1:ExperimentTransparencyTrust .
+    hi:hasMetricConcept hint:TrustPreservationMetric ;
+    hi:hasExperiment hi-s1:ExperimentTransparencyTrust ;
+    rdfs:comment "Evaluates how explanation clarity influences user trust under inconsistent data."@en .
+
+
+############################
+# Experiments + Hypotheses + Metrics
+############################
+
+hi-s1:ExperimentDataCollectionQuality a hi:Experiment ;
+    hi:hasExperimentConcept hint:TransparencyTrustExperiment ;
+    hi:hasMetricTested hint:RecommendationRelevanceMetric ;
+    hi:hasNullHypothesis "Data collection quality does not improve user outcomes." ;
+    hi:hasAlternativeHypothesis "Better data collection improves personalization and outcomes." .
+
+hi-s1:ExperimentConflictAccuracy a hi:Experiment ;
+    hi:hasExperimentConcept hint:DeliberationSupportExperiment ;
+    hi:hasMetricTested hint:FairOutcomeMetric ;
+    hi:hasNullHypothesis "Conflict resolution does not improve data consistency." ;
+    hi:hasAlternativeHypothesis "Argumentation-based conflict resolution increases consistency." .
 
 hi-s1:ExperimentTransparencyTrust a hi:Experiment ;
     hi:hasExperimentConcept hint:TransparencyTrustExperiment ;
-    rdfs:comment "Experiment to assess how explanations affect user trust under data inconsistencies."@en ;
-    hi:testsMetric hi-s1:MetricTrustPreservation ;
-    hi:hasNullHypothesis hi-s1:NullHypothesisNoTrustChange ;
-    hi:hasAlternativeHypothesis hi-s1:AlternativeHypothesisTransparencyImprovesTrust .
-
-hi-s1:MetricTrustPreservation a hi:Metric ;
-    hi:hasMetricConcept hint:TrustPreservationMetric ;
-    rdfs:label "Trust Preservation Metric."@en ;
-    rdfs:comment "Quantifies user trust retention when explanations are provided versus when hidden."@en .
-
-hi-s1:NullHypothesisNoTrustChange a hi:NullHypothesis ;
-    rdfs:label "Null Hypothesis of No Trust Change."@en ;
-    rdfs:comment "Transparency in explanations does not significantly affect user trust or satisfaction."@en .
-
-hi-s1:AlternativeHypothesisTransparencyImprovesTrust a hi:AlternativeHypothesis ;
-    rdfs:label "Alternative Hypothesis that Transparency Improves Trust."@en ;
-    rdfs:comment "Providing transparent reasoning improves user trust even under occasional errors or data mismatches."@en .
-
+    hi:hasMetricTested hint:TrustPreservationMetric ;
+    hi:hasNullHypothesis "Transparency does not affect trust." ;
+    hi:hasAlternativeHypothesis "Transparency improves user trust." .
 
 
 
 #################################################################
-# Scientific Paper and Use Case -- SCENARIO 2
+# USE CASE 2
 #################################################################
 
 hi-s2:UseCaseCollaborativeManipulation a hi:UseCase ;
@@ -182,297 +213,258 @@ hi-s2:UseCaseCollaborativeManipulation a hi:UseCase ;
     hi:hasDomainConcept hint:IndustrialAndServiceRoboticsDomain ;
     hi:hasHITeam hi-s2:HITeamCollabManipulation .
 
+#################################################################
 # HI Team, Goal, Context, Ethical Constraints
+#################################################################
 
 hi-s2:HITeamCollabManipulation a hi:HITeam ;
     hi:hasGoal hi-s2:GoalSafeToolRetrieval ;
     hi:hasMember hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
     hi:operatesInContext hi-s2:ContextWorkspaceManipulation ;
-    hi:hasConstraintConcept hi-s2:EthicalConstraintSafety ,
-                            hi-s2:EthicalConstraintTransparency .
 
 hi-s2:GoalSafeToolRetrieval a hi:Goal ;
     hi:hasGoalConcept hint:SafeRetrievalGoal ;
-    hi:hasTask hi-s2:TaskUnlockCabinet , 
-                    hi-s2:TaskOpenCabinet , 
-                    hi-s2:TaskRetrieveTool .
+    hi:hasTask hi-s2:TaskUnlockCabinet ,
+               hi-s2:TaskOpenCabinet ,
+               hi-s2:TaskRetrieveTool .
 
 hi-s2:ContextWorkspaceManipulation a hi:Context ;
     hi:hasContextConcept hint:WorkspaceManipulationContext ;
-    hi:exhibitsPhenomenonConcept hi-s2:PhenomenonRiskExposure ,
-                          hi-s2:PhenomenonSkillComplementarity .
-
-hi-s2:EthicalConstraintSafety a hi:EthicalConstraint ;
-    hi:hasConstraintConceptType hint:SafetyConstraint ;
-    rdfs:comment "Minimize human physical risk during manipulation."@en .
-
-hi-s2:EthicalConstraintTransparency a hi:EthicalConstraint ;
-    hi:hasConstraintConceptType hint:TransparencyConstraint ;
-    rdfs:comment "Explain system behavior in risky or unexpected situations."@en .
+    hi:hasPhenomenonConcept hint:RiskExposurePhenomenon ,
+                            hint:SkillsComplementarityPhenomenon .
+	hi:hasConstraintConcept hint:SafetyConstraint ,
+						    hint:TransparencyConstraint .						
 
 #################################################################
-# Roles
-#################################################################
-
-hi-s2:RoleRiskOperator a dul:Role ;
-    hi:hasRoleType hint:RiskOperatorRole ;
-    rdfs:label "Risk Operator (Heavy/Confined Operations)"@en .
-
-hi-s2:RoleFineManipulator a dul:Role ;
-    hi:hasRoleType hint:FineManipulatorRole ;
-    rdfs:label "Fine Manipulation Specialist"@en .
-
-#################################################################
-# Agents
+# Agents (with role concepts and capabilities)
 #################################################################
 
 hi-s2:RobotManipulator a hi:ArtificialAgent ;
-    hi:hasRoleConcept hi-s2:RoleRiskOperator ;
+    hi:hasAgentConcept hint:ArtificialAgent ;
+    hi:hasRoleConcept hint:RiskOperatorRole ;
     hi:hasCapability hi-s2:CapabilityHeavyLifting ,
                      hi-s2:CapabilityConfinedReach ,
                      hi-s2:CapabilityRLPolicyLearning ,
                      hi-s2:CapabilityExplanation ,
                      hi-s2:CapabilityKGQuery ;
-    hi:performsExecution hi-s2:ExecHeavyLift ,
-                         hi-s2:ExecConfinedReach ,
+    hi:performsExecution hi-s2:ExecConfinedReach ,
                          hi-s2:ExecOpenCabinet ,
-                         hi-s2:ExecRLExplain ;
-    hi:usesMethod hi-s2:MethodReinforcementLearning ,
-                  hi-s2:MethodKGQuerying ,
-                  hi-s2:MethodPostHocExplanation .
+                         hi-s2:ExecHeavyLift ,
+                         hi-s2:ExecRLExplain .
 
 hi-s2:HumanTechnician a hi:HumanAgent ;
-    hi:hasRoleConcept hi-s2:RoleFineManipulator ;
+    hi:hasAgentConcept hint:HumanAgent ;
+    hi:hasRoleConcept hint:FineManipulatorRole ;
     hi:hasCapability hi-s2:CapabilityFineDexterity ,
                      hi-s2:CapabilitySituationalAwareness ,
                      hi-s2:CapabilitySelfReporting ;
-    hi:performsExecution hi-s2:ExecUnlockCabinet ,
-                         hi-s2:ExecUnlockCabinet ,
-                         hi-s2:ExecUserFeedback .
+    hi:performsExecution hi-s2:ExecUnlockCabinet .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s2:CapabilityHeavyLifting a hi:Capability ; 
+hi-s2:CapabilityHeavyLifting a hi:Capability ;
     hi:hasCapabilityConcept hint:HeavyLiftingCapability ;
-    hi:allowsTask hi-s2:TaskHeavyLift .
+    hi:allowsTask hi-s2:TaskHeavyLift ,
+                  hi-s2:TaskRetrieveTool .
 
-hi-s2:CapabilityConfinedReach a hi:Capability ; 
+hi-s2:CapabilityConfinedReach a hi:Capability ;
     hi:hasCapabilityConcept hint:ConfinedReachingCapability ;
-    hi:allowsTask hi-s2:TaskHeavyLift .
+    hi:allowsTask hi-s2:TaskOpenCabinet ,
+                  hi-s2:TaskHeavyLift .
 
-hi-s2:CapabilityRLPolicyLearning a hi:Capability ; 
+hi-s2:CapabilityRLPolicyLearning a hi:Capability ;
     hi:hasCapabilityConcept hint:ReinforcementLearningCapability ;
     hi:allowsTask hi-s2:TaskPolicyLearning .
 
-hi-s2:CapabilityExplanation a hi:Capability ; 
+hi-s2:CapabilityExplanation a hi:Capability ;
     hi:hasCapabilityConcept hint:ExplainingCapability ;
     hi:allowsTask hi-s2:TaskExplanation .
 
-hi-s2:CapabilityKGQuery a hi:Capability ; 
+hi-s2:CapabilityKGQuery a hi:Capability ;
     hi:hasCapabilityConcept hint:KnowledgeGraphQueryingCapability ;
     hi:allowsTask hi-s2:TaskKnowledgeQuery .
 
-hi-s2:CapabilityFineDexterity a hi:Capability ; 
+hi-s2:CapabilityFineDexterity a hi:Capability ;
     hi:hasCapabilityConcept hint:FineDexterityCapability ;
-    hi:allowsTask hi-s2:TaskFineInsertion .
+    hi:allowsTask hi-s2:TaskFineInsertion ,
+                  hi-s2:TaskUnlockCabinet .
 
-hi-s2:CapabilitySituationalAwareness a hi:Capability ; 
+hi-s2:CapabilitySituationalAwareness a hi:Capability ;
     hi:hasCapabilityConcept hint:SituationalAwarenessCapability ;
     hi:allowsTask hi-s2:TaskSituationalAssessment .
 
-hi-s2:CapabilitySelfReporting a hi:Capability ; 
+hi-s2:CapabilitySelfReporting a hi:Capability ;
     hi:hasCapabilityConcept hint:SelfReportingCapability ;
     hi:allowsTask hi-s2:TaskDataCollection .
 
 #################################################################
-# Tasks (decomposition of the manipulation sequence)
+# Tasks
 #################################################################
 
-hi-s2:TaskUnlockCabinet a hi:Task ; 
+hi-s2:TaskUnlockCabinet a hi:Task ;
     hi:hasTaskConcept hint:UnlockCabinetTask ;
     hi:requiresCapability hi-s2:CapabilityFineDexterity .
 
-hi-s2:TaskOpenCabinet a hi:Task ; 
+hi-s2:TaskOpenCabinet a hi:Task ;
     hi:hasTaskConcept hint:OpenCabinetTask ;
     hi:requiresCapability hi-s2:CapabilityConfinedReach .
 
-hi-s2:TaskRetrieveTool a hi:Task ; 
+hi-s2:TaskRetrieveTool a hi:Task ;
     hi:hasTaskConcept hint:RetrieveToolTask ;
     hi:requiresCapability hi-s2:CapabilityHeavyLifting .
 
-hi-s2:TaskFineInsertion a hi:Task ; 
+hi-s2:TaskFineInsertion a hi:Task ;
     hi:hasTaskConcept hint:FineInsertionTask ;
     hi:requiresCapability hi-s2:CapabilityFineDexterity .
 
-hi-s2:TaskHeavyLift a hi:Task ; 
+hi-s2:TaskHeavyLift a hi:Task ;
     hi:hasTaskConcept hint:HeavyLiftingTask ;
-    hi:requiresCapability hi-s2:CapabilityHeavyLifting , 
-                            hi-s2:CapabilityConfinedReach .
+    hi:requiresCapability hi-s2:CapabilityHeavyLifting ,
+                          hi-s2:CapabilityConfinedReach .
 
-hi-s2:TaskSituationalAssessment a hi:Task ; 
+hi-s2:TaskSituationalAssessment a hi:Task ;
     hi:hasTaskConcept hint:SituationalAssessmentTask ;
     hi:requiresCapability hi-s2:CapabilitySituationalAwareness .
 
-hi-s2:TaskDataCollection  a hi:Task ; 
+hi-s2:TaskDataCollection a hi:Task ;
     hi:hasTaskConcept hint:DataCollectionTask ;
     hi:requiresCapability hi-s2:CapabilitySelfReporting .
 
-hi-s2:TaskPolicyLearning a hi:Task ; 
+hi-s2:TaskPolicyLearning a hi:Task ;
     hi:hasTaskConcept hint:PolicyLearningTask ;
     hi:requiresCapability hi-s2:CapabilityRLPolicyLearning .
 
-hi-s2:TaskKnowledgeQuery a hi:Task ; 
+hi-s2:TaskKnowledgeQuery a hi:Task ;
     hi:hasTaskConcept hint:KnowledgeGraphQueryTask ;
     hi:requiresCapability hi-s2:CapabilityKGQuery .
 
-hi-s2:TaskExplanation a hi:Task ; 
-    hi:hasTaskConcept hint:ExplanationTask ;  
+hi-s2:TaskExplanation a hi:Task ;
+    hi:hasTaskConcept hint:ExplanationTask ;
     hi:requiresCapability hi-s2:CapabilityExplanation .
 
-#################################################################
-# Methods
-#################################################################
-
-hi-s2:MethodReinforcementLearning a dul:Method ; 
-    hi:hasMethodConcept hint:ReinforcementLearningMethod ;
-    rdfs:comment "Learning action sequences without predefined task models."@en .
-
-hi-s2:MethodKGQuerying a dul:Method ; 
-    hi:hasMethodConcept hint:KnowledgeGraphQueryingMethod ;
-    rdfs:comment "Query prior knowledge to support low-level policy decisions."@en .
-
-hi-s2:MethodPostHocExplanation a dul:Method ; 
-    hi:hasMethodConcept hint:PostHocExplanationMethod ;
-    rdfs:comment "Generate explanations for risky/unexpected behaviors."@en .
 
 #################################################################
-# Task Executions (who did what, how, and towards which goal)
+# Task Executions (each with its own evaluation)
 #################################################################
 
 hi-s2:ExecUnlockCabinet a hi:TaskExecution ;
     hi:hasExecutionConcept hint:UnlockCabinetTaskExecution ;
-    hi:realizesTask hi-s2:TaskUnlockCabinet, hi-s2:TaskFineInsertion ;
+    hi:realizesTask hi-s2:TaskUnlockCabinet ;
     hi:performedBy hi-s2:HumanTechnician ;
-    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:evaluatedBy hi-s2:EvalFineManipulation .
 
 hi-s2:ExecOpenCabinet a hi:TaskExecution ;
     hi:hasExecutionConcept hint:OpenCabinetTaskExecution ;
     hi:realizesTask hi-s2:TaskOpenCabinet ;
     hi:performedBy hi-s2:RobotManipulator ;
-    hi:usesMethod hi-s2:MethodKGQuerying ;
-    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
+    hi:hasMethodConcept hint:KnowledgeGraphQueryMethod ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:evaluatedBy hi-s2:EvalKGQueryAccuracy .
 
 hi-s2:ExecConfinedReach a hi:TaskExecution ;
     hi:hasExecutionConcept hint:ConfinedReachTaskExecution ;
     hi:realizesTask hi-s2:TaskHeavyLift ;
     hi:performedBy hi-s2:RobotManipulator ;
-    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
+    hi:hasMethodConcept hint:ReinforcementLearningMethod ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:evaluatedBy hi-s2:EvalReachSafety .
 
 hi-s2:ExecHeavyLift a hi:TaskExecution ;
     hi:hasExecutionConcept hint:HeavyLiftingTaskExecution ;
     hi:realizesTask hi-s2:TaskHeavyLift ;
     hi:performedBy hi-s2:RobotManipulator ;
-    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:evaluatedBy hi-s2:EvalLoadSafety .
 
 hi-s2:ExecRLExplain a hi:TaskExecution ;
     hi:hasExecutionConcept hint:ReinforcementLearningExplanationTaskExecution ;
     hi:realizesTask hi-s2:TaskExplanation ;
     hi:performedBy hi-s2:RobotManipulator ;
-    hi:usesMethod hi-s2:MethodPostHocExplanation ;
-    hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
+    hi:hasMethodConcept hint:PostHocExplanationMethod ;
+    hi:towardsGoal hi-s2:GoalSafeToolRetrieval ;
+    hi:evaluatedBy hi-s2:EvalExplanationTransparency .
 
 #################################################################
-# Interaction (coordination + explanation)
+# Evaluations 
+#################################################################
+
+hi-s2:EvalFineManipulation a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:FineManipulationEvaluation ;
+    hi:hasMetricConcept hint:TaskSuccessRateMetric ;
+    hi:hasExperiment hi-s2:ExperimentFineManipulation .
+
+hi-s2:EvalKGQueryAccuracy a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:KGQueryAccuracyEvaluation ;
+    hi:hasMetricConcept hint:TaskSuccessRateMetric ;
+    hi:hasExperiment hi-s2:ExperimentKGSupport .
+
+hi-s2:EvalReachSafety a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:AIInterventionImpactEvaluation ;
+    hi:hasMetricConcept hint:SafetyComplianceMetric ;
+    hi:hasExperiment hi-s2:ExperimentReachSafety .
+
+hi-s2:EvalLoadSafety a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:AIInterventionImpactEvaluation ;
+    hi:hasMetricConcept hint:SafetyComplianceMetric ;
+    hi:hasExperiment hi-s2:ExperimentLoadSafety .
+
+hi-s2:EvalExplanationTransparency a hi:Evaluation ;
+    hi:hasEvaluationConcept hint:TransparencyEvaluation ;
+    hi:hasMetricConcept hint:ExplanationClarityMetric ;
+    hi:hasExperiment hi-s2:ExperimentExplanationTransparency .
+
+#################################################################
+# Experiments 
+#################################################################
+
+hi-s2:ExperimentFineManipulation a hi:Experiment ;
+    hi:hasExperimentConcept hint:FineManipulationExperiment ;
+    hi:hasMetricTested hint:TaskSuccessRateMetric ;
+    hi:hasNullHypothesis "Fine manipulation precision and success rate do not improve across trials or conditions." ;
+    hi:hasAlternativeHypothesis "Fine manipulation precision and success rate improve, especially when roles and capabilities are well allocated between human and robot." .
+
+hi-s2:ExperimentKGSupport a hi:Experiment ;
+    hi:hasExperimentConcept hint:ReinforcementLearningWithKnowledgeGraphsExperiment ;
+    hi:hasMetricTested hint:TaskSuccessRateMetric ;
+    hi:hasNullHypothesis "Knowledge graph support does not significantly increase the success rate of cabinet opening and tool retrieval." ;
+    hi:hasAlternativeHypothesis "Knowledge graph support increases the success rate and robustness of cabinet opening and tool retrieval sequences." .
+
+hi-s2:ExperimentReachSafety a hi:Experiment ;
+    hi:hasExperimentConcept hint:SafetyComplianceExperiment ;
+    hi:hasMetricTested hint:SafetyComplianceMetric ;
+    hi:hasNullHypothesis "Using RL-based policies in confined reach does not change safety compliance compared to baseline control." ;
+    hi:hasAlternativeHypothesis "Using RL-based policies in confined reach improves safety compliance and reduces risk exposure for the human." .
+
+hi-s2:ExperimentLoadSafety a hi:Experiment ;
+    hi:hasExperimentConcept hint:SafetyComplianceExperiment ;
+    hi:hasMetricTested hint:SafetyComplianceMetric ;
+    hi:hasNullHypothesis "Delegating heavy lifting to the robot does not significantly reduce safety incidents." ;
+    hi:hasAlternativeHypothesis "Delegating heavy lifting to the robot reduces safety incidents and improves overall safety compliance." .
+
+hi-s2:ExperimentExplanationTransparency a hi:Experiment ;
+    hi:hasExperimentConcept hint:TransparencyTrustExperiment ;
+    hi:hasMetricTested hint:ExplanationClarityMetric ;
+    hi:hasNullHypothesis "Providing explanations about planned risky actions does not affect perceived clarity or operator trust." ;
+    hi:hasAlternativeHypothesis "Providing explanations about planned risky actions improves perceived clarity and maintains or increases operator trust." .
+
+#################################################################
+# Interaction
 #################################################################
 
 hi-s2:InteractionExplainRisk a hi:Interaction ;
-    hi:performedBy hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
-    hi:hasInteractionIntent hi-s2:IntentExplain ;
-    hi:usesInteractionModality hi-s2:ModalityVerbalDialogue ;
+    hi:hasAgentInvolved hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
+    hi:hasInteractionIntentConcept hint:ExplanationIntent ;
+    hi:hasInteractionModalityConcept hint:VerbalDialogueModality ;
     hi:towardsGoal hi-s2:GoalSafeToolRetrieval .
 
-hi-s2:IntentExplain a hi:InteractionIntent ;
-    hi:hasInteractionIntentType hint:ExplanationIntent ;
-    rdfs:comment "Explain planned behavior in risky/unexpected situations."@en .
 
-hi-s2:ModalityVerbalDialogue a hi:InteractionModality ;
-    hi:hasInteractionModalityType hint:VerbalDialogueModality ;
-    rdfs:comment "Spoken or chat interface for explanations and clarifications."@en .
 
 #################################################################
-# Agent-related Phenomena and Feedback
+# Scientific Paper and Use Case -- SCENARIO 3
 #################################################################
-
-hi-s2:PhenomenonRiskExposure a hi:AgentRelatedPhenomenon ;
-    hi:hasPhenomenonType hint:RiskExposurePhenomenon ;
-    rdfs:comment "Potential for harm, especially during heavy lifting or confined reach."@en .
-
-hi-s2:PhenomenonSkillComplementarity a hi:AgentRelatedPhenomenon ;
-    hi:hasPhenomenonType hint:SkillComplementarityPhenomenon ;
-    rdfs:comment "Differential strengths: robot handles risky operations, human handles fine dexterity."@en .
-
-hi-s2:FeedbackExplanationMessage a hi:Feedback ;
-    hi:hasFeedbackType hint:ExplanationMessageFeedback ;
-    rdfs:comment "System feedback to human explaining current plan and safety rationale."@en .
-
-#################################################################
-# Experiment, Evaluation, Hypotheses, and Metrics
-#################################################################
-
-hi-s2:ExperimentRLwithKG a hi:Experiment ;
-    hi:hasExperimentConcept hint:ReinforcementLearningWithKnowledgeGraphsExperiment ;
-    hi:testsMetric hi-s2:MetricTaskSuccessRate ;
-    hi:testsMetric hi-s2:MetricSafetyCompliance ;
-    hi:testsMetric hi-s2:MetricExplanationClarity .
-
-hi-s2:EvaluationRLKGImpact a hi:Evaluation ;
-    hi:hasEvaluationConcept hint:ReinforcementLearningWithKnowledgeGraphsEvaluation ;
-    hi:usesMetric hi-s2:MetricTaskSuccessRate ;
-    hi:usesMetric hi-s2:MetricSafetyCompliance ;
-    hi:usesMetric hi-s2:MetricExplanationClarity ;
-    hi:hasExperiment hi-s2:ExperimentRLwithKG ;
-    hi:hasNullHypothesis hi-s2:NullHypothesisNoBenefitFromKG ;
-    hi:hasAlternativeHypothesis hi-s2:AlternativeHypothesisKGImprovesSafetyAndEfficiency .
-
-hi-s2:MetricTaskSuccessRate a hi:Metric ;
-    hi:hasMetricConcept hint:TaskSuccessRateMetric ;
-    rdfs:comment "Fraction of manipulation sequences completed successfully."@en .
-
-hi-s2:MetricSafetyCompliance a hi:Metric ;
-    hi:hasMetricConcept hint:SafetyComplianceMetric ;
-    rdfs:comment "Incidents avoided / constraints respected during risky operations."@en .
-
-hi-s2:MetricExplanationClarity a hi:Metric ;
-    hi:hasMetricConcept hint:ExplanationClarityMetric ;
-    rdfs:comment "Human-rated clarity/utility of robot explanations."@en .
-
-hi-s2:NullHypothesisNoBenefitFromKG a hi:NullHypothesis ;
-    rdfs:comment "KG support does not improve success, safety, or explanations compared to RL alone."@en .
-
-hi-s2:AlternativeHypothesisKGImprovesSafetyAndEfficiency a hi:AlternativeHypothesis ;
-    rdfs:comment "KG support improves success rate and safety, with clearer explanations."@en .
-
-#################################################################
-# Linking evaluations to execution
-#################################################################
-
-hi-s2:ExecHeavyLift hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-hi-s2:ExecConfinedReach hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-hi-s2:ExecUnlockCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-hi-s2:ExecUnlockCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-hi-s2:ExecOpenCabinet hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-hi-s2:ExecRLExplain hi:evaluatedBy hi-s2:EvaluationRLKGImpact .
-
-
-
-
 #################################################################
 # Scientific Paper and Use Case -- SCENARIO 3
 #################################################################
@@ -482,94 +474,85 @@ hi-s3:UseCaseGroupDeliberationHI a hi:UseCase ;
     hi:hasDomainConcept hint:LawAndPolicyDomain ;
     hi:hasHITeam hi-s3:HITeamGroupDeliberation .
 
+#################################################################
 # HI Team, Goal, Context, Ethical Constraints
+#################################################################
 
 hi-s3:HITeamGroupDeliberation a hi:HITeam ;
     hi:hasGoal hi-s3:GoalFairAccurateVerdict ;
-    hi:hasMember    hi-s3:AIDeliberationAssistant , 
-                    hi-s3:HumanJuror1 , 
-                    hi-s3:HumanJuror2 ;
+    hi:hasMember 
+        hi-s3:AIDeliberationAssistant ,
+        hi-s3:HumanJuror1 ,
+        hi-s3:HumanJuror2 ;
     hi:operatesInContext hi-s3:ContextJuryDeliberation .
 
 hi-s3:GoalFairAccurateVerdict a hi:Goal ;
     hi:hasGoalConcept hint:FairAccurateVerdictGoal ;
-    hi:hasTask hi-s3:TaskAssessCommunicationAccuracy ,
-                    hi-s3:TaskDecideIntervention ,
-                    hi-s3:TaskExplainDecision .
+    hi:hasTask 
+        hi-s3:TaskAssessCommunicationAccuracy ,
+        hi-s3:TaskDecideIntervention ,
+        hi-s3:TaskExplainDecision ,
+        hi-s3:TaskProvideStatement .
 
 hi-s3:ContextJuryDeliberation a hi:Context ;
     hi:hasContextConcept hint:JuryDeliberationContext ;
-    hi:exhibitsPhenomenonConcept hi-s3:PhenomenonGroupthink ,
-                          hi-s3:PhenomenonTrustShift ;
-    hi:hasConstraintConcept hi-s3:EthicalConstraintAvoidUndueInfluence ,
-                            hi-s3:EthicalConstraintFairness ,
-                            hi-s3:EthicalConstraintTransparency .
+    hi:hasPhenomenonConcept hint:GroupThinkingPhenomenon ,
+                             hint:TrustShiftPhenomenon ;
+    hi:hasConstraintConcept 
+        hint:UndueInfluenceConstraint ,
+        hint:FairnessConstraint ,
+        hint:TransparencyConstraint ;
+	hi:hasInfluenceOn hi:HITeamGroupDeliberation .
 
-hi-s3:EthicalConstraintAvoidUndueInfluence a hi:EthicalConstraint ;
-    hi:hasConstraintConceptType    hint:UndueInfluenceConstraint .
-
-hi-s3:EthicalConstraintFairness            a hi:EthicalConstraint ;
-    hi:hasConstraintConceptType    hint:FairnessConstraint .
-
-hi-s3:EthicalConstraintTransparency        a hi:EthicalConstraint ;
-    hi:hasConstraintConceptType    hint:TransparencyConstraint.
-
-#################################################################
-# Roles
-#################################################################
-
-hi-s3:RoleAIAdvisor a dul:Role ; 
-    hi:hasRoleType hint:AIAdvisorRole ;
-    rdfs:label "AI Deliberation Advisor"@en .
-
-hi-s3:RoleJuror a dul:Role ;
-    hi:hasRoleType hint:JurorRole ;
-    rdfs:label "Juror"@en .
 
 #################################################################
 # Agents
 #################################################################
 
 hi-s3:AIDeliberationAssistant a hi:ArtificialAgent ;
-    hi:hasRoleConcept hi-s3:RoleAIAdvisor ;
-    hi:hasCapability hi-s3:CapabilityBayesianReasoning ,
-                     hi-s3:CapabilityMetaAnalysis ,
-                     hi-s3:CapabilityExplanation ;
-    hi:performsExecution hi-s3:ExecAssessAccuracy ,
-                         hi-s3:ExecDecideIntervention ,
-                         hi-s3:ExecExplainDecision ;
-    hi:usesMethod hi-s3:MethodBayesianLogic ,
-                  hi-s3:MethodMetaAnalyticalScoring .
+    hi:hasAgentConcept hint:ArtificialAgent ;
+    hi:hasRoleConcept hint:AIAdvisorRole ;
+    hi:hasCapability 
+        hi-s3:CapabilityBayesianReasoning ,
+        hi-s3:CapabilityMetaAnalysis ,
+        hi-s3:CapabilityExplanation ;
+    hi:performsExecution 
+        hi-s3:ExecAssessAccuracy ,
+        hi-s3:ExecDecideIntervention ,
+        hi-s3:ExecExplainDecision .
 
 hi-s3:HumanJuror1 a hi:HumanAgent ;
-    hi:hasRoleConcept hi-s3:RoleJuror ;
+    hi:hasAgentConcept hint:HumanAgent ;
+    hi:hasRoleConcept hint:JurorRole ;
     hi:hasCapability hi-s3:CapabilitySelfReporting ;
-    hi:performsExecution hi-s3:ExecProvideStatements1 .
+    hi:performsExecution hi-s3:ExecProvideStatement1 .
 
 hi-s3:HumanJuror2 a hi:HumanAgent ;
-    hi:hasRoleConcept hi-s3:RoleJuror ;
+    hi:hasAgentConcept hint:HumanAgent ;
+    hi:hasRoleConcept hint:JurorRole ;
     hi:hasCapability hi-s3:CapabilitySelfReporting ;
-    hi:performsExecution hi-s3:ExecProvideStatements2 .
+    hi:performsExecution hi-s3:ExecProvideStatement2 .
 
 #################################################################
 # Capabilities
 #################################################################
 
-hi-s3:CapabilityBayesianReasoning a hi:Capability ; 
+hi-s3:CapabilityBayesianReasoning a hi:Capability ;
     hi:hasCapabilityConcept hint:BayesianReasoningCapability ;
-    hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
+    hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy ,
+                  hi-s3:TaskDecideIntervention .
 
-hi-s3:CapabilityMetaAnalysis a hi:Capability ; 
+hi-s3:CapabilityMetaAnalysis a hi:Capability ;
     hi:hasCapabilityConcept hint:MetaAnalysisCapability ;
     hi:allowsTask hi-s3:TaskAssessCommunicationAccuracy .
 
-hi-s3:CapabilityExplanation a hi:Capability ; 
+hi-s3:CapabilityExplanation a hi:Capability ;
     hi:hasCapabilityConcept hint:ExplainingCapability ;
     hi:allowsTask hi-s3:TaskExplainDecision .
 
-hi-s3:CapabilitySelfReporting a hi:Capability ; 
+hi-s3:CapabilitySelfReporting a hi:Capability ;
     hi:hasCapabilityConcept hint:SelfReportingCapability ;
-    hi:allowsTask hi-s3:TaskProvideStatements .
+    hi:allowsTask hi-s3:TaskProvideStatement .
 
 #################################################################
 # Tasks
@@ -587,38 +570,26 @@ hi-s3:TaskExplainDecision a hi:Task ;
     hi:hasTaskConcept hint:ExplanationTask ;
     hi:requiresCapability hi-s3:CapabilityExplanation .
 
-hi-s3:TaskProvideStatements a hi:Task ;
-    hi:hasTaskConcept hint:ProvideStatementsTask ;
+hi-s3:TaskProvideStatement a hi:Task ;
+    hi:hasTaskConcept hint:ProvideStatementTask ;
     hi:requiresCapability hi-s3:CapabilitySelfReporting .
 
 #################################################################
-# Methods
-#################################################################
-
-hi-s3:MethodBayesianLogic a dul:Method ;
-    hi:hasMethodConcept hint:BayesianLogicMethod ;
-    rdfs:comment "Bayesian logic as meta-analytical framework for evaluating individual/collective communication accuracy."@en .
-
-hi-s3:MethodMetaAnalyticalScoring a dul:Method ;
-    hi:hasMethodConcept hint:MetaAnalysisScoringMethod ;
-    rdfs:comment "Aggregates juror statements likelihoods and reliability to decide justified intervention."@en .
-
-#################################################################
-# Task Executions
+# Task Executions 
 #################################################################
 
 hi-s3:ExecAssessAccuracy a hi:TaskExecution ;
     hi:hasExecutionConcept hint:AssessAccuracyTaskExecution ;
     hi:realizesTask hi-s3:TaskAssessCommunicationAccuracy ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
-    hi:usesMethod hi-s3:MethodBayesianLogic ;
+    hi:hasMethodConcept hint:BayesianLogicMethod ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecDecideIntervention a hi:TaskExecution ;
-    hi:hasExecutionConcept hint:DecideInterventionTaskExecution ; 
+    hi:hasExecutionConcept hint:DecideInterventionTaskExecution ;
     hi:realizesTask hi-s3:TaskDecideIntervention ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
-    hi:usesMethod hi-s3:MethodMetaAnalyticalScoring ;
+    hi:hasMethodConcept hint:MetaAnalysisScoringMethod ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 hi-s3:ExecExplainDecision a hi:TaskExecution ;
@@ -627,125 +598,77 @@ hi-s3:ExecExplainDecision a hi:TaskExecution ;
     hi:performedBy hi-s3:AIDeliberationAssistant ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s3:ExecProvideStatements1 a hi:TaskExecution ;
-    hi:hasExecutionConcept hint:ProvideStatementsTaskExecution ;
-    hi:realizesTask hi-s3:TaskProvideStatements ;
+hi-s3:ExecProvideStatement1 a hi:TaskExecution ;
+    hi:hasExecutionConcept hint:ProvideStatementTaskExecution ;
+    hi:realizesTask hi-s3:TaskProvideStatement ;
     hi:performedBy hi-s3:HumanJuror1 ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
-hi-s3:ExecProvideStatements2 a hi:TaskExecution ;
-    hi:hasExecutionConcept hint:ProvideStatementsTaskExecution ;
-    hi:realizesTask hi-s3:TaskProvideStatements ;
+hi-s3:ExecProvideStatement2 a hi:TaskExecution ;
+    hi:hasExecutionConcept hint:ProvideStatementTaskExecution ;
+    hi:realizesTask hi-s3:TaskProvideStatement ;
     hi:performedBy hi-s3:HumanJuror2 ;
     hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
 
 #################################################################
-# Interaction (deliberation + explanation)
+# Interaction Episodes
 #################################################################
 
 hi-s3:InteractionGroupDeliberation a hi:Interaction ;
-    hi:performedBy  hi-s3:AIDeliberationAssistant , 
-                    hi-s3:HumanJuror1 , 
-                    hi-s3:HumanJuror2 ;
-    hi:hasInteractionIntent hi-s3:IntentDeliberate ;
-    hi:usesInteractionModality hi-s3:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
+    hi:hasAgentInvolved 
+        hi-s3:AIDeliberationAssistant ,
+        hi-s3:HumanJuror1 ,
+        hi-s3:HumanJuror2 ;
+    hi:hasInteractionIntentConcept hint:DeliberationIntent ;
+    hi:hasInteractionModalityConcept hint:VerbalDialogueModality .
 
 hi-s3:InteractionExplainConditions a hi:Interaction ;
-    hi:performedBy  hi-s3:AIDeliberationAssistant , 
-                    hi-s3:HumanJuror1 , 
-                    hi-s3:HumanJuror2 ;
-    hi:hasInteractionIntent hi-s3:IntentExplain ;
-    hi:usesInteractionModality hi-s3:ModalityVerbalDialogue ;
-    hi:towardsGoal hi-s3:GoalFairAccurateVerdict .
+    hi:hasAgentInvolved 
+        hi-s3:AIDeliberationAssistant ,
+        hi-s3:HumanJuror1 ,
+        hi-s3:HumanJuror2 ;
+    hi:hasInteractionIntentConcept hint:ExplanationIntent ;
+    hi:hasInteractionModalityConcept hint:VerbalDialogueModality .
 
-hi-s3:IntentDeliberate a hi:InteractionIntent ;
-    hi:hasInteractionIntentType hint:DeliberationIntent.
-
-hi-s3:IntentExplain    a hi:InteractionIntent ;
-    hi:hasInteractionIntentType hint:ExplanationIntent.
-
-hi-s3:ModalityVerbalDialogue a hi:InteractionModality ;
-    hi:hasInteractionModalityType hint:VerbalDialogueModality.
 
 #################################################################
-# Agent-related Phenomena and Feedback
-#################################################################
-
-hi-s3:PhenomenonGroupthink a hi:AgentRelatedPhenomenon ;
-    hi:hasPhenomenonType hint:GroupthinkPhenomenon ;
-    rdfs:comment "Conformity pressures biasing juror judgments."@en .
-
-hi-s3:PhenomenonTrustShift a hi:AgentRelatedPhenomenon ;
-    hi:hasPhenomenonType hint:TrustShiftPhenomenon ;   
-    rdfs:comment "Trust variation in AI depending on transparency and accuracy of intervention."@en .
-
-hi-s3:BiasConfirmation a hi:Bias ;
-    hi:hasBiasConcept hint:ConfirmationBias ;
-    rdfs:comment "Selective attention to evidence consistent with prior beliefs."@en .
-
-hi-s3:FeedbackInterventionRationale a hi:Feedback ;
-    hi:hasFeedbackType hint:InterventionRationaleFeedback ;
-    rdfs:comment "Explanation of conditions under which the AI assumes responsibility to act."@en .
-
-#################################################################
-# Experiment, Evaluation, Hypotheses, and Metrics
+# Experiment, Evaluation, Hypotheses, Metrics
 #################################################################
 
 hi-s3:ExperimentDeliberationSupport a hi:Experiment ;
     hi:hasExperimentConcept hint:DeliberationSupportExperiment ;
-    hi:testsMetric hi-s3:MetricFairOutcomeAccuracy ;
-    hi:testsMetric hi-s3:MetricUndueInfluenceRate ;
-    hi:testsMetric hi-s3:MetricExplanationClarity .
+    hi:hasMetricTested hint:FairOutcomeMetric ;
+    hi:hasMetricTested hint:UndueInfluenceMetric ;
+    hi:hasMetricTested hint:ExplanationClarityMetric ;
+    hi:hasNullHypothesis "AI intervention has no effect on fairness or may increase undue influence."@en ;
+    hi:hasAlternativeHypothesis "AI-supported Bayesian meta-analysis improves fairness without increasing undue influence."@en .
 
 hi-s3:EvaluationAIInterventionImpact a hi:Evaluation ;
     hi:hasEvaluationConcept hint:AIInterventionImpactEvaluation ;
-    hi:usesMetric hi-s3:MetricFairOutcomeAccuracy ;
-    hi:usesMetric hi-s3:MetricUndueInfluenceRate ;
-    hi:usesMetric hi-s3:MetricExplanationClarity ;
-    hi:hasExperiment hi-s3:ExperimentDeliberationSupport ;
-    hi:hasNullHypothesis hi-s3:NullHypothesisNoBenefitOrInfluence ;
-    hi:hasAlternativeHypothesis hi-s3:AlternativeHypothesisFairnessWithoutUndueInfluence .
-
-hi-s3:MetricFairOutcomeAccuracy a hi:Metric ;
-    hi:hasMetricConcept hint:FairOutcomeAccuracyMetric ;
-    rdfs:comment "Accuracy of group decision relative to ground-truth or expert benchmark."@en .
-
-hi-s3:MetricUndueInfluenceRate a hi:Metric ;
-    hi:hasMetricConcept hint:UndueInfluenceRateMetric ;
-    rdfs:comment "Frequency of AI-caused shifts attributable to influence beyond justified intervention."@en .
-
-hi-s3:MetricExplanationClarity a hi:Metric ;
+    hi:hasMetricConcept hint:FairOutcomeMetric ;
+    hi:hasMetricConcept hint:UndueInfluenceMetric ;
     hi:hasMetricConcept hint:ExplanationClarityMetric ;
-    rdfs:comment "Human-rated clarity of conditions and rationale for AI interventions."@en .
-
-hi-s3:NullHypothesisNoBenefitOrInfluence a hi:NullHypothesis ;
-    rdfs:comment "AI intervention does not improve outcomes and/or increases undue influence."@en .
-
-hi-s3:AlternativeHypothesisFairnessWithoutUndueInfluence a hi:AlternativeHypothesis ;
-    rdfs:comment "Bayesian meta-analysis improves fairness/accuracy while keeping undue influence low."@en .
+    hi:hasExperiment hi-s3:ExperimentDeliberationSupport .
 
 #################################################################
-# Linking evaluations to executions (traceability)
+# Linking evaluations to executions
 #################################################################
 
 hi-s3:ExecAssessAccuracy     hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
-
 hi-s3:ExecDecideIntervention hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
-
 hi-s3:ExecExplainDecision    hi:evaluatedBy hi-s3:EvaluationAIInterventionImpact .
 
+
+
+
 #################################################################
-# Influence 
 #################################################################
-
-hi-s3:ContextJuryDeliberation hi:influences hi-s3:EvaluationAIInterventionImpact .
-
-hi-s3:PhenomenonGroupthink    hi:influences hi-s3:GoalFairAccurateVerdict .
-
-hi-s3:BiasConfirmation        hi:influences hi-s3:TaskAssessCommunicationAccuracy .
-
-hi-s3:FeedbackInterventionRationale hi:influences hi-s3:ExecDecideIntervention.
+#################################################################
+###### all scenarios below need to be fixed #####################
+#################################################################
+#################################################################
+#################################################################
+#################################################################
 
 
 
