@@ -448,7 +448,7 @@ hi:TaskExecution a owl:Class ;
 
 ###  https://w3id.org/hi-ontology#Interaction
 hi:Interaction a owl:Class ;
-                    [ a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
                       owl:onProperty hi:hasAgentInvolved ;
                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                       owl:onClass hi:Agent
