@@ -12,7 +12,7 @@
 @prefix swrla:    <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
 @prefix schema:   <http://schema.org/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 
 
 <https://w3id.org/hi-ontology#>  a owl:Ontology ;
