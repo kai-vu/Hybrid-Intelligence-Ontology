@@ -5,7 +5,6 @@
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml:      <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix swrl:     <http://www.w3.org/2003/11/swrl#> .
@@ -13,6 +12,7 @@
 @prefix swrla:    <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
 @prefix schema:   <http://schema.org/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
 <https://w3id.org/hi-ontology#>  a owl:Ontology ;
@@ -448,7 +448,7 @@ hi:TaskExecution a owl:Class ;
 
 ###  https://w3id.org/hi-ontology#Interaction
 hi:Interaction a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
+                    [ a owl:Restriction ;
                       owl:onProperty hi:hasAgentInvolved ;
                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                       owl:onClass hi:Agent
