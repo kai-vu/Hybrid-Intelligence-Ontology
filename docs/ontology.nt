@@ -79,6 +79,9 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foa
 # http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://www.w3.org/2002/07/owl#minQualifiedCardinality
+<http://www.w3.org/2002/07/owl#minQualifiedCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://xmlns.com/foaf/0.1/member
 <http://xmlns.com/foaf/0.1/member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -106,187 +109,299 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foa
 # #################################################################
 # 
 # 
-# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
 # https://w3id.org/hi-ontology#allowsTask
 <https://w3id.org/hi-ontology#allowsTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#allowsTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Capability> .
 <https://w3id.org/hi-ontology#allowsTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
 <https://w3id.org/hi-ontology#allowsTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A capability enables or allows a task to be performed."@en .
+<https://w3id.org/hi-ontology#allowsTask> <http://www.w3.org/2000/01/rdf-schema#label> "allows task" .
 # 
 # https://w3id.org/hi-ontology#assignedToTask
 <https://w3id.org/hi-ontology#assignedToTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#assignedToTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
-<https://w3id.org/hi-ontology#assignedToTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
-<https://w3id.org/hi-ontology#assignedToTask> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#realizesTask> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#performsExecution> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/hi-ontology#assignedToTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Agent formally assigned to perform a task (inferred from executions)."@en .
-# 
-# https://w3id.org/hi-ontology#describesUseCase
-<https://w3id.org/hi-ontology#describesUseCase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#describesUseCase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#ScientificPaper> .
-<https://w3id.org/hi-ontology#describesUseCase> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#UseCase> .
-<https://w3id.org/hi-ontology#describesUseCase> <http://www.w3.org/2000/01/rdf-schema#comment> "A paper describing a specific use case or scenario."@en .
 # 
 # https://w3id.org/hi-ontology#eligibleForTask
 <https://w3id.org/hi-ontology#eligibleForTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#eligibleForTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hi-ontology#assignedToTask> .
-<https://w3id.org/hi-ontology#eligibleForTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
-<https://w3id.org/hi-ontology#eligibleForTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
-<https://w3id.org/hi-ontology#eligibleForTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Agent eligible for a task based on membership and capabilities (policy-level notion)."@en .
 # 
 # https://w3id.org/hi-ontology#evaluatedBy
 <https://w3id.org/hi-ontology#evaluatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#evaluatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
 <https://w3id.org/hi-ontology#evaluatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Evaluation> .
 <https://w3id.org/hi-ontology#evaluatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Execution is evaluated by a defined evaluation."@en .
+<https://w3id.org/hi-ontology#evaluatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "evaluated by" .
 # 
 # https://w3id.org/hi-ontology#executesTask
 <https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hi-ontology#assignedToTask> .
 <https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
-<https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#realizesTask> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#performsExecution> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#realizesTask> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#performsExecution> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Agent executes a task (derivable from Agent→Execution→Task)."@en .
+<https://w3id.org/hi-ontology#executesTask> <http://www.w3.org/2000/01/rdf-schema#label> "executes task" .
 # 
-# https://w3id.org/hi-ontology#exhibitsPhenomenon
-<https://w3id.org/hi-ontology#exhibitsPhenomenon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#exhibitsPhenomenon> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Context> .
-<https://w3id.org/hi-ontology#exhibitsPhenomenon> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#AgentRelatedPhenomenon> .
-<https://w3id.org/hi-ontology#exhibitsPhenomenon> <http://www.w3.org/2000/01/rdf-schema#comment> "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
+# https://w3id.org/hi-ontology#hasAgentConcept
+<https://w3id.org/hi-ontology#hasAgentConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasAgentConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
+<https://w3id.org/hi-ontology#hasAgentConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hi-ontology#hasAgentConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an agent to a concept in the HINT thesaurus."@en .
 # 
-# https://w3id.org/hi-ontology#hasAlternativeHypothesis
-<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
-<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#AlternativeHypothesis> .
+# https://w3id.org/hi-ontology#hasAgentInvolved
+<https://w3id.org/hi-ontology#hasAgentInvolved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasAgentInvolved> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Interaction> .
+<https://w3id.org/hi-ontology#hasAgentInvolved> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Agent> .
+<https://w3id.org/hi-ontology#hasAgentInvolved> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates an agent that participates in or contributes to an interaction episode. This property identifies the human or artificial agents involved in the exchange."@en .
+<https://w3id.org/hi-ontology#hasAgentInvolved> <http://www.w3.org/2000/01/rdf-schema#label> "has agent involved" .
 # 
 # https://w3id.org/hi-ontology#hasCapability
 <https://w3id.org/hi-ontology#hasCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#hasCapability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#hasCapability> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Capability> .
 <https://w3id.org/hi-ontology#hasCapability> <http://www.w3.org/2000/01/rdf-schema#comment> "Agent possesses a capability."@en .
+<https://w3id.org/hi-ontology#hasCapability> <http://www.w3.org/2000/01/rdf-schema#label> "has capability" .
 # 
-# https://w3id.org/hi-ontology#hasEthicalConstraint
-<https://w3id.org/hi-ontology#hasEthicalConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#hasEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Context> .
-<https://w3id.org/hi-ontology#hasEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#EthicalConstraint> .
-<https://w3id.org/hi-ontology#hasEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#comment> "Ethical constraints that apply in a given context."@en .
+# https://w3id.org/hi-ontology#hasCapabilityConcept
+<https://w3id.org/hi-ontology#hasCapabilityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasCapabilityConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Capability> .
+<https://w3id.org/hi-ontology#hasCapabilityConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasCapabilityConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a capability to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasCapabilityConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has capability concept" .
+# 
+# https://w3id.org/hi-ontology#hasConstraintConcept
+<https://w3id.org/hi-ontology#hasConstraintConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#HITeam> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#Context> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hi-ontology#hasConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the constraint using a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has constraint concept" .
+# 
+# https://w3id.org/hi-ontology#hasContextConcept
+<https://w3id.org/hi-ontology#hasContextConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasContextConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Context> .
+<https://w3id.org/hi-ontology#hasContextConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasContextConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a context to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasContextConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has context concept" .
+# 
+# https://w3id.org/hi-ontology#hasDomainConcept
+<https://w3id.org/hi-ontology#hasDomainConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasDomainConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#UseCase> .
+<https://w3id.org/hi-ontology#hasDomainConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasDomainConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a domain to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasDomainConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has domain concept" .
+# 
+# https://w3id.org/hi-ontology#hasEvaluationConcept
+<https://w3id.org/hi-ontology#hasEvaluationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasEvaluationConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
+<https://w3id.org/hi-ontology#hasEvaluationConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasEvaluationConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an evaluation to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasEvaluationConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has evaluation concept" .
+# 
+# https://w3id.org/hi-ontology#hasExecutionConcept
+<https://w3id.org/hi-ontology#hasExecutionConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasExecutionConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Execution> .
+<https://w3id.org/hi-ontology#Execution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hi-ontology#hasExecutionConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasExecutionConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an experiment to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasExecutionConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has execution concept" .
 # 
 # https://w3id.org/hi-ontology#hasExperiment
 <https://w3id.org/hi-ontology#hasExperiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
 <https://w3id.org/hi-ontology#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Experiment> .
+<https://w3id.org/hi-ontology#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#comment> "An evaluation has an experiment."@en .
+<https://w3id.org/hi-ontology#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#label> "has experiment" .
+# 
+# https://w3id.org/hi-ontology#hasExperimentConcept
+<https://w3id.org/hi-ontology#hasExperimentConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasExperimentConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Experiment> .
+<https://w3id.org/hi-ontology#hasExperimentConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasExperimentConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an experiment to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasExperimentConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has experiment concept" .
 # 
 # https://w3id.org/hi-ontology#hasGoal
 <https://w3id.org/hi-ontology#hasGoal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#hasGoal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#HITeam> .
 <https://w3id.org/hi-ontology#hasGoal> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Goal> .
 <https://w3id.org/hi-ontology#hasGoal> <http://www.w3.org/2000/01/rdf-schema#comment> "An HI team pursues one or more goals."@en .
+<https://w3id.org/hi-ontology#hasGoal> <http://www.w3.org/2000/01/rdf-schema#label> "has goal" .
 # 
-# https://w3id.org/hi-ontology#hasInteractionIntent
-<https://w3id.org/hi-ontology#hasInteractionIntent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#hasInteractionIntent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Interaction> .
-<https://w3id.org/hi-ontology#hasInteractionIntent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Intentionality> .
-<https://w3id.org/hi-ontology#hasInteractionIntent> <http://www.w3.org/2000/01/rdf-schema#comment> "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
+# https://w3id.org/hi-ontology#hasGoalConcept
+<https://w3id.org/hi-ontology#hasGoalConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasGoalConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Goal> .
+<https://w3id.org/hi-ontology#hasGoalConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasGoalConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a goal to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasGoalConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has goal concept" .
+# 
+# https://w3id.org/hi-ontology#hasHITeam
+<https://w3id.org/hi-ontology#hasHITeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasHITeam> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#UseCase> .
+<https://w3id.org/hi-ontology#hasHITeam> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#HITeam> .
+<https://w3id.org/hi-ontology#hasHITeam> <http://www.w3.org/2000/01/rdf-schema#comment> "A use case introduces a hybrid intelligence team."@en .
+<https://w3id.org/hi-ontology#hasHITeam> <http://www.w3.org/2000/01/rdf-schema#label> "has HI team" .
+# 
+# https://w3id.org/hi-ontology#hasInfluenceOn
+<https://w3id.org/hi-ontology#hasInfluenceOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasInfluenceOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Context> .
+<https://w3id.org/hi-ontology#hasInfluenceOn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#HITeam> .
+<https://w3id.org/hi-ontology#hasInfluenceOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a contextual condition to the HI team whose actions, collaboration dynamics, or task performance are influenced by that condition. It captures how background phenomena and constraints shape the team's operation in a given use case."@en .
+<https://w3id.org/hi-ontology#hasInfluenceOn> <http://www.w3.org/2000/01/rdf-schema#label> "has influence on" .
+# 
+# https://w3id.org/hi-ontology#hasInteractionEpisode
+<https://w3id.org/hi-ontology#hasInteractionEpisode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasInteractionEpisode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
+<https://w3id.org/hi-ontology#hasInteractionEpisode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Interaction> .
+<https://w3id.org/hi-ontology#hasInteractionEpisode> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies moments of interaction (e.g., dialogue, negotiation, or guidance) that unfold within the execution of a task."@en .
+<https://w3id.org/hi-ontology#hasInteractionEpisode> <http://www.w3.org/2000/01/rdf-schema#label> "has interaction episode" .
+# 
+# https://w3id.org/hi-ontology#hasInteractionIntentConcept
+<https://w3id.org/hi-ontology#hasInteractionIntentConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasInteractionIntentConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Interaction> .
+<https://w3id.org/hi-ontology#hasInteractionIntentConcept> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Intentionality> .
+<https://w3id.org/hi-ontology#Intentionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hi-ontology#hasInteractionIntentConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
+<https://w3id.org/hi-ontology#hasInteractionIntentConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has interaction intent concept" .
+# 
+# https://w3id.org/hi-ontology#hasInteractionModalityConcept
+<https://w3id.org/hi-ontology#hasInteractionModalityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasInteractionModalityConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Interaction> .
+<https://w3id.org/hi-ontology#hasInteractionModalityConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasInteractionModalityConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Modality/channel used during the interaction."@en .
+<https://w3id.org/hi-ontology#hasInteractionModalityConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has interaction modality concept" .
 # 
 # https://w3id.org/hi-ontology#hasMember
 <https://w3id.org/hi-ontology#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#hasMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#HITeam> .
 <https://w3id.org/hi-ontology#hasMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#hasMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies agents that are members of an HI team."@en .
+<https://w3id.org/hi-ontology#hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
 # 
-# https://w3id.org/hi-ontology#hasNullHypothesis
-<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
-<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#NullHypothesis> .
+# https://w3id.org/hi-ontology#hasMethodConcept
+<https://w3id.org/hi-ontology#hasMethodConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasMethodConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
+<https://w3id.org/hi-ontology#hasMethodConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasMethodConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a task execution to a method in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasMethodConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has method concept" .
 # 
-# https://w3id.org/hi-ontology#hasRole
-<https://w3id.org/hi-ontology#hasRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#hasRole> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy> .
-<https://w3id.org/hi-ontology#hasRole> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
-<https://w3id.org/hi-ontology#hasRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> .
+# https://w3id.org/hi-ontology#hasMetricConcept
+<https://w3id.org/hi-ontology#hasMetricConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasMetricConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
+<https://w3id.org/hi-ontology#hasMetricConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasMetricConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "An evaluation uses certain metrics, defined in the HINT thesaurus"@en .
+<https://w3id.org/hi-ontology#hasMetricConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has metric concept" .
 # 
-# https://w3id.org/hi-ontology#inDomain
-<https://w3id.org/hi-ontology#inDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#inDomain> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#UseCase> .
-<https://w3id.org/hi-ontology#inDomain> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Domain> .
-<https://w3id.org/hi-ontology#inDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a use case to its domain of application."@en .
+# https://w3id.org/hi-ontology#hasMetricTested
+<https://w3id.org/hi-ontology#hasMetricTested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasMetricTested> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Experiment> .
+<https://w3id.org/hi-ontology#hasMetricTested> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasMetricTested> <http://www.w3.org/2000/01/rdf-schema#comment> "An experiment tests certain metrics, defined in the HINT thesaurus"@en .
+<https://w3id.org/hi-ontology#hasMetricTested> <http://www.w3.org/2000/01/rdf-schema#label> "has metric tested" .
 # 
-# https://w3id.org/hi-ontology#influencedBy
-<https://w3id.org/hi-ontology#influencedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#influencedBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid12 .
-_:genid12 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
+# https://w3id.org/hi-ontology#hasPhenomenonConcept
+<https://w3id.org/hi-ontology#hasPhenomenonConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasPhenomenonConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Context> .
+<https://w3id.org/hi-ontology#hasPhenomenonConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasPhenomenonConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .
+<https://w3id.org/hi-ontology#hasPhenomenonConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has phenomenon concept" .
+# 
+# https://w3id.org/hi-ontology#hasRoleConcept
+<https://w3id.org/hi-ontology#hasRoleConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasRoleConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
+<https://w3id.org/hi-ontology#hasRoleConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasRoleConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a role to a concept in the HINT thesaurus."@en .
+# 
+# https://w3id.org/hi-ontology#hasTask
+<https://w3id.org/hi-ontology#hasTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Goal> .
+<https://w3id.org/hi-ontology#hasTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
+<https://w3id.org/hi-ontology#hasTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A goal requires one or more tasks to be fulfilled."@en .
+<https://w3id.org/hi-ontology#hasTask> <http://www.w3.org/2000/01/rdf-schema#label> "has task" .
+# 
+# https://w3id.org/hi-ontology#hasTaskConcept
+<https://w3id.org/hi-ontology#hasTaskConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasTaskConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Task> .
+<https://w3id.org/hi-ontology#hasTaskConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasTaskConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a task to a concept in the HINT thesaurus."@en .
+# 
+# https://w3id.org/hi-ontology#hasUseCaseConcept
+<https://w3id.org/hi-ontology#hasUseCaseConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#hasUseCaseConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#UseCase> .
+<https://w3id.org/hi-ontology#hasUseCaseConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/hi-ontology#hasUseCaseConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a use case to a concept in the HINT thesaurus."@en .
+<https://w3id.org/hi-ontology#hasUseCaseConcept> <http://www.w3.org/2000/01/rdf-schema#label> "has use case concept" .
+# 
+# https://w3id.org/hi-ontology#iaAssignedToTask
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hi-ontology#isEligibleForTask> .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid14 .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#EthicalConstraint> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#realizesTask> .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#AgentRelatedPhenomenon> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#performsExecution> .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#influencedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that an entity is influenced by a phenomenon or ethical constraint."@en .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task."@en .
+<https://w3id.org/hi-ontology#iaAssignedToTask> <http://www.w3.org/2000/01/rdf-schema#label> "is assigned to task" .
 # 
-# https://w3id.org/hi-ontology#influencedByEthicalConstraint
-<https://w3id.org/hi-ontology#influencedByEthicalConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#influencedByEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#TaskExecution> .
+# https://w3id.org/hi-ontology#isEligibleForTask
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#allowsTask> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#hasCapability> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#Evaluation> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#Agent> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#influencedByEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#EthicalConstraint> .
-<https://w3id.org/hi-ontology#influencedByEthicalConstraint> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#hasEthicalConstraint> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#operatesInContext> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/hi-ontology#influencedByEthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#comment> "Direct influence of an ethical constraint on agents, executions, methods, or evaluations."@en .
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an agent to a task it is eligible to perform, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility."@en .
+<https://w3id.org/hi-ontology#isEligibleForTask> <http://www.w3.org/2000/01/rdf-schema#label> "is eligible for task" .
 # 
-# https://w3id.org/hi-ontology#introducesHITeam
-<https://w3id.org/hi-ontology#introducesHITeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#introducesHITeam> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#UseCase> .
-<https://w3id.org/hi-ontology#introducesHITeam> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#HITeam> .
-<https://w3id.org/hi-ontology#introducesHITeam> <http://www.w3.org/2000/01/rdf-schema#comment> "A use case introduces a hybrid intelligence team."@en .
+# https://w3id.org/hi-ontology#isInfluencedBy
+<https://w3id.org/hi-ontology#isInfluencedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hi-ontology#isInfluencedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hi-ontology#hasInfluenceOn> .
+<https://w3id.org/hi-ontology#isInfluencedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance."@en .
+<https://w3id.org/hi-ontology#isInfluencedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is influenced by" .
 # 
 # https://w3id.org/hi-ontology#operatesInContext
 <https://w3id.org/hi-ontology#operatesInContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#operatesInContext> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#operatesInContext> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Context> .
+<https://w3id.org/hi-ontology#operatesInContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the context in which an HI team operates."@en .
+<https://w3id.org/hi-ontology#operatesInContext> <http://www.w3.org/2000/01/rdf-schema#label> "operates in context" .
 # 
 # https://w3id.org/hi-ontology#performedBy
 <https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hi-ontology#performsExecution> .
-<https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
+<https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#unionOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#TaskExecution> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Execution performed by an agent."@en .
+<https://w3id.org/hi-ontology#performedBy> <http://www.w3.org/2000/01/rdf-schema#label> "performed by" .
 # 
 # https://w3id.org/hi-ontology#performsExecution
 <https://w3id.org/hi-ontology#performsExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#performsExecution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#performsExecution> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#TaskExecution> .
 <https://w3id.org/hi-ontology#performsExecution> <http://www.w3.org/2000/01/rdf-schema#comment> "Agent that performs a specific task execution."@en .
+<https://w3id.org/hi-ontology#performsExecution> <http://www.w3.org/2000/01/rdf-schema#label> "performs execution" .
 # 
 # https://w3id.org/hi-ontology#realizedBy
 <https://w3id.org/hi-ontology#realizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -294,64 +409,54 @@ _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://w3id.org/hi-ontology#realizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Task> .
 <https://w3id.org/hi-ontology#realizedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#TaskExecution> .
 <https://w3id.org/hi-ontology#realizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A task is realized through a task execution."@en .
+<https://w3id.org/hi-ontology#realizedBy> <http://www.w3.org/2000/01/rdf-schema#label> "realized by" .
 # 
 # https://w3id.org/hi-ontology#realizesTask
 <https://w3id.org/hi-ontology#realizesTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#realizesTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
 <https://w3id.org/hi-ontology#realizesTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
 <https://w3id.org/hi-ontology#realizesTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Task execution realizes a task."@en .
+<https://w3id.org/hi-ontology#realizesTask> <http://www.w3.org/2000/01/rdf-schema#label> "realizes task" .
 # 
 # https://w3id.org/hi-ontology#requiresCapability
 <https://w3id.org/hi-ontology#requiresCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#requiresCapability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Task> .
 <https://w3id.org/hi-ontology#requiresCapability> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Capability> .
 <https://w3id.org/hi-ontology#requiresCapability> <http://www.w3.org/2000/01/rdf-schema#comment> "A task requires certain capabilities to be accomplished."@en .
+<https://w3id.org/hi-ontology#requiresCapability> <http://www.w3.org/2000/01/rdf-schema#label> "requires cability" .
 # 
 # https://w3id.org/hi-ontology#requiresTask
 <https://w3id.org/hi-ontology#requiresTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#requiresTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Goal> .
-<https://w3id.org/hi-ontology#requiresTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Task> .
-<https://w3id.org/hi-ontology#requiresTask> <http://www.w3.org/2000/01/rdf-schema#comment> "A goal requires one or more tasks to be fulfilled."@en .
-# 
-# https://w3id.org/hi-ontology#testsMetric
-<https://w3id.org/hi-ontology#testsMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#testsMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Experiment> .
-<https://w3id.org/hi-ontology#testsMetric> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Metric> .
 # 
 # https://w3id.org/hi-ontology#towardsGoal
 <https://w3id.org/hi-ontology#towardsGoal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hi-ontology#towardsGoal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
 <https://w3id.org/hi-ontology#towardsGoal> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Goal> .
+<https://w3id.org/hi-ontology#towardsGoal> <http://www.w3.org/2000/01/rdf-schema#comment> "Task execution towards a goal."@en .
+<https://w3id.org/hi-ontology#towardsGoal> <http://www.w3.org/2000/01/rdf-schema#label> "towards goal" .
 # 
-# https://w3id.org/hi-ontology#usesInteractionModality
-<https://w3id.org/hi-ontology#usesInteractionModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#usesInteractionModality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Interaction> .
-<https://w3id.org/hi-ontology#usesInteractionModality> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#InteractionModality> .
-<https://w3id.org/hi-ontology#usesInteractionModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Modality/channel used during the interaction."@en .
 # 
-# https://w3id.org/hi-ontology#usesMethod
-<https://w3id.org/hi-ontology#usesMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#usesMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#TaskExecution> .
-<https://w3id.org/hi-ontology#usesMethod> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> .
-<https://w3id.org/hi-ontology#usesMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Execution makes use of a specific method."@en .
 # 
-# https://w3id.org/hi-ontology#usesMethodByAgent
-<https://w3id.org/hi-ontology#usesMethodByAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#usesMethodByAgent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Agent> .
-<https://w3id.org/hi-ontology#usesMethodByAgent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> .
-<https://w3id.org/hi-ontology#usesMethodByAgent> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#usesMethod> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hi-ontology#performsExecution> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/hi-ontology#usesMethodByAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "Inferred: an agent uses a method via the executions it performs."@en .
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
 # 
-# https://w3id.org/hi-ontology#usesMetric
-<https://w3id.org/hi-ontology#usesMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hi-ontology#usesMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Evaluation> .
-<https://w3id.org/hi-ontology#usesMetric> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hi-ontology#Metric> .
+# 
+# https://w3id.org/hi-ontology#hasAlternativeHypothesis
+<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Experiment> .
+<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#comment> "Stores the textual formulation of the alternative hypothesis of an experiment."@en .
+<https://w3id.org/hi-ontology#hasAlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#label> "has alternative hypothesis"@en .
+# 
+# https://w3id.org/hi-ontology#hasNullHypothesis
+<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hi-ontology#Experiment> .
+<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#comment> "Stores the textual formulation of the null hypothesis of an experiment."@en .
+<https://w3id.org/hi-ontology#hasNullHypothesis> <http://www.w3.org/2000/01/rdf-schema#label> "has null hypothesis"@en .
 # 
 # 
 # 
@@ -361,6 +466,9 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # #
 # #################################################################
 # 
+# 
+# http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://schema.org/Organization
 # 
@@ -372,15 +480,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> <http://www.w3.org/2000/01/rdf-schema#comment> "A technical or procedural means used during task execution or evaluation."@en .
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> <http://www.w3.org/2000/01/rdf-schema#label> "Method"@en .
-# 
-# http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> <http://www.w3.org/2000/01/rdf-schema#comment> "A functional or organizational position occupied by an agent within an HI team."@en .
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> <http://www.w3.org/2000/01/rdf-schema#label> "Role"@en .
+# http://www.w3.org/2004/02/skos/core#Concept
 # 
 # http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -388,28 +488,11 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # https://w3id.org/hi-ontology#Agent
 <https://w3id.org/hi-ontology#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# https://w3id.org/hi-ontology#AgentRelatedPhenomenon
-<https://w3id.org/hi-ontology#AgentRelatedPhenomenon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#AgentRelatedPhenomenon> <http://www.w3.org/2000/01/rdf-schema#comment> "Human or system phenomena affecting performance or decision-making, such as bias or feedback."@en .
-<https://w3id.org/hi-ontology#AgentRelatedPhenomenon> <http://www.w3.org/2000/01/rdf-schema#label> "Agent-related Phenomenon"@en .
-# 
-# https://w3id.org/hi-ontology#AlternativeHypothesis
-<https://w3id.org/hi-ontology#AlternativeHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#AlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#Hypothesis> .
-<https://w3id.org/hi-ontology#AlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#comment> "The hypothesis positing an effect or difference."@en .
-<https://w3id.org/hi-ontology#AlternativeHypothesis> <http://www.w3.org/2000/01/rdf-schema#label> "Alternative Hypothesis (H1)"@en .
-# 
 # https://w3id.org/hi-ontology#ArtificialAgent
 <https://w3id.org/hi-ontology#ArtificialAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hi-ontology#ArtificialAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#Agent> .
 <https://w3id.org/hi-ontology#ArtificialAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "An artificial or computational agent (robot, software, etc.) collaborating with human agents."@en .
 <https://w3id.org/hi-ontology#ArtificialAgent> <http://www.w3.org/2000/01/rdf-schema#label> "Artificial Agent"@en .
-# 
-# https://w3id.org/hi-ontology#Bias
-<https://w3id.org/hi-ontology#Bias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Bias> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#AgentRelatedPhenomenon> .
-<https://w3id.org/hi-ontology#Bias> <http://www.w3.org/2000/01/rdf-schema#comment> "Systematic deviation in decision-making or evaluation, exhibited by agents or datasets."@en .
-<https://w3id.org/hi-ontology#Bias> <http://www.w3.org/2000/01/rdf-schema#label> "Bias"@en .
 # 
 # https://w3id.org/hi-ontology#Capability
 <https://w3id.org/hi-ontology#Capability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -421,55 +504,37 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <https://w3id.org/hi-ontology#Context> <http://www.w3.org/2000/01/rdf-schema#comment> "Situational conditions (environmental, cultural, cognitive) under which tasks and evaluations occur."@en .
 <https://w3id.org/hi-ontology#Context> <http://www.w3.org/2000/01/rdf-schema#label> "Context"@en .
 # 
-# https://w3id.org/hi-ontology#Domain
-<https://w3id.org/hi-ontology#Domain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Domain> <http://www.w3.org/2000/01/rdf-schema#comment> "The subject area or discipline in which a Use Case or research scenario belongs."@en .
-<https://w3id.org/hi-ontology#Domain> <http://www.w3.org/2000/01/rdf-schema#label> "Domain"@en .
-# 
-# https://w3id.org/hi-ontology#EthicalConstraint
-<https://w3id.org/hi-ontology#EthicalConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#EthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#comment> "Normative condition constraining agent behavior, tasks, or evaluations within a context."@en .
-<https://w3id.org/hi-ontology#EthicalConstraint> <http://www.w3.org/2000/01/rdf-schema#label> "Ethical Constraint"@en .
-# 
 # https://w3id.org/hi-ontology#Evaluation
 <https://w3id.org/hi-ontology#Evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hi-ontology#Evaluation> <http://www.w3.org/2000/01/rdf-schema#comment> "A process of assessing the quality or outcome of executions, methods, or goals."@en .
 <https://w3id.org/hi-ontology#Evaluation> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation"@en .
+# 
+# https://w3id.org/hi-ontology#Execution
 # 
 # https://w3id.org/hi-ontology#Experiment
 <https://w3id.org/hi-ontology#Experiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hi-ontology#Experiment> <http://www.w3.org/2000/01/rdf-schema#comment> "An empirical setup linked to an evaluation that tests metrics and hypotheses."@en .
 <https://w3id.org/hi-ontology#Experiment> <http://www.w3.org/2000/01/rdf-schema#label> "Experiment"@en .
 # 
-# https://w3id.org/hi-ontology#Feedback
-<https://w3id.org/hi-ontology#Feedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Feedback> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#AgentRelatedPhenomenon> .
-<https://w3id.org/hi-ontology#Feedback> <http://www.w3.org/2000/01/rdf-schema#comment> "Information returned to an agent that influences subsequent actions or learning."@en .
-<https://w3id.org/hi-ontology#Feedback> <http://www.w3.org/2000/01/rdf-schema#label> "Feedback"@en .
-# 
 # https://w3id.org/hi-ontology#Goal
 <https://w3id.org/hi-ontology#Goal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hi-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://org.semanticweb.owlapi/error#Error1> .
 <https://w3id.org/hi-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> .
-<https://w3id.org/hi-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
-_:genid24 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#Task> .
-_:genid24 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#requiresTask> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hi-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#comment> "A desired outcome pursued by an HI team, requiring one or more tasks to be completed."@en .
 <https://w3id.org/hi-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#label> "Goal"@en .
 # 
 # https://w3id.org/hi-ontology#HITeam
 <https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
-_:genid25 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#ArtificialAgent> .
-_:genid25 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#hasMember> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
-_:genid26 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#HumanAgent> .
-_:genid26 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#hasMember> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#ArtificialAgent> .
+_:genid19 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#hasMember> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#HumanAgent> .
+_:genid20 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#hasMember> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#comment> "A hybrid intelligence team composed of human and artificial agents pursuing a shared goal."@en .
 <https://w3id.org/hi-ontology#HITeam> <http://www.w3.org/2000/01/rdf-schema#label> "HI Team"@en .
 # 
@@ -480,55 +545,25 @@ _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/hi-ontology#HumanAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities."@en .
 <https://w3id.org/hi-ontology#HumanAgent> <http://www.w3.org/2000/01/rdf-schema#label> "Human Agent"@en .
 # 
-# https://w3id.org/hi-ontology#Hypothesis
-<https://w3id.org/hi-ontology#Hypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Hypothesis> <http://www.w3.org/2000/01/rdf-schema#comment> "A proposed explanation or assumption tested by experiments."@en .
-<https://w3id.org/hi-ontology#Hypothesis> <http://www.w3.org/2000/01/rdf-schema#label> "Hypothesis"@en .
-# 
 # https://w3id.org/hi-ontology#Intentionality
-<https://w3id.org/hi-ontology#Intentionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Intentionality> <http://www.w3.org/2000/01/rdf-schema#comment> "Communicative/social intent (explaining, requesting, negotiating, instructing...)."@en .
-<https://w3id.org/hi-ontology#Intentionality> <http://www.w3.org/2000/01/rdf-schema#label> "Interaction Intentionality"@en .
 # 
 # https://w3id.org/hi-ontology#Interaction
 <https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#TaskExecution> .
-<https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
-_:genid27 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#Agent> .
-_:genid27 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#performedBy> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#Agent> .
+_:genid21 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#hasAgentInvolved> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/2000/01/rdf-schema#comment> "A multi-agent task execution where two or more agents coordinate (verbal, symbolic, or physical) toward a goal."@en .
 <https://w3id.org/hi-ontology#Interaction> <http://www.w3.org/2000/01/rdf-schema#label> "Interaction"@en .
 # 
-# https://w3id.org/hi-ontology#InteractionModality
-<https://w3id.org/hi-ontology#InteractionModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#InteractionModality> <http://www.w3.org/2000/01/rdf-schema#comment> "Channel or medium of interaction (verbal dialog, gesture, symbolic messages, haptic, etc.)."@en .
-<https://w3id.org/hi-ontology#InteractionModality> <http://www.w3.org/2000/01/rdf-schema#label> "Interaction Modality"@en .
-# 
-# https://w3id.org/hi-ontology#Metric
-<https://w3id.org/hi-ontology#Metric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Metric> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurable criterion used to quantify performance or outcomes in an evaluation."@en .
-<https://w3id.org/hi-ontology#Metric> <http://www.w3.org/2000/01/rdf-schema#label> "Metric"@en .
-# 
-# https://w3id.org/hi-ontology#NullHypothesis
-<https://w3id.org/hi-ontology#NullHypothesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#NullHypothesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hi-ontology#Hypothesis> .
-<https://w3id.org/hi-ontology#NullHypothesis> <http://www.w3.org/2000/01/rdf-schema#comment> "The default hypothesis positing no effect or difference."@en .
-<https://w3id.org/hi-ontology#NullHypothesis> <http://www.w3.org/2000/01/rdf-schema#label> "Null Hypothesis (H0)"@en .
-# 
-# https://w3id.org/hi-ontology#ScientificPaper
-<https://w3id.org/hi-ontology#ScientificPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#ScientificPaper> <http://www.w3.org/2000/01/rdf-schema#comment> "A written document describing a Use Case, domain, or experimental configuration."@en .
-<https://w3id.org/hi-ontology#ScientificPaper> <http://www.w3.org/2000/01/rdf-schema#label> "Scientific Paper"@en .
-# 
 # https://w3id.org/hi-ontology#Task
 <https://w3id.org/hi-ontology#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hi-ontology#Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#Capability> .
-_:genid28 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#requiresCapability> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hi-ontology#Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hi-ontology#Capability> .
+_:genid22 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hi-ontology#requiresCapability> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hi-ontology#Task> <http://www.w3.org/2000/01/rdf-schema#comment> "A unit of purposeful activity executed by an agent toward achieving a goal."@en .
 <https://w3id.org/hi-ontology#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task"@en .
 # 
@@ -555,10 +590,13 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/hi-ontology#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/hi-ontology#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> .
 # 
-_:genid29 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:genid30 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:genid31 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:genid32 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+# https://w3id.org/hi-ontology/rules/roleConcept
+<https://w3id.org/hi-ontology/rules/roleConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+_:genid23 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid24 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid25 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid26 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 # 
 # 
 # #################################################################
@@ -582,132 +620,112 @@ _:genid32 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tru
 # 
 <https://w3id.org/hi-ontology/rules/team> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
 <https://w3id.org/hi-ontology/rules/agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
-<https://w3id.org/hi-ontology/rules/role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
 <https://w3id.org/hi-ontology/rules/goal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
 <https://w3id.org/hi-ontology/rules/task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
 <https://w3id.org/hi-ontology/rules/cap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
 <https://w3id.org/hi-ontology/rules/exec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
-_:genid33 <http://www.w3.org/2000/01/rdf-schema#comment> "If an HI team exists and has a member agent, then the agent must be classified by some Role (hi:hasRole)." .
-_:genid33 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 1 — Team membership implies having a role" .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid33 <http://www.w3.org/2003/11/swrl#body> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid35 .
-_:genid35 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid35 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
-_:genid35 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasMember> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid37 .
-_:genid37 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
-_:genid37 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/hi-ontology#HITeam> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid33 <http://www.w3.org/2003/11/swrl#head> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid39 .
-_:genid39 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/role> .
-_:genid39 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid39 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasRole> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid40 <http://www.w3.org/2000/01/rdf-schema#comment> "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." .
-_:genid40 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 2 — Team, Goal, and Capability determine eligibility" .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid40 <http://www.w3.org/2003/11/swrl#body> _:genid51 .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid27 <http://www.w3.org/2000/01/rdf-schema#comment> "If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus."@en .
+_:genid27 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 2 — Team membership implies having a role concept"@en .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid27 <http://www.w3.org/2003/11/swrl#body> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid29 .
+_:genid29 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid29 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
+_:genid29 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasMember> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid31 .
+_:genid31 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
+_:genid31 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/hi-ontology#HITeam> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid27 <http://www.w3.org/2003/11/swrl#head> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid33 .
+_:genid33 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/roleConcept> .
+_:genid33 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid33 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasRoleConcept> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid34 <http://www.w3.org/2000/01/rdf-schema#comment> "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." .
+_:genid34 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 1 — Team, Goal, and Capability determine eligibility" .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid34 <http://www.w3.org/2003/11/swrl#body> _:genid45 .
 _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid36 .
+_:genid36 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
+_:genid36 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/cap> .
+_:genid36 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#allowsTask> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
+_:genid38 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/cap> .
+_:genid38 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid38 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasCapability> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
+_:genid40 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid40 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
+_:genid40 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasMember> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid42 .
 _:genid42 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid42 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/cap> .
-_:genid42 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#allowsTask> .
+_:genid42 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/goal> .
+_:genid42 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#requiresTask> .
 _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
 _:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid44 .
-_:genid44 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/cap> .
-_:genid44 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid44 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasCapability> .
+_:genid44 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/goal> .
+_:genid44 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
+_:genid44 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasGoal> .
 _:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid46 .
-_:genid46 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
 _:genid46 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
-_:genid46 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasMember> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid46 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/hi-ontology#HITeam> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
 _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid34 <http://www.w3.org/2003/11/swrl#head> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid48 .
 _:genid48 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid48 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/goal> .
-_:genid48 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#requiresTask> .
+_:genid48 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid48 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#eligibleForTask> .
 _:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
 _:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid50 .
-_:genid50 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/goal> .
-_:genid50 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
-_:genid50 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#hasGoal> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid52 .
-_:genid52 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/team> .
-_:genid52 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/hi-ontology#HITeam> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid40 <http://www.w3.org/2003/11/swrl#head> _:genid53 .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
-_:genid54 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid54 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid54 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#eligibleForTask> .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid55 <http://www.w3.org/2000/01/rdf-schema#comment> "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." .
-_:genid55 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 4 — Assignment → Performance" .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid55 <http://www.w3.org/2003/11/swrl#body> _:genid58 .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
-_:genid57 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/exec> .
-_:genid57 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/task> .
-_:genid57 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#realizedBy> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid59 .
-_:genid59 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid59 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid59 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#assignedToTask> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid55 <http://www.w3.org/2003/11/swrl#head> _:genid60 .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid61 .
-_:genid61 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid61 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/exec> .
-_:genid61 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#performedBy> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid62 <http://www.w3.org/2000/01/rdf-schema#comment> "If an agent is eligible for a task, then the agent can be assigned to that task." .
-_:genid62 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 3 — Eligibility implies assignment" .
-_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid62 <http://www.w3.org/2003/11/swrl#body> _:genid63 .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid64 .
-_:genid64 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid64 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid64 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#eligibleForTask> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid62 <http://www.w3.org/2003/11/swrl#head> _:genid65 .
-_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid66 .
-_:genid66 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
-_:genid66 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
-_:genid66 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#assignedToTask> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid49 <http://www.w3.org/2000/01/rdf-schema#comment> "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." .
+_:genid49 <http://www.w3.org/2000/01/rdf-schema#label> "Rule 3 — Assignment → Performance" .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid49 <http://www.w3.org/2003/11/swrl#body> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
+_:genid51 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/exec> .
+_:genid51 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/task> .
+_:genid51 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#realizedBy> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid53 .
+_:genid53 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/task> .
+_:genid53 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid53 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#assignedToTask> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid49 <http://www.w3.org/2003/11/swrl#head> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid55 .
+_:genid55 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/hi-ontology/rules/agent> .
+_:genid55 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/hi-ontology/rules/exec> .
+_:genid55 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/hi-ontology#performedBy> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

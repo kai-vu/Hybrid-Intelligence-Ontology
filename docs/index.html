@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/hi-ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/hi-ontology#","name":"The Hybrid Intelligence (HI) Ontology", "headline":"Document describing the ontology https://w3id.org/hi-ontology#", "dateReleased":"2025-10-01", "version":"2.0.0", "author":[{"@type":"Person","name":"Francesca Urgese"},{"@type":"Person","name":"Margherita Martorana"},{"@type":"Person","name":"Ilaria Tiddi"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/hi-ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/hi-ontology#","name":"The Hybrid Intelligence (HI) Ontology", "headline":"The Hybrid Intelligence (HI) Ontology provides a structured conceptual model for describing hybrid human–AI teamwork. It formalizes core elements of HI systems - including agents, teams, goals, tasks, capabilities, executions, interactions, evaluations, and contextual influences - and integrates them with the HINT thesaurus through semantic links to controlled vocabulary concepts. The ontology enables consistent representation, reasoning, and analysis of HI use cases and supports interoperability across diverse hybrid intelligence scenarios.", "dateReleased":"2025-10-01", "version":"2.0.0"}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -74,14 +74,9 @@ $(function(){
 <dd><a href="https://w3id.org/hi-ontology#">https://w3id.org/hi-ontology#</a></dd>
 <dt>Revision:</dt>
 <dd>2.0.0</dd>
-<dt>Authors:</dt>
-<dd>Francesca Urgese</dd><dd>Margherita Martorana</dd><dd>Ilaria Tiddi</dd>
-
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Francesca Urgese, Margherita Martorana, Ilaria Tiddi. The Hybrid Intelligence (HI) Ontology. Revision: 2.0.0.</dd>
-</dl>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
 
 <hr/>
 </div>
@@ -90,14 +85,17 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+The Hybrid Intelligence (HI) Ontology provides a structured conceptual model for describing hybrid human–AI teamwork. It formalizes core elements of HI systems - including agents, teams, goals, tasks, capabilities, executions, interactions, evaluations, and contextual influences - and integrates them with the HINT thesaurus through semantic links to controlled vocabulary concepts. The ontology enables consistent representation, reasoning, and analysis of HI use cases and supports interoperability across diverse hybrid intelligence scenarios.</span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<span class="markdown">Hybrid Intelligence (HI) systems combine human and artificial agents to work collaboratively toward shared goals. Modeling these systems requires a clear representation of the entities involved, their capabilities and roles, the tasks they perform, and the contextual conditions that shape their behavior. The Hybrid Intelligence (HI) Ontology provides a formal framework for capturing these elements in a machine-interpretable way.
+
+The ontology describes HI teams, their members, goals, and required tasks, as well as the capabilities, methods, and interaction episodes that characterize their joint activity. It further models contextual constraints, phenomena, and evaluation processes that influence team performance. A key feature of the ontology is its integration with the HINT thesaurus through dedicated object properties linking HI entities to controlled vocabulary concepts. This supports terminological consistency, improves interpretability, and enables flexible classification of use cases, capabilities, contexts, and evaluation elements.
+
+Overall, the HI Ontology offers a foundation for representing, comparing, and reasoning over hybrid intelligence scenarios, supporting research and applications in collaborative AI, human–AI teams, and explainable hybrid systems.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -107,12 +105,15 @@ This is a place holder text for the introduction. The introduction should briefl
 <tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1/&gt;</td></tr>
 <tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
 <tr><td><b>dul</b></td><td>&lt;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#&gt;</td></tr>
+<tr><td><b>error</b></td><td>&lt;http://org.semanticweb.owlapi/error#&gt;</td></tr>
 <tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1/&gt;</td></tr>
 <tr><td><b>hi</b></td><td>&lt;https://w3id.org/hi-ontology#&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>rules</b></td><td>&lt;https://w3id.org/hi-ontology/rules/&gt;</td></tr>
 <tr><td><b>schema</b></td><td>&lt;http://schema.org/&gt;</td></tr>
+<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
 <tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl#&gt;</td></tr>
 <tr><td><b>swrla</b></td><td>&lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt;</td></tr>
 <tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb#&gt;</td></tr>
@@ -135,18 +136,7 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#AgentRelatedPhenomenon"
-         title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a>
-   </li>
-   <li>
-      <a href="#AlternativeHypothesis"
-         title="https://w3id.org/hi-ontology#AlternativeHypothesis">Alternative Hypothesis (H1)</a>
-   </li>
-   <li>
       <a href="#ArtificialAgent" title="https://w3id.org/hi-ontology#ArtificialAgent">Artificial Agent</a>
-   </li>
-   <li>
-      <a href="#Bias" title="https://w3id.org/hi-ontology#Bias">Bias</a>
    </li>
    <li>
       <a href="#Capability" title="https://w3id.org/hi-ontology#Capability">Capability</a>
@@ -155,19 +145,10 @@ This ontology has the following classes and properties.</span>
       <a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a>
    </li>
    <li>
-      <a href="#Domain" title="https://w3id.org/hi-ontology#Domain">Domain</a>
-   </li>
-   <li>
-      <a href="#EthicalConstraint" title="https://w3id.org/hi-ontology#EthicalConstraint">Ethical Constraint</a>
-   </li>
-   <li>
       <a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a>
    </li>
    <li>
       <a href="#Experiment" title="https://w3id.org/hi-ontology#Experiment">Experiment</a>
-   </li>
-   <li>
-      <a href="#Feedback" title="https://w3id.org/hi-ontology#Feedback">Feedback</a>
    </li>
    <li>
       <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a>
@@ -179,33 +160,7 @@ This ontology has the following classes and properties.</span>
       <a href="#HumanAgent" title="https://w3id.org/hi-ontology#HumanAgent">Human Agent</a>
    </li>
    <li>
-      <a href="#Hypothesis" title="https://w3id.org/hi-ontology#Hypothesis">Hypothesis</a>
-   </li>
-   <li>
       <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a>
-   </li>
-   <li>
-      <a href="#Intentionality" title="https://w3id.org/hi-ontology#Intentionality">Interaction Intentionality</a>
-   </li>
-   <li>
-      <a href="#InteractionModality" title="https://w3id.org/hi-ontology#InteractionModality">Interaction Modality</a>
-   </li>
-   <li>
-      <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method"
-         title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">Method</a>
-   </li>
-   <li>
-      <a href="#Metric" title="https://w3id.org/hi-ontology#Metric">Metric</a>
-   </li>
-   <li>
-      <a href="#NullHypothesis" title="https://w3id.org/hi-ontology#NullHypothesis">Null Hypothesis (H0)</a>
-   </li>
-   <li>
-      <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"
-         title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">Role</a>
-   </li>
-   <li>
-      <a href="#ScientificPaper" title="https://w3id.org/hi-ontology#ScientificPaper">Scientific Paper</a>
    </li>
    <li>
       <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a>
@@ -220,174 +175,148 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">
-         <span>allows Task</span>
+      <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a>
+   </li>
+   <li>
+      <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated by</a>
+   </li>
+   <li>
+      <a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">executes task</a>
+   </li>
+   <li>
+      <a href="#hasAgentConcept" title="https://w3id.org/hi-ontology#hasAgentConcept">
+         <span>has Agent Concept</span>
       </a>
    </li>
    <li>
-      <a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">
-         <span>assigned To Task</span>
+      <a href="#hasAgentInvolved" title="https://w3id.org/hi-ontology#hasAgentInvolved">has agent involved</a>
+   </li>
+   <li>
+      <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has capability</a>
+   </li>
+   <li>
+      <a href="#hasCapabilityConcept"
+         title="https://w3id.org/hi-ontology#hasCapabilityConcept">has capability concept</a>
+   </li>
+   <li>
+      <a href="#hasConstraintConcept"
+         title="https://w3id.org/hi-ontology#hasConstraintConcept">has constraint concept</a>
+   </li>
+   <li>
+      <a href="#hasContextConcept" title="https://w3id.org/hi-ontology#hasContextConcept">has context concept</a>
+   </li>
+   <li>
+      <a href="#hasDomainConcept" title="https://w3id.org/hi-ontology#hasDomainConcept">has domain concept</a>
+   </li>
+   <li>
+      <a href="#hasEvaluationConcept"
+         title="https://w3id.org/hi-ontology#hasEvaluationConcept">has evaluation concept</a>
+   </li>
+   <li>
+      <a href="#hasExecutionConcept" title="https://w3id.org/hi-ontology#hasExecutionConcept">has execution concept</a>
+   </li>
+   <li>
+      <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has experiment</a>
+   </li>
+   <li>
+      <a href="#hasExperimentConcept"
+         title="https://w3id.org/hi-ontology#hasExperimentConcept">has experiment concept</a>
+   </li>
+   <li>
+      <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has goal</a>
+   </li>
+   <li>
+      <a href="#hasGoalConcept" title="https://w3id.org/hi-ontology#hasGoalConcept">has goal concept</a>
+   </li>
+   <li>
+      <a href="#hasHITeam" title="https://w3id.org/hi-ontology#hasHITeam">has HI team</a>
+   </li>
+   <li>
+      <a href="#hasInfluenceOn" title="https://w3id.org/hi-ontology#hasInfluenceOn">has influence on</a>
+   </li>
+   <li>
+      <a href="#hasInteractionEpisode"
+         title="https://w3id.org/hi-ontology#hasInteractionEpisode">has interaction episode</a>
+   </li>
+   <li>
+      <a href="#hasInteractionIntentConcept"
+         title="https://w3id.org/hi-ontology#hasInteractionIntentConcept">has interaction intent concept</a>
+   </li>
+   <li>
+      <a href="#hasInteractionModalityConcept"
+         title="https://w3id.org/hi-ontology#hasInteractionModalityConcept">has interaction modality concept</a>
+   </li>
+   <li>
+      <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has member</a>
+   </li>
+   <li>
+      <a href="#hasMethodConcept" title="https://w3id.org/hi-ontology#hasMethodConcept">has method concept</a>
+   </li>
+   <li>
+      <a href="#hasMetricConcept" title="https://w3id.org/hi-ontology#hasMetricConcept">has metric concept</a>
+   </li>
+   <li>
+      <a href="#hasMetricTested" title="https://w3id.org/hi-ontology#hasMetricTested">has metric tested</a>
+   </li>
+   <li>
+      <a href="#hasPhenomenonConcept"
+         title="https://w3id.org/hi-ontology#hasPhenomenonConcept">has phenomenon concept</a>
+   </li>
+   <li>
+      <a href="#hasRoleConcept" title="https://w3id.org/hi-ontology#hasRoleConcept">
+         <span>has Role Concept</span>
       </a>
    </li>
    <li>
-      <a href="#describesUseCase" title="https://w3id.org/hi-ontology#describesUseCase">
-         <span>describes Use Case</span>
+      <a href="#hasTask" title="https://w3id.org/hi-ontology#hasTask">has task</a>
+   </li>
+   <li>
+      <a href="#hasTaskConcept" title="https://w3id.org/hi-ontology#hasTaskConcept">
+         <span>has Task Concept</span>
       </a>
    </li>
    <li>
-      <a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask">
-         <span>eligible For Task</span>
-      </a>
+      <a href="#hasUseCaseConcept" title="https://w3id.org/hi-ontology#hasUseCaseConcept">has use case concept</a>
    </li>
    <li>
-      <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">
-         <span>evaluated By</span>
-      </a>
+      <a href="#iaAssignedToTask" title="https://w3id.org/hi-ontology#iaAssignedToTask">is assigned to task</a>
    </li>
    <li>
-      <a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">
-         <span>executes Task</span>
-      </a>
+      <a href="#isEligibleForTask" title="https://w3id.org/hi-ontology#isEligibleForTask">is eligible for task</a>
    </li>
    <li>
-      <a href="#exhibitsPhenomenon" title="https://w3id.org/hi-ontology#exhibitsPhenomenon">
-         <span>exhibits Phenomenon</span>
-      </a>
+      <a href="#isInfluencedBy" title="https://w3id.org/hi-ontology#isInfluencedBy">is influenced by</a>
    </li>
+   <li>
+      <a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">operates in context</a>
+   </li>
+   <li>
+      <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed by</a>
+   </li>
+   <li>
+      <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a>
+   </li>
+   <li>
+      <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a>
+   </li>
+   <li>
+      <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a>
+   </li>
+   <li>
+      <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires cability</a>
+   </li>
+   <li>
+      <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards goal</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
    <li>
       <a href="#hasAlternativeHypothesis"
-         title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">
-         <span>has Alternative Hypothesis</span>
-      </a>
+         title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">has alternative hypothesis</a>
    </li>
    <li>
-      <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">
-         <span>has Capability</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasEthicalConstraint"
-         title="https://w3id.org/hi-ontology#hasEthicalConstraint">
-         <span>has Ethical Constraint</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">
-         <span>has Experiment</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">
-         <span>has Goal</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasInteractionIntent"
-         title="https://w3id.org/hi-ontology#hasInteractionIntent">
-         <span>has Interaction Intent</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">
-         <span>has Member</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">
-         <span>has Null Hypothesis</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasRole" title="https://w3id.org/hi-ontology#hasRole">
-         <span>has Role</span>
-      </a>
-   </li>
-   <li>
-      <a href="#inDomain" title="https://w3id.org/hi-ontology#inDomain">
-         <span>in Domain</span>
-      </a>
-   </li>
-   <li>
-      <a href="#influencedBy" title="https://w3id.org/hi-ontology#influencedBy">
-         <span>influenced By</span>
-      </a>
-   </li>
-   <li>
-      <a href="#influencedByEthicalConstraint"
-         title="https://w3id.org/hi-ontology#influencedByEthicalConstraint">
-         <span>influenced By Ethical Constraint</span>
-      </a>
-   </li>
-   <li>
-      <a href="#introducesHITeam" title="https://w3id.org/hi-ontology#introducesHITeam">
-         <span>introduces H I Team</span>
-      </a>
-   </li>
-   <li>
-      <a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">
-         <span>operates In Context</span>
-      </a>
-   </li>
-   <li>
-      <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">
-         <span>performed By</span>
-      </a>
-   </li>
-   <li>
-      <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">
-         <span>performs Execution</span>
-      </a>
-   </li>
-   <li>
-      <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">
-         <span>realized By</span>
-      </a>
-   </li>
-   <li>
-      <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">
-         <span>realizes Task</span>
-      </a>
-   </li>
-   <li>
-      <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">
-         <span>requires Capability</span>
-      </a>
-   </li>
-   <li>
-      <a href="#requiresTask" title="https://w3id.org/hi-ontology#requiresTask">
-         <span>requires Task</span>
-      </a>
-   </li>
-   <li>
-      <a href="#testsMetric" title="https://w3id.org/hi-ontology#testsMetric">
-         <span>tests Metric</span>
-      </a>
-   </li>
-   <li>
-      <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">
-         <span>towards Goal</span>
-      </a>
-   </li>
-   <li>
-      <a href="#usesInteractionModality"
-         title="https://w3id.org/hi-ontology#usesInteractionModality">
-         <span>uses Interaction Modality</span>
-      </a>
-   </li>
-   <li>
-      <a href="#usesMethod" title="https://w3id.org/hi-ontology#usesMethod">
-         <span>uses Method</span>
-      </a>
-   </li>
-   <li>
-      <a href="#usesMethodByAgent" title="https://w3id.org/hi-ontology#usesMethodByAgent">
-         <span>uses Method By Agent</span>
-      </a>
-   </li>
-   <li>
-      <a href="#usesMetric" title="https://w3id.org/hi-ontology#usesMetric">
-         <span>uses Metric</span>
-      </a>
+      <a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">has null hypothesis</a>
    </li>
 </ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -426,6 +355,12 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">
          <span>member</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2002/07/owl#minQualifiedCardinality"
+         title="http://www.w3.org/2002/07/owl#minQualifiedCardinality">
+         <span>min Qualified Cardinality</span>
       </a>
    </li>
    <li>
@@ -476,16 +411,13 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#d4e1121">Rule 1 — Team membership implies having a role</a>
+      <a href="#d4e1291">Rule 1 — Team, Goal, and Capability determine eligibility</a>
    </li>
    <li>
-      <a href="#d4e1200">Rule 2 — Team, Goal, and Capability determine eligibility</a>
+      <a href="#d4e1212">Rule 2 — Team membership implies having a role concept</a>
    </li>
    <li>
-      <a href="#d4e1449">Rule 3 — Eligibility implies assignment</a>
-   </li>
-   <li>
-      <a href="#d4e1367">Rule 4 — Assignment → Performance</a>
+      <a href="#d4e1458">Rule 3 — Assignment → Performance</a>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
 </div>
@@ -503,75 +435,19 @@ This section provides details for each class and property defined by The Hybrid 
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
-  <li><a href="#AgentRelatedPhenomenon" title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a></li>
-  <li><a href="#AlternativeHypothesis" title="https://w3id.org/hi-ontology#AlternativeHypothesis">Alternative Hypothesis (H1)</a></li>
   <li><a href="#ArtificialAgent" title="https://w3id.org/hi-ontology#ArtificialAgent">Artificial Agent</a></li>
-  <li><a href="#Bias" title="https://w3id.org/hi-ontology#Bias">Bias</a></li>
   <li><a href="#Capability" title="https://w3id.org/hi-ontology#Capability">Capability</a></li>
   <li><a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a></li>
-  <li><a href="#Domain" title="https://w3id.org/hi-ontology#Domain">Domain</a></li>
-  <li><a href="#EthicalConstraint" title="https://w3id.org/hi-ontology#EthicalConstraint">Ethical Constraint</a></li>
   <li><a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a></li>
   <li><a href="#Experiment" title="https://w3id.org/hi-ontology#Experiment">Experiment</a></li>
-  <li><a href="#Feedback" title="https://w3id.org/hi-ontology#Feedback">Feedback</a></li>
   <li><a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a></li>
   <li><a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a></li>
   <li><a href="#HumanAgent" title="https://w3id.org/hi-ontology#HumanAgent">Human Agent</a></li>
-  <li><a href="#Hypothesis" title="https://w3id.org/hi-ontology#Hypothesis">Hypothesis</a></li>
   <li><a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a></li>
-  <li><a href="#Intentionality" title="https://w3id.org/hi-ontology#Intentionality">Interaction Intentionality</a></li>
-  <li><a href="#InteractionModality" title="https://w3id.org/hi-ontology#InteractionModality">Interaction Modality</a></li>
-  <li><a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">Method</a></li>
-  <li><a href="#Metric" title="https://w3id.org/hi-ontology#Metric">Metric</a></li>
-  <li><a href="#NullHypothesis" title="https://w3id.org/hi-ontology#NullHypothesis">Null Hypothesis (H0)</a></li>
-  <li><a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">Role</a></li>
-  <li><a href="#ScientificPaper" title="https://w3id.org/hi-ontology#ScientificPaper">Scientific Paper</a></li>
   <li><a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a></li>
   <li><a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a></li>
   <li><a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a></li>
  </ul>
- <div class="entity" id="AgentRelatedPhenomenon">
-  <h3>Agent-related Phenomenon<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#AgentRelatedPhenomenon</p>
-  <div class="comment">
-   <span class="markdown">Human or system phenomena affecting performance or decision-making, such as bias or feedback.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#Bias" title="https://w3id.org/hi-ontology#Bias">Bias</a> <sup class="type-c" title="class">c</sup>, <a href="#Feedback" title="https://w3id.org/hi-ontology#Feedback">Feedback</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#exhibitsPhenomenon" title="https://w3id.org/hi-ontology#exhibitsPhenomenon">exhibits Phenomenon</a> <sup class="type-op" title="object property">op</sup>, <a href="#influencedBy" title="https://w3id.org/hi-ontology#influencedBy">influenced By</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="AlternativeHypothesis">
-  <h3>Alternative Hypothesis (H1)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#AlternativeHypothesis</p>
-  <div class="comment">
-   <span class="markdown">The hypothesis positing an effect or difference.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#Hypothesis" title="https://w3id.org/hi-ontology#Hypothesis">Hypothesis</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#hasAlternativeHypothesis" title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">has Alternative Hypothesis</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="ArtificialAgent">
   <h3>Artificial Agent<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#ArtificialAgent</p>
@@ -587,21 +463,6 @@ This section provides details for each class and property defined by The Hybrid 
    </dd>
   </dl>
  </div>
- <div class="entity" id="Bias">
-  <h3>Bias<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Bias</p>
-  <div class="comment">
-   <span class="markdown">Systematic deviation in decision-making or evaluation, exhibited by agents or datasets.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#AgentRelatedPhenomenon" title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="Capability">
   <h3>Capability<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Capability</p>
@@ -613,13 +474,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows Task</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCapabilityConcept" title="https://w3id.org/hi-ontology#hasCapabilityConcept">has capability concept</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has Capability</a> <sup class="type-op" title="object property">op</sup>, <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires Capability</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has capability</a> <sup class="type-op" title="object property">op</sup>, <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires cability</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -634,43 +495,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#exhibitsPhenomenon" title="https://w3id.org/hi-ontology#exhibitsPhenomenon">exhibits Phenomenon</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEthicalConstraint" title="https://w3id.org/hi-ontology#hasEthicalConstraint">has Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasConstraintConcept" title="https://w3id.org/hi-ontology#hasConstraintConcept">has constraint concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasContextConcept" title="https://w3id.org/hi-ontology#hasContextConcept">has context concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInfluenceOn" title="https://w3id.org/hi-ontology#hasInfluenceOn">has influence on</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPhenomenonConcept" title="https://w3id.org/hi-ontology#hasPhenomenonConcept">has phenomenon concept</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">operates In Context</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="Domain">
-  <h3>Domain<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Domain</p>
-  <div class="comment">
-   <span class="markdown">The subject area or discipline in which a Use Case or research scenario belongs.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#inDomain" title="https://w3id.org/hi-ontology#inDomain">in Domain</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="EthicalConstraint">
-  <h3>Ethical Constraint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#EthicalConstraint</p>
-  <div class="comment">
-   <span class="markdown">Normative condition constraining agent behavior, tasks, or evaluations within a context.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#hasEthicalConstraint" title="https://w3id.org/hi-ontology#hasEthicalConstraint">has Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>, <a href="#influencedBy" title="https://w3id.org/hi-ontology#influencedBy">influenced By</a> <sup class="type-op" title="object property">op</sup>, <a href="#influencedByEthicalConstraint" title="https://w3id.org/hi-ontology#influencedByEthicalConstraint">influenced By Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">operates in context</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -685,13 +516,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#hasAlternativeHypothesis" title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">has Alternative Hypothesis</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has Experiment</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">has Null Hypothesis</a> <sup class="type-op" title="object property">op</sup>, <a href="#influencedByEthicalConstraint" title="https://w3id.org/hi-ontology#influencedByEthicalConstraint">influenced By Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesMetric" title="https://w3id.org/hi-ontology#usesMetric">uses Metric</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasEvaluationConcept" title="https://w3id.org/hi-ontology#hasEvaluationConcept">has evaluation concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has experiment</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMetricConcept" title="https://w3id.org/hi-ontology#hasMetricConcept">has metric concept</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated by</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -706,28 +537,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#testsMetric" title="https://w3id.org/hi-ontology#testsMetric">tests Metric</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasAlternativeHypothesis" title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">has alternative hypothesis</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasExperimentConcept" title="https://w3id.org/hi-ontology#hasExperimentConcept">has experiment concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMetricTested" title="https://w3id.org/hi-ontology#hasMetricTested">has metric tested</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">has null hypothesis</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has Experiment</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="Feedback">
-  <h3>Feedback<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Feedback</p>
-  <div class="comment">
-   <span class="markdown">Information returned to an agent that influences subsequent actions or learning.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#AgentRelatedPhenomenon" title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a> <sup class="type-c" title="class">c</sup>
+    <a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has experiment</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -742,19 +558,19 @@ This section provides details for each class and property defined by The Hybrid 
     has super-classes
    </dt>
    <dd>
-    <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal" target="_blank" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+    <a href="http://org.semanticweb.owlapi/error#Error1" target="_blank" title="http://org.semanticweb.owlapi/error#Error1">Error1</a> <sup class="type-c" title="class">c</sup>, <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal" target="_blank" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#requiresTask" title="https://w3id.org/hi-ontology#requiresTask">requires Task</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasGoalConcept" title="https://w3id.org/hi-ontology#hasGoalConcept">has goal concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTask" title="https://w3id.org/hi-ontology#hasTask">has task</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has Goal</a> <sup class="type-op" title="object property">op</sup>, <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards Goal</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has goal</a> <sup class="type-op" title="object property">op</sup>, <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards goal</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -773,13 +589,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has Goal</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has Member</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasConstraintConcept" title="https://w3id.org/hi-ontology#hasConstraintConcept">has constraint concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has goal</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has member</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#introducesHITeam" title="https://w3id.org/hi-ontology#introducesHITeam">introduces H I Team</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasHITeam" title="https://w3id.org/hi-ontology#hasHITeam">has HI team</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInfluenceOn" title="https://w3id.org/hi-ontology#hasInfluenceOn">has influence on</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -798,21 +614,6 @@ This section provides details for each class and property defined by The Hybrid 
    </dd>
   </dl>
  </div>
- <div class="entity" id="Hypothesis">
-  <h3>Hypothesis<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Hypothesis</p>
-  <div class="comment">
-   <span class="markdown">A proposed explanation or assumption tested by experiments.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#AlternativeHypothesis" title="https://w3id.org/hi-ontology#AlternativeHypothesis">Alternative Hypothesis (H1)</a> <sup class="type-c" title="class">c</sup>, <a href="#NullHypothesis" title="https://w3id.org/hi-ontology#NullHypothesis">Null Hypothesis (H0)</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="Interaction">
   <h3>Interaction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Interaction</p>
@@ -823,131 +624,18 @@ This section provides details for each class and property defined by The Hybrid 
    <dt>
     has super-classes
    </dt>
-   <dd>
-    <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
-   </dd>
+   <dd></dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#hasInteractionIntent" title="https://w3id.org/hi-ontology#hasInteractionIntent">has Interaction Intent</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesInteractionModality" title="https://w3id.org/hi-ontology#usesInteractionModality">uses Interaction Modality</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="Intentionality">
-  <h3>Interaction Intentionality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Intentionality</p>
-  <div class="comment">
-   <span class="markdown">Communicative/social intent (explaining, requesting, negotiating, instructing...).</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#hasInteractionIntent" title="https://w3id.org/hi-ontology#hasInteractionIntent">has Interaction Intent</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="InteractionModality">
-  <h3>Interaction Modality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#InteractionModality</p>
-  <div class="comment">
-   <span class="markdown">Channel or medium of interaction (verbal dialog, gesture, symbolic messages, haptic, etc.).</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#usesInteractionModality" title="https://w3id.org/hi-ontology#usesInteractionModality">uses Interaction Modality</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">
-  <h3>Method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</p>
-  <div class="comment">
-   <span class="markdown">A technical or procedural means used during task execution or evaluation.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#influencedByEthicalConstraint" title="https://w3id.org/hi-ontology#influencedByEthicalConstraint">influenced By Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasAgentInvolved" title="https://w3id.org/hi-ontology#hasAgentInvolved">has agent involved</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInteractionIntentConcept" title="https://w3id.org/hi-ontology#hasInteractionIntentConcept">has interaction intent concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInteractionModalityConcept" title="https://w3id.org/hi-ontology#hasInteractionModalityConcept">has interaction modality concept</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#usesMethod" title="https://w3id.org/hi-ontology#usesMethod">uses Method</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesMethodByAgent" title="https://w3id.org/hi-ontology#usesMethodByAgent">uses Method By Agent</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="Metric">
-  <h3>Metric<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#Metric</p>
-  <div class="comment">
-   <span class="markdown">A measurable criterion used to quantify performance or outcomes in an evaluation.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#testsMetric" title="https://w3id.org/hi-ontology#testsMetric">tests Metric</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesMetric" title="https://w3id.org/hi-ontology#usesMetric">uses Metric</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="NullHypothesis">
-  <h3>Null Hypothesis (H0)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#NullHypothesis</p>
-  <div class="comment">
-   <span class="markdown">The default hypothesis positing no effect or difference.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#Hypothesis" title="https://w3id.org/hi-ontology#Hypothesis">Hypothesis</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">has Null Hypothesis</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">
-  <h3>Role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role</p>
-  <div class="comment">
-   <span class="markdown">A functional or organizational position occupied by an agent within an HI team.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#hasRole" title="https://w3id.org/hi-ontology#hasRole">has Role</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="ScientificPaper">
-  <h3>Scientific Paper<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#ScientificPaper</p>
-  <div class="comment">
-   <span class="markdown">A written document describing a Use Case, domain, or experimental configuration.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#describesUseCase" title="https://w3id.org/hi-ontology#describesUseCase">describes Use Case</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasInteractionEpisode" title="https://w3id.org/hi-ontology#hasInteractionEpisode">has interaction episode</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -966,13 +654,13 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized By</a> <sup class="type-op" title="object property">op</sup>, <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires Capability</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasTaskConcept" title="https://w3id.org/hi-ontology#hasTaskConcept">has Task Concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a> <sup class="type-op" title="object property">op</sup>, <a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires cability</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask">eligible For Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">executes Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#requiresTask" title="https://w3id.org/hi-ontology#requiresTask">requires Task</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a> <sup class="type-op" title="object property">op</sup>, <a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">executes task</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTask" title="https://w3id.org/hi-ontology#hasTask">has task</a> <sup class="type-op" title="object property">op</sup>, <a href="#iaAssignedToTask" title="https://w3id.org/hi-ontology#iaAssignedToTask">is assigned to task</a> <sup class="type-op" title="object property">op</sup>, <a href="#isEligibleForTask" title="https://w3id.org/hi-ontology#isEligibleForTask">is eligible for task</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -984,22 +672,16 @@ This section provides details for each class and property defined by The Hybrid 
   </div>
   <dl class="description">
    <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#influencedByEthicalConstraint" title="https://w3id.org/hi-ontology#influencedByEthicalConstraint">influenced By Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards Goal</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesMethod" title="https://w3id.org/hi-ontology#usesMethod">uses Method</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated by</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInteractionEpisode" title="https://w3id.org/hi-ontology#hasInteractionEpisode">has interaction episode</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMethodConcept" title="https://w3id.org/hi-ontology#hasMethodConcept">has method concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed by</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a> <sup class="type-op" title="object property">op</sup>, <a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards goal</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs Execution</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1014,55 +696,56 @@ This section provides details for each class and property defined by The Hybrid 
     is in domain of
    </dt>
    <dd>
-    <a href="#inDomain" title="https://w3id.org/hi-ontology#inDomain">in Domain</a> <sup class="type-op" title="object property">op</sup>, <a href="#introducesHITeam" title="https://w3id.org/hi-ontology#introducesHITeam">introduces H I Team</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#describesUseCase" title="https://w3id.org/hi-ontology#describesUseCase">describes Use Case</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#hasHITeam" title="https://w3id.org/hi-ontology#hasHITeam">has HI team</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDomainConcept" title="https://w3id.org/hi-ontology#hasDomainConcept">has domain concept</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasUseCaseConcept" title="https://w3id.org/hi-ontology#hasUseCaseConcept">has use case concept</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask"> <span>allows Task</span> </a></li>
-  <li><a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask"> <span>assigned To Task</span> </a></li>
-  <li><a href="#describesUseCase" title="https://w3id.org/hi-ontology#describesUseCase"> <span>describes Use Case</span> </a></li>
-  <li><a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask"> <span>eligible For Task</span> </a></li>
-  <li><a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy"> <span>evaluated By</span> </a></li>
-  <li><a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask"> <span>executes Task</span> </a></li>
-  <li><a href="#exhibitsPhenomenon" title="https://w3id.org/hi-ontology#exhibitsPhenomenon"> <span>exhibits Phenomenon</span> </a></li>
-  <li><a href="#hasAlternativeHypothesis" title="https://w3id.org/hi-ontology#hasAlternativeHypothesis"> <span>has Alternative Hypothesis</span> </a></li>
-  <li><a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability"> <span>has Capability</span> </a></li>
-  <li><a href="#hasEthicalConstraint" title="https://w3id.org/hi-ontology#hasEthicalConstraint"> <span>has Ethical Constraint</span> </a></li>
-  <li><a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment"> <span>has Experiment</span> </a></li>
-  <li><a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal"> <span>has Goal</span> </a></li>
-  <li><a href="#hasInteractionIntent" title="https://w3id.org/hi-ontology#hasInteractionIntent"> <span>has Interaction Intent</span> </a></li>
-  <li><a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember"> <span>has Member</span> </a></li>
-  <li><a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis"> <span>has Null Hypothesis</span> </a></li>
-  <li><a href="#hasRole" title="https://w3id.org/hi-ontology#hasRole"> <span>has Role</span> </a></li>
-  <li><a href="#inDomain" title="https://w3id.org/hi-ontology#inDomain"> <span>in Domain</span> </a></li>
-  <li><a href="#influencedBy" title="https://w3id.org/hi-ontology#influencedBy"> <span>influenced By</span> </a></li>
-  <li><a href="#influencedByEthicalConstraint" title="https://w3id.org/hi-ontology#influencedByEthicalConstraint"> <span>influenced By Ethical Constraint</span> </a></li>
-  <li><a href="#introducesHITeam" title="https://w3id.org/hi-ontology#introducesHITeam"> <span>introduces H I Team</span> </a></li>
-  <li><a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext"> <span>operates In Context</span> </a></li>
-  <li><a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy"> <span>performed By</span> </a></li>
-  <li><a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution"> <span>performs Execution</span> </a></li>
-  <li><a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy"> <span>realized By</span> </a></li>
-  <li><a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask"> <span>realizes Task</span> </a></li>
-  <li><a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability"> <span>requires Capability</span> </a></li>
-  <li><a href="#requiresTask" title="https://w3id.org/hi-ontology#requiresTask"> <span>requires Task</span> </a></li>
-  <li><a href="#testsMetric" title="https://w3id.org/hi-ontology#testsMetric"> <span>tests Metric</span> </a></li>
-  <li><a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal"> <span>towards Goal</span> </a></li>
-  <li><a href="#usesInteractionModality" title="https://w3id.org/hi-ontology#usesInteractionModality"> <span>uses Interaction Modality</span> </a></li>
-  <li><a href="#usesMethod" title="https://w3id.org/hi-ontology#usesMethod"> <span>uses Method</span> </a></li>
-  <li><a href="#usesMethodByAgent" title="https://w3id.org/hi-ontology#usesMethodByAgent"> <span>uses Method By Agent</span> </a></li>
-  <li><a href="#usesMetric" title="https://w3id.org/hi-ontology#usesMetric"> <span>uses Metric</span> </a></li>
+  <li><a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a></li>
+  <li><a href="#evaluatedBy" title="https://w3id.org/hi-ontology#evaluatedBy">evaluated by</a></li>
+  <li><a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">executes task</a></li>
+  <li><a href="#hasAgentConcept" title="https://w3id.org/hi-ontology#hasAgentConcept"> <span>has Agent Concept</span> </a></li>
+  <li><a href="#hasAgentInvolved" title="https://w3id.org/hi-ontology#hasAgentInvolved">has agent involved</a></li>
+  <li><a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has capability</a></li>
+  <li><a href="#hasCapabilityConcept" title="https://w3id.org/hi-ontology#hasCapabilityConcept">has capability concept</a></li>
+  <li><a href="#hasConstraintConcept" title="https://w3id.org/hi-ontology#hasConstraintConcept">has constraint concept</a></li>
+  <li><a href="#hasContextConcept" title="https://w3id.org/hi-ontology#hasContextConcept">has context concept</a></li>
+  <li><a href="#hasDomainConcept" title="https://w3id.org/hi-ontology#hasDomainConcept">has domain concept</a></li>
+  <li><a href="#hasEvaluationConcept" title="https://w3id.org/hi-ontology#hasEvaluationConcept">has evaluation concept</a></li>
+  <li><a href="#hasExecutionConcept" title="https://w3id.org/hi-ontology#hasExecutionConcept">has execution concept</a></li>
+  <li><a href="#hasExperiment" title="https://w3id.org/hi-ontology#hasExperiment">has experiment</a></li>
+  <li><a href="#hasExperimentConcept" title="https://w3id.org/hi-ontology#hasExperimentConcept">has experiment concept</a></li>
+  <li><a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has goal</a></li>
+  <li><a href="#hasGoalConcept" title="https://w3id.org/hi-ontology#hasGoalConcept">has goal concept</a></li>
+  <li><a href="#hasHITeam" title="https://w3id.org/hi-ontology#hasHITeam">has HI team</a></li>
+  <li><a href="#hasInfluenceOn" title="https://w3id.org/hi-ontology#hasInfluenceOn">has influence on</a></li>
+  <li><a href="#hasInteractionEpisode" title="https://w3id.org/hi-ontology#hasInteractionEpisode">has interaction episode</a></li>
+  <li><a href="#hasInteractionIntentConcept" title="https://w3id.org/hi-ontology#hasInteractionIntentConcept">has interaction intent concept</a></li>
+  <li><a href="#hasInteractionModalityConcept" title="https://w3id.org/hi-ontology#hasInteractionModalityConcept">has interaction modality concept</a></li>
+  <li><a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has member</a></li>
+  <li><a href="#hasMethodConcept" title="https://w3id.org/hi-ontology#hasMethodConcept">has method concept</a></li>
+  <li><a href="#hasMetricConcept" title="https://w3id.org/hi-ontology#hasMetricConcept">has metric concept</a></li>
+  <li><a href="#hasMetricTested" title="https://w3id.org/hi-ontology#hasMetricTested">has metric tested</a></li>
+  <li><a href="#hasPhenomenonConcept" title="https://w3id.org/hi-ontology#hasPhenomenonConcept">has phenomenon concept</a></li>
+  <li><a href="#hasRoleConcept" title="https://w3id.org/hi-ontology#hasRoleConcept"> <span>has Role Concept</span> </a></li>
+  <li><a href="#hasTask" title="https://w3id.org/hi-ontology#hasTask">has task</a></li>
+  <li><a href="#hasTaskConcept" title="https://w3id.org/hi-ontology#hasTaskConcept"> <span>has Task Concept</span> </a></li>
+  <li><a href="#hasUseCaseConcept" title="https://w3id.org/hi-ontology#hasUseCaseConcept">has use case concept</a></li>
+  <li><a href="#iaAssignedToTask" title="https://w3id.org/hi-ontology#iaAssignedToTask">is assigned to task</a></li>
+  <li><a href="#isEligibleForTask" title="https://w3id.org/hi-ontology#isEligibleForTask">is eligible for task</a></li>
+  <li><a href="#isInfluencedBy" title="https://w3id.org/hi-ontology#isInfluencedBy">is influenced by</a></li>
+  <li><a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">operates in context</a></li>
+  <li><a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed by</a></li>
+  <li><a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a></li>
+  <li><a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a></li>
+  <li><a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a></li>
+  <li><a href="#requiresCapability" title="https://w3id.org/hi-ontology#requiresCapability">requires cability</a></li>
+  <li><a href="#towardsGoal" title="https://w3id.org/hi-ontology#towardsGoal">towards goal</a></li>
  </ul>
  <div class="entity" id="allowsTask">
-  <h3>allows Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>allows task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#allowsTask</p>
   <div class="comment">
    <span class="markdown">A capability enables or allows a task to be performed.</span>
@@ -1084,95 +767,8 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
- <div class="entity" id="assignedToTask">
-  <h3>assigned To Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#assignedToTask</p>
-  <div class="comment">
-   <span class="markdown">Agent formally assigned to perform a task (inferred from executions).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has sub-properties
-    </dt>
-    <dd>
-     <a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask">eligible For Task</a> <sup class="type-op" title="object property">op</sup>, <a href="#executesTask" title="https://w3id.org/hi-ontology#executesTask">executes Task</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has sub-property chains
-    </dt>
-    <dd>
-     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs Execution</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes Task</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="describesUseCase">
-  <h3>describes Use Case<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#describesUseCase</p>
-  <div class="comment">
-   <span class="markdown">A paper describing a specific use case or scenario.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#ScientificPaper" title="https://w3id.org/hi-ontology#ScientificPaper">Scientific Paper</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="eligibleForTask">
-  <h3>eligible For Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#eligibleForTask</p>
-  <div class="comment">
-   <span class="markdown">Agent eligible for a task based on membership and capabilities (policy-level notion).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has super-properties
-    </dt>
-    <dd>
-     <a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="evaluatedBy">
-  <h3>evaluated By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>evaluated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#evaluatedBy</p>
   <div class="comment">
    <span class="markdown">Execution is evaluated by a defined evaluation.</span>
@@ -1195,7 +791,7 @@ This section provides details for each class and property defined by The Hybrid 
   </div>
  </div>
  <div class="entity" id="executesTask">
-  <h3>executes Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>executes task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#executesTask</p>
   <div class="comment">
    <span class="markdown">Agent executes a task (derivable from Agent→Execution→Task).</span>
@@ -1206,7 +802,7 @@ This section provides details for each class and property defined by The Hybrid 
      has super-properties
     </dt>
     <dd>
-     <a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>
+     <a href="https://w3id.org/hi-ontology#assignedToTask" target="_blank" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -1224,16 +820,16 @@ This section provides details for each class and property defined by The Hybrid 
      has sub-property chains
     </dt>
     <dd>
-     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs Execution</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes Task</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="exhibitsPhenomenon">
-  <h3>exhibits Phenomenon<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#exhibitsPhenomenon</p>
+ <div class="entity" id="hasAgentConcept">
+  <h3>has Agent Concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasAgentConcept</p>
   <div class="comment">
-   <span class="markdown">Context exhibits a phenomenon (e.g., bias/feedback emerges in that context).</span>
+   <span class="markdown">Links an agent to a concept in the HINT thesaurus.</span>
   </div>
   <div class="description">
    <dl>
@@ -1241,39 +837,42 @@ This section provides details for each class and property defined by The Hybrid 
      has domain
     </dt>
     <dd>
-     <a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a> <sup class="type-c" title="class">c</sup>
+     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#AgentRelatedPhenomenon" title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="hasAlternativeHypothesis">
-  <h3>has Alternative Hypothesis<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasAlternativeHypothesis</p>
+ <div class="entity" id="hasAgentInvolved">
+  <h3>has agent involved<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasAgentInvolved</p>
+  <div class="comment">
+   <span class="markdown">Indicates an agent that participates in or contributes to an interaction episode. This property identifies the human or artificial agents involved in the exchange.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#AlternativeHypothesis" title="https://w3id.org/hi-ontology#AlternativeHypothesis">Alternative Hypothesis (H1)</a> <sup class="type-c" title="class">c</sup>
+     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasCapability">
-  <h3>has Capability<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>has capability<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasCapability</p>
   <div class="comment">
    <span class="markdown">Agent possesses a capability.</span>
@@ -1295,11 +894,57 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
- <div class="entity" id="hasEthicalConstraint">
-  <h3>has Ethical Constraint<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasEthicalConstraint</p>
+ <div class="entity" id="hasCapabilityConcept">
+  <h3>has capability concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasCapabilityConcept</p>
   <div class="comment">
-   <span class="markdown">Ethical constraints that apply in a given context.</span>
+   <span class="markdown">Links a capability to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Capability" title="https://w3id.org/hi-ontology#Capability">Capability</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasConstraintConcept">
+  <h3>has constraint concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasConstraintConcept</p>
+  <div class="comment">
+   <span class="markdown">Specifies the constraint using a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasContextConcept">
+  <h3>has context concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasContextConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a context to a concept in the HINT thesaurus.</span>
   </div>
   <div class="description">
    <dl>
@@ -1313,14 +958,86 @@ This section provides details for each class and property defined by The Hybrid 
      has range
     </dt>
     <dd>
-     <a href="#EthicalConstraint" title="https://w3id.org/hi-ontology#EthicalConstraint">Ethical Constraint</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDomainConcept">
+  <h3>has domain concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasDomainConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a domain to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEvaluationConcept">
+  <h3>has evaluation concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasEvaluationConcept</p>
+  <div class="comment">
+   <span class="markdown">Links an evaluation to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasExecutionConcept">
+  <h3>has execution concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasExecutionConcept</p>
+  <div class="comment">
+   <span class="markdown">Links an experiment to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/hi-ontology#Execution" target="_blank" title="https://w3id.org/hi-ontology#Execution">Execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasExperiment">
-  <h3>has Experiment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>has experiment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasExperiment</p>
+  <div class="comment">
+   <span class="markdown">An evaluation has an experiment.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1338,8 +1055,31 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
+ <div class="entity" id="hasExperimentConcept">
+  <h3>has experiment concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasExperimentConcept</p>
+  <div class="comment">
+   <span class="markdown">Links an experiment to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Experiment" title="https://w3id.org/hi-ontology#Experiment">Experiment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="hasGoal">
-  <h3>has Goal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>has goal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasGoal</p>
   <div class="comment">
    <span class="markdown">An HI team pursues one or more goals.</span>
@@ -1361,9 +1101,107 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
- <div class="entity" id="hasInteractionIntent">
-  <h3>has Interaction Intent<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasInteractionIntent</p>
+ <div class="entity" id="hasGoalConcept">
+  <h3>has goal concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasGoalConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a goal to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasHITeam">
+  <h3>has HI team<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasHITeam</p>
+  <div class="comment">
+   <span class="markdown">A use case introduces a hybrid intelligence team.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInfluenceOn">
+  <h3>has influence on<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasInfluenceOn</p>
+  <div class="comment">
+   <span class="markdown">Relates a contextual condition to the HI team whose actions, collaboration dynamics, or task performance are influenced by that condition. It captures how background phenomena and constraints shape the team's operation in a given use case.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isInfluencedBy" title="https://w3id.org/hi-ontology#isInfluencedBy">is influenced by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInteractionEpisode">
+  <h3>has interaction episode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasInteractionEpisode</p>
+  <div class="comment">
+   <span class="markdown">Identifies moments of interaction (e.g., dialogue, negotiation, or guidance) that unfold within the execution of a task.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInteractionIntentConcept">
+  <h3>has interaction intent concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasInteractionIntentConcept</p>
   <div class="comment">
    <span class="markdown">Intent underlying the interaction (e.g., explain, request, negotiate).</span>
   </div>
@@ -1379,13 +1217,36 @@ This section provides details for each class and property defined by The Hybrid 
      has range
     </dt>
     <dd>
-     <a href="#Intentionality" title="https://w3id.org/hi-ontology#Intentionality">Interaction Intentionality</a> <sup class="type-c" title="class">c</sup>
+     <a href="https://w3id.org/hi-ontology#Intentionality" target="_blank" title="https://w3id.org/hi-ontology#Intentionality">Intentionality</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInteractionModalityConcept">
+  <h3>has interaction modality concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasInteractionModalityConcept</p>
+  <div class="comment">
+   <span class="markdown">Modality/channel used during the interaction.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasMember">
-  <h3>has Member<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>has member<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasMember</p>
   <div class="comment">
    <span class="markdown">Specifies agents that are members of an HI team.</span>
@@ -1407,9 +1268,35 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
- <div class="entity" id="hasNullHypothesis">
-  <h3>has Null Hypothesis<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasNullHypothesis</p>
+ <div class="entity" id="hasMethodConcept">
+  <h3>has method concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasMethodConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a task execution to a method in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasMetricConcept">
+  <h3>has metric concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasMetricConcept</p>
+  <div class="comment">
+   <span class="markdown">An evaluation uses certain metrics, defined in the HINT thesaurus</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1422,21 +1309,162 @@ This section provides details for each class and property defined by The Hybrid 
      has range
     </dt>
     <dd>
-     <a href="#NullHypothesis" title="https://w3id.org/hi-ontology#NullHypothesis">Null Hypothesis (H0)</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="hasRole">
-  <h3>has Role<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasRole</p>
+ <div class="entity" id="hasMetricTested">
+  <h3>has metric tested<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasMetricTested</p>
+  <div class="comment">
+   <span class="markdown">An experiment tests certain metrics, defined in the HINT thesaurus</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Experiment" title="https://w3id.org/hi-ontology#Experiment">Experiment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPhenomenonConcept">
+  <h3>has phenomenon concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasPhenomenonConcept</p>
+  <div class="comment">
+   <span class="markdown">Context exhibits a phenomenon (e.g., bias/feedback emerges in that context).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Context" title="https://w3id.org/hi-ontology#Context">Context</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRoleConcept">
+  <h3>has Role Concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasRoleConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a role to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTask">
+  <h3>has task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasTask</p>
+  <div class="comment">
+   <span class="markdown">A goal requires one or more tasks to be fulfilled.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTaskConcept">
+  <h3>has Task Concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasTaskConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a task to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasUseCaseConcept">
+  <h3>has use case concept<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasUseCaseConcept</p>
+  <div class="comment">
+   <span class="markdown">Links a use case to a concept in the HINT thesaurus.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="iaAssignedToTask">
+  <h3>is assigned to task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#iaAssignedToTask</p>
+  <div class="comment">
+   <span class="markdown">Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has super-properties
     </dt>
     <dd>
-     <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy" target="_blank" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy">is Classified By</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#isEligibleForTask" title="https://w3id.org/hi-ontology#isEligibleForTask">is eligible for task</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -1448,106 +1476,75 @@ This section provides details for each class and property defined by The Hybrid 
      has range
     </dt>
     <dd>
-     <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role">Role</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="inDomain">
-  <h3>in Domain<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#inDomain</p>
-  <div class="comment">
-   <span class="markdown">Links a use case to its domain of application.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Domain" title="https://w3id.org/hi-ontology#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="influencedBy">
-  <h3>influenced By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#influencedBy</p>
-  <div class="comment">
-   <span class="markdown">Indicates that an entity is influenced by a phenomenon or ethical constraint.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#AgentRelatedPhenomenon" title="https://w3id.org/hi-ontology#AgentRelatedPhenomenon">Agent-related Phenomenon</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#EthicalConstraint" title="https://w3id.org/hi-ontology#EthicalConstraint">Ethical Constraint</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="influencedByEthicalConstraint">
-  <h3>influenced By Ethical Constraint<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#influencedByEthicalConstraint</p>
-  <div class="comment">
-   <span class="markdown">Direct influence of an ethical constraint on agents, executions, methods, or evaluations.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">Method</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#EthicalConstraint" title="https://w3id.org/hi-ontology#EthicalConstraint">Ethical Constraint</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has sub-property chains
     </dt>
     <dd>
-     <a href="#operatesInContext" title="https://w3id.org/hi-ontology#operatesInContext">operates In Context</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#hasEthicalConstraint" title="https://w3id.org/hi-ontology#hasEthicalConstraint">has Ethical Constraint</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="introducesHITeam">
-  <h3>introduces H I Team<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#introducesHITeam</p>
+ <div class="entity" id="isEligibleForTask">
+  <h3>is eligible for task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#isEligibleForTask</p>
   <div class="comment">
-   <span class="markdown">A use case introduces a hybrid intelligence team.</span>
+   <span class="markdown">Relates an agent to a task it is eligible to perform, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility.</span>
   </div>
   <div class="description">
    <dl>
     <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#iaAssignedToTask" title="https://w3id.org/hi-ontology#iaAssignedToTask">is assigned to task</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
      has domain
     </dt>
     <dd>
-     <a href="#UseCase" title="https://w3id.org/hi-ontology#UseCase">Use Case</a> <sup class="type-c" title="class">c</sup>
+     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has capability</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isInfluencedBy">
+  <h3>is influenced by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#isInfluencedBy</p>
+  <div class="comment">
+   <span class="markdown">Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasInfluenceOn" title="https://w3id.org/hi-ontology#hasInfluenceOn">has influence on</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="operatesInContext">
-  <h3>operates In Context<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>operates in context<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#operatesInContext</p>
+  <div class="comment">
+   <span class="markdown">Specifies the context in which an HI team operates.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1566,7 +1563,7 @@ This section provides details for each class and property defined by The Hybrid 
   </div>
  </div>
  <div class="entity" id="performedBy">
-  <h3>performed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>performed by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#performedBy</p>
   <div class="comment">
    <span class="markdown">Execution performed by an agent.</span>
@@ -1589,13 +1586,13 @@ This section provides details for each class and property defined by The Hybrid 
      is inverse of
     </dt>
     <dd>
-     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs Execution</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs execution</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="performsExecution">
-  <h3>performs Execution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>performs execution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#performsExecution</p>
   <div class="comment">
    <span class="markdown">Agent that performs a specific task execution.</span>
@@ -1618,13 +1615,13 @@ This section provides details for each class and property defined by The Hybrid 
      is inverse of
     </dt>
     <dd>
-     <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed By</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed by</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="realizedBy">
-  <h3>realized By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>realized by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#realizedBy</p>
   <div class="comment">
    <span class="markdown">A task is realized through a task execution.</span>
@@ -1647,13 +1644,13 @@ This section provides details for each class and property defined by The Hybrid 
      is inverse of
     </dt>
     <dd>
-     <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes Task</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#realizesTask" title="https://w3id.org/hi-ontology#realizesTask">realizes task</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="realizesTask">
-  <h3>realizes Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>realizes task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#realizesTask</p>
   <div class="comment">
    <span class="markdown">Task execution realizes a task.</span>
@@ -1676,13 +1673,13 @@ This section provides details for each class and property defined by The Hybrid 
      is inverse of
     </dt>
     <dd>
-     <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized By</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="requiresCapability">
-  <h3>requires Capability<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>requires cability<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/hi-ontology#requiresCapability</p>
   <div class="comment">
    <span class="markdown">A task requires certain capabilities to be accomplished.</span>
@@ -1704,11 +1701,11 @@ This section provides details for each class and property defined by The Hybrid 
    </dl>
   </div>
  </div>
- <div class="entity" id="requiresTask">
-  <h3>requires Task<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#requiresTask</p>
+ <div class="entity" id="towardsGoal">
+  <h3>towards goal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#towardsGoal</p>
   <div class="comment">
-   <span class="markdown">A goal requires one or more tasks to be fulfilled.</span>
+   <span class="markdown">Task execution towards a goal.</span>
   </div>
   <div class="description">
    <dl>
@@ -1716,20 +1713,29 @@ This section provides details for each class and property defined by The Hybrid 
      has domain
     </dt>
     <dd>
-     <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+     <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Task" title="https://w3id.org/hi-ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="testsMetric">
-  <h3>tests Metric<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#testsMetric</p>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasAlternativeHypothesis" title="https://w3id.org/hi-ontology#hasAlternativeHypothesis">has alternative hypothesis</a></li>
+  <li><a href="#hasNullHypothesis" title="https://w3id.org/hi-ontology#hasNullHypothesis">has null hypothesis</a></li>
+ </ul>
+ <div class="entity" id="hasAlternativeHypothesis">
+  <h3>has alternative hypothesis<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasAlternativeHypothesis</p>
+  <div class="comment">
+   <span class="markdown">Stores the textual formulation of the alternative hypothesis of an experiment.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1742,36 +1748,16 @@ This section provides details for each class and property defined by The Hybrid 
      has range
     </dt>
     <dd>
-     <a href="#Metric" title="https://w3id.org/hi-ontology#Metric">Metric</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="towardsGoal">
-  <h3>towards Goal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#towardsGoal</p>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Goal" title="https://w3id.org/hi-ontology#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="usesInteractionModality">
-  <h3>uses Interaction Modality<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#usesInteractionModality</p>
+ <div class="entity" id="hasNullHypothesis">
+  <h3>has null hypothesis<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#hasNullHypothesis</p>
   <div class="comment">
-   <span class="markdown">Modality/channel used during the interaction.</span>
+   <span class="markdown">Stores the textual formulation of the null hypothesis of an experiment.</span>
   </div>
   <div class="description">
    <dl>
@@ -1779,85 +1765,13 @@ This section provides details for each class and property defined by The Hybrid 
      has domain
     </dt>
     <dd>
-     <a href="#Interaction" title="https://w3id.org/hi-ontology#Interaction">Interaction</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Experiment" title="https://w3id.org/hi-ontology#Experiment">Experiment</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#InteractionModality" title="https://w3id.org/hi-ontology#InteractionModality">Interaction Modality</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="usesMethod">
-  <h3>uses Method<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#usesMethod</p>
-  <div class="comment">
-   <span class="markdown">Execution makes use of a specific method.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#TaskExecution" title="https://w3id.org/hi-ontology#TaskExecution">Task Execution</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">Method</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="usesMethodByAgent">
-  <h3>uses Method By Agent<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#usesMethodByAgent</p>
-  <div class="comment">
-   <span class="markdown">Inferred: an agent uses a method via the executions it performs.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="https://w3id.org/hi-ontology#Agent" target="_blank" title="https://w3id.org/hi-ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method" title="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method">Method</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has sub-property chains
-    </dt>
-    <dd>
-     <a href="#performsExecution" title="https://w3id.org/hi-ontology#performsExecution">performs Execution</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#usesMethod" title="https://w3id.org/hi-ontology#usesMethod">uses Method</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="usesMetric">
-  <h3>uses Metric<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/hi-ontology#usesMetric</p>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Evaluation" title="https://w3id.org/hi-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Metric" title="https://w3id.org/hi-ontology#Metric">Metric</a> <sup class="type-c" title="class">c</sup>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>
@@ -1872,6 +1786,7 @@ This section provides details for each class and property defined by The Hybrid 
   <li><a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled" title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"> <span>is Rule Enabled</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/license" title="http://purl.org/dc/elements/1.1/license"> <span>license</span> </a></li>
   <li><a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member"> <span>member</span> </a></li>
+  <li><a href="#http://www.w3.org/2002/07/owl#minQualifiedCardinality" title="http://www.w3.org/2002/07/owl#minQualifiedCardinality"> <span>min Qualified Cardinality</span> </a></li>
   <li><a href="#http://schema.org/name" title="http://schema.org/name"> <span>name</span> </a></li>
   <li><a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name"> <span>name</span> </a></li>
   <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
@@ -1907,6 +1822,10 @@ This section provides details for each class and property defined by The Hybrid 
  <div class="entity" id="http://xmlns.com/foaf/0.1/member">
   <h3>member<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/member</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2002/07/owl#minQualifiedCardinality">
+  <h3>min Qualified Cardinality<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#minQualifiedCardinality</p>
  </div>
  <div class="entity" id="http://schema.org/name">
   <h3>name<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
@@ -1962,32 +1881,28 @@ This section provides details for each class and property defined by The Hybrid 
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="swrlrules">
  <h3 id="swrlrules" class="list">SWRL rules</h3>
  <ul class="hlist">
-  <li><a href="#d4e1121">Rule 1 — Team membership implies having a role</a></li>
-  <li><a href="#d4e1200">Rule 2 — Team, Goal, and Capability determine eligibility</a></li>
-  <li><a href="#d4e1449">Rule 3 — Eligibility implies assignment</a></li>
-  <li><a href="#d4e1367">Rule 4 — Assignment → Performance</a></li>
+  <li><a href="#d4e1291">Rule 1 — Team, Goal, and Capability determine eligibility</a></li>
+  <li><a href="#d4e1212">Rule 2 — Team membership implies having a role concept</a></li>
+  <li><a href="#d4e1458">Rule 3 — Assignment → Performance</a></li>
  </ul>
- <div class="entity" id="d4e1121">
-  <h3>Rule 1 — Team membership implies having a role<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
-  <p>If an HI team exists and has a member agent, then the agent must be classified by some Role (hi:hasRole).<br><br><a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has Member</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#hasRole" title="https://w3id.org/hi-ontology#hasRole">has Role</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
+ <div class="entity" id="d4e1291">
+  <h3>Rule 1 — Team, Goal, and Capability determine eligibility<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T.<br><br><a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has goal</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="https://w3id.org/hi-ontology#requiresTask" target="_blank" title="https://w3id.org/hi-ontology#requiresTask">requires Task</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has member</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has capability</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows task</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="https://w3id.org/hi-ontology#eligibleForTask" target="_blank" title="https://w3id.org/hi-ontology#eligibleForTask">eligible For Task</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
  </div>
- <div class="entity" id="d4e1200">
-  <h3>Rule 2 — Team, Goal, and Capability determine eligibility<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
-  <p>If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T.<br><br><a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasGoal" title="https://w3id.org/hi-ontology#hasGoal">has Goal</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#requiresTask" title="https://w3id.org/hi-ontology#requiresTask">requires Task</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has Member</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#hasCapability" title="https://w3id.org/hi-ontology#hasCapability">has Capability</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#allowsTask" title="https://w3id.org/hi-ontology#allowsTask">allows Task</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask">eligible For Task</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
+ <div class="entity" id="d4e1212">
+  <h3>Rule 2 — Team membership implies having a role concept<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus.<br><br><a href="#HITeam" title="https://w3id.org/hi-ontology#HITeam">HI Team</a> <sup class="type-c" title="class">c</sup>(?) , <a href="#hasMember" title="https://w3id.org/hi-ontology#hasMember">has member</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#hasRoleConcept" title="https://w3id.org/hi-ontology#hasRoleConcept">has Role Concept</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
  </div>
- <div class="entity" id="d4e1449">
-  <h3>Rule 3 — Eligibility implies assignment<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
-  <p>If an agent is eligible for a task, then the agent can be assigned to that task.<br><br><a href="#eligibleForTask" title="https://w3id.org/hi-ontology#eligibleForTask">eligible For Task</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
- </div>
- <div class="entity" id="d4e1367">
-  <h3>Rule 4 — Assignment → Performance<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
-  <p>If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent.<br><br><a href="#assignedToTask" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized By</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed By</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
+ <div class="entity" id="d4e1458">
+  <h3>Rule 3 — Assignment → Performance<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent.<br><br><a href="https://w3id.org/hi-ontology#assignedToTask" target="_blank" title="https://w3id.org/hi-ontology#assignedToTask">assigned To Task</a> <sup class="type-op" title="object property">op</sup>(?,?) , <a href="#realizedBy" title="https://w3id.org/hi-ontology#realizedBy">realized by</a> <sup class="type-op" title="object property">op</sup>(?,?) -&gt; <a href="#performedBy" title="https://w3id.org/hi-ontology#performedBy">performed by</a> <sup class="type-op" title="object property">op</sup>(?,?)</p>
  </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
 </div>
 </div>
