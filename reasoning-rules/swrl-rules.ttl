@@ -1,0 +1,176 @@
+@prefix hi: <https://w3id.org/hi-ontology#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# HI Rules – Variables
+#################################################################
+
+<https://w3id.org/hi-ontology/rules/team> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/goal> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/task> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/agent> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/cap> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/role> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/exec> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/roleConcept> a swrl:Variable .
+
+#################################################################
+# Rule 1 — Team, Goal, and Capability determine eligibility
+#################################################################
+
+[ a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 1 — Team, Goal, and Capability determine eligibility" ;
+  rdfs:comment "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." ;
+
+  swrl:body [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:ClassAtom ;
+      swrl:classPredicate hi:HITeam ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
+    ] ;
+    rdf:rest [
+      a swrl:AtomList ;
+      rdf:first [
+        a swrl:IndividualPropertyAtom ;
+        swrl:propertyPredicate hi:hasGoal ;
+        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+        swrl:argument2 <https://w3id.org/hi-ontology/rules/goal>
+      ] ;
+      rdf:rest [
+        a swrl:AtomList ;
+        rdf:first [
+          a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate hi:requiresTask ;
+          swrl:argument1 <https://w3id.org/hi-ontology/rules/goal> ;
+          swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
+        ] ;
+        rdf:rest [
+          a swrl:AtomList ;
+          rdf:first [
+            a swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate hi:hasMember ;
+            swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+            swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+          ] ;
+          rdf:rest [
+            a swrl:AtomList ;
+            rdf:first [
+              a swrl:IndividualPropertyAtom ;
+              swrl:propertyPredicate hi:hasCapability ;
+              swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+              swrl:argument2 <https://w3id.org/hi-ontology/rules/cap>
+            ] ;
+            rdf:rest [
+              a swrl:AtomList ;
+              rdf:first [
+                a swrl:IndividualPropertyAtom ;
+                swrl:propertyPredicate hi:allowsTask ;
+                swrl:argument1 <https://w3id.org/hi-ontology/rules/cap> ;
+                swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
+              ] ;
+              rdf:rest rdf:nil
+            ]
+          ]
+        ]
+      ]
+    ]
+  ] ;
+
+  swrl:head [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:isEligibleForTask ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
+    ] ;
+    rdf:rest rdf:nil
+  ]
+] .
+
+#################################################################
+# Rule 2 — Team membership → Agent must have a role concept
+#################################################################
+
+[ a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 2 — Team membership implies having a role concept"@en ;
+  rdfs:comment "If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus."@en ;
+
+  swrl:body [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:ClassAtom ;
+      swrl:classPredicate hi:HITeam ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
+    ] ;
+    rdf:rest [
+      a swrl:AtomList ;
+      rdf:first [
+        a swrl:IndividualPropertyAtom ;
+        swrl:propertyPredicate hi:hasMember ;
+        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+      ] ;
+      rdf:rest rdf:nil
+    ]
+  ] ;
+
+  swrl:head [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:hasRoleConcept ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/roleConcept>
+    ] ;
+    rdf:rest rdf:nil
+  ]
+] .
+
+#################################################################
+# Rule 3 — Assignment → Execution performed by agent
+#################################################################
+
+[ a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 3 — Assignment → Performance" ;
+  rdfs:comment "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." ;
+
+  swrl:body [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:isAssignedToTask ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
+    ] ;
+    rdf:rest [
+      a swrl:AtomList ;
+      rdf:first [
+        a swrl:IndividualPropertyAtom ;
+        swrl:propertyPredicate hi:realizedBy ;
+        swrl:argument1 <https://w3id.org/hi-ontology/rules/task> ;
+        swrl:argument2 <https://w3id.org/hi-ontology/rules/exec>
+      ] ;
+      rdf:rest rdf:nil
+    ]
+  ] ;
+
+  swrl:head [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:performedBy ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/exec> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+    ] ;
+    rdf:rest rdf:nil
+  ]
+] .
