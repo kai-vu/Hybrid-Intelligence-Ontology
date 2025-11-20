@@ -1,6 +1,5 @@
 @prefix hi:       <https://w3id.org/hi-ontology#> .
 @prefix dc:       <http://purl.org/dc/elements/1.1/> .
-@prefix dul:      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml:      <http://www.w3.org/XML/1998/namespace> .
@@ -150,6 +149,8 @@ hi:hasInfluenceOn a owl:ObjectProperty ;
 ###  https://w3id.org/hi-ontology#isInfluencedBy
 hi:isInfluencedBy a owl:ObjectProperty ; 
 	owl:inverseOf hi:hasInfluenceOn ;
+	rdfs:domain hi:HITeam ;
+	rdfs:range hi:Context ; 
 	rdfs:label "is influenced by" ;
 	rdfs:comment "Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance."@en . 
 	
@@ -157,6 +158,7 @@ hi:isInfluencedBy a owl:ObjectProperty ;
 hi:hasRoleConcept a owl:ObjectProperty ;
     rdfs:domain hi:Agent ;
     rdfs:range  skos:Concept ;
+	rdfs:label "has role concept" ;
     rdfs:comment "Links a role to a concept in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#hasCapability
@@ -191,10 +193,12 @@ hi:allowsTask a owl:ObjectProperty ;
 hi:hasTaskConcept a owl:ObjectProperty ;
     rdfs:domain hi:Task ;
     rdfs:range  skos:Concept ;
+	rdfs:label "has task concept" ;
     rdfs:comment "Links a task to a concept in the HINT thesaurus."@en .
 
 ###  https://w3id.org/hi-ontology#requiresCapability
 hi:requiresCapability a owl:ObjectProperty ;
+	owl:inverseOf hi:allowsTask ;
     rdfs:domain hi:Task ;
     rdfs:range hi:Capability ;
     rdfs:label "requires cability" ;
@@ -202,7 +206,7 @@ hi:requiresCapability a owl:ObjectProperty ;
 
 ### https://w3id.org/hi-ontology#hasExecutionConcept
 hi:hasExecutionConcept a owl:ObjectProperty ;
-    rdfs:domain hi:Execution ;
+    rdfs:domain hi:TaskExecution ;
     rdfs:range  skos:Concept ;
     rdfs:label "has execution concept" ;
     rdfs:comment "Links an experiment to a concept in the HINT thesaurus."@en .
@@ -250,7 +254,7 @@ hi:hasMethodConcept a owl:ObjectProperty ;
 ###  https://w3id.org/hi-ontology#hasInteractionIntentConcept
 hi:hasInteractionIntentConcept a owl:ObjectProperty ;
     rdfs:domain hi:Interaction ;
-    rdfs:range hi:Intentionality ;
+    rdfs:range skos:Concept ;
     rdfs:label "has interaction intent concept" ;
     rdfs:comment "Intent underlying the interaction (e.g., explain, request, negotiate)."@en .
 	
@@ -315,11 +319,12 @@ hi:hasMetricTested a owl:ObjectProperty ;
 hi:hasAgentConcept a owl:ObjectProperty ;
     rdfs:domain hi:Agent ;
     rdfs:range  skos:Concept ;
+	rdfs:label "has agent concept" ;
     rdfs:comment "Links an agent to a concept in the HINT thesaurus."@en . 
 
 
 ###  https://w3id.org/hi-ontology#isAssignedToTask
-hi:iaAssignedToTask a owl:ObjectProperty ;
+hi:isAssignedToTask a owl:ObjectProperty ;
 	rdfs:subPropertyOf hi:isEligibleForTask ;
 	rdfs:domain hi:Agent ;
 	rdfs:range hi:Task ;
@@ -337,7 +342,7 @@ hi:isEligibleForTask a owl:ObjectProperty ;
 	
 ###  https://w3id.org/hi-ontology#executesTask
 hi:executesTask a owl:ObjectProperty ;
-    rdfs:subPropertyOf hi:assignedToTask ;
+    rdfs:subPropertyOf hi:isAssignedToTask ;
     rdfs:domain hi:Agent ;
     rdfs:range hi:Task ;
     owl:propertyChainAxiom ( hi:performsExecution hi:realizesTask ) ;
@@ -398,12 +403,12 @@ hi:HITeam a owl:Class ;
 
 ###  https://w3id.org/hi-ontology#Goal
 hi:Goal a owl:Class ;
-    rdfs:subClassOf dul:Goal ,
-        [ a owl:Restriction ;
-          owl:onProperty hi:requiresTask ;
-          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onClass hi:Task
-        ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty hi:requiresTask ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass hi:Task
+    ] ;
     rdfs:comment "A desired outcome pursued by an HI team, requiring one or more tasks to be completed."@en ;
     rdfs:label "Goal"@en .
 
@@ -413,7 +418,7 @@ hi:Context a owl:Class ;
     rdfs:label "Context"@en .
 
 ###  https://w3id.org/hi-ontology#Agent
-hi:Agent a owl:Class, dul:Entity ;
+hi:Agent a owl:Class ;
     rdfs:comment "An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system."@en ;
     rdfs:label "Agent"@en .
 
@@ -426,6 +431,7 @@ hi:ArtificialAgent a owl:Class ;
 ###  https://w3id.org/hi-ontology#HumanAgent
 hi:HumanAgent a owl:Class ;
     rdfs:subClassOf hi:Agent , foaf:Person ;
+	owl:disjointWith hi:ArtificialAgent ;
     rdfs:comment "A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities."@en ;
     rdfs:label "Human Agent"@en .
 
@@ -473,9 +479,23 @@ hi:Experiment a owl:Class ;
 #################################################################
 # Reused Classes
 #################################################################
+skos:Concept a owl:Class ;
+    rdfs:label "Concept"@en ;
+    rdfs:comment "A SKOS concept representing a unit of thought, used for controlled vocabularies and thesauri."@en .
 
+schema:PropertyValue a owl:Class ;
+    rdfs:label "Property Value"@en ;
+    rdfs:comment "A Schema.org class representing a specific property-value pair, often used for metadata or structured descriptions."@en .
+
+schema:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "A Schema.org class representing an organization such as an institution, company, or group."@en .
+	
 ###  http://xmlns.com/foaf/0.1/Person
-foaf:Person a owl:Class .
+foaf:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "A human individual described using the FOAF vocabulary. Represents natural persons who may participate in, interact with, or be modeled within a Hybrid Intelligence scenario."@en .
+
 
 
 
