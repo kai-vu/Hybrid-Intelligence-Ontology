@@ -220,7 +220,7 @@ hi-s2:UseCaseCollaborativeManipulation a hi:UseCase ;
 hi-s2:HITeamCollabManipulation a hi:HITeam ;
     hi:hasGoal hi-s2:GoalSafeToolRetrieval ;
     hi:hasMember hi-s2:RobotManipulator , hi-s2:HumanTechnician ;
-    hi:operatesInContext hi-s2:ContextWorkspaceManipulation ;
+    hi:operatesInContext hi-s2:ContextWorkspaceManipulation .
 
 hi-s2:GoalSafeToolRetrieval a hi:Goal ;
     hi:hasGoalConcept hint:SafeRetrievalGoal ;
@@ -231,7 +231,7 @@ hi-s2:GoalSafeToolRetrieval a hi:Goal ;
 hi-s2:ContextWorkspaceManipulation a hi:Context ;
     hi:hasContextConcept hint:WorkspaceManipulationContext ;
     hi:hasPhenomenonConcept hint:RiskExposurePhenomenon ,
-                            hint:SkillsComplementarityPhenomenon .
+                            hint:SkillsComplementarityPhenomenon ;
 	hi:hasConstraintConcept hint:SafetyConstraint ,
 						    hint:TransparencyConstraint ;
 	hi:hasInfluenceOn 		hi-s2:HITeamCollabManipulation .												
