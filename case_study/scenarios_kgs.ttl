@@ -899,7 +899,7 @@ hi-s5:HITeamDiagnosis a hi:HITeam ;
 
 hi-s5:GoalAccurateTrustworthyDiagnosis a hi:Goal ;
     hi:hasGoalConcept  hint:AccurateTrustworthyDiagnosisGoal ;
-    hi:hasTask         hi-s5:TaskSymptomAnalysis ,
+    hi:requiresTask         hi-s5:TaskSymptomAnalysis ,
                        hi-s5:TaskCandidateGeneration ,
                        hi-s5:TaskHypothesisComparison ,
                        hi-s5:TaskExplainReasoning .
@@ -1110,7 +1110,7 @@ hi-s6:HITeamCampusEnergy a hi:HITeam ;
 
 hi-s6:GoalFairEfficientHeating a hi:Goal ;
     hi:hasGoalConcept hint:FairEfficientHeatingGoal ;
-    hi:hasTask hi-s6:TaskLearnOccupancy ,
+    hi:requiresTask hi-s6:TaskLearnOccupancy ,
                hi-s6:TaskLearnEnergyBehavior ,
                hi-s6:TaskNegotiateAllocation ,
                hi-s6:TaskCoordinateWithOperator ,
@@ -1314,7 +1314,7 @@ hi-s7:HITeamVirtualMuseum a hi:HITeam ;
 
 hi-s7:GoalEnhancedVisitorLearning a hi:Goal ;
     hi:hasGoalConcept hint:EnhancedVisitorGoal ;
-    hi:hasTask hi-s7:TaskInterpretMultimodalInput ,
+    hi:requiresTask hi-s7:TaskInterpretMultimodalInput ,
                hi-s7:TaskSemanticRetrieval ,
                hi-s7:TaskComputeSimilarity ,
                hi-s7:TaskRecommendArtifacts ,

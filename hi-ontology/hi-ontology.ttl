@@ -115,8 +115,8 @@ hi:hasGoalConcept a owl:ObjectProperty ;
     rdfs:label "has goal concept" ;
     rdfs:comment "Links a goal to a concept in the HINT thesaurus."@en .
 
-###  https://w3id.org/hi-ontology#hasTask
-hi:hasTask a owl:ObjectProperty ;
+###  https://w3id.org/hi-ontology#requiresTask
+hi:requiresTask a owl:ObjectProperty ;
     rdfs:domain hi:Goal ;
     rdfs:range hi:Task ;
     rdfs:label "has task" ;
