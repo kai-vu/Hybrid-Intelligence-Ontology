@@ -103,7 +103,7 @@ hi:operatesInContext a owl:ObjectProperty ;
 hi:hasConstraintConcept a owl:ObjectProperty ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf ( hi:Context hi:HITeam ) 
+        owl:unionOf ( hi:Context hi:HITeam hi:Agent ) 
     ] ;
     rdfs:range skos:Concept ;
     rdfs:label "has constraint concept" ;
@@ -132,7 +132,10 @@ hi:hasContextConcept a owl:ObjectProperty ;
 
 ###  https://w3id.org/hi-ontology#exhibitsPhenomenonConcept
 hi:hasPhenomenonConcept a owl:ObjectProperty ;
-    rdfs:domain hi:Context ;
+	rdfs:domain [
+    	a owl:Class ;
+    	owl:unionOf ( hi:Context hi:HITeam hi:Agent ) 
+		] ;
     rdfs:range skos:Concept ;
     rdfs:label "has phenomenon concept" ;
     rdfs:comment "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."@en .

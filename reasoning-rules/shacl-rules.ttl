@@ -162,23 +162,6 @@ hi:ExecutionShape
     sh:closed false
 .
 
-###############################################################
-# RoleConcept Shape
-# - Must have SKOS prefLabel
-###############################################################
-hi:RoleConceptShape
-    a sh:NodeShape ;
-    sh:targetClass hi:RoleConcept ;
-
-    sh:property [
-        sh:path skos:prefLabel ;
-        sh:minCount 1 ;
-        sh:message "Every RoleConcept must have a skos:prefLabel." ;
-    ] ;
-
-    sh:closed false
-.
-
 #################################################################
 # Cross-entity Consistency Shapes
 #################################################################

@@ -17,6 +17,9 @@
 <https://w3id.org/hi-ontology/rules/role> a swrl:Variable .
 <https://w3id.org/hi-ontology/rules/exec> a swrl:Variable .
 <https://w3id.org/hi-ontology/rules/roleConcept> a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/context>    a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/phen>       a swrl:Variable .
+<https://w3id.org/hi-ontology/rules/cons> a swrl:Variable .
 
 #################################################################
 # Rule 1 — Team, Goal, and Capability determine eligibility
@@ -174,3 +177,107 @@
     rdf:rest rdf:nil
   ]
 ] .
+
+#################################################################
+# Rule 4A — Context phenomena propagate to team agents
+#################################################################
+
+[ a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule A — Context phenomena propagate to team agents" ;
+  rdfs:comment "If a team operates in a context that has a phenomenon concept, then all team agents inherit that phenomenon concept." ;
+
+  swrl:body [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:operatesInContext ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/context>
+    ] ;
+    rdf:rest [
+      a swrl:AtomList ;
+      rdf:first [
+        a swrl:IndividualPropertyAtom ;
+        swrl:propertyPredicate hi:hasMember ;
+        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+      ] ;
+      rdf:rest [
+        a swrl:AtomList ;
+        rdf:first [
+          a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate hi:hasPhenomenonConcept ;
+          swrl:argument1 <https://w3id.org/hi-ontology/rules/context> ;
+          swrl:argument2 <https://w3id.org/hi-ontology/rules/phen>
+        ] ;
+        rdf:rest rdf:nil
+      ]
+    ]
+  ] ;
+
+  swrl:head [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:hasPhenomenonConcept ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/phen>
+    ] ;
+    rdf:rest rdf:nil
+  ]
+] .
+
+#################################################################
+# Rule 4B — Context constraints propagate to team agents
+#################################################################
+
+
+[ a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule B — Context constraints propagate to team agents" ;
+  rdfs:comment "If a team operates in a context that has a constraint concept, then all team agents inherit that constraint concept." ;
+
+  swrl:body [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:operatesInContext ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/context>
+    ] ;
+    rdf:rest [
+      a swrl:AtomList ;
+      rdf:first [
+        a swrl:IndividualPropertyAtom ;
+        swrl:propertyPredicate hi:hasMember ;
+        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
+        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
+      ] ;
+      rdf:rest [
+        a swrl:AtomList ;
+        rdf:first [
+          a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate hi:hasConstraintConcept ;
+          swrl:argument1 <https://w3id.org/hi-ontology/rules/context> ;
+          swrl:argument2 <https://w3id.org/hi-ontology/rules/cons>
+        ] ;
+        rdf:rest rdf:nil
+      ]
+    ]
+  ] ;
+
+  swrl:head [
+    a swrl:AtomList ;
+    rdf:first [
+      a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:hasConstraintConcept ;
+      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
+      swrl:argument2 <https://w3id.org/hi-ontology/rules/cons>
+    ] ;
+    rdf:rest rdf:nil
+  ]
+] .
+
+
+
