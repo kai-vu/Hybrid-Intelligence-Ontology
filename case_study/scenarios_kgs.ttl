@@ -684,7 +684,7 @@ hi-s4:HITeamTutoring a hi:HITeam ;
     hi:operatesInContext hi-s4:ContextOnlineLearning .
 
 hi-s4:GoalEffectiveLearning a hi:Goal ;
-    hi:hasGoalConcept hint:EffectiveLeaningGoal ;
+    hi:hasGoalConcept hint:EffectiveLearningGoal ;
     hi:requiresTask        hi-s4:TaskReconstructTrajectory ,
                       hi-s4:TaskRecommendResources ,
                       hi-s4:TaskSemanticReasoning ,
