@@ -1118,8 +1118,8 @@ hi-s6:GoalFairEfficientHeating a hi:Goal ;
 
 hi-s6:ContextSmartCampus a hi:Context ;
     hi:hasContextConcept       hint:SmartCampusContext ;
-    hi:hasPhenomenonConcept hint:PhenomenonLoadVariability ,
-                                 hint:PhenomenonCoLearningDynamics ;
+    hi:hasPhenomenonConcept hint:LoadVariabilityPhenomenon ,
+                                 hint:CooperativeLearningDynamicsPhenomenon ;
     hi:hasConstraintConcept    hint:SustainabilityConstraint ,
 		  					   hint:UserComfortConstraint ,
 							   hint:TransparencyConstraint ;
