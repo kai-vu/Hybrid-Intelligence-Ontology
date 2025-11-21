@@ -129,7 +129,7 @@ hi:hasContextConcept a owl:ObjectProperty ;
     rdfs:label "has context concept" ;
     rdfs:comment "Links a context to a concept in the HINT thesaurus."@en .
 
-###  https://w3id.org/hi-ontology#exhibitsPhenomenonConcept
+###  https://w3id.org/hi-ontology#hasPhenomenonConcept
 hi:hasPhenomenonConcept a owl:ObjectProperty ;
 	rdfs:domain [
     	a owl:Class ;

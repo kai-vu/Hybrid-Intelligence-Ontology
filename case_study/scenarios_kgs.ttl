@@ -906,7 +906,7 @@ hi-s5:GoalAccurateTrustworthyDiagnosis a hi:Goal ;
 
 hi-s5:ContextClinicalConsultation a hi:Context ;
     hi:hasContextConcept hint:ClinicalConsultationContext ;
-    hi:exhibitsPhenomenonConcept 
+    hi:hasPhenomenonConcept 
             hint:DataMismatchPhenomenon ,
             hint:TrustShiftPhenomenon ;
     hi:hasConstraintConcept hint:PrivacyConstraint, hint:FairnessConstraint, hint:TransparencyConstraint ;
@@ -1118,7 +1118,7 @@ hi-s6:GoalFairEfficientHeating a hi:Goal ;
 
 hi-s6:ContextSmartCampus a hi:Context ;
     hi:hasContextConcept       hint:SmartCampusContext ;
-    hi:exhibitsPhenomenonConcept hint:PhenomenonLoadVariability ,
+    hi:hasPhenomenonConcept hint:PhenomenonLoadVariability ,
                                  hint:PhenomenonCoLearningDynamics ;
     hi:hasConstraintConcept    hint:SustainabilityConstraint ,
 		  					   hint:UserComfortConstraint ,
@@ -1323,7 +1323,7 @@ hi-s7:GoalEnhancedVisitorLearning a hi:Goal ;
 
 hi-s7:ContextVirtualExhibition a hi:Context ;
     hi:hasContextConcept hint:VirtualExhibitionContext ;
-    hi:exhibitsPhenomenonConcept hint:EngagementShiftPhenomenon ,
+    hi:hasPhenomenonConcept hint:EngagementShiftPhenomenon ,
                                  hint:KnowledgeMismatchPhenomenon ;
     hi:hasConstraintConcept hint:PrivacyConstraint ,
     						hint:TransparencyConstraint ,
