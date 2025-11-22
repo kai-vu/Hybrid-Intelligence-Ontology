@@ -17,31 +17,6 @@
 <https://w3id.org/hi-ontology#>  a owl:Ontology ;
     dc:title "The Hybrid Intelligence (HI) Ontology"@en ;
     dc:description "Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena."@en ;
-    dc:creator [
-        a foaf:Person ;
-        foaf:name "Francesca Urgese" ;
-        schema:identifier [
-            a schema:PropertyValue ;
-            schema:propertyID "ORCID" ;
-            schema:value "0009-0009-0516-1800";
-            foaf:member _:org  
-        ]], [
-        a foaf:Person ;
-        foaf:name "Margherita Martorana" ;
-        schema:identifier [
-            a schema:PropertyValue ;
-            schema:propertyID "ORCID" ;
-            schema:value "0000-0001-8004-0464" ;
-            foaf:member _:org  
-        ]] , [
-        a foaf:Person ;
-        foaf:name "Ilaria Tiddi" ;
-        schema:identifier [
-            a schema:PropertyValue ;
-            schema:propertyID "ORCID" ;
-            schema:value "0000-0001-7116-9338" ;
-            foaf:member _:org  
-        ]] ;
     dcterms:created "2025-10-01"^^xsd:date ;
     owl:versionInfo "2.0.0" ;
     dc:license <https://creativecommons.org/licenses/by/4.0/> ;

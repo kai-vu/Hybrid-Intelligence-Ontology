@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:ns0="http://purl.org/vocab/vann/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:schema="http://schema.org/">
+
+  <owl:Ontology rdf:about="https://w3id.org/hi-ontology#">
+    <dc11:title xml:lang="en">The Hybrid Intelligence (HI) Ontology</dc11:title>
+    <dc11:description xml:lang="en">Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena.</dc11:description>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dc:created>
+    <owl:versionInfo>2.0.0</owl:versionInfo>
+    <dc11:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <ns0:preferredNamespacePrefix>hi</ns0:preferredNamespacePrefix>
+    <ns0:preferredNamespaceUri>https://w3id.org/hi-ontology#</ns0:preferredNamespaceUri>
+  </owl:Ontology>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasUseCaseConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has use case concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a use case to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasDomainConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has domain concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a domain to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasHITeam">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+    <rdfs:label>has HI team</rdfs:label>
+    <rdfs:comment xml:lang="en">A use case introduces a hybrid intelligence team.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasGoal">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+    <rdfs:label>has goal</rdfs:label>
+    <rdfs:comment xml:lang="en">An HI team pursues one or more goals.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasMember">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:label>has member</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies agents that are members of an HI team.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#operatesInContext">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Context"/>
+    <rdfs:label>operates in context</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the context in which an HI team operates.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasConstraintConcept">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#Context"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </rdf:rest>
+
+          </rdf:Description>
+        </owl:unionOf>
+
+      </owl:Class>
+    </rdfs:domain>
+
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has constraint concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the constraint using a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasGoalConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has goal concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a goal to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#requiresTask">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:label>has task</rdfs:label>
+    <rdfs:comment xml:lang="en">A goal requires one or more tasks to be fulfilled.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasContextConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Context"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has context concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a context to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasPhenomenonConcept">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#Context"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </rdf:rest>
+
+          </rdf:Description>
+        </owl:unionOf>
+
+      </owl:Class>
+    </rdfs:domain>
+
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has phenomenon concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Context exhibits a phenomenon (e.g., bias/feedback emerges in that context).</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasInfluenceOn">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Context"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+    <rdfs:label>has influence on</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates a contextual condition to the HI team whose actions, collaboration dynamics, or task performance are influenced by that condition. It captures how background phenomena and constraints shape the team's operation in a given use case.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isInfluencedBy">
+    <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#hasInfluenceOn"/>
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Context"/>
+    <rdfs:label>is influenced by</rdfs:label>
+    <rdfs:comment xml:lang="en">Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasRoleConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has role concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a role to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasCapability">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+    <rdfs:label>has capability</rdfs:label>
+    <rdfs:comment xml:lang="en">Agent possesses a capability.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#performsExecution">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:label>performs execution</rdfs:label>
+    <rdfs:comment xml:lang="en">Agent that performs a specific task execution.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasCapabilityConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has capability concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a capability to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#allowsTask">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:label>allows task</rdfs:label>
+    <rdfs:comment xml:lang="en">A capability enables or allows a task to be performed.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasTaskConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has task concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a task to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#requiresCapability">
+    <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#allowsTask"/>
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+    <rdfs:label>requires cability</rdfs:label>
+    <rdfs:comment xml:lang="en">A task requires certain capabilities to be accomplished.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasExecutionConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has execution concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an experiment to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#realizesTask">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:label>realizes task</rdfs:label>
+    <rdfs:comment xml:lang="en">Task execution realizes a task.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#performedBy">
+    <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#performsExecution"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:Description>
+        </owl:unionOf>
+
+      </owl:Class>
+    </rdfs:domain>
+
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:label>performed by</rdfs:label>
+    <rdfs:comment xml:lang="en">Execution performed by an agent.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionEpisode">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+    <rdfs:label>has interaction episode</rdfs:label>
+    <rdfs:comment xml:lang="en">Identifies moments of interaction (e.g., dialogue, negotiation, or guidance) that unfold within the execution of a task.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#towardsGoal">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+    <rdfs:label>towards goal</rdfs:label>
+    <rdfs:comment xml:lang="en">Task execution towards a goal.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasMethodConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has method concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a task execution to a method in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionIntentConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has interaction intent concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Intent underlying the interaction (e.g., explain, request, negotiate).</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasAgentInvolved">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:label>has agent involved</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates an agent that participates in or contributes to an interaction episode. This property identifies the human or artificial agents involved in the exchange.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionModalityConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has interaction modality concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Modality/channel used during the interaction.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#evaluatedBy">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+    <rdfs:label>evaluated by</rdfs:label>
+    <rdfs:comment xml:lang="en">Execution is evaluated by a defined evaluation.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasEvaluationConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has evaluation concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an evaluation to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasMetricConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has metric concept</rdfs:label>
+    <rdfs:comment xml:lang="en">An evaluation uses certain metrics, defined in the HINT thesaurus</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasExperiment">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+    <rdfs:label>has experiment</rdfs:label>
+    <rdfs:comment xml:lang="en">An evaluation has an experiment.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasExperimentConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has experiment concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an experiment to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasMetricTested">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has metric tested</rdfs:label>
+    <rdfs:comment xml:lang="en">An experiment tests certain metrics, defined in the HINT thesaurus</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasAgentConcept">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label>has agent concept</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an agent to a concept in the HINT thesaurus.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isAssignedToTask">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isEligibleForTask">
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <owl:propertyChainAxiom>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#hasCapability"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://w3id.org/hi-ontology#allowsTask"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+
+          </rdf:Description>
+        </owl:propertyChainAxiom>
+
+        <rdfs:label>is eligible for task</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates an agent to a task it is eligible to perform, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility.</rdfs:comment>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <owl:propertyChainAxiom>
+      <rdf:Description>
+        <rdf:first rdf:resource="https://w3id.org/hi-ontology#performsExecution"/>
+        <rdf:rest>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#realizesTask"/>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:Description>
+        </rdf:rest>
+
+      </rdf:Description>
+    </owl:propertyChainAxiom>
+
+    <rdfs:label>is assigned to task</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#executesTask">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/hi-ontology#isAssignedToTask"/>
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <owl:propertyChainAxiom>
+      <rdf:Description>
+        <rdf:first rdf:resource="https://w3id.org/hi-ontology#performsExecution"/>
+        <rdf:rest>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://w3id.org/hi-ontology#realizesTask"/>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:Description>
+        </rdf:rest>
+
+      </rdf:Description>
+    </owl:propertyChainAxiom>
+
+    <rdfs:label>executes task</rdfs:label>
+    <rdfs:comment xml:lang="en">Agent executes a task (derivable from Agent→Execution→Task).</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#realizedBy">
+    <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#realizesTask"/>
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Task"/>
+    <rdfs:range rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+    <rdfs:label>realized by</rdfs:label>
+    <rdfs:comment xml:lang="en">A task is realized through a task execution.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/hi-ontology#hasAlternativeHypothesis">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has alternative hypothesis</rdfs:label>
+    <rdfs:comment xml:lang="en">Stores the textual formulation of the alternative hypothesis of an experiment.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/hi-ontology#hasNullHypothesis">
+    <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has null hypothesis</rdfs:label>
+    <rdfs:comment xml:lang="en">Stores the textual formulation of the null hypothesis of an experiment.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#UseCase">
+    <rdfs:comment xml:lang="en">A structured situation describing a specific hybrid intelligence scenario (previously 'Scenario').</rdfs:comment>
+    <rdfs:label xml:lang="en">Use Case</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#HITeam">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#hasMember"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#hasMember"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:about="https://w3id.org/hi-ontology#HumanAgent">
+            <rdfs:subClassOf rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+            <rdfs:subClassOf>
+              <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+                <rdfs:label xml:lang="en">Person</rdfs:label>
+                <rdfs:comment xml:lang="en">A human individual described using the FOAF vocabulary. Represents natural persons who may participate in, interact with, or be modeled within a Hybrid Intelligence scenario.</rdfs:comment>
+              </owl:Class>
+            </rdfs:subClassOf>
+
+            <owl:disjointWith rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+            <rdfs:comment xml:lang="en">A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities.</rdfs:comment>
+            <rdfs:label xml:lang="en">Human Agent</rdfs:label>
+          </owl:Class>
+        </owl:onClass>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:comment xml:lang="en">A hybrid intelligence team composed of human and artificial agents pursuing a shared goal.</rdfs:comment>
+    <rdfs:label xml:lang="en">HI Team</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Goal">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#requiresTask"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/hi-ontology#Task"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:comment xml:lang="en">A desired outcome pursued by an HI team, requiring one or more tasks to be completed.</rdfs:comment>
+    <rdfs:label xml:lang="en">Goal</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Context">
+    <rdfs:comment xml:lang="en">Situational conditions (environmental, cultural, cognitive) under which tasks and evaluations occur.</rdfs:comment>
+    <rdfs:label xml:lang="en">Context</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Agent">
+    <rdfs:comment xml:lang="en">An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system.</rdfs:comment>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#ArtificialAgent">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+    <rdfs:comment xml:lang="en">An artificial or computational agent (robot, software, etc.) collaborating with human agents.</rdfs:comment>
+    <rdfs:label xml:lang="en">Artificial Agent</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Capability">
+    <rdfs:comment xml:lang="en">A skill, competence, or functional capacity that allows an agent to perform or enable a task.</rdfs:comment>
+    <rdfs:label xml:lang="en">Capability</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Task">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#requiresCapability"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:comment xml:lang="en">A unit of purposeful activity executed by an agent toward achieving a goal.</rdfs:comment>
+    <rdfs:label xml:lang="en">Task</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#TaskExecution">
+    <rdfs:comment xml:lang="en">The realization or performance of a specific task by an agent using a method.</rdfs:comment>
+    <rdfs:label xml:lang="en">Task Execution</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Interaction">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#hasAgentInvolved"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:comment xml:lang="en">A multi-agent task execution where two or more agents coordinate (verbal, symbolic, or physical) toward a goal.</rdfs:comment>
+    <rdfs:label xml:lang="en">Interaction</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Evaluation">
+    <rdfs:comment xml:lang="en">A process of assessing the quality or outcome of executions, methods, or goals.</rdfs:comment>
+    <rdfs:label xml:lang="en">Evaluation</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/hi-ontology#Experiment">
+    <rdfs:comment xml:lang="en">An empirical setup linked to an evaluation that tests metrics and hypotheses.</rdfs:comment>
+    <rdfs:label xml:lang="en">Experiment</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdfs:label xml:lang="en">Concept</rdfs:label>
+    <rdfs:comment xml:lang="en">A SKOS concept representing a unit of thought, used for controlled vocabularies and thesauri.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://schema.org/PropertyValue">
+    <rdfs:label xml:lang="en">Property Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A Schema.org class representing a specific property-value pair, often used for metadata or structured descriptions.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://schema.org/Organization">
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:comment xml:lang="en">A Schema.org class representing an organization such as an institution, company, or group.</rdfs:comment>
+  </owl:Class>
+
+  <schema:Organization rdf:nodeID="genid1">
+    <schema:name>Knowledge in AI (KAI) Group - Vrije Universiteit Amsterdam</schema:name>
+  </schema:Organization>
+
+</rdf:RDF>
