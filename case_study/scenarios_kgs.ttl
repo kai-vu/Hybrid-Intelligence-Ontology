@@ -702,7 +702,7 @@ hi-s4:ContextOnlineLearning a hi:Context ;
                             hint:AutonomyConstraint ;
     hi:hasPhenomenonConcept hint:TrustShiftPhenomenon ,
                             hint:KnowledgeMismatchPhenomenon ;
-	hi:hasInfluenceOn		hi-s4:HiTeamTutoring ;						
+	hi:hasInfluenceOn		hi-s4:HITeamTutoring ;						
     rdfs:comment "Online personalized learning setting where an AI tutor adapts to a learner using self-reports and KGs."@en .
 
 
@@ -1256,15 +1256,15 @@ hi-s6:ExecExplainOperator a hi:TaskExecution ;
 
 hi-s6:InteractionNegotiation a hi:Interaction ;
     hi:hasAgentInvolved hi-s6:AIBuildingAgent , hi-s6:HumanGridOperator ;
-    hi:hasInteractionIntentType hint:NegotiationIntent ;
-    hi:hasInteractionModalityType hint:NetworkProtocolModality .
+    hi:hasInteractionIntentConcept hint:NegotiationIntent ;
+    hi:hasInteractionModalityConcept hint:NetworkProtocolModality .
 
 hi-s6:ExecNegotiate hi:hasInteractionEpisode hi-s6:InteractionNegotiation .
 
 hi-s6:InteractionExplainAllocation a hi:Interaction ;
     hi:hasAgentInvolved hi-s6:AIBuildingAgent , hi-s6:HumanGridOperator ;
-    hi:hasInteractionIntentType hint:ExplanationIntent ;
-    hi:hasInteractionModalityType hint:DashboardModality .
+    hi:hasInteractionIntentConcept hint:ExplanationIntent ;
+    hi:hasInteractionModalityConcept hint:DashboardModality .
 
 hi-s6:ExecExplainDecision hi:hasInteractionEpisode hi-s6:InteractionExplainAllocation .
 
@@ -1484,12 +1484,12 @@ hi-s7:ExecExplainRecommendations a hi:TaskExecution ;
 
 hi-s7:InteractionVRGuidedTour a hi:Interaction ;
     hi:hasAgentInvolved hi-s7:AIVirtualGuide , hi-s7:HumanVisitor ;
-    hi:hasInteractionIntent hi-s7:IntentGuide ;
+    hi:hasInteractionIntentConcept hi-s7:IntentGuide ;
     hi:hasInteractionModalityConcept hint:VirtualRealityModality .
 
 hi-s7:InteractionQA a hi:Interaction ;
     hi:hasAgentInvolved hi-s7:AIVirtualGuide , hi-s7:HumanVisitor ;
-    hi:hasInteractionIntent hi-s7:IntentAnswer ;
+    hi:hasInteractionIntentConcept hi-s7:IntentAnswer ;
     hi:hasInteractionModalityConcept hint:VoiceChatModality .
 
 hi-s7:ExecRecommendArtifacts hi:hasInteractionEpisode hi-s7:InteractionVRGuidedTour .
