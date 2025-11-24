@@ -6,278 +6,126 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #################################################################
-# HI Rules – Variables
+# VARIABLE SHORTCUTS
 #################################################################
 
-<https://w3id.org/hi-ontology/rules/team> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/goal> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/task> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/agent> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/cap> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/role> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/exec> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/roleConcept> a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/context>    a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/phen>       a swrl:Variable .
-<https://w3id.org/hi-ontology/rules/cons> a swrl:Variable .
+hi:team    a swrl:Variable .
+hi:goal    a swrl:Variable .
+hi:task    a swrl:Variable .
+hi:agent   a swrl:Variable .
+hi:cap     a swrl:Variable .
+hi:exec    a swrl:Variable .
+hi:context a swrl:Variable .
+hi:phen    a swrl:Variable .
+hi:cons    a swrl:Variable .
 
 #################################################################
-# Rule 1 — Team, Goal, and Capability determine eligibility
+# RULE 1 — TEAM + GOAL + CAPABILITY → ELIGIBILITY
 #################################################################
 
-[ a swrl:Imp ;
+[
+  a swrl:Imp ;
   swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 1 — Team, Goal, and Capability determine eligibility" ;
-  rdfs:comment "If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T." ;
+  rdfs:label "Rule 1 — Eligibility from Capabilities" ;
+  rdfs:comment "If team has goal requiring a task and a member has a capability allowing that task, the agent is eligible." ;
 
-  swrl:body [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:ClassAtom ;
-      swrl:classPredicate hi:HITeam ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
-    ] ;
-    rdf:rest [
-      a swrl:AtomList ;
-      rdf:first [
-        a swrl:IndividualPropertyAtom ;
-        swrl:propertyPredicate hi:hasGoal ;
-        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-        swrl:argument2 <https://w3id.org/hi-ontology/rules/goal>
-      ] ;
-      rdf:rest [
-        a swrl:AtomList ;
-        rdf:first [
-          a swrl:IndividualPropertyAtom ;
-          swrl:propertyPredicate hi:requiresTask ;
-          swrl:argument1 <https://w3id.org/hi-ontology/rules/goal> ;
-          swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-        ] ;
-        rdf:rest [
-          a swrl:AtomList ;
-          rdf:first [
-            a swrl:IndividualPropertyAtom ;
-            swrl:propertyPredicate hi:hasMember ;
-            swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-            swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-          ] ;
-          rdf:rest [
-            a swrl:AtomList ;
-            rdf:first [
-              a swrl:IndividualPropertyAtom ;
-              swrl:propertyPredicate hi:hasCapability ;
-              swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-              swrl:argument2 <https://w3id.org/hi-ontology/rules/cap>
-            ] ;
-            rdf:rest [
-              a swrl:AtomList ;
-              rdf:first [
-                a swrl:IndividualPropertyAtom ;
-                swrl:propertyPredicate hi:allowsTask ;
-                swrl:argument1 <https://w3id.org/hi-ontology/rules/cap> ;
-                swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-              ] ;
-              rdf:rest rdf:nil
-            ]
-          ]
-        ]
-      ]
-    ]
-  ] ;
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate hi:HITeam ; swrl:argument1 hi:team ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasGoal ; swrl:argument1 hi:team ; swrl:argument2 hi:goal ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:requiresTask ; swrl:argument1 hi:goal ; swrl:argument2 hi:task ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasMember ; swrl:argument1 hi:team ; swrl:argument2 hi:agent ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasCapability ; swrl:argument1 hi:agent ; swrl:argument2 hi:cap ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:allowsTask ; swrl:argument1 hi:cap ; swrl:argument2 hi:task ]
+  ) ;
 
-  swrl:head [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:isEligibleForTask ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-    ] ;
-    rdf:rest rdf:nil
-  ]
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:isEligibleForTask ; swrl:argument1 hi:agent ; swrl:argument2 hi:task ]
+  )
 ] .
 
 #################################################################
-# Rule 2 — Team membership → Agent must have a role concept
+# RULE 2 — ASSIGNMENT + EXECUTION REALIZATION → PERFORMED BY
 #################################################################
 
-[ a swrl:Imp ;
+[
+  a swrl:Imp ;
   swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 2 — Team membership implies having a role concept"@en ;
-  rdfs:comment "If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus."@en ;
+  rdfs:label "Rule 2 — Assignment → Execution performed by agent" ;
+  rdfs:comment "If an agent is assigned to a task, and an execution realizes that task, then the execution is performed by the agent." ;
 
-  swrl:body [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:ClassAtom ;
-      swrl:classPredicate hi:HITeam ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/team>
-    ] ;
-    rdf:rest [
-      a swrl:AtomList ;
-      rdf:first [
-        a swrl:IndividualPropertyAtom ;
-        swrl:propertyPredicate hi:hasMember ;
-        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-      ] ;
-      rdf:rest rdf:nil
-    ]
-  ] ;
+  swrl:body (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:isAssignedToTask ; swrl:argument1 hi:agent ; swrl:argument2 hi:task ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:realizedBy ; swrl:argument1 hi:task ; swrl:argument2 hi:exec ]
+  ) ;
 
-  swrl:head [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:hasRoleConcept ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/roleConcept>
-    ] ;
-    rdf:rest rdf:nil
-  ]
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:performedBy ; swrl:argument1 hi:exec ; swrl:argument2 hi:agent ]
+  )
 ] .
 
 #################################################################
-# Rule 3 — Assignment → Execution performed by agent
+# RULE 3A — CONTEXT PHENOMENA PROPAGATE TO TEAM AGENTS
 #################################################################
 
-[ a swrl:Imp ;
+[
+  a swrl:Imp ;
   swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 3 — Assignment → Performance" ;
-  rdfs:comment "If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent." ;
+  rdfs:label "Rule 3a — Context → Agent Phenomena" ;
+  rdfs:comment "If a team operates in a context with a phenomenon, every agent inherits that phenomenon." ;
 
-  swrl:body [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
+  swrl:body (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:operatesInContext ; swrl:argument1 hi:team ; swrl:argument2 hi:context ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasMember ; swrl:argument1 hi:team ; swrl:argument2 hi:agent ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasPhenomenonConcept ; swrl:argument1 hi:context ; swrl:argument2 hi:phen ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasPhenomenonConcept ; swrl:argument1 hi:agent ; swrl:argument2 hi:phen ]
+  )
+] .
+
+#################################################################
+# RULE 3B — CONTEXT CONSTRAINTS PROPAGATE TO TEAM AGENTS
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 3b — Context → Agent Constraints" ;
+  rdfs:comment "If a team operates in a context with a constraint, every agent inherits that constraint." ;
+
+  swrl:body (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:operatesInContext ; swrl:argument1 hi:team ; swrl:argument2 hi:context ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasMember ; swrl:argument1 hi:team ; swrl:argument2 hi:agent ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasConstraintConcept ; swrl:argument1 hi:context ; swrl:argument2 hi:cons ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate hi:hasConstraintConcept ; swrl:argument1 hi:agent ; swrl:argument2 hi:cons ]
+  )
+] .
+
+#################################################################
+# RULE 4 — Assignment Implies Eligibility
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 4 — Assignment implies eligibility" ;
+  rdfs:comment "If an agent is assigned to a task, then the agent must also be eligible for that task." ;
+
+  swrl:body (
+    [ a swrl:IndividualPropertyAtom ;
       swrl:propertyPredicate hi:isAssignedToTask ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/task>
-    ] ;
-    rdf:rest [
-      a swrl:AtomList ;
-      rdf:first [
-        a swrl:IndividualPropertyAtom ;
-        swrl:propertyPredicate hi:realizedBy ;
-        swrl:argument1 <https://w3id.org/hi-ontology/rules/task> ;
-        swrl:argument2 <https://w3id.org/hi-ontology/rules/exec>
-      ] ;
-      rdf:rest rdf:nil
-    ]
-  ] ;
+      swrl:argument1 hi:agent ;
+      swrl:argument2 hi:task ]
+  ) ;
 
-  swrl:head [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:performedBy ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/exec> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-    ] ;
-    rdf:rest rdf:nil
-  ]
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ;
+      swrl:propertyPredicate hi:isEligibleForTask ;
+      swrl:argument1 hi:agent ;
+      swrl:argument2 hi:task ]
+  )
 ] .
-
-#################################################################
-# Rule 4A — Context phenomena propagate to team agents
-#################################################################
-
-[ a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule A — Context phenomena propagate to team agents" ;
-  rdfs:comment "If a team operates in a context that has a phenomenon concept, then all team agents inherit that phenomenon concept." ;
-
-  swrl:body [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:operatesInContext ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/context>
-    ] ;
-    rdf:rest [
-      a swrl:AtomList ;
-      rdf:first [
-        a swrl:IndividualPropertyAtom ;
-        swrl:propertyPredicate hi:hasMember ;
-        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-      ] ;
-      rdf:rest [
-        a swrl:AtomList ;
-        rdf:first [
-          a swrl:IndividualPropertyAtom ;
-          swrl:propertyPredicate hi:hasPhenomenonConcept ;
-          swrl:argument1 <https://w3id.org/hi-ontology/rules/context> ;
-          swrl:argument2 <https://w3id.org/hi-ontology/rules/phen>
-        ] ;
-        rdf:rest rdf:nil
-      ]
-    ]
-  ] ;
-
-  swrl:head [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:hasPhenomenonConcept ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/phen>
-    ] ;
-    rdf:rest rdf:nil
-  ]
-] .
-
-#################################################################
-# Rule 4B — Context constraints propagate to team agents
-#################################################################
-
-
-[ a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule B — Context constraints propagate to team agents" ;
-  rdfs:comment "If a team operates in a context that has a constraint concept, then all team agents inherit that constraint concept." ;
-
-  swrl:body [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:operatesInContext ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/context>
-    ] ;
-    rdf:rest [
-      a swrl:AtomList ;
-      rdf:first [
-        a swrl:IndividualPropertyAtom ;
-        swrl:propertyPredicate hi:hasMember ;
-        swrl:argument1 <https://w3id.org/hi-ontology/rules/team> ;
-        swrl:argument2 <https://w3id.org/hi-ontology/rules/agent>
-      ] ;
-      rdf:rest [
-        a swrl:AtomList ;
-        rdf:first [
-          a swrl:IndividualPropertyAtom ;
-          swrl:propertyPredicate hi:hasConstraintConcept ;
-          swrl:argument1 <https://w3id.org/hi-ontology/rules/context> ;
-          swrl:argument2 <https://w3id.org/hi-ontology/rules/cons>
-        ] ;
-        rdf:rest rdf:nil
-      ]
-    ]
-  ] ;
-
-  swrl:head [
-    a swrl:AtomList ;
-    rdf:first [
-      a swrl:IndividualPropertyAtom ;
-      swrl:propertyPredicate hi:hasConstraintConcept ;
-      swrl:argument1 <https://w3id.org/hi-ontology/rules/agent> ;
-      swrl:argument2 <https://w3id.org/hi-ontology/rules/cons>
-    ] ;
-    rdf:rest rdf:nil
-  ]
-] .
-
-
-

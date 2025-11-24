@@ -10,6 +10,9 @@
 @prefix hi-s5:  <https://w3id.org/hi-ontology/scenarios/5/> .
 @prefix hi-s6:  <https://w3id.org/hi-ontology/scenarios/6/> .
 @prefix hi-s7:  <https://w3id.org/hi-ontology/scenarios/7/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://w3id.org/hi-ontology> a owl:Ontology .
 
 #################################################################
 # USE CASE 1 — Personal Assistant Hybrid Intelligence System

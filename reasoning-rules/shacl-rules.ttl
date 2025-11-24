@@ -52,18 +52,20 @@ hi:HITeamShape
 .
 
 ###############################################################
-# AGENT MUST HAVE ROLE IF PART OF A TEAM
+# Agent MUST HAVE ROLE if part of a team
 ###############################################################
 hi:TeamMemberRoleRequirement
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
     sh:targetObjectsOf hi:hasMember ;
 
     sh:property [
         sh:path hi:hasRoleConcept ;
         sh:minCount 1 ;
         sh:message "Any agent who is a member of a team MUST have at least one RoleConcept." ;
-    ] .
-    
+    ] ;
+
+    sh:closed false
+.
 
 ###############################################################
 # Agent Shape (soft constraints)
