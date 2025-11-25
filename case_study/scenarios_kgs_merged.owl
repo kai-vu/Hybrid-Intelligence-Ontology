@@ -1,0 +1,2651 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/hi-ontology#"
+     xml:base="https://w3id.org/hi-ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:hi-ontology="https://w3id.org/hi-ontology#">
+    <owl:Ontology rdf:about="https://w3id.org/hi-ontology">
+        <owl:imports rdf:resource="https://w3id.org/hi-ontology#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/hi-ontology#allowsTask -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#allowsTask"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#evaluatedBy -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#evaluatedBy"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasAgentConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasAgentConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasAgentInvolved -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasAgentInvolved"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasAlternativeHypothesis -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasAlternativeHypothesis"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasCapability -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasCapability"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasCapabilityConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasCapabilityConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasConstraintConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasConstraintConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasContextConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasContextConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasDomainConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasDomainConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasEvaluationConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasEvaluationConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasExecutionConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasExecutionConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasExperiment -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasExperiment"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasExperimentConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasExperimentConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasGoal -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasGoal"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasGoalConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasGoalConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasHITeam -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasHITeam"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInfluenceOn -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInfluenceOn"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInteractionConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInteractionEpisode -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionEpisode"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInteractionIntent -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionIntent"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInteractionIntentConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionIntentConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasInteractionModalityConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionModalityConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasMember -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasMember"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasMethodConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasMethodConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasMetricConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasMetricConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasMetricTested -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasMetricTested"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasNullHypothesis -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasNullHypothesis"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasPhenomenonConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasPhenomenonConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasRoleConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasRoleConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasTaskConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasTaskConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#hasUseCaseConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#hasUseCaseConcept"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#operatesInContext -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#operatesInContext"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#performedBy -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#performedBy"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#performsExecution -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#performsExecution"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#realizesTask -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#realizesTask"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#requiresCapability -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#requiresCapability"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#requiresTask -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#requiresTask"/>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#towardsGoal -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/hi-ontology#towardsGoal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/hi-ontology#executesTask -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#executesTask">
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:label xml:lang="en">executes task</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/hi-ontology#isAssignedToTask -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isAssignedToTask">
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment>Relates an agent to a task it is assigned to, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility.</rdfs:comment>
+        <rdfs:label xml:lang="en">is assigned to task</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/AIAssistant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/AIAssistant">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilityReasoning"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilitySensing"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/AIAssistantRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExecutionConflictResolution"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExecutionExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskExplanation"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/CapabilityReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/CapabilityReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskConflictResolution"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/CapabilitySelfReporting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/CapabilitySelfReporting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/CapabilitySensing -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/CapabilitySensing">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SensingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ContextHealthMonitoring -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ContextHealthMonitoring">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <rdfs:comment xml:lang="en">Health-monitoring context involving multimodal data, user reports, and sensor uncertainty.</rdfs:comment>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/AutonomyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/PrivacyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/HealthMonitoringContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/1/HITeamPersonalAssistant"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/DataMismatchPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/SensorNoisePhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/TrustShiftPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/EvaluationConflictAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/EvaluationConflictAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <rdfs:comment xml:lang="en">Evaluates how accurately inconsistencies are identified and resolved.</rdfs:comment>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/ConflictResolutionAccuracyEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExperimentConflictAccuracy"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/EvaluationDataCollectionQuality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/EvaluationDataCollectionQuality">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <rdfs:comment xml:lang="en">Evaluates the completeness, reliability, and relevance of collected data.</rdfs:comment>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionQualityEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExperimentDataCollectionQuality"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/EvaluationTransparencyImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/EvaluationTransparencyImpact">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <rdfs:comment xml:lang="en">Evaluates how explanation clarity influences user trust under inconsistent data.</rdfs:comment>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExperimentTransparencyTrust"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/TrustPreservationMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExecutionConflictResolution -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExecutionConflictResolution">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/EvaluationConflictAccuracy"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ConflictResolutionTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/ArgumentationReasoningMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/AIAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskConflictResolution"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExecutionDataCollection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExecutionDataCollection">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/EvaluationDataCollectionQuality"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/HumanUser"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExecutionExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExecutionExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/EvaluationTransparencyImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/1/InteractionExplainDecision"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/1/AIAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskExplanation"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExperimentConflictAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExperimentConflictAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Argumentation-based conflict resolution increases consistency.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/DeliberationSupportExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+        <hasNullHypothesis>Conflict resolution does not improve data consistency.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExperimentDataCollectionQuality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExperimentDataCollectionQuality">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Better data collection improves personalization and outcomes.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyTrustExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+        <hasNullHypothesis>Data collection quality does not improve user outcomes.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/ExperimentTransparencyTrust -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/ExperimentTransparencyTrust">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Transparency improves user trust.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyTrustExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/TrustPreservationMetric"/>
+        <hasNullHypothesis>Transparency does not affect trust.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <rdfs:comment xml:lang="en">Maintain and improve user wellbeing using data fusion, conflict resolution and explanations.</rdfs:comment>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/UserWellbeingGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskConflictResolution"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/1/TaskExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/HITeamPersonalAssistant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/HITeamPersonalAssistant">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/1/GoalUserWellbeing"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/1/AIAssistant"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/1/HumanUser"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ContextHealthMonitoring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/HumanUser -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/HumanUser">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilitySelfReporting"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/HumanUserRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/1/ExecutionDataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/InteractionExplainDecision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/InteractionExplainDecision">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/1/AIAssistant"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/1/HumanUser"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VerbalDialogueModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/TaskConflictResolution -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/TaskConflictResolution">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Detect and resolve inconsistencies between reported and sensed data.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ConflictResolutionTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilityReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/TaskDataCollection">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Collect user self-reports and sensor-based activity data.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilitySelfReporting"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilitySensing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/TaskExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/TaskExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Provide explanations to maintain trust and engagement.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/1/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/1/UseCasePersonalAssistantHI -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/1/UseCasePersonalAssistantHI">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/HealthAndLifestyleDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/1/HITeamPersonalAssistant"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/PersonalAssistantUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityConfinedReach -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityConfinedReach">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskOpenCabinet"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ConfinedReachingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskExplanation"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityFineDexterity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityFineDexterity">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskFineInsertion"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskUnlockCabinet"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/FineDexterityCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityHeavyLifting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityHeavyLifting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskRetrieveTool"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/HeavyLiftingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskKnowledgeQuery"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilityRLPolicyLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilityRLPolicyLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskPolicyLearning"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ReinforcementLearningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilitySelfReporting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilitySelfReporting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskDataCollection"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/CapabilitySituationalAwareness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/CapabilitySituationalAwareness">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskSituationalAssessment"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SituationalAwarenessCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ContextWorkspaceManipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ContextWorkspaceManipulation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/SafetyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/WorkspaceManipulationContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/2/HITeamCollabManipulation"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/RiskExposurePhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/SkillsComplementarityPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/EvalExplanationTransparency -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/EvalExplanationTransparency">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExperimentExplanationTransparency"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/EvalFineManipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/EvalFineManipulation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/FineManipulationEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExperimentFineManipulation"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/TaskSuccessRateMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/EvalKGQueryAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/EvalKGQueryAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/KGQueryAccuracyEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExperimentKGSupport"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/TaskSuccessRateMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/EvalLoadSafety -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/EvalLoadSafety">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/AIInterventionImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExperimentLoadSafety"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/EvalReachSafety -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/EvalReachSafety">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/AIInterventionImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExperimentReachSafety"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExecConfinedReach -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExecConfinedReach">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/EvalReachSafety"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ConfinedReachTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/ReinforcementLearningMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExecHeavyLift -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExecHeavyLift">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/EvalLoadSafety"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/HeavyLiftingTaskExecution"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExecOpenCabinet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExecOpenCabinet">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/EvalKGQueryAccuracy"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/OpenCabinetTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskOpenCabinet"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExecRLExplain -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExecRLExplain">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/EvalExplanationTransparency"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ReinforcementLearningExplanationTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskExplanation"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExecUnlockCabinet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExecUnlockCabinet">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/EvalFineManipulation"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/UnlockCabinetTaskExecution"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/2/HumanTechnician"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskUnlockCabinet"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExperimentExplanationTransparency -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExperimentExplanationTransparency">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Providing explanations about planned risky actions improves perceived clarity and maintains or increases operator trust.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyTrustExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasNullHypothesis>Providing explanations about planned risky actions does not affect perceived clarity or operator trust.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExperimentFineManipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExperimentFineManipulation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Fine manipulation precision and success rate improve, especially when roles and capabilities are well allocated between human and robot.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/FineManipulationExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/TaskSuccessRateMetric"/>
+        <hasNullHypothesis>Fine manipulation precision and success rate do not improve across trials or conditions.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExperimentKGSupport -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExperimentKGSupport">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Knowledge graph support increases the success rate and robustness of cabinet opening and tool retrieval sequences.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/ReinforcementLearningWithKnowledgeGraphsExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/TaskSuccessRateMetric"/>
+        <hasNullHypothesis>Knowledge graph support does not significantly increase the success rate of cabinet opening and tool retrieval.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExperimentLoadSafety -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExperimentLoadSafety">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Delegating heavy lifting to the robot reduces safety incidents and improves overall safety compliance.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceMetric"/>
+        <hasNullHypothesis>Delegating heavy lifting to the robot does not significantly reduce safety incidents.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/ExperimentReachSafety -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/ExperimentReachSafety">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Using RL-based policies in confined reach improves safety compliance and reduces risk exposure for the human.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/SafetyComplianceMetric"/>
+        <hasNullHypothesis>Using RL-based policies in confined reach does not change safety compliance compared to baseline control.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/SafeRetrievalGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskOpenCabinet"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskRetrieveTool"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/2/TaskUnlockCabinet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/HITeamCollabManipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/HITeamCollabManipulation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/2/HumanTechnician"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ContextWorkspaceManipulation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/HumanTechnician -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/HumanTechnician">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityFineDexterity"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilitySelfReporting"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilitySituationalAwareness"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/FineManipulatorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExecUnlockCabinet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/InteractionExplainRisk -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/InteractionExplainRisk">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/2/HumanTechnician"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VerbalDialogueModality"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/2/GoalSafeToolRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/RobotManipulator -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/RobotManipulator">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityConfinedReach"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityHeavyLifting"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityKGQuery"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityRLPolicyLearning"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/RiskOperatorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExecConfinedReach"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExecHeavyLift"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExecOpenCabinet"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/2/ExecRLExplain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskDataCollection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskDataCollection">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilitySelfReporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskFineInsertion -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskFineInsertion">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/FineInsertionTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityFineDexterity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskHeavyLift">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/HeavyLiftingTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityConfinedReach"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityHeavyLifting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskKnowledgeQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskKnowledgeQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityKGQuery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskOpenCabinet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskOpenCabinet">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/OpenCabinetTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityConfinedReach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskPolicyLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskPolicyLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/PolicyLearningTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityRLPolicyLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskRetrieveTool -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskRetrieveTool">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/RetrieveToolTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityHeavyLifting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskSituationalAssessment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskSituationalAssessment">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/SituationalAssessmentTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilitySituationalAwareness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/TaskUnlockCabinet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/TaskUnlockCabinet">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/UnlockCabinetTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/2/CapabilityFineDexterity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/2/UseCaseCollaborativeManipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/2/UseCaseCollaborativeManipulation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/IndustrialAndServiceRoboticsDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/2/HITeamCollabManipulation"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/CollaborativeManipulationUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityBayesianReasoning"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityMetaAnalysis"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/AIAdvisorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExecAssessAccuracy"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExecDecideIntervention"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExecExplainDecision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/CapabilityBayesianReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/CapabilityBayesianReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskDecideIntervention"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskExplainDecision"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/CapabilityMetaAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/CapabilityMetaAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/MetaAnalysisCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/CapabilitySelfReporting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/CapabilitySelfReporting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ContextJuryDeliberation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ContextJuryDeliberation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/FairnessConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/UndueInfluenceConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/JuryDeliberationContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HITeamGroupDeliberation"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/GroupThinkingPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/TrustShiftPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/AIInterventionImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExperimentDeliberationSupport"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/UndueInfluenceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExecAssessAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExecAssessAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/AssessAccuracyTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianLogicMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExecDecideIntervention -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExecDecideIntervention">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/DecideInterventionTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/MetaAnalysisScoringMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskDecideIntervention"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExecExplainDecision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExecExplainDecision">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskExplainDecision"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement1">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ProvideStatementTaskExecution"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror1"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement2">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/EvaluationAIInterventionImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ProvideStatementTaskExecution"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror2"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/ExperimentDeliberationSupport -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/ExperimentDeliberationSupport">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis xml:lang="en">AI-supported Bayesian meta-analysis improves fairness without increasing undue influence.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/DeliberationSupportExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/UndueInfluenceMetric"/>
+        <hasNullHypothesis xml:lang="en">AI intervention has no effect on fairness or may increase undue influence.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/FairAccurateVerdictGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskDecideIntervention"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskExplainDecision"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/HITeamGroupDeliberation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/HITeamGroupDeliberation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/3/GoalFairAccurateVerdict"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror1"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror2"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ContextJuryDeliberation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/HumanJuror1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/HumanJuror1">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilitySelfReporting"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/JurorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/HumanJuror2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/HumanJuror2">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasAgentConcept rdf:resource="https://w3id.org/hi-thesaurus/HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilitySelfReporting"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/JurorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/3/ExecProvideStatement2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/InteractionExplainConditions -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/InteractionExplainConditions">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror1"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror2"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VerbalDialogueModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/InteractionGroupDeliberation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/InteractionGroupDeliberation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/AIDeliberationAssistant"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror1"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HumanJuror2"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/DeliberationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VerbalDialogueModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/TaskAssessCommunicationAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/AssessCommunicationAccuracyTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityBayesianReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/TaskDecideIntervention -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/TaskDecideIntervention">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/DecideInterventionTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityBayesianReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/TaskExplainDecision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/TaskExplainDecision">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/TaskProvideStatement">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ProvideStatementTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/3/CapabilitySelfReporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/3/UseCaseGroupDeliberationHI -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/3/UseCaseGroupDeliberationHI">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/LawAndPolicyDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/3/HITeamGroupDeliberation"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/GroupDeliberationUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/AITutor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/AITutor">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityBayesianReasoning"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityKGQuery"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilitySemanticReasoning"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/TutorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecBayesianModeling"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecExplainRecommendations"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecRecommendResources"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecReconstructTrajectory"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecSemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/CapabilityBayesianReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/CapabilityBayesianReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskBayesianInference"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskExplainRecommendations"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/CapabilityKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/CapabilityKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskKGQuery"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/CapabilitySelfReporting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/CapabilitySelfReporting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/CapabilitySemanticReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/CapabilitySemanticReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskRecommendResources"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskSemanticReasoning"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ContextOnlineLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ContextOnlineLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <rdfs:comment xml:lang="en">Online personalized learning setting where an AI tutor adapts to a learner using self-reports and KGs.</rdfs:comment>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/AutonomyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/PrivacyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/OnlineLearningContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/4/HITeamTutoring"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeMismatchPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/TrustShiftPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/TutorImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExperimentTutoringRelevance"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/LearningGainMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecBayesianModeling -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecBayesianModeling">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianModelingTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianLogicMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskBayesianInference"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecExplainRecommendations -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecExplainRecommendations">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/4/InteractionExplainRecommendations"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskExplainRecommendations"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecProvideLearningHistory -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecProvideLearningHistory">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ProvideLearningHistoryTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/DataCollectionMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/HumanLearner"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecRecommendResources -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecRecommendResources">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendResourcesTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticLinkingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskRecommendResources"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecReconstructTrajectory -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecReconstructTrajectory">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ReconstructTrajectoryTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExecSemanticReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExecSemanticReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/EvaluationTutorImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticLinkingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskSemanticReasoning"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/ExperimentTutoringRelevance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/ExperimentTutoringRelevance">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis xml:lang="en">Combining Bayesian inference with semantic reasoning yields higher recommendation relevance, learning gains, and clearer explanations.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/OnlineTutoringExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/LearningGainMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+        <hasNullHypothesis xml:lang="en">Personalized AI tutoring does not significantly improve relevance or learning gains over a non-personalized baseline.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/EffectiveLearningGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskBayesianInference"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskExplainRecommendations"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskKGQuery"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskRecommendResources"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/4/TaskSemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/HITeamTutoring -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/HITeamTutoring">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/4/GoalEffectiveLearning"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/4/HumanLearner"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ContextOnlineLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/HumanLearner -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/HumanLearner">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilitySelfReporting"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/LearnerRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/4/ExecProvideLearningHistory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/InteractionExplainRecommendations -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/InteractionExplainRecommendations">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/4/AITutor"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/4/HumanLearner"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/TextChatModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskBayesianInference -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskBayesianInference">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Infer a probabilistic model of the learner’s prior knowledge and interests.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianInferenceTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityBayesianReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskExplainRecommendations -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskExplainRecommendations">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Explain why specific resources and topics were recommended.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Query public knowledge graphs to retrieve background information and related topics.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilityKGQuery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskRecommendResources -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskRecommendResources">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Select suitable learning resources based on the learner’s trajectory and knowledge state.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendResourcesTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilitySemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskReconstructTrajectory">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Reconstruct the learner’s study trajectory using self-reported history and logs.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ReconstructTrajectoryTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilitySelfReporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/TaskSemanticReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/TaskSemanticReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">Reason over semantic relations between topics, prerequisites, and learner goals.</rdfs:comment>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/4/CapabilitySemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/4/UseCaseAutonomousTutoring -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/4/UseCaseAutonomousTutoring">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/EducationDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/4/HITeamTutoring"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/AutonomousTutoringUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityEmbeddingReasoning"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityKGQuery"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/AIAdvisorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExecCandidateGeneration"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExecExplainAI"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExecSymptomEmbedding"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/CapabilityClinicalJudgment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/CapabilityClinicalJudgment">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskHypothesisComparison"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ClinicalJudgmentCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/CapabilityEmbeddingReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/CapabilityEmbeddingReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskCandidateGeneration"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/EmbeddingReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/CapabilityKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/CapabilityKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ContextClinicalConsultation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ContextClinicalConsultation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <rdfs:comment xml:lang="en">Clinical consultation using patient history and symptom data stored in a knowledge graph.</rdfs:comment>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/FairnessConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/PrivacyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/ClinicalConsultationContext"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/DataMismatchPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/TrustShiftPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/EvalDiagnosisAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/EvalDiagnosisAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <rdfs:comment xml:lang="en">Evaluation of the accuracy of diagnostic recommendations and hypothesis selection.</rdfs:comment>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/DiagnosisAccuracyMetric"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExperimentDiagnosisAccuracy"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/DiagnosisAccuracyMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/EvalExplanationClarity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/EvalExplanationClarity">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <rdfs:comment xml:lang="en">Evaluation of whether AI and clinician explanations are clear, structured, and clinically informative.</rdfs:comment>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExperimentExplanationClarity"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExecCandidateGeneration -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExecCandidateGeneration">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/EvalDiagnosisAccuracy"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/CandidateHypothesisGenerationTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticLinkingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskCandidateGeneration"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExecExplainAI -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExecExplainAI">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/EvalExplanationClarity"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/5/InteractionClinicalDialogue"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExecExplainHuman -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExecExplainHuman">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/EvalExplanationClarity"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/5/InteractionClinicalDialogue"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/HumanClinician"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExecHypothesisComparison -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExecHypothesisComparison">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/EvalDiagnosisAccuracy"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/HypothesisComparisonTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/BayesianLogicMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/HumanClinician"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskHypothesisComparison"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExecSymptomEmbedding -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExecSymptomEmbedding">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/EvalDiagnosisAccuracy"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticEmbeddingTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticEmbeddingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExperimentDiagnosisAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExperimentDiagnosisAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <rdfs:comment xml:lang="en">Experiment measuring diagnostic accuracy from hybrid clinician–AI collaboration under clinical consultation conditions.</rdfs:comment>
+        <hasAlternativeHypothesis xml:lang="en">Embedding-based reasoning combined with clinician judgment significantly increases diagnostic accuracy.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/DiagnosisExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/DiagnosisAccuracyMetric"/>
+        <hasNullHypothesis xml:lang="en">AI–human collaborative diagnosis does not significantly improve diagnostic accuracy compared to clinician-only assessment.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/ExperimentExplanationClarity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/ExperimentExplanationClarity">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <rdfs:comment xml:lang="en">Experiment assessing the clarity and trust impact of AI-generated explanations in hybrid diagnosis.</rdfs:comment>
+        <hasAlternativeHypothesis xml:lang="en">Clear post-hoc explanations from the AI assistant improve clinician understanding and trust.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyTrustExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasNullHypothesis xml:lang="en">Providing explanations does not significantly improve clinician trust or decision justification quality.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/AccurateTrustworthyDiagnosisGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskCandidateGeneration"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskHypothesisComparison"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/HITeamDiagnosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/HITeamDiagnosis">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/5/GoalAccurateTrustworthyDiagnosis"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/5/HumanClinician"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ContextClinicalConsultation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/HumanClinician -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/HumanClinician">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityClinicalJudgment"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityExplanation"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/ClinicianRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExecExplainHuman"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/5/ExecHypothesisComparison"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/InteractionClinicalDialogue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/InteractionClinicalDialogue">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <rdfs:comment xml:lang="en">Dialogue between clinician and AI assistant during diagnostic explanation.</rdfs:comment>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/5/AIDiagnosticAssistant"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/5/HumanClinician"/>
+        <hasInteractionConcept rdf:resource="https://w3id.org/hi-thesaurus/Interaction"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VerbalDialogueModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/TaskCandidateGeneration -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/TaskCandidateGeneration">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/CandidateHypothesisGenerationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityEmbeddingReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/TaskExplainReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/TaskHypothesisComparison -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/TaskHypothesisComparison">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/HypothesisComparisonTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityClinicalJudgment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/TaskSymptomAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/SymptomAnalysisTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityEmbeddingReasoning"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/5/CapabilityKGQuery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/5/UseCaseHybridMedicalDiagnosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/5/UseCaseHybridMedicalDiagnosis">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/MedicalDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/5/HITeamDiagnosis"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/MedicalDiagnosisUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityKGQuery"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityNegotiation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityPatternLearning"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/BuilderRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecExplainDecision"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecLearnEnergyBehavior"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecLearnOccupancy"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecNegotiate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/CapabilityKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/CapabilityKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnEnergyBehavior"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/CapabilityNegotiation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/CapabilityNegotiation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskNegotiateAllocation"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/NegotiationCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/CapabilityOperatorCoordination -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/CapabilityOperatorCoordination">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskCoordinateWithOperator"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/OperatorCoordinationCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/CapabilityPatternLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/CapabilityPatternLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnOccupancy"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/PatternLearningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ContextSmartCampus -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ContextSmartCampus">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/SustainabilityConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/UserComfortConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/SmartCampusContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HITeamCampusEnergy"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/CooperativeLearningDynamicsPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/LoadVariabilityPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/NegotationImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExperimentCampusEnergy"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/CO2ReductionMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/EnergyEfficiencyMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/UserComfortMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecCoordinateWithOperator -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecCoordinateWithOperator">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/CoordinationTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/ProtocolNegotiationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskCoordinateWithOperator"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecExplainDecision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecExplainDecision">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/6/InteractionExplainAllocation"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecExplainOperator -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecExplainOperator">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/PostHocExplanationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecLearnEnergyBehavior -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecLearnEnergyBehavior">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/LearnEnergyBehaviorTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnEnergyBehavior"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecLearnOccupancy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecLearnOccupancy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/LearnOccupancyTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/CooperativeLearningMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnOccupancy"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExecNegotiate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExecNegotiate">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/EvaluationNegotiationImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/NegotiationTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/6/InteractionNegotiation"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/ProtocolNegotiationMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskNegotiateAllocation"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/ExperimentCampusEnergy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/ExperimentCampusEnergy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis>Co-learning and negotiation improve efficiency, fairness, and comfort while reducing CO2 emissions.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/CampusEnergyAllocationExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/CO2ReductionMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/EnergyEfficiencyMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/FairOutcomeMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/UserComfortMetric"/>
+        <hasNullHypothesis>Negotiation and co-learning do not improve fairness or efficiency compared to independent building control.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/FairEfficientHeatingGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskCoordinateWithOperator"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnEnergyBehavior"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskLearnOccupancy"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/6/TaskNegotiateAllocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/HITeamCampusEnergy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/HITeamCampusEnergy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/6/GoalFairEfficientHeating"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ContextSmartCampus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityOperatorCoordination"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/GridOperatorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecCoordinateWithOperator"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/6/ExecExplainOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/InteractionExplainAllocation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/InteractionExplainAllocation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/DashboardModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/InteractionNegotiation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/InteractionNegotiation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/6/AIBuildingAgent"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HumanGridOperator"/>
+        <hasInteractionIntentConcept rdf:resource="https://w3id.org/hi-thesaurus/NegotiationIntent"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/NetworkProtocolModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/TaskCoordinateWithOperator -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/TaskCoordinateWithOperator">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/OperatorCoordinationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityOperatorCoordination"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/TaskExplainDecision">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/TaskLearnEnergyBehavior -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/TaskLearnEnergyBehavior">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/LearnEnergyBehaviorTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityKGQuery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/TaskLearnOccupancy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/TaskLearnOccupancy">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/LearnOccupancyTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityPatternLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/TaskNegotiateAllocation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/TaskNegotiateAllocation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/AllocationNegotationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/6/CapabilityNegotiation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/6/UseCaseCampusEnergyNegotiation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/6/UseCaseCampusEnergyNegotiation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/SmartCampusDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/6/HITeamCampusEnergy"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/EnergyNegotiationUseCase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#ArtificialAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityEmbeddingReasoning"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityExplanation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityKGQuery"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityMultimodalInterpretation"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualGuideRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecAnswerQuestions"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecComputeSimilarity"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecExplainRecommendations"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecInterpretInput"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecRecommendArtifacts"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecSemanticRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilityEmbeddingReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilityEmbeddingReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskComputeSimilarity"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/EmbeddingReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilityExplanation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilityExplanation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskExplainRecommendations"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplainingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilityKGQuery -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilityKGQuery">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilityMultimodalInterpretation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilityMultimodalInterpretation">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/MultimodalInterpretationCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilitySelfReporting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilitySelfReporting">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Capability"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskAnswerQuestions"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskRecommendArtifacts"/>
+        <allowsTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval"/>
+        <hasCapabilityConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ContextVirtualExhibition -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ContextVirtualExhibition">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/AccessibilityConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/PrivacyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasContextConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualExhibitionContext"/>
+        <hasInfluenceOn rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HITeamVirtualMuseum"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/EngagementShiftPhenomenon"/>
+        <hasPhenomenonConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeMismatchPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Evaluation"/>
+        <hasEvaluationConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualRealityImpactEvaluation"/>
+        <hasExperiment rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExperimentVRGuideEffectiveness"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/AnswerAccuracyMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/EngagementTimeMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecAnswerQuestions -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecAnswerQuestions">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/QuestionAnsweringTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/7/InteractionQA"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskAnswerQuestions"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecComputeSimilarity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecComputeSimilarity">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticEmbeddingTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticEmbeddingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskComputeSimilarity"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecExplainRecommendations -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecExplainRecommendations">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticLinkingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskExplainRecommendations"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecInterpretInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecInterpretInput">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/InterpretInputTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualRealityInputParsingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecProvideProfile -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecProvideProfile">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/ProvideProfileTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SelfReportingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HumanVisitor"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecRecommendArtifacts -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecRecommendArtifacts">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendResourcesTaskExecution"/>
+        <hasInteractionEpisode rdf:resource="https://w3id.org/hi-ontology/scenarios/7/InteractionVRGuidedTour"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticLinkingMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskRecommendArtifacts"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExecSemanticRetrieval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExecSemanticRetrieval">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
+        <evaluatedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/EvaluationVRGuideImpact"/>
+        <hasExecutionConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningTaskExecution"/>
+        <hasMethodConcept rdf:resource="https://w3id.org/hi-thesaurus/KnowledgeGraphQueryMethod"/>
+        <performedBy rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <realizesTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval"/>
+        <towardsGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/ExperimentVRGuideEffectiveness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/ExperimentVRGuideEffectiveness">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Experiment"/>
+        <hasAlternativeHypothesis xml:lang="en">Multimodal input + KG reasoning improves engagement and relevance.</hasAlternativeHypothesis>
+        <hasExperimentConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualRealityEffectivenessExperiment"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/AnswerAccuracyMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/EngagementTimeMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/ExplanationClarityMetric"/>
+        <hasMetricTested rdf:resource="https://w3id.org/hi-thesaurus/RecommendationRelevanceMetric"/>
+        <hasNullHypothesis xml:lang="en">No improvement over a non-personalized baseline.</hasNullHypothesis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <hasGoalConcept rdf:resource="https://w3id.org/hi-thesaurus/EnhancedVisitorGoal"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskAnswerQuestions"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskComputeSimilarity"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskExplainRecommendations"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskRecommendArtifacts"/>
+        <requiresTask rdf:resource="https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/HITeamVirtualMuseum -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/HITeamVirtualMuseum">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/AccessibilityConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/PrivacyConstraint"/>
+        <hasConstraintConcept rdf:resource="https://w3id.org/hi-thesaurus/TransparencyConstraint"/>
+        <hasGoal rdf:resource="https://w3id.org/hi-ontology/scenarios/7/GoalEnhancedVisitorLearning"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <hasMember rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HumanVisitor"/>
+        <operatesInContext rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ContextVirtualExhibition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/HumanVisitor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/HumanVisitor">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
+        <hasCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySelfReporting"/>
+        <hasRoleConcept rdf:resource="https://w3id.org/hi-thesaurus/VisitorRole"/>
+        <performsExecution rdf:resource="https://w3id.org/hi-ontology/scenarios/7/ExecProvideProfile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/InteractionQA -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/InteractionQA">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HumanVisitor"/>
+        <hasInteractionIntent rdf:resource="https://w3id.org/hi-ontology/scenarios/7/IntentAnswer"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VoiceChatModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/InteractionVRGuidedTour -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/InteractionVRGuidedTour">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/7/AIVirtualGuide"/>
+        <hasAgentInvolved rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HumanVisitor"/>
+        <hasInteractionIntent rdf:resource="https://w3id.org/hi-ontology/scenarios/7/IntentGuide"/>
+        <hasInteractionModalityConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualRealityModality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskAnswerQuestions -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskAnswerQuestions">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/QuestionAnsweringTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskComputeSimilarity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskComputeSimilarity">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityEmbeddingReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskExplainRecommendations -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskExplainRecommendations">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/ExplanationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityExplanation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskInterpretMultimodalInput">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/MultimodalInputInterpretationTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilityMultimodalInterpretation"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySelfReporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskRecommendArtifacts -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskRecommendArtifacts">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/RecommendResourcesTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/TaskSemanticRetrieval">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <hasTaskConcept rdf:resource="https://w3id.org/hi-thesaurus/SemanticReasoningTask"/>
+        <requiresCapability rdf:resource="https://w3id.org/hi-ontology/scenarios/7/CapabilitySemanticReasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hi-ontology/scenarios/7/UseCaseVirtualMuseumGuide -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/scenarios/7/UseCaseVirtualMuseumGuide">
+        <rdf:type rdf:resource="https://w3id.org/hi-ontology#UseCase"/>
+        <hasDomainConcept rdf:resource="https://w3id.org/hi-thesaurus/DigitalMuseumDomain"/>
+        <hasHITeam rdf:resource="https://w3id.org/hi-ontology/scenarios/7/HITeamVirtualMuseum"/>
+        <hasUseCaseConcept rdf:resource="https://w3id.org/hi-thesaurus/VirtualMuseumGuideUseCase"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
