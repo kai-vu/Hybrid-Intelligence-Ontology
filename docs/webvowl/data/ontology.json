@@ -2,13 +2,12 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl", "http://schema.org", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/hi-ontology", "http://org.semanticweb.owlapi/error", "http://xmlns.com/foaf/0.1", "http://www.w3.org/2004/02/skos/core" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://schema.org", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/hi-ontology", "http://xmlns.com/foaf/0.1", "http://www.w3.org/2004/02/skos/core" ],
     "title" : {
       "en" : "The Hybrid Intelligence (HI) Ontology"
     },
     "iri" : "https://w3id.org/hi-ontology#",
     "version" : "2.0.0",
-    "author" : [ "_:genid2147483648", "_:genid2147483652", "_:genid2147483650" ],
     "description" : {
       "en" : "Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena."
     },
@@ -18,22 +17,6 @@
         "language" : "undefined",
         "value" : "https://creativecommons.org/licenses/by/4.0/",
         "type" : "iri"
-      } ],
-      "creator" : [ {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "_:genid2147483652",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "_:genid2147483648",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "_:genid2147483650",
-        "type" : "label"
       } ],
       "created" : [ {
         "identifier" : "created",
@@ -47,16 +30,16 @@
         "value" : "hi",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/hi-ontology#",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "2.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/hi-ontology#",
         "type" : "label"
       } ],
       "title" : [ {
@@ -75,79 +58,64 @@
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "29",
-    "type" : "owl:Class"
-  }, {
-    "id" : "30",
+    "id" : "24",
     "type" : "owl:Class"
   }, {
     "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "37",
+    "id" : "29",
     "type" : "owl:Class"
   }, {
-    "id" : "40",
-    "type" : "owl:Class"
-  }, {
-    "id" : "19",
-    "type" : "owl:Class"
-  }, {
-    "id" : "9",
-    "type" : "owl:Class"
-  }, {
-    "id" : "50",
-    "type" : "owl:Class"
-  }, {
-    "id" : "39",
-    "type" : "owl:Class"
-  }, {
-    "id" : "21",
-    "type" : "owl:Class"
-  }, {
-    "id" : "55",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "28",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "25",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "57",
-    "type" : "owl:Class"
-  }, {
-    "id" : "65",
-    "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "66",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "61",
-    "type" : "owl:Class"
-  }, {
-    "id" : "46",
-    "type" : "owl:Class"
-  }, {
-    "id" : "12",
+    "id" : "32",
     "type" : "owl:Class"
   }, {
     "id" : "17",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "12",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "50",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -155,7 +123,11 @@
     "baseIri" : "http://schema.org",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "PropertyValue"
+      "IRI-based" : "PropertyValue",
+      "en" : "Property Value"
+    },
+    "comment" : {
+      "en" : "A Schema.org class representing a specific property-value pair, often used for metadata or structured descriptions."
     },
     "attributes" : [ "external" ],
     "id" : "3"
@@ -164,7 +136,11 @@
     "baseIri" : "http://www.w3.org/2004/02/skos/core",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Concept"
+      "IRI-based" : "Concept",
+      "en" : "Concept"
+    },
+    "comment" : {
+      "en" : "A SKOS concept representing a unit of thought, used for controlled vocabularies and thesauri."
     },
     "attributes" : [ "external" ],
     "id" : "2"
@@ -179,17 +155,7 @@
     "comment" : {
       "en" : "The realization or performance of a specific task by an agent using a method."
     },
-    "id" : "13"
-  }, {
-    "iri" : "http://org.semanticweb.owlapi/error#Error1",
-    "baseIri" : "http://org.semanticweb.owlapi/error",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Error1"
-    },
-    "subClasses" : [ "9" ],
-    "attributes" : [ "external" ],
-    "id" : "29"
+    "id" : "14"
   }, {
     "iri" : "https://w3id.org/hi-ontology#ArtificialAgent",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -201,8 +167,8 @@
     "comment" : {
       "en" : "An artificial or computational agent (robot, software, etc.) collaborating with human agents."
     },
-    "id" : "30",
-    "superClasses" : [ "11" ]
+    "id" : "24",
+    "superClasses" : [ "8" ]
   }, {
     "iri" : "https://w3id.org/hi-ontology#Experiment",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -223,20 +189,24 @@
       "IRI-based" : "Agent",
       "en" : "Agent"
     },
-    "subClasses" : [ "36", "30" ],
+    "subClasses" : [ "28", "24" ],
     "comment" : {
       "en" : "An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system."
     },
-    "id" : "11"
+    "id" : "8"
   }, {
     "iri" : "http://schema.org/Organization",
     "baseIri" : "http://schema.org",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Organization"
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "A Schema.org class representing an organization such as an institution, company, or group."
     },
     "attributes" : [ "external" ],
-    "id" : "37"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Capability",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -248,7 +218,7 @@
     "comment" : {
       "en" : "A skill, competence, or functional capacity that allows an agent to perform or enable a task."
     },
-    "id" : "40"
+    "id" : "32"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Evaluation",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -260,7 +230,7 @@
     "comment" : {
       "en" : "A process of assessing the quality or outcome of executions, methods, or goals."
     },
-    "id" : "19"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Goal",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -272,18 +242,21 @@
     "comment" : {
       "en" : "A desired outcome pursued by an HI team, requiring one or more tasks to be completed."
     },
-    "id" : "9",
-    "superClasses" : [ "29", "46" ]
+    "id" : "12"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Person",
     "baseIri" : "http://xmlns.com/foaf/0.1",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Person"
+      "IRI-based" : "Person",
+      "en" : "Person"
     },
-    "subClasses" : [ "36" ],
+    "subClasses" : [ "28" ],
+    "comment" : {
+      "en" : "A human individual described using the FOAF vocabulary. Represents natural persons who may participate in, interact with, or be modeled within a Hybrid Intelligence scenario."
+    },
     "attributes" : [ "external" ],
-    "id" : "50"
+    "id" : "44"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Interaction",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -295,7 +268,7 @@
     "comment" : {
       "en" : "A multi-agent task execution where two or more agents coordinate (verbal, symbolic, or physical) toward a goal."
     },
-    "id" : "39"
+    "id" : "31"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Task",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -307,73 +280,36 @@
     "comment" : {
       "en" : "A unit of purposeful activity executed by an agent toward achieving a goal."
     },
-    "id" : "21"
+    "id" : "34"
+  }, {
+    "instances" : 0,
+    "union" : [ "8", "9", "11" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "49"
+  }, {
+    "instances" : 0,
+    "union" : [ "14" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "50"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "55",
+    "id" : "51",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "28",
+    "id" : "23",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "25",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity",
-    "baseIri" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
-    "instances" : 1,
-    "label" : {
-      "IRI-based" : "Entity"
-    },
-    "attributes" : [ "external" ],
-    "id" : "57"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#Intentionality",
-    "baseIri" : "https://w3id.org/hi-ontology",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "Intentionality"
-    },
-    "id" : "65"
-  }, {
-    "instances" : 0,
-    "union" : [ "12", "8" ],
+    "union" : [ "8", "9", "11" ],
     "attributes" : [ "union", "anonymous" ],
     "id" : "1"
-  }, {
-    "instances" : 0,
-    "union" : [ "13" ],
-    "attributes" : [ "union", "anonymous" ],
-    "id" : "66"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#Execution",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Execution"
-    },
-    "id" : "61"
-  }, {
-    "iri" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal",
-    "baseIri" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Goal"
-    },
-    "subClasses" : [ "9" ],
-    "attributes" : [ "external" ],
-    "id" : "46"
   }, {
     "iri" : "https://w3id.org/hi-ontology#Context",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -385,7 +321,7 @@
     "comment" : {
       "en" : "Situational conditions (environmental, cultural, cognitive) under which tasks and evaluations occur."
     },
-    "id" : "12"
+    "id" : "9"
   }, {
     "iri" : "https://w3id.org/hi-ontology#UseCase",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -397,7 +333,7 @@
     "comment" : {
       "en" : "A structured situation describing a specific hybrid intelligence scenario (previously 'Scenario')."
     },
-    "id" : "17"
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/hi-ontology#HumanAgent",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -409,8 +345,8 @@
     "comment" : {
       "en" : "A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities."
     },
-    "id" : "36",
-    "superClasses" : [ "11", "50" ]
+    "id" : "28",
+    "superClasses" : [ "8", "44" ]
   }, {
     "iri" : "https://w3id.org/hi-ontology#HITeam",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -422,7 +358,7 @@
     "comment" : {
       "en" : "A hybrid intelligence team composed of human and artificial agents pursuing a shared goal."
     },
-    "id" : "8"
+    "id" : "11"
   } ],
   "property" : [ {
     "id" : "0",
@@ -440,7 +376,7 @@
     "id" : "10",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "14",
+    "id" : "13",
     "type" : "owl:objectProperty"
   }, {
     "id" : "15",
@@ -455,22 +391,22 @@
     "id" : "20",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "23",
+    "id" : "21",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "24",
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "25",
     "type" : "owl:objectProperty"
   }, {
     "id" : "26",
     "type" : "owl:objectProperty"
   }, {
     "id" : "27",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "31",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "32",
+    "id" : "30",
     "type" : "owl:objectProperty"
   }, {
     "id" : "33",
@@ -479,7 +415,13 @@
     "id" : "35",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "38",
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
     "type" : "owl:objectProperty"
   }, {
     "id" : "41",
@@ -491,91 +433,70 @@
     "id" : "43",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "44",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "45",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "47",
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
     "type" : "owl:objectProperty"
   }, {
     "id" : "48",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "49",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "51",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "52",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "22",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "53",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "54",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "56",
-    "type" : "rdf:Property"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "58",
     "type" : "owl:objectProperty"
   }, {
     "id" : "59",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "60",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "62",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "63",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "64",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "67",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "68",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "69",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "70",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "34",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "71",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "72",
+    "id" : "63",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "73",
+    "id" : "64",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "74",
+    "id" : "47",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "75",
+    "id" : "65",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "76",
+    "id" : "66",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "77",
+    "id" : "67",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -621,30 +542,30 @@
     "attributes" : [ "object" ],
     "id" : "6"
   }, {
-    "iri" : "https://w3id.org/hi-ontology#hasGoal",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasGoal",
-      "undefined" : "has goal"
-    },
-    "domain" : "8",
-    "comment" : {
-      "en" : "An HI team pursues one or more goals."
-    },
-    "attributes" : [ "object" ],
-    "id" : "7"
-  }, {
     "iri" : "https://w3id.org/hi-ontology#operatesInContext",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "12",
+    "range" : "9",
     "label" : {
       "IRI-based" : "operatesInContext",
       "undefined" : "operates in context"
     },
-    "domain" : "11",
+    "domain" : "8",
     "comment" : {
       "en" : "Specifies the context in which an HI team operates."
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/hi-ontology#hasGoal",
+    "baseIri" : "https://w3id.org/hi-ontology",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasGoal",
+      "undefined" : "has goal"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "An HI team pursues one or more goals."
     },
     "attributes" : [ "object" ],
     "id" : "10"
@@ -656,12 +577,12 @@
       "IRI-based" : "hasContextConcept",
       "undefined" : "has context concept"
     },
-    "domain" : "12",
+    "domain" : "9",
     "comment" : {
       "en" : "Links a context to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "14"
+    "id" : "13"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasMethodConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -670,12 +591,26 @@
       "IRI-based" : "hasMethodConcept",
       "undefined" : "has method concept"
     },
-    "domain" : "13",
+    "domain" : "14",
     "comment" : {
       "en" : "Links a task execution to a method in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
     "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/hi-ontology#evaluatedBy",
+    "baseIri" : "https://w3id.org/hi-ontology",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "evaluatedBy",
+      "undefined" : "evaluated by"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "Execution is evaluated by a defined evaluation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "16"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasDomainConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -684,41 +619,12 @@
       "IRI-based" : "hasDomainConcept",
       "undefined" : "has domain concept"
     },
-    "domain" : "17",
+    "domain" : "19",
     "comment" : {
       "en" : "Links a domain to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "16"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#evaluatedBy",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "19",
-    "label" : {
-      "IRI-based" : "evaluatedBy",
-      "undefined" : "evaluated by"
-    },
-    "domain" : "13",
-    "comment" : {
-      "en" : "Execution is evaluated by a defined evaluation."
-    },
-    "attributes" : [ "object" ],
     "id" : "18"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#iaAssignedToTask",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
-    "label" : {
-      "IRI-based" : "iaAssignedToTask",
-      "undefined" : "is assigned to task"
-    },
-    "superproperty" : [ "22" ],
-    "domain" : "11",
-    "comment" : {
-      "en" : "Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task."
-    },
-    "attributes" : [ "object" ],
-    "id" : "20"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasUseCaseConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -727,39 +633,30 @@
       "IRI-based" : "hasUseCaseConcept",
       "undefined" : "has use case concept"
     },
-    "domain" : "17",
+    "domain" : "19",
     "comment" : {
       "en" : "Links a use case to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "23"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#eligibleForTask",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "25",
-    "label" : {
-      "IRI-based" : "eligibleForTask"
-    },
-    "domain" : "25",
-    "attributes" : [ "object" ],
-    "id" : "24"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasRoleConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
     "range" : "2",
     "label" : {
-      "IRI-based" : "hasRoleConcept"
+      "IRI-based" : "hasRoleConcept",
+      "undefined" : "has role concept"
     },
-    "domain" : "11",
+    "domain" : "8",
     "comment" : {
       "en" : "Links a role to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "21"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasNullHypothesis",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "28",
+    "range" : "23",
     "label" : {
       "IRI-based" : "hasNullHypothesis",
       "en" : "has null hypothesis"
@@ -769,21 +666,21 @@
       "en" : "Stores the textual formulation of the null hypothesis of an experiment."
     },
     "attributes" : [ "datatype" ],
-    "id" : "27"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasInfluenceOn",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "8",
+    "range" : "11",
     "label" : {
       "IRI-based" : "hasInfluenceOn",
       "undefined" : "has influence on"
     },
-    "domain" : "12",
+    "domain" : "9",
     "comment" : {
       "en" : "Relates a contextual condition to the HI team whose actions, collaboration dynamics, or task performance are influenced by that condition. It captures how background phenomena and constraints shape the team's operation in a given use case."
     },
     "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasEvaluationConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -792,37 +689,26 @@
       "IRI-based" : "hasEvaluationConcept",
       "undefined" : "has evaluation concept"
     },
-    "domain" : "19",
+    "domain" : "17",
     "comment" : {
       "en" : "Links an evaluation to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "32"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#assignedToTask",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "25",
-    "label" : {
-      "IRI-based" : "assignedToTask"
-    },
-    "domain" : "25",
-    "subproperty" : [ "34" ],
-    "attributes" : [ "object" ],
-    "id" : "33"
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/hi-ontology#performsExecution",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "13",
+    "range" : "14",
     "label" : {
       "IRI-based" : "performsExecution",
       "undefined" : "performs execution"
     },
-    "domain" : "11",
+    "domain" : "8",
     "comment" : {
       "en" : "Agent that performs a specific task execution."
     },
     "attributes" : [ "object" ],
-    "id" : "35"
+    "id" : "27"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasInteractionModalityConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -831,95 +717,98 @@
       "IRI-based" : "hasInteractionModalityConcept",
       "undefined" : "has interaction modality concept"
     },
-    "domain" : "39",
+    "domain" : "31",
     "comment" : {
       "en" : "Modality/channel used during the interaction."
     },
     "attributes" : [ "object" ],
-    "id" : "38"
+    "id" : "30"
   }, {
     "iri" : "https://w3id.org/hi-ontology#realizesTask",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
+    "range" : "34",
     "label" : {
       "IRI-based" : "realizesTask",
       "undefined" : "realizes task"
     },
-    "domain" : "13",
+    "domain" : "14",
     "comment" : {
       "en" : "Task execution realizes a task."
     },
     "attributes" : [ "object" ],
-    "id" : "41"
+    "id" : "33"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasCapability",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "40",
+    "range" : "32",
     "label" : {
       "IRI-based" : "hasCapability",
       "undefined" : "has capability"
     },
-    "domain" : "11",
+    "domain" : "8",
     "comment" : {
       "en" : "Agent possesses a capability."
     },
     "attributes" : [ "object" ],
-    "id" : "42"
+    "id" : "35"
+  }, {
+    "iri" : "https://w3id.org/hi-ontology#isAssignedToTask",
+    "baseIri" : "https://w3id.org/hi-ontology",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "isAssignedToTask",
+      "undefined" : "is assigned to task"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "8",
+    "subproperty" : [ "38" ],
+    "comment" : {
+      "en" : "Relates an agent to a task that it is formally assigned to perform. Every assignment implies that the agent is eligible for that task."
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasAgentConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
     "range" : "2",
     "label" : {
-      "IRI-based" : "hasAgentConcept"
+      "IRI-based" : "hasAgentConcept",
+      "undefined" : "has agent concept"
     },
-    "domain" : "11",
+    "domain" : "8",
     "comment" : {
       "en" : "Links an agent to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "43"
+    "id" : "39"
   }, {
     "iri" : "https://w3id.org/hi-ontology#towardsGoal",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "9",
+    "range" : "12",
     "label" : {
       "IRI-based" : "towardsGoal",
       "undefined" : "towards goal"
     },
-    "domain" : "13",
+    "domain" : "14",
     "comment" : {
       "en" : "Task execution towards a goal."
     },
     "attributes" : [ "object" ],
-    "id" : "44"
+    "id" : "40"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasAgentInvolved",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "11",
+    "range" : "8",
     "label" : {
       "IRI-based" : "hasAgentInvolved",
       "undefined" : "has agent involved"
     },
-    "domain" : "39",
+    "domain" : "31",
     "comment" : {
       "en" : "Indicates an agent that participates in or contributes to an interaction episode. This property identifies the human or artificial agents involved in the exchange."
     },
     "attributes" : [ "object" ],
-    "id" : "45"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#hasTask",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
-    "label" : {
-      "IRI-based" : "hasTask",
-      "undefined" : "has task"
-    },
-    "domain" : "9",
-    "comment" : {
-      "en" : "A goal requires one or more tasks to be fulfilled."
-    },
-    "attributes" : [ "object" ],
-    "id" : "47"
+    "id" : "41"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasExperiment",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -928,17 +817,12 @@
       "IRI-based" : "hasExperiment",
       "undefined" : "has experiment"
     },
-    "domain" : "19",
+    "domain" : "17",
     "comment" : {
       "en" : "An evaluation has an experiment."
     },
     "attributes" : [ "object" ],
-    "id" : "48"
-  }, {
-    "range" : "46",
-    "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "49"
+    "id" : "42"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasCapabilityConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -947,95 +831,89 @@
       "IRI-based" : "hasCapabilityConcept",
       "undefined" : "has capability concept"
     },
-    "domain" : "40",
+    "domain" : "32",
     "comment" : {
       "en" : "Links a capability to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "51"
+    "id" : "43"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasHITeam",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "8",
+    "range" : "11",
     "label" : {
       "IRI-based" : "hasHITeam",
       "undefined" : "has HI team"
     },
-    "domain" : "17",
+    "domain" : "19",
     "comment" : {
       "en" : "A use case introduces a hybrid intelligence team."
     },
     "attributes" : [ "object" ],
-    "id" : "52"
+    "id" : "45"
   }, {
     "iri" : "https://w3id.org/hi-ontology#isEligibleForTask",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
+    "range" : "34",
     "label" : {
       "IRI-based" : "isEligibleForTask",
       "undefined" : "is eligible for task"
     },
-    "domain" : "11",
-    "subproperty" : [ "20" ],
+    "domain" : "8",
+    "subproperty" : [ "36" ],
     "comment" : {
       "en" : "Relates an agent to a task it is eligible to perform, based on their capabilities. Assignment is a stricter, policy-level decision that presupposes eligibility."
     },
     "attributes" : [ "object" ],
-    "id" : "22"
+    "id" : "37"
   }, {
     "iri" : "https://w3id.org/hi-ontology#requiresCapability",
+    "inverse" : "47",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "40",
+    "range" : "32",
     "label" : {
       "IRI-based" : "requiresCapability",
       "undefined" : "requires cability"
     },
-    "domain" : "21",
+    "domain" : "34",
     "comment" : {
       "en" : "A task requires certain capabilities to be accomplished."
     },
     "attributes" : [ "object" ],
-    "id" : "53"
+    "id" : "46"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasTaskConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
     "range" : "2",
     "label" : {
-      "IRI-based" : "hasTaskConcept"
+      "IRI-based" : "hasTaskConcept",
+      "undefined" : "has task concept"
     },
-    "domain" : "21",
+    "domain" : "34",
     "comment" : {
       "en" : "Links a task to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "54"
-  }, {
-    "domain" : "57",
-    "range" : "11",
-    "id" : "56",
-    "label" : {
-      "IRI-based" : "4",
-      "undefined" : "is a"
-    }
+    "id" : "48"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasInteractionEpisode",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "39",
+    "range" : "31",
     "label" : {
       "IRI-based" : "hasInteractionEpisode",
       "undefined" : "has interaction episode"
     },
-    "domain" : "13",
+    "domain" : "14",
     "comment" : {
       "en" : "Identifies moments of interaction (e.g., dialogue, negotiation, or guidance) that unfold within the execution of a task."
     },
     "attributes" : [ "object" ],
-    "id" : "58"
+    "id" : "52"
   }, {
-    "range" : "29",
-    "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "59"
+    "range" : "8",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "53"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasExecutionConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -1044,57 +922,71 @@
       "IRI-based" : "hasExecutionConcept",
       "undefined" : "has execution concept"
     },
-    "domain" : "61",
+    "domain" : "14",
     "comment" : {
       "en" : "Links an experiment to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "60"
+    "id" : "54"
   }, {
-    "range" : "11",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "62"
+    "range" : "8",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
   }, {
-    "range" : "11",
-    "domain" : "30",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "63"
+    "range" : "44",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "56"
   }, {
-    "range" : "50",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "64"
+    "range" : "28",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "57"
   }, {
     "iri" : "https://w3id.org/hi-ontology#realizedBy",
-    "inverse" : "41",
+    "inverse" : "33",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "13",
+    "range" : "14",
     "label" : {
       "IRI-based" : "realizedBy",
       "undefined" : "realized by"
     },
-    "domain" : "21",
+    "domain" : "34",
     "comment" : {
       "en" : "A task is realized through a task execution."
     },
     "attributes" : [ "object" ],
-    "id" : "67"
+    "id" : "58"
   }, {
     "iri" : "https://w3id.org/hi-ontology#performedBy",
-    "inverse" : "35",
+    "inverse" : "27",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "11",
+    "range" : "8",
     "label" : {
       "IRI-based" : "performedBy",
       "undefined" : "performed by"
     },
-    "domain" : "66",
+    "domain" : "50",
     "comment" : {
       "en" : "Execution performed by an agent."
     },
     "attributes" : [ "object" ],
-    "id" : "68"
+    "id" : "59"
+  }, {
+    "iri" : "https://w3id.org/hi-ontology#requiresTask",
+    "baseIri" : "https://w3id.org/hi-ontology",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "requiresTask",
+      "undefined" : "has task"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "A goal requires one or more tasks to be fulfilled."
+    },
+    "attributes" : [ "object" ],
+    "id" : "60"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasGoalConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -1103,41 +995,31 @@
       "IRI-based" : "hasGoalConcept",
       "undefined" : "has goal concept"
     },
-    "domain" : "9",
+    "domain" : "12",
     "comment" : {
       "en" : "Links a goal to a concept in the HINT thesaurus."
     },
     "attributes" : [ "object" ],
-    "id" : "69"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#requiresTask",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "25",
-    "label" : {
-      "IRI-based" : "requiresTask"
-    },
-    "domain" : "25",
-    "attributes" : [ "object" ],
-    "id" : "70"
+    "id" : "61"
   }, {
     "iri" : "https://w3id.org/hi-ontology#executesTask",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
+    "range" : "34",
     "label" : {
       "IRI-based" : "executesTask",
       "undefined" : "executes task"
     },
-    "superproperty" : [ "33" ],
-    "domain" : "11",
+    "superproperty" : [ "36" ],
+    "domain" : "8",
     "comment" : {
       "en" : "Agent executes a task (derivable from Agent→Execution→Task)."
     },
     "attributes" : [ "object" ],
-    "id" : "34"
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasAlternativeHypothesis",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "55",
+    "range" : "51",
     "label" : {
       "IRI-based" : "hasAlternativeHypothesis",
       "en" : "has alternative hypothesis"
@@ -1147,7 +1029,7 @@
       "en" : "Stores the textual formulation of the alternative hypothesis of an experiment."
     },
     "attributes" : [ "datatype" ],
-    "id" : "71"
+    "id" : "62"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasPhenomenonConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -1156,55 +1038,69 @@
       "IRI-based" : "hasPhenomenonConcept",
       "undefined" : "has phenomenon concept"
     },
-    "domain" : "12",
+    "domain" : "49",
     "comment" : {
       "en" : "Context exhibits a phenomenon (e.g., bias/feedback emerges in that context)."
     },
     "attributes" : [ "object" ],
-    "id" : "72"
+    "id" : "63"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasInteractionIntentConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "65",
+    "range" : "2",
     "label" : {
       "IRI-based" : "hasInteractionIntentConcept",
       "undefined" : "has interaction intent concept"
     },
-    "domain" : "39",
+    "domain" : "31",
     "comment" : {
       "en" : "Intent underlying the interaction (e.g., explain, request, negotiate)."
     },
     "attributes" : [ "object" ],
-    "id" : "73"
+    "id" : "64"
   }, {
     "iri" : "https://w3id.org/hi-ontology#allowsTask",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "21",
+    "range" : "34",
     "label" : {
       "IRI-based" : "allowsTask",
       "undefined" : "allows task"
     },
-    "domain" : "40",
+    "domain" : "32",
     "comment" : {
       "en" : "A capability enables or allows a task to be performed."
     },
     "attributes" : [ "object" ],
-    "id" : "74"
+    "id" : "47"
   }, {
     "iri" : "https://w3id.org/hi-ontology#isInfluencedBy",
-    "inverse" : "31",
+    "inverse" : "25",
     "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "12",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isInfluencedBy",
       "undefined" : "is influenced by"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance."
     },
     "attributes" : [ "object" ],
-    "id" : "75"
+    "id" : "65"
+  }, {
+    "iri" : "https://w3id.org/hi-ontology#hasMember",
+    "baseIri" : "https://w3id.org/hi-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasMember",
+      "undefined" : "has member"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "Specifies agents that are members of an HI team."
+    },
+    "attributes" : [ "object" ],
+    "id" : "66"
   }, {
     "iri" : "https://w3id.org/hi-ontology#hasMetricConcept",
     "baseIri" : "https://w3id.org/hi-ontology",
@@ -1213,25 +1109,11 @@
       "IRI-based" : "hasMetricConcept",
       "undefined" : "has metric concept"
     },
-    "domain" : "19",
+    "domain" : "17",
     "comment" : {
       "en" : "An evaluation uses certain metrics, defined in the HINT thesaurus"
     },
     "attributes" : [ "object" ],
-    "id" : "76"
-  }, {
-    "iri" : "https://w3id.org/hi-ontology#hasMember",
-    "baseIri" : "https://w3id.org/hi-ontology",
-    "range" : "11",
-    "label" : {
-      "IRI-based" : "hasMember",
-      "undefined" : "has member"
-    },
-    "domain" : "8",
-    "comment" : {
-      "en" : "Specifies agents that are members of an HI team."
-    },
-    "attributes" : [ "object" ],
-    "id" : "77"
+    "id" : "67"
   } ]
 }

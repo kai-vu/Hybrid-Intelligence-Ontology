@@ -6,18 +6,11 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/hi-ontology#">
-        <dc:creator rdf:nodeID="genid1"/>
-        <dc:creator rdf:nodeID="genid4"/>
-        <dc:creator rdf:nodeID="genid6"/>
         <dc:description xml:lang="en">Conceptual model of Hybrid Intelligence: agents, teams, goals, tasks, capabilities, methods, evaluations, context, and ethical phenomena.</dc:description>
         <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dc:title xml:lang="en">The Hybrid Intelligence (HI) Ontology</dc:title>
@@ -26,43 +19,6 @@
         <vann:preferredNamespaceUri>https://w3id.org/hi-ontology#</vann:preferredNamespaceUri>
         <owl:versionInfo>2.0.0</owl:versionInfo>
     </owl:Ontology>
-    <rdf:Description rdf:nodeID="genid1">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <schema:identifier rdf:nodeID="genid2"/>
-        <foaf:name>Francesca Urgese</foaf:name>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid4">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <schema:identifier rdf:nodeID="genid5"/>
-        <foaf:name>Margherita Martorana</foaf:name>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid6">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <schema:identifier rdf:nodeID="genid7"/>
-        <foaf:name>Ilaria Tiddi</foaf:name>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid2">
-        <rdf:type rdf:resource="http://schema.org/PropertyValue"/>
-        <schema:propertyID>ORCID</schema:propertyID>
-        <schema:value>0009-0009-0516-1800</schema:value>
-        <foaf:member rdf:nodeID="genid3"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid5">
-        <rdf:type rdf:resource="http://schema.org/PropertyValue"/>
-        <schema:propertyID>ORCID</schema:propertyID>
-        <schema:value>0000-0001-8004-0464</schema:value>
-        <foaf:member rdf:nodeID="genid3"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid7">
-        <rdf:type rdf:resource="http://schema.org/PropertyValue"/>
-        <schema:propertyID>ORCID</schema:propertyID>
-        <schema:value>0000-0001-7116-9338</schema:value>
-        <foaf:member rdf:nodeID="genid3"/>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid3">
-        <rdf:type rdf:resource="http://schema.org/Organization"/>
-        <schema:name>Knowledge in AI (KAI) Group - Vrije Universiteit Amsterdam</schema:name>
-    </rdf:Description>
     
 
 
@@ -75,13 +31,6 @@
      -->
 
 
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
     
 
 
@@ -127,59 +76,10 @@
     
 
 
-    <!-- http://schema.org/identifier -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/identifier"/>
-    
-
-
     <!-- http://schema.org/name -->
 
 
     <owl:AnnotationProperty rdf:about="http://schema.org/name"/>
-    
-
-
-    <!-- http://schema.org/propertyID -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/propertyID"/>
-    
-
-
-    <!-- http://schema.org/value -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/value"/>
-    
-
-
-    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
-
-
-    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#minQualifiedCardinality -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minQualifiedCardinality"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/member -->
-
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/member"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/name -->
-
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
     
 
 
@@ -226,20 +126,6 @@
     
 
 
-    <!-- https://w3id.org/hi-ontology#assignedToTask -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#assignedToTask"/>
-    
-
-
-    <!-- https://w3id.org/hi-ontology#eligibleForTask -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#eligibleForTask"/>
-    
-
-
     <!-- https://w3id.org/hi-ontology#evaluatedBy -->
 
 
@@ -256,7 +142,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#executesTask">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hi-ontology#assignedToTask"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hi-ontology#isAssignedToTask"/>
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -276,6 +162,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Links an agent to a concept in the HINT thesaurus.</rdfs:comment>
+        <rdfs:label>has agent concept</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -323,6 +210,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/hi-ontology#Agent"/>
                     <rdf:Description rdf:about="https://w3id.org/hi-ontology#Context"/>
                     <rdf:Description rdf:about="https://w3id.org/hi-ontology#HITeam"/>
                 </owl:unionOf>
@@ -375,7 +263,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasExecutionConcept">
-        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Execution"/>
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#TaskExecution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Links an experiment to a concept in the HINT thesaurus.</rdfs:comment>
         <rdfs:label>has execution concept</rdfs:label>
@@ -472,7 +360,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasInteractionIntentConcept">
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Interaction"/>
-        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Intentionality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Intent underlying the interaction (e.g., explain, request, negotiate).</rdfs:comment>
         <rdfs:label>has interaction intent concept</rdfs:label>
     </owl:ObjectProperty>
@@ -543,7 +431,15 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasPhenomenonConcept">
-        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Context"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/hi-ontology#Agent"/>
+                    <rdf:Description rdf:about="https://w3id.org/hi-ontology#Context"/>
+                    <rdf:Description rdf:about="https://w3id.org/hi-ontology#HITeam"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Context exhibits a phenomenon (e.g., bias/feedback emerges in that context).</rdfs:comment>
         <rdfs:label>has phenomenon concept</rdfs:label>
@@ -558,18 +454,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Links a role to a concept in the HINT thesaurus.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/hi-ontology#hasTask -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#hasTask">
-        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Goal"/>
-        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
-        <rdfs:comment xml:lang="en">A goal requires one or more tasks to be fulfilled.</rdfs:comment>
-        <rdfs:label>has task</rdfs:label>
+        <rdfs:label>has role concept</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -581,6 +466,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Task"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Links a task to a concept in the HINT thesaurus.</rdfs:comment>
+        <rdfs:label>has task concept</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -597,10 +483,10 @@
     
 
 
-    <!-- https://w3id.org/hi-ontology#iaAssignedToTask -->
+    <!-- https://w3id.org/hi-ontology#isAssignedToTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#iaAssignedToTask">
+    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isAssignedToTask">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hi-ontology#isEligibleForTask"/>
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
@@ -635,6 +521,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#isInfluencedBy">
         <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#hasInfluenceOn"/>
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
+        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Context"/>
         <rdfs:comment xml:lang="en">Related a HI Team to the contextual condition that affects its actions, collaboration dynamics, or task performance.</rdfs:comment>
         <rdfs:label>is influenced by</rdfs:label>
     </owl:ObjectProperty>
@@ -713,6 +601,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#requiresCapability">
+        <owl:inverseOf rdf:resource="https://w3id.org/hi-ontology#allowsTask"/>
         <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Task"/>
         <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Capability"/>
         <rdfs:comment xml:lang="en">A task requires certain capabilities to be accomplished.</rdfs:comment>
@@ -724,7 +613,12 @@
     <!-- https://w3id.org/hi-ontology#requiresTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#requiresTask"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/hi-ontology#requiresTask">
+        <rdfs:domain rdf:resource="https://w3id.org/hi-ontology#Goal"/>
+        <rdfs:range rdf:resource="https://w3id.org/hi-ontology#Task"/>
+        <rdfs:comment xml:lang="en">A goal requires one or more tasks to be fulfilled.</rdfs:comment>
+        <rdfs:label>has task</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -788,59 +682,53 @@
     
 
 
-    <!-- http://org.semanticweb.owlapi/error#Error1 -->
-
-
-    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
-    
-
-
     <!-- http://schema.org/Organization -->
 
 
-    <owl:Class rdf:about="http://schema.org/Organization"/>
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <rdfs:comment xml:lang="en">A Schema.org class representing an organization such as an institution, company, or group.</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.org/PropertyValue -->
 
 
-    <owl:Class rdf:about="http://schema.org/PropertyValue"/>
-    
-
-
-    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
-
-
-    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-    
-
-
-    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal -->
-
-
-    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    <owl:Class rdf:about="http://schema.org/PropertyValue">
+        <rdfs:comment xml:lang="en">A Schema.org class representing a specific property-value pair, often used for metadata or structured descriptions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Property Value</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:comment xml:lang="en">A SKOS concept representing a unit of thought, used for controlled vocabularies and thesauri.</rdfs:comment>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment xml:lang="en">A human individual described using the FOAF vocabulary. Represents natural persons who may participate in, interact with, or be modeled within a Hybrid Intelligence scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/hi-ontology#Agent -->
 
 
-    <owl:Class rdf:about="https://w3id.org/hi-ontology#Agent"/>
+    <owl:Class rdf:about="https://w3id.org/hi-ontology#Agent">
+        <rdfs:comment xml:lang="en">An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
     
 
 
@@ -849,6 +737,7 @@
 
     <owl:Class rdf:about="https://w3id.org/hi-ontology#ArtificialAgent">
         <rdfs:subClassOf rdf:resource="https://w3id.org/hi-ontology#Agent"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/hi-ontology#HumanAgent"/>
         <rdfs:comment xml:lang="en">An artificial or computational agent (robot, software, etc.) collaborating with human agents.</rdfs:comment>
         <rdfs:label xml:lang="en">Artificial Agent</rdfs:label>
     </owl:Class>
@@ -885,13 +774,6 @@
     
 
 
-    <!-- https://w3id.org/hi-ontology#Execution -->
-
-
-    <owl:Class rdf:about="https://w3id.org/hi-ontology#Execution"/>
-    
-
-
     <!-- https://w3id.org/hi-ontology#Experiment -->
 
 
@@ -906,8 +788,13 @@
 
 
     <owl:Class rdf:about="https://w3id.org/hi-ontology#Goal">
-        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/hi-ontology#requiresTask"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/hi-ontology#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A desired outcome pursued by an HI team, requiring one or more tasks to be completed.</rdfs:comment>
         <rdfs:label xml:lang="en">Goal</rdfs:label>
     </owl:Class>
@@ -947,13 +834,6 @@
         <rdfs:comment xml:lang="en">A human participant in the hybrid intelligence system, possessing cognitive and perceptual abilities.</rdfs:comment>
         <rdfs:label xml:lang="en">Human Agent</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- https://w3id.org/hi-ontology#Intentionality -->
-
-
-    <owl:Class rdf:about="https://w3id.org/hi-ontology#Intentionality"/>
     
 
 
@@ -1008,279 +888,9 @@
         <rdfs:comment xml:lang="en">A structured situation describing a specific hybrid intelligence scenario (previously &apos;Scenario&apos;).</rdfs:comment>
         <rdfs:label xml:lang="en">Use Case</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/hi-ontology#Agent -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology#Agent">
-        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/hi-ontology/rules/roleConcept -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/hi-ontology/rules/roleConcept"/>
     <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-    </rdf:Description>
-    <rdf:Description>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology#Agent">
-        <rdfs:comment xml:lang="en">An autonomous entity capable of having roles, goals, and capabilities within a hybrid intelligence system.</rdfs:comment>
-        <rdfs:label xml:lang="en">Agent</rdfs:label>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Rules
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/team">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/agent">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/goal">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/task">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/cap">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/hi-ontology/rules/exec">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en">If an HI team exists and has a member agent, then the agent must be associated with some role concept (hi:hasRoleConcept) from the HINT thesaurus.</rdfs:comment>
-        <rdfs:label xml:lang="en">Rule 2 — Team membership implies having a role concept</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/team"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#hasMember"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/team"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#hasRoleConcept"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/roleConcept"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment>If team has goal G requiring task T, and agent ∈ team and has capability C that allows T ⇒ agent eligible for T.</rdfs:comment>
-        <rdfs:label>Rule 1 — Team, Goal, and Capability determine eligibility</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://w3id.org/hi-ontology#HITeam"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/team"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#hasGoal"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/team"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/goal"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#requiresTask"/>
-                                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/goal"/>
-                                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/task"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#hasMember"/>
-                                                <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/team"/>
-                                                <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#hasCapability"/>
-                                                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                                                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/cap"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#allowsTask"/>
-                                                                <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/cap"/>
-                                                                <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/task"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#eligibleForTask"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/task"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment>If an agent is assigned to a task and an execution realizes that task, then that execution is performed by the agent.</rdfs:comment>
-        <rdfs:label>Rule 3 — Assignment → Performance</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#assignedToTask"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/task"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#realizedBy"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/task"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/exec"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/hi-ontology#performedBy"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/hi-ontology/rules/exec"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/hi-ontology/rules/agent"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
+        <rdf:type rdf:resource="http://schema.org/Organization"/>
+        <schema:name>Knowledge in AI (KAI) Group - Vrije Universiteit Amsterdam</schema:name>
     </rdf:Description>
 </rdf:RDF>
 
