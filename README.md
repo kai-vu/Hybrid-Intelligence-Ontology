@@ -1,5 +1,5 @@
 # Versions
-- [V2](./v2/) Latest
+- [V2](./hi-ontology/) Latest
 - [V1](./previous-versions/) Previous versions
 
 ## Scenario repository
