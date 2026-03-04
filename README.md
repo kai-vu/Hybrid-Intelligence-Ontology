@@ -2,6 +2,8 @@
 - [V2](./hi-ontology/) Latest
 - [V1](./previous-versions/) Previous versions
 
+![Ontology Diagram](images/HI-ONTOLOGY.svg)
+
 ## Scenario repository
 For seven Hybrid Intelligence scenarios, we provide the task decomposition in markdown as well as a visual (flowchart) representation. The task decomposition consists of a *title*, a *description*, a *visual task decomposition*, *terminology*,  *inference steps* and *tasks*. The HI scenarios currently in the repository are listed below:
 
