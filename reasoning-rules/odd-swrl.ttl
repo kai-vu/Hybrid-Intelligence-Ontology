@@ -1,0 +1,402 @@
+@prefix odd: <https://w3id.org/odd#> .
+@prefix hi: <https://w3id.org/hi-ontology#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# VARIABLE SHORTCUTS
+#################################################################
+
+odd:dir1   a swrl:Variable .
+odd:dir2   a swrl:Variable .
+odd:exec   a swrl:Variable .
+odd:ctx    a swrl:Variable .
+odd:epist  a swrl:Variable .
+odd:temp   a swrl:Variable .
+odd:p1     a swrl:Variable .
+odd:p2     a swrl:Variable .
+
+#################################################################
+# RULE 1 — DIRECTIVE TARGET IMPLIES REGULATED EXECUTION
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 1 — Directive target is a regulated execution" ;
+  rdfs:comment "If a directive regulates a task execution, that execution is classified as a regulated execution." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:Directive ; swrl:argument1 odd:dir1 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:RegulatedExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 2 — FULL ACTIVATION OF DIRECTIVE
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 2 — Directive activation from satisfied conditions" ;
+  rdfs:comment "A directive becomes active when its contextual, epistemic, and temporal conditions match the current conditions of the regulated execution." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:Directive ; swrl:argument1 odd:dir1 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasContextCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:ctx ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentContextCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:ctx ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasEpistemicCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:epist ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentEpistemicState ; swrl:argument1 odd:exec ; swrl:argument2 odd:epist ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasTemporalCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:temp ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentTemporalCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:temp ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+  )
+] .
+
+#################################################################
+# RULE 3 — ACTIVE OBLIGATORY DIRECTIVE CLASSIFIES EXECUTION
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 3 — Active obligatory directive" ;
+  rdfs:comment "If an active directive assigns obligatory status to an execution, the execution is classified as obligatory." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:obligatory ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 4 — ACTIVE PERMITTED DIRECTIVE CLASSIFIES EXECUTION
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 4 — Active permitted directive" ;
+  rdfs:comment "If an active directive assigns permitted status to an execution, the execution is classified as permitted." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:permitted ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 5 — ACTIVE PROHIBITED DIRECTIVE CLASSIFIES EXECUTION
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 5 — Active prohibited directive" ;
+  rdfs:comment "If an active directive assigns prohibited status to an execution, the execution is classified as prohibited." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:prohibited ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 6 — PROHIBITED + PERFORMED → NON-COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 6 — Prohibited and performed implies non-compliance" ;
+  rdfs:comment "If a prohibited execution is nevertheless performed, it is non-compliant." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 7 — PROHIBITED + SUPPRESSED → COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 7 — Prohibited and suppressed implies compliance" ;
+  rdfs:comment "If a prohibited execution is suppressed, it is compliant." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 8 — OBLIGATORY + PERFORMED → COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 8 — Obligatory and performed implies compliance" ;
+  rdfs:comment "If an obligatory execution is performed, it is compliant." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 9 — OBLIGATORY + SUPPRESSED → NON-COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 9 — Obligatory and suppressed implies non-compliance" ;
+  rdfs:comment "If an obligatory execution is suppressed, it is non-compliant." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 10 — PERMITTED + PERFORMED → COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 10 — Permitted and performed implies compliance" ;
+  rdfs:comment "If a permitted execution is performed, it is compliant." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 11 — PERMITTED + SUPPRESSED → COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 11 — Permitted and suppressed implies compliance" ;
+  rdfs:comment "If a permitted execution is suppressed, it is still compliant, because permission does not require performance." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 12 — ATTEMPTED PROHIBITED EXECUTION → NON-COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 12 — Prohibited and attempted implies non-compliance" ;
+  rdfs:comment "If a prohibited execution is attempted, it is treated as non-compliant because the forbidden execution has been initiated." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:attempted ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 13 — OBLIGATORY + ABORTED → NON-COMPLIANT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 13 — Obligatory and aborted implies non-compliance" ;
+  rdfs:comment "If an obligatory execution is aborted before completion, it is treated as non-compliant because the required execution was not fulfilled." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:aborted ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 14 — OBLIGATORY + ATTEMPTED → UNDERDETERMINED
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 14 — Obligatory and attempted implies underdetermined status" ;
+  rdfs:comment "If an obligatory execution is only attempted, compliance is left underdetermined because fulfilment is not yet established." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:attempted ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:UnderdeterminedExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 15 — PROHIBITED + ABORTED → UNDERDETERMINED
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 15 — Prohibited and aborted implies underdetermined status" ;
+  rdfs:comment "If a prohibited execution is started and then aborted, the regulatory status is treated as underdetermined unless a stricter violation policy is adopted." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:aborted ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:UnderdeterminedExecution ; swrl:argument1 odd:exec ]
+  )
+] .
+
+#################################################################
+# RULE 16 — ACTIVE DIRECTIVES WITH OPPOSITE STATUS ON SAME EXECUTION CONFLICT
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 16 — Obligatory vs prohibited conflict" ;
+  rdfs:comment "If two active directives regulate the same execution and one is obligatory while the other is prohibited, the directives conflict." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir2 ]
+    [ a swrl:DifferentIndividualsAtom ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:obligatory ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:prohibited ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:conflictsWithDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+  )
+] .
+
+#################################################################
+# RULE 17 — ACTIVE DIRECTIVES PRIORITY COMPARISON
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 17 — Higher priority directive" ;
+  rdfs:comment "If two active directives regulate the same execution and one has a greater priority value than the other, then it has higher priority." ;
+
+  swrl:body (
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir2 ]
+    [ a swrl:DifferentIndividualsAtom ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:exec ]
+    [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate odd:hasPriorityValue ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:p1 ]
+    [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate odd:hasPriorityValue ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:p2 ]
+    [ a swrl:BuiltinAtom ; swrl:builtin swrlb:greaterThan ; swrl:arguments ( odd:p1 odd:p2 ) ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasHigherPriorityThan ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+  )
+] .
+
+#################################################################
+# RULE 18 — CONFLICT + HIGHER PRIORITY → OVERRIDE
+#################################################################
+
+[
+  a swrl:Imp ;
+  swrla:isRuleEnabled "true"^^xsd:boolean ;
+  rdfs:label "Rule 18 — Higher-priority directive overrides conflicting directive" ;
+  rdfs:comment "If two directives conflict and one has higher priority than the other, the higher-priority directive overrides the lower-priority one." ;
+
+  swrl:body (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:conflictsWithDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasHigherPriorityThan ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+  ) ;
+
+  swrl:head (
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:overridesDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
+    [ a swrl:ClassAtom ; swrl:classPredicate odd:OverriddenDirective ; swrl:argument1 odd:dir2 ]
+  )
+] .

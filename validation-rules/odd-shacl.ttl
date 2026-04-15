@@ -1,0 +1,756 @@
+@prefix odd:    <https://w3id.org/odd#> .
+@prefix hi:     <https://w3id.org/hi-ontology#> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+##################################################
+# SHAPES GRAPH
+##################################################
+
+odd:ODDShapes
+    a sh:NodeShape ;
+    rdfs:label "ODD validation shapes graph"@en ;
+    rdfs:comment "Collection of SHACL shapes for validating the structural integrity, regulatory completeness, consistency, and traceability of the ODD ontology."@en ;
+    skos:definition "A set of SHACL constraints used to validate Dynamic Directives, reified activation conditions, regulated executions, compliance assessments, violations, and justifications in the ODD extension."@en .
+
+##################################################
+# 1. DIRECTIVE SHAPES
+##################################################
+
+odd:DirectiveShape
+    a sh:NodeShape ;
+    sh:targetClass odd:Directive ;
+    rdfs:label "Directive shape"@en ;
+    rdfs:comment "Validates that every directive contains the minimum structural information needed to operate as a regulatory construct."@en ;
+    skos:definition "A shape requiring each directive to regulate at least one execution, specify exactly one normative status, and provide contextual, epistemic, and temporal activation conditions."@en ;
+
+    sh:property [
+        sh:path odd:regulatesExecution ;
+        sh:class hi:TaskExecution ;
+        sh:minCount 1 ;
+        sh:message "Every directive must regulate at least one task execution."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasNormativeStatus ;
+        sh:class odd:NormativeStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every directive must have exactly one normative status."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasContextCondition ;
+        sh:class odd:ContextCondition ;
+        sh:minCount 1 ;
+        sh:message "Every directive must specify at least one context condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasEpistemicCondition ;
+        sh:class odd:EpistemicCondition ;
+        sh:minCount 1 ;
+        sh:message "Every directive must specify at least one epistemic condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasTemporalCondition ;
+        sh:class odd:TemporalCondition ;
+        sh:minCount 1 ;
+        sh:message "Every directive must specify at least one temporal condition."@en
+    ] .
+
+odd:ActiveDirectiveShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ActiveDirective ;
+    rdfs:label "Active directive shape"@en ;
+    rdfs:comment "Validates that every active directive is structurally complete enough to justify its activation."@en ;
+    skos:definition "A shape requiring each active directive to regulate an execution, assign a normative status, and be linked to reified contextual, epistemic, and temporal conditions."@en ;
+
+    sh:property [
+        sh:path odd:regulatesExecution ;
+        sh:class hi:TaskExecution ;
+        sh:minCount 1 ;
+        sh:message "An active directive must regulate at least one task execution."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasNormativeStatus ;
+        sh:class odd:NormativeStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An active directive must have exactly one normative status."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasContextCondition ;
+        sh:class odd:ContextCondition ;
+        sh:minCount 1 ;
+        sh:message "An active directive must include at least one context condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasEpistemicCondition ;
+        sh:class odd:EpistemicCondition ;
+        sh:minCount 1 ;
+        sh:message "An active directive must include at least one epistemic condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasTemporalCondition ;
+        sh:class odd:TemporalCondition ;
+        sh:minCount 1 ;
+        sh:message "An active directive must include at least one temporal condition."@en
+    ] .
+
+##################################################
+# 2. CONDITION SHAPES
+##################################################
+
+odd:ConditionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:Condition ;
+    rdfs:label "Condition shape"@en ;
+    rdfs:comment "Validates that each condition is documented and participates in at least one directive or justification context."@en ;
+    skos:definition "A generic shape for conditions requiring minimum documentation and ensuring that conditions are not structurally orphaned."@en ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Every condition should have at least one label."@en
+    ] ;
+
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Every condition should have at least one SKOS definition."@en
+    ] ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Every condition should be used either by a directive or by a justification."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS { ?d odd:hasActivationCondition $this . }
+              FILTER NOT EXISTS { ?j odd:refersToCondition $this . }
+            }
+        """
+    ] .
+
+odd:ContextConditionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ContextCondition ;
+    rdfs:label "Context condition shape"@en ;
+    rdfs:comment "Validates that every contextual condition refers to an HI context."@en ;
+    skos:definition "A shape requiring each context condition to reify or point to at least one underlying Hybrid Intelligence context."@en ;
+
+    sh:property [
+        sh:path odd:refersToContext ;
+        sh:class hi:Context ;
+        sh:minCount 1 ;
+        sh:message "Every context condition must refer to at least one HI context."@en
+    ] .
+
+odd:EpistemicConditionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:EpistemicCondition ;
+    rdfs:label "Epistemic condition shape"@en ;
+    rdfs:comment "Validates that every epistemic condition refers to an epistemic state."@en ;
+    skos:definition "A shape requiring each epistemic condition to reify or point to at least one underlying epistemic state."@en ;
+
+    sh:property [
+        sh:path odd:refersToEpistemicState ;
+        sh:class odd:EpistemicState ;
+        sh:minCount 1 ;
+        sh:message "Every epistemic condition must refer to at least one epistemic state."@en
+    ] .
+
+odd:TemporalConditionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:TemporalCondition ;
+    rdfs:label "Temporal condition shape"@en ;
+    rdfs:comment "Validates that every temporal condition refers to at least one temporal reference."@en ;
+    skos:definition "A shape requiring each temporal condition to be linked to a temporal entity, interval, phase, or other temporal reference used to ground applicability."@en ;
+
+    sh:property [
+        sh:path odd:refersToTemporalReference ;
+        sh:minCount 1 ;
+        sh:message "Every temporal condition must refer to at least one temporal reference."@en
+    ] .
+
+##################################################
+# 3. EPISTEMIC STATE SHAPES
+##################################################
+
+odd:EpistemicStateShape
+    a sh:NodeShape ;
+    sh:targetClass odd:EpistemicState ;
+    rdfs:label "Epistemic state shape"@en ;
+    rdfs:comment "Validates that every epistemic state identifies whose informational state it represents and what its content is."@en ;
+    skos:definition "A shape requiring each epistemic state to be linked to at least one agent and to at least one epistemic content item."@en ;
+
+    sh:property [
+        sh:path odd:isKnownBy ;
+        sh:class hi:Agent ;
+        sh:minCount 1 ;
+        sh:message "Every epistemic state must be linked to at least one agent via odd:isKnownBy."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasEpistemicContent ;
+        sh:minCount 1 ;
+        sh:message "Every epistemic state must specify at least one epistemic content item."@en
+    ] .
+
+##################################################
+# 4. REGULATED EXECUTION SHAPES
+##################################################
+
+odd:RegulatedExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:RegulatedExecution ;
+    rdfs:label "Regulated execution shape"@en ;
+    rdfs:comment "Validates that every regulated execution has enough information to be assessed."@en ;
+    skos:definition "A shape requiring each regulated execution to have exactly one execution outcome, to be regulated by at least one directive, and to expose the current contextual, epistemic, and temporal condition instances used for activation matching."@en ;
+
+    sh:property [
+        sh:path odd:hasExecutionOutcome ;
+        sh:class odd:ExecutionOutcome ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every regulated execution must have exactly one execution outcome."@en
+    ] ;
+
+    sh:property [
+        sh:path [ sh:inversePath odd:regulatesExecution ] ;
+        sh:class odd:Directive ;
+        sh:minCount 1 ;
+        sh:message "Every regulated execution must be regulated by at least one directive."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasCurrentContextCondition ;
+        sh:class odd:ContextCondition ;
+        sh:minCount 1 ;
+        sh:message "Every regulated execution should have at least one current context condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasCurrentEpistemicCondition ;
+        sh:class odd:EpistemicCondition ;
+        sh:minCount 1 ;
+        sh:message "Every regulated execution should have at least one current epistemic condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasCurrentTemporalCondition ;
+        sh:class odd:TemporalCondition ;
+        sh:minCount 1 ;
+        sh:message "Every regulated execution should have at least one current temporal condition."@en
+    ] .
+
+##################################################
+# 5. NORMATIVE CLASSIFICATION SUPPORT SHAPES
+##################################################
+
+odd:ObligatoryExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ObligatoryExecution ;
+    rdfs:label "Obligatory execution shape"@en ;
+    rdfs:comment "Checks that an obligatory execution is supported by at least one active obligatory directive."@en ;
+    skos:definition "A shape validating that the classification of an obligatory execution is grounded in an active directive assigning obligatory normative status."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Every obligatory execution must be supported by at least one active directive with normative status odd:obligatory."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS {
+                ?d a odd:ActiveDirective ;
+                   odd:regulatesExecution $this ;
+                   odd:hasNormativeStatus odd:obligatory .
+              }
+            }
+        """
+    ] .
+
+odd:PermittedExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:PermittedExecution ;
+    rdfs:label "Permitted execution shape"@en ;
+    rdfs:comment "Checks that a permitted execution is supported by at least one active permitted directive."@en ;
+    skos:definition "A shape validating that the classification of a permitted execution is grounded in an active directive assigning permitted normative status."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Every permitted execution must be supported by at least one active directive with normative status odd:permitted."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS {
+                ?d a odd:ActiveDirective ;
+                   odd:regulatesExecution $this ;
+                   odd:hasNormativeStatus odd:permitted .
+              }
+            }
+        """
+    ] .
+
+odd:ProhibitedExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ProhibitedExecution ;
+    rdfs:label "Prohibited execution shape"@en ;
+    rdfs:comment "Checks that a prohibited execution is supported by at least one active prohibited directive."@en ;
+    skos:definition "A shape validating that the classification of a prohibited execution is grounded in an active directive assigning prohibited normative status."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Every prohibited execution must be supported by at least one active directive with normative status odd:prohibited."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS {
+                ?d a odd:ActiveDirective ;
+                   odd:regulatesExecution $this ;
+                   odd:hasNormativeStatus odd:prohibited .
+              }
+            }
+        """
+    ] .
+
+##################################################
+# 6. CLASSIFICATION CONSISTENCY SHAPES
+##################################################
+
+odd:CompliantExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:CompliantExecution ;
+    rdfs:label "Compliant execution shape"@en ;
+    rdfs:comment "Ensures that a compliant execution is not also classified as non-compliant or underdetermined."@en ;
+    skos:definition "A shape enforcing the mutual exclusivity of compliant classification with non-compliant and underdetermined classifications."@en ;
+
+    sh:not [
+        sh:or (
+            [ sh:class odd:NonCompliantExecution ]
+            [ sh:class odd:UnderdeterminedExecution ]
+        )
+    ] .
+
+odd:NonCompliantExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:NonCompliantExecution ;
+    rdfs:label "Non-compliant execution shape"@en ;
+    rdfs:comment "Ensures that a non-compliant execution is not also classified as compliant or underdetermined."@en ;
+    skos:definition "A shape enforcing the mutual exclusivity of non-compliant classification with compliant and underdetermined classifications."@en ;
+
+    sh:not [
+        sh:or (
+            [ sh:class odd:CompliantExecution ]
+            [ sh:class odd:UnderdeterminedExecution ]
+        )
+    ] .
+
+odd:UnderdeterminedExecutionShape
+    a sh:NodeShape ;
+    sh:targetClass odd:UnderdeterminedExecution ;
+    rdfs:label "Underdetermined execution shape"@en ;
+    rdfs:comment "Ensures that an underdetermined execution is not simultaneously classified as compliant or non-compliant."@en ;
+    skos:definition "A shape enforcing the mutual exclusivity of underdetermined classification with compliant and non-compliant classifications."@en ;
+
+    sh:not [
+        sh:or (
+            [ sh:class odd:CompliantExecution ]
+            [ sh:class odd:NonCompliantExecution ]
+        )
+    ] .
+
+##################################################
+# 7. OUTCOME / NORMATIVE COMPATIBILITY SHAPES
+##################################################
+
+odd:ProhibitedPerformedNonComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ProhibitedExecution ;
+    rdfs:label "Prohibited performed non-compliance shape"@en ;
+    rdfs:comment "Checks that a prohibited execution marked as performed is classified as non-compliant."@en ;
+    skos:definition "A shape ensuring that when a prohibited execution has outcome odd:performed, it must also be classified as odd:NonCompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A prohibited execution with outcome odd:performed must be classified as odd:NonCompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:performed .
+              FILTER NOT EXISTS { $this a odd:NonCompliantExecution . }
+            }
+        """
+    ] .
+
+odd:ProhibitedSuppressedComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ProhibitedExecution ;
+    rdfs:label "Prohibited suppressed compliance shape"@en ;
+    rdfs:comment "Checks that a prohibited execution marked as suppressed is classified as compliant."@en ;
+    skos:definition "A shape ensuring that when a prohibited execution has outcome odd:suppressed, it must also be classified as odd:CompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A prohibited execution with outcome odd:suppressed must be classified as odd:CompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:suppressed .
+              FILTER NOT EXISTS { $this a odd:CompliantExecution . }
+            }
+        """
+    ] .
+
+odd:ObligatoryPerformedComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ObligatoryExecution ;
+    rdfs:label "Obligatory performed compliance shape"@en ;
+    rdfs:comment "Checks that an obligatory execution marked as performed is classified as compliant."@en ;
+    skos:definition "A shape ensuring that when an obligatory execution has outcome odd:performed, it must also be classified as odd:CompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "An obligatory execution with outcome odd:performed must be classified as odd:CompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:performed .
+              FILTER NOT EXISTS { $this a odd:CompliantExecution . }
+            }
+        """
+    ] .
+
+odd:ObligatorySuppressedNonComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ObligatoryExecution ;
+    rdfs:label "Obligatory suppressed non-compliance shape"@en ;
+    rdfs:comment "Checks that an obligatory execution marked as suppressed is classified as non-compliant."@en ;
+    skos:definition "A shape ensuring that when an obligatory execution has outcome odd:suppressed, it must also be classified as odd:NonCompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "An obligatory execution with outcome odd:suppressed must be classified as odd:NonCompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:suppressed .
+              FILTER NOT EXISTS { $this a odd:NonCompliantExecution . }
+            }
+        """
+    ] .
+
+odd:PermittedPerformedComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:PermittedExecution ;
+    rdfs:label "Permitted performed compliance shape"@en ;
+    rdfs:comment "Checks that a permitted execution marked as performed is classified as compliant."@en ;
+    skos:definition "A shape ensuring that when a permitted execution has outcome odd:performed, it must also be classified as odd:CompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A permitted execution with outcome odd:performed must be classified as odd:CompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:performed .
+              FILTER NOT EXISTS { $this a odd:CompliantExecution . }
+            }
+        """
+    ] .
+
+odd:PermittedSuppressedComplianceShape
+    a sh:NodeShape ;
+    sh:targetClass odd:PermittedExecution ;
+    rdfs:label "Permitted suppressed compliance shape"@en ;
+    rdfs:comment "Checks that a permitted execution marked as suppressed is classified as compliant."@en ;
+    skos:definition "A shape ensuring that when a permitted execution has outcome odd:suppressed, it must also be classified as odd:CompliantExecution."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A permitted execution with outcome odd:suppressed must be classified as odd:CompliantExecution."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:hasExecutionOutcome odd:suppressed .
+              FILTER NOT EXISTS { $this a odd:CompliantExecution . }
+            }
+        """
+    ] .
+
+##################################################
+# 8. CONFLICT / OVERRIDE SHAPES
+##################################################
+
+odd:ConflictDirectiveShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf odd:conflictsWithDirective ;
+    rdfs:label "Conflict directive shape"@en ;
+    rdfs:comment "Checks that a declared directive conflict is grounded in shared target execution and incompatible normative status."@en ;
+    skos:definition "A shape validating that a directive conflict relation only holds when the two directives regulate the same execution and assign incompatible normative statuses."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A directive may conflict with another directive only if they regulate the same execution and have incompatible statuses."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:conflictsWithDirective ?other .
+              FILTER NOT EXISTS {
+                $this odd:regulatesExecution ?e .
+                ?other odd:regulatesExecution ?e .
+                {
+                  $this odd:hasNormativeStatus odd:obligatory .
+                  ?other odd:hasNormativeStatus odd:prohibited .
+                }
+                UNION
+                {
+                  $this odd:hasNormativeStatus odd:prohibited .
+                  ?other odd:hasNormativeStatus odd:obligatory .
+                }
+              }
+            }
+        """
+    ] .
+
+odd:OverrideSupportShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf odd:overridesDirective ;
+    rdfs:label "Override support shape"@en ;
+    rdfs:comment "Checks that every override relation is grounded in both conflict and higher priority."@en ;
+    skos:definition "A shape ensuring that a directive only overrides another directive when the two conflict and the overriding directive has higher priority."@en ;
+
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A directive may override another directive only if it conflicts with it and has higher priority."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this odd:overridesDirective ?other .
+              FILTER NOT EXISTS { $this odd:conflictsWithDirective ?other . }
+              UNION
+              FILTER NOT EXISTS { $this odd:hasHigherPriorityThan ?other . }
+            }
+        """
+    ] .
+
+odd:OverriddenDirectiveShape
+    a sh:NodeShape ;
+    sh:targetClass odd:OverriddenDirective ;
+    rdfs:label "Overridden directive shape"@en ;
+    rdfs:comment "Checks that any directive classified as overridden is actually the target of an override relation."@en ;
+    skos:definition "A shape validating that a directive is only classified as overridden when some other directive explicitly overrides it."@en ;
+
+    sh:property [
+        sh:path [ sh:inversePath odd:overridesDirective ] ;
+        sh:class odd:Directive ;
+        sh:minCount 1 ;
+        sh:message "Every overridden directive must be overridden by at least one directive."@en
+    ] .
+
+##################################################
+# 9. COMPLIANCE ASSESSMENT SHAPES
+##################################################
+
+odd:ComplianceAssessmentShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ComplianceAssessment ;
+    rdfs:label "Compliance assessment shape"@en ;
+    rdfs:comment "Validates that every compliance assessment is linked to an execution, a directive, a compliance status, and a justification."@en ;
+    skos:definition "A shape requiring each compliance assessment to be traceable to the execution assessed, the directive that triggered the assessment, the resulting compliance status, and a supporting justification."@en ;
+
+    sh:property [
+        sh:path odd:appliesToExecution ;
+        sh:class hi:TaskExecution ;
+        sh:minCount 1 ;
+        sh:message "Every compliance assessment must apply to at least one task execution."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:triggeredByDirective ;
+        sh:class odd:Directive ;
+        sh:minCount 1 ;
+        sh:message "Every compliance assessment must be triggered by at least one directive."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasComplianceStatus ;
+        sh:class odd:ComplianceStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every compliance assessment must have exactly one compliance status."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasJustification ;
+        sh:class odd:Justification ;
+        sh:minCount 1 ;
+        sh:message "Every compliance assessment must have at least one justification."@en
+    ] .
+
+##################################################
+# 10. VIOLATION SHAPES
+##################################################
+
+odd:ViolationShape
+    a sh:NodeShape ;
+    sh:targetClass odd:Violation ;
+    rdfs:label "Violation shape"@en ;
+    rdfs:comment "Validates that every violation is traceable to the directive breached and the execution involved."@en ;
+    skos:definition "A shape requiring each violation to identify both the directive that was breached and the execution whose outcome gave rise to the breach."@en ;
+
+    sh:property [
+        sh:path odd:violatesDirective ;
+        sh:class odd:Directive ;
+        sh:minCount 1 ;
+        sh:message "Every violation must identify at least one breached directive."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:concernsExecution ;
+        sh:class hi:TaskExecution ;
+        sh:minCount 1 ;
+        sh:message "Every violation must identify the task execution involved in the breach."@en
+    ] .
+
+##################################################
+# 11. JUSTIFICATION SHAPES
+##################################################
+
+odd:JustificationShape
+    a sh:NodeShape ;
+    sh:targetClass odd:Justification ;
+    rdfs:label "Justification shape"@en ;
+    rdfs:comment "Validates that every justification is properly linked to the assessment, directive, execution, and conditions it explains."@en ;
+    skos:definition "A shape requiring each justification to record the assessment it supports, the directive involved, the execution evaluated, and the conditions that explain directive activation."@en ;
+
+    sh:property [
+        sh:path odd:justifiesAssessment ;
+        sh:class odd:ComplianceAssessment ;
+        sh:minCount 1 ;
+        sh:message "Every justification must justify at least one compliance assessment."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:refersToDirective ;
+        sh:class odd:Directive ;
+        sh:minCount 1 ;
+        sh:message "Every justification must refer to at least one directive."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:refersToExecution ;
+        sh:class hi:TaskExecution ;
+        sh:minCount 1 ;
+        sh:message "Every justification must refer to at least one task execution."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:refersToCondition ;
+        sh:class odd:Condition ;
+        sh:minCount 1 ;
+        sh:message "Every justification must refer to at least one condition."@en
+    ] ;
+
+    sh:property [
+        sh:path odd:hasTraceText ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "If present, the textual trace of a justification must be a string."@en
+    ] .
+
+##################################################
+# 12. PRIORITY SHAPES
+##################################################
+
+odd:PriorityDirectiveShape
+    a sh:NodeShape ;
+    sh:targetClass odd:Directive ;
+    rdfs:label "Priority directive shape"@en ;
+    rdfs:comment "Validates the datatype and cardinality of directive priority values when used."@en ;
+    skos:definition "A shape constraining any priority value assigned to a directive to a single integer value."@en ;
+
+    sh:property [
+        sh:path odd:hasPriorityValue ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "A directive priority value, if specified, must be a single integer."@en
+    ] .
+
+##################################################
+# 13. VOCABULARY DOCUMENTATION SHAPES
+##################################################
+
+odd:NormativeStatusVocabularyShape
+    a sh:NodeShape ;
+    sh:targetClass odd:NormativeStatus ;
+    rdfs:label "Normative status vocabulary shape"@en ;
+    rdfs:comment "Ensures that normative status individuals are documented."@en ;
+    skos:definition "A shape requiring each normative status value to include a label and a definition."@en ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each normative status should have at least one human-readable label."@en
+    ] ;
+
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each normative status should have at least one SKOS definition."@en
+    ] .
+
+odd:ExecutionOutcomeVocabularyShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ExecutionOutcome ;
+    rdfs:label "Execution outcome vocabulary shape"@en ;
+    rdfs:comment "Ensures that execution outcome individuals are documented."@en ;
+    skos:definition "A shape requiring each execution outcome value to include a label and a definition."@en ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each execution outcome should have at least one human-readable label."@en
+    ] ;
+
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each execution outcome should have at least one SKOS definition."@en
+    ] .
+
+odd:ComplianceStatusVocabularyShape
+    a sh:NodeShape ;
+    sh:targetClass odd:ComplianceStatus ;
+    rdfs:label "Compliance status vocabulary shape"@en ;
+    rdfs:comment "Ensures that compliance status individuals are documented."@en ;
+    skos:definition "A shape requiring each compliance status value to include a label and a definition."@en ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each compliance status should have at least one human-readable label."@en
+    ] ;
+
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Each compliance status should have at least one SKOS definition."@en
+    ] .
