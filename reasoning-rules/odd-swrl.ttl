@@ -15,7 +15,7 @@ odd:dir1   a swrl:Variable .
 odd:dir2   a swrl:Variable .
 odd:exec   a swrl:Variable .
 odd:ctx    a swrl:Variable .
-odd:epist  a swrl:Variable .
+odd:epcond a swrl:Variable .
 odd:temp   a swrl:Variable .
 odd:p1     a swrl:Variable .
 odd:p2     a swrl:Variable .
@@ -48,15 +48,15 @@ odd:p2     a swrl:Variable .
   a swrl:Imp ;
   swrla:isRuleEnabled "true"^^xsd:boolean ;
   rdfs:label "Rule 2 — Directive activation from satisfied conditions" ;
-  rdfs:comment "A directive becomes active when its contextual, epistemic, and temporal conditions match the current conditions of the regulated execution." ;
+  rdfs:comment "A directive becomes active when its contextual, epistemic, and temporal condition instances match the current conditions of the regulated execution." ;
 
   swrl:body (
     [ a swrl:ClassAtom ; swrl:classPredicate odd:Directive ; swrl:argument1 odd:dir1 ]
     [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
     [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasContextCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:ctx ]
     [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentContextCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:ctx ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasEpistemicCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:epist ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentEpistemicState ; swrl:argument1 odd:exec ; swrl:argument2 odd:epist ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasEpistemicCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:epcond ]
+    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentEpistemicCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:epcond ]
     [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasTemporalCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:temp ]
     [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentTemporalCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:temp ]
   ) ;

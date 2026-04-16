@@ -1,402 +1,438 @@
-@prefix odd: <https://w3id.org/odd#> .
-@prefix hi: <https://w3id.org/hi-ontology#> .
-@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
-@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
-@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-#################################################################
-# VARIABLE SHORTCUTS
-#################################################################
-
-odd:dir1   a swrl:Variable .
-odd:dir2   a swrl:Variable .
-odd:exec   a swrl:Variable .
-odd:ctx    a swrl:Variable .
-odd:epcond a swrl:Variable .
-odd:temp   a swrl:Variable .
-odd:p1     a swrl:Variable .
-odd:p2     a swrl:Variable .
-
-#################################################################
-# RULE 1 — DIRECTIVE TARGET IMPLIES REGULATED EXECUTION
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 1 — Directive target is a regulated execution" ;
-  rdfs:comment "If a directive regulates a task execution, that execution is classified as a regulated execution." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:Directive ; swrl:argument1 odd:dir1 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:RegulatedExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 2 — FULL ACTIVATION OF DIRECTIVE
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 2 — Directive activation from satisfied conditions" ;
-  rdfs:comment "A directive becomes active when its contextual, epistemic, and temporal condition instances match the current conditions of the regulated execution." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:Directive ; swrl:argument1 odd:dir1 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasContextCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:ctx ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentContextCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:ctx ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasEpistemicCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:epcond ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentEpistemicCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:epcond ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasTemporalCondition ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:temp ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasCurrentTemporalCondition ; swrl:argument1 odd:exec ; swrl:argument2 odd:temp ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-  )
-] .
-
-#################################################################
-# RULE 3 — ACTIVE OBLIGATORY DIRECTIVE CLASSIFIES EXECUTION
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 3 — Active obligatory directive" ;
-  rdfs:comment "If an active directive assigns obligatory status to an execution, the execution is classified as obligatory." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:obligatory ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 4 — ACTIVE PERMITTED DIRECTIVE CLASSIFIES EXECUTION
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 4 — Active permitted directive" ;
-  rdfs:comment "If an active directive assigns permitted status to an execution, the execution is classified as permitted." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:permitted ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 5 — ACTIVE PROHIBITED DIRECTIVE CLASSIFIES EXECUTION
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 5 — Active prohibited directive" ;
-  rdfs:comment "If an active directive assigns prohibited status to an execution, the execution is classified as prohibited." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:prohibited ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 6 — PROHIBITED + PERFORMED → NON-COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 6 — Prohibited and performed implies non-compliance" ;
-  rdfs:comment "If a prohibited execution is nevertheless performed, it is non-compliant." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 7 — PROHIBITED + SUPPRESSED → COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 7 — Prohibited and suppressed implies compliance" ;
-  rdfs:comment "If a prohibited execution is suppressed, it is compliant." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 8 — OBLIGATORY + PERFORMED → COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 8 — Obligatory and performed implies compliance" ;
-  rdfs:comment "If an obligatory execution is performed, it is compliant." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 9 — OBLIGATORY + SUPPRESSED → NON-COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 9 — Obligatory and suppressed implies non-compliance" ;
-  rdfs:comment "If an obligatory execution is suppressed, it is non-compliant." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 10 — PERMITTED + PERFORMED → COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 10 — Permitted and performed implies compliance" ;
-  rdfs:comment "If a permitted execution is performed, it is compliant." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:performed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 11 — PERMITTED + SUPPRESSED → COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 11 — Permitted and suppressed implies compliance" ;
-  rdfs:comment "If a permitted execution is suppressed, it is still compliant, because permission does not require performance." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:PermittedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:suppressed ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:CompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 12 — ATTEMPTED PROHIBITED EXECUTION → NON-COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 12 — Prohibited and attempted implies non-compliance" ;
-  rdfs:comment "If a prohibited execution is attempted, it is treated as non-compliant because the forbidden execution has been initiated." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:attempted ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 13 — OBLIGATORY + ABORTED → NON-COMPLIANT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 13 — Obligatory and aborted implies non-compliance" ;
-  rdfs:comment "If an obligatory execution is aborted before completion, it is treated as non-compliant because the required execution was not fulfilled." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:aborted ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:NonCompliantExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 14 — OBLIGATORY + ATTEMPTED → UNDERDETERMINED
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 14 — Obligatory and attempted implies underdetermined status" ;
-  rdfs:comment "If an obligatory execution is only attempted, compliance is left underdetermined because fulfilment is not yet established." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ObligatoryExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:attempted ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:UnderdeterminedExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 15 — PROHIBITED + ABORTED → UNDERDETERMINED
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 15 — Prohibited and aborted implies underdetermined status" ;
-  rdfs:comment "If a prohibited execution is started and then aborted, the regulatory status is treated as underdetermined unless a stricter violation policy is adopted." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ProhibitedExecution ; swrl:argument1 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasExecutionOutcome ; swrl:argument1 odd:exec ; swrl:argument2 odd:aborted ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:UnderdeterminedExecution ; swrl:argument1 odd:exec ]
-  )
-] .
-
-#################################################################
-# RULE 16 — ACTIVE DIRECTIVES WITH OPPOSITE STATUS ON SAME EXECUTION CONFLICT
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 16 — Obligatory vs prohibited conflict" ;
-  rdfs:comment "If two active directives regulate the same execution and one is obligatory while the other is prohibited, the directives conflict." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir2 ]
-    [ a swrl:DifferentIndividualsAtom ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:obligatory ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasNormativeStatus ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:prohibited ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:conflictsWithDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-  )
-] .
-
-#################################################################
-# RULE 17 — ACTIVE DIRECTIVES PRIORITY COMPARISON
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 17 — Higher priority directive" ;
-  rdfs:comment "If two active directives regulate the same execution and one has a greater priority value than the other, then it has higher priority." ;
-
-  swrl:body (
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir1 ]
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:ActiveDirective ; swrl:argument1 odd:dir2 ]
-    [ a swrl:DifferentIndividualsAtom ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:exec ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:regulatesExecution ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:exec ]
-    [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate odd:hasPriorityValue ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:p1 ]
-    [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate odd:hasPriorityValue ; swrl:argument1 odd:dir2 ; swrl:argument2 odd:p2 ]
-    [ a swrl:BuiltinAtom ; swrl:builtin swrlb:greaterThan ; swrl:arguments ( odd:p1 odd:p2 ) ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasHigherPriorityThan ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-  )
-] .
-
-#################################################################
-# RULE 18 — CONFLICT + HIGHER PRIORITY → OVERRIDE
-#################################################################
-
-[
-  a swrl:Imp ;
-  swrla:isRuleEnabled "true"^^xsd:boolean ;
-  rdfs:label "Rule 18 — Higher-priority directive overrides conflicting directive" ;
-  rdfs:comment "If two directives conflict and one has higher priority than the other, the higher-priority directive overrides the lower-priority one." ;
-
-  swrl:body (
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:conflictsWithDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:hasHigherPriorityThan ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-  ) ;
-
-  swrl:head (
-    [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate odd:overridesDirective ; swrl:argument1 odd:dir1 ; swrl:argument2 odd:dir2 ]
-    [ a swrl:ClassAtom ; swrl:classPredicate odd:OverriddenDirective ; swrl:argument1 odd:dir2 ]
-  )
-] .
+@prefix odd:    <https://w3id.org/odd#> .
+@prefix hi:     <https://w3id.org/hi-ontology#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+
+##################################################
+# ONTOLOGY
+##################################################
+
+odd:ODD a owl:Ontology ;
+    rdfs:label "Ontology for Dynamic Directives"@en ;
+    rdfs:comment "A modular ontology extending the Hybrid Intelligence ontology with a regulatory layer for representing dynamic, context-sensitive, epistemically informed, and norm-bounded modulation of action selection and execution."@en ;
+    skos:definition "An ontology that formalises Dynamic Directives as regulatory constructs linked to Hybrid Intelligence entities such as agents, task executions, and contexts, in order to represent activation conditions, normative qualifications, execution outcomes, and compliance assessments."@en .
+
+##################################################
+# CORE REGULATORY CLASSES
+##################################################
+
+odd:Directive a owl:Class ;
+    rdfs:label "Directive"@en ;
+    rdfs:comment "A regulatory construct that modulates the selection, prioritisation, performance, or suppression of an execution under specific conditions."@en ;
+    skos:definition "A context-sensitive regulatory entity that applies normative force to a task execution in a Hybrid Intelligence setting on the basis of contextual, epistemic, and possibly temporal conditions."@en .
+
+odd:Condition a owl:Class ;
+    rdfs:label "Condition"@en ;
+    rdfs:comment "An abstract condition that contributes to the applicability of a directive."@en ;
+    skos:definition "A generic condition that must hold, or be evaluated as holding, for a directive to become active or relevant in a given situation."@en .
+
+odd:ContextCondition a owl:Class ;
+    rdfs:subClassOf odd:Condition ;
+    rdfs:label "Context Condition"@en ;
+    rdfs:comment "A condition grounded in environmental, social, situational, or task-related circumstances."@en ;
+    skos:definition "A condition that captures relevant contextual aspects of a Hybrid Intelligence scenario, such as user profile, role configuration, environmental risk, or interaction setting."@en .
+
+odd:EpistemicCondition a owl:Class ;
+    rdfs:subClassOf odd:Condition ;
+    rdfs:label "Epistemic Condition"@en ;
+    rdfs:comment "A condition concerning what an agent knows, assumes, believes, or is uncertain about."@en ;
+    skos:definition "A condition that constrains directive applicability in terms of knowledge, belief, informational asymmetry, or uncertainty held by one or more agents."@en .
+
+odd:TemporalCondition a owl:Class ;
+    rdfs:subClassOf odd:Condition ;
+    rdfs:label "Temporal Condition"@en ;
+    rdfs:comment "A condition constraining when, for how long, or during which phase a directive applies."@en ;
+    skos:definition "A condition that specifies the temporal applicability, persistence, ordering, or expiry of a directive."@en .
+
+odd:EpistemicState a owl:Class ;
+    rdfs:label "Epistemic State"@en ;
+    rdfs:comment "A representation of the informational position of an agent with respect to relevant facts, propositions, or execution-related circumstances."@en ;
+    skos:definition "A state describing what an agent knows, assumes, believes, or does not know in relation to a regulated situation or execution."@en .
+
+odd:NormativeEffect a owl:Class ;
+    rdfs:label "Normative Effect"@en ;
+    rdfs:comment "A deontic effect expressing how a directive normatively qualifies a regulated execution."@en ;
+    skos:definition "The regulatory consequence associated with a directive, such as qualifying an execution as obligatory, permitted, or prohibited."@en .
+
+odd:ComplianceAssessment a owl:Class ;
+    rdfs:label "Compliance Assessment"@en ;
+    rdfs:comment "An evaluative entity representing whether a task execution conforms to the normative requirements of applicable directives."@en ;
+    skos:definition "An assessment that compares the normative qualification assigned by an active directive with the actual outcome of the regulated execution in order to determine compliance."@en .
+
+odd:Violation a owl:Class ;
+    rdfs:label "Violation"@en ;
+    rdfs:comment "A non-compliant regulatory outcome in which an execution breaches the requirements imposed by an applicable directive."@en ;
+    skos:definition "A detected breach of a directive arising when the realised outcome of a regulated execution conflicts with its normative qualification."@en .
+
+odd:Justification a owl:Class ;
+    rdfs:label "Justification"@en ;
+    rdfs:comment "An explanatory entity that records why a directive applied or why a compliance result was reached."@en ;
+    skos:definition "A traceability entity linking a directive, its activation conditions, and the resulting compliance or violation assessment in order to support explainability."@en .
+
+##################################################
+# DERIVED / CLASSIFICATION CLASSES
+##################################################
+
+odd:ActiveDirective a owl:Class ;
+    rdfs:subClassOf odd:Directive ;
+    rdfs:label "Active Directive"@en ;
+    rdfs:comment "A directive whose activation conditions are satisfied in the current situation."@en ;
+    skos:definition "A directive that is currently applicable because its required contextual, epistemic, and any relevant temporal conditions hold."@en .
+
+odd:OverriddenDirective a owl:Class ;
+    rdfs:subClassOf odd:Directive ;
+    rdfs:label "Overridden Directive"@en ;
+    rdfs:comment "A directive whose regulatory force has been suspended or superseded by another directive with higher priority or authority."@en ;
+    skos:definition "A directive that was applicable but whose normative effect has been overridden or deprioritised by a conflicting directive with greater precedence."@en .
+
+odd:RegulatedExecution a owl:Class ;
+    rdfs:subClassOf hi:TaskExecution ;
+    rdfs:label "Regulated Execution"@en ;
+    rdfs:comment "A task execution that is the target of at least one directive."@en ;
+    skos:definition "A task execution falling within the scope of regulatory assessment because it is explicitly constrained or qualified by a directive."@en .
+
+odd:ObligatoryExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Obligatory Execution"@en ;
+    rdfs:comment "A regulated execution that is normatively qualified as obligatory under an applicable directive."@en ;
+    skos:definition "A regulated execution that ought to be performed because an active directive assigns it obligatory normative status."@en .
+
+odd:PermittedExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Permitted Execution"@en ;
+    rdfs:comment "A regulated execution that is normatively qualified as permitted under an applicable directive."@en ;
+    skos:definition "A regulated execution that may be performed because an active directive assigns it permitted normative status."@en .
+
+odd:ProhibitedExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Prohibited Execution"@en ;
+    rdfs:comment "A regulated execution that is normatively qualified as prohibited under an applicable directive."@en ;
+    skos:definition "A regulated execution that ought not to be performed because an active directive assigns it prohibited normative status."@en .
+
+odd:CompliantExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Compliant Execution"@en ;
+    rdfs:comment "A regulated execution whose realised outcome conforms to the normative qualification imposed by an applicable directive."@en ;
+    skos:definition "A regulated execution assessed as normatively acceptable because its actual outcome is compatible with the status assigned by an active directive."@en .
+
+odd:NonCompliantExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Non-Compliant Execution"@en ;
+    rdfs:comment "A regulated execution whose realised outcome conflicts with the normative qualification imposed by an applicable directive."@en ;
+    skos:definition "A regulated execution assessed as normatively unacceptable because its actual outcome is incompatible with the status assigned by an active directive."@en .
+
+odd:UnderdeterminedExecution a owl:Class ;
+    rdfs:subClassOf odd:RegulatedExecution ;
+    rdfs:label "Underdetermined Execution"@en ;
+    rdfs:comment "A regulated execution whose compliance status cannot be conclusively determined from available information."@en ;
+    skos:definition "A regulated execution assessed as underdetermined because contextual, epistemic, temporal, or outcome information is insufficient to determine whether it is compliant or non-compliant with an applicable directive."@en .
+
+##################################################
+# CONTROLLED STATUS CLASSES
+##################################################
+
+odd:NormativeStatus a owl:Class ;
+    rdfs:label "Normative Status"@en ;
+    rdfs:comment "A controlled category representing the deontic qualification assigned by a directive."@en ;
+    skos:definition "A classification value expressing whether a regulated execution is obligatory, permitted, or prohibited under a directive."@en .
+
+odd:ExecutionOutcome a owl:Class ;
+    rdfs:label "Execution Outcome"@en ;
+    rdfs:comment "A controlled category representing what actually happened to a task execution."@en ;
+    skos:definition "A classification value describing the realised operational outcome of a task execution, such as being performed, suppressed, attempted, or aborted."@en .
+
+odd:ComplianceStatus a owl:Class ;
+    rdfs:label "Compliance Status"@en ;
+    rdfs:comment "A controlled category representing the result of regulatory assessment."@en ;
+    skos:definition "A classification value stating whether the relation between a directive and an execution outcome is compliant, non-compliant, or underdetermined."@en .
+
+##################################################
+# NORMATIVE STATUS INDIVIDUALS
+##################################################
+
+odd:obligatory a odd:NormativeStatus ;
+    rdfs:label "obligatory"@en ;
+    rdfs:comment "Indicates that the regulated execution ought to be performed when the directive applies."@en ;
+    skos:definition "A normative status stating that a regulated execution is required under the conditions specified by an applicable directive."@en .
+
+odd:permitted a odd:NormativeStatus ;
+    rdfs:label "permitted"@en ;
+    rdfs:comment "Indicates that the regulated execution may be performed and is not forbidden when the directive applies."@en ;
+    skos:definition "A normative status stating that a regulated execution is allowed under the conditions specified by an applicable directive."@en .
+
+odd:prohibited a odd:NormativeStatus ;
+    rdfs:label "prohibited"@en ;
+    rdfs:comment "Indicates that the regulated execution ought not to be performed when the directive applies."@en ;
+    skos:definition "A normative status stating that a regulated execution is forbidden under the conditions specified by an applicable directive."@en .
+
+##################################################
+# EXECUTION OUTCOME INDIVIDUALS
+##################################################
+
+odd:performed a odd:ExecutionOutcome ;
+    rdfs:label "performed"@en ;
+    rdfs:comment "Indicates that the execution was actually carried out."@en ;
+    skos:definition "An execution outcome stating that the regulated task execution was realised in practice."@en .
+
+odd:suppressed a odd:ExecutionOutcome ;
+    rdfs:label "suppressed"@en ;
+    rdfs:comment "Indicates that the execution was deliberately withheld or not carried out."@en ;
+    skos:definition "An execution outcome stating that the regulated task execution was intentionally prevented, inhibited, or not selected for performance."@en .
+
+odd:attempted a odd:ExecutionOutcome ;
+    rdfs:label "attempted"@en ;
+    rdfs:comment "Indicates that the execution was initiated but not necessarily completed successfully."@en ;
+    skos:definition "An execution outcome stating that the regulated task execution was undertaken but may not have been fully realised."@en .
+
+odd:aborted a odd:ExecutionOutcome ;
+    rdfs:label "aborted"@en ;
+    rdfs:comment "Indicates that the execution was interrupted or terminated before completion."@en ;
+    skos:definition "An execution outcome stating that the regulated task execution was started or planned but then halted before successful completion."@en .
+
+##################################################
+# COMPLIANCE STATUS INDIVIDUALS
+##################################################
+
+odd:compliant a odd:ComplianceStatus ;
+    rdfs:label "compliant"@en ;
+    rdfs:comment "Indicates that the realised execution outcome is compatible with the directive's normative qualification."@en ;
+    skos:definition "A compliance status stating that the actual outcome of a regulated execution satisfies the requirements imposed by the applicable directive."@en .
+
+odd:nonCompliant a odd:ComplianceStatus ;
+    rdfs:label "non-compliant"@en ;
+    rdfs:comment "Indicates that the realised execution outcome conflicts with the directive's normative qualification."@en ;
+    skos:definition "A compliance status stating that the actual outcome of a regulated execution breaches the requirements imposed by the applicable directive."@en .
+
+odd:underdetermined a odd:ComplianceStatus ;
+    rdfs:label "underdetermined"@en ;
+    rdfs:comment "Indicates that compliance cannot yet be conclusively determined from the available information."@en ;
+    skos:definition "A compliance status stating that the available contextual, epistemic, temporal, or outcome information is insufficient to determine whether the execution is compliant or non-compliant."@en .
+
+##################################################
+# OBJECT PROPERTIES
+##################################################
+
+odd:regulatesExecution a owl:ObjectProperty ;
+    rdfs:label "regulates execution"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range hi:TaskExecution ;
+    rdfs:comment "Links a directive to the task execution whose performance, suppression, or prioritisation it regulates."@en ;
+    skos:definition "Relates a directive to the concrete task execution that is subject to its normative qualification."@en .
+
+odd:hasActivationCondition a owl:ObjectProperty ;
+    rdfs:label "has activation condition"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:Condition ;
+    rdfs:comment "Links a directive to a condition that contributes to its applicability."@en ;
+    skos:definition "Relates a directive to a condition that must hold, or be evaluated as holding, for the directive to become active."@en .
+
+odd:hasContextCondition a owl:ObjectProperty ;
+    rdfs:subPropertyOf odd:hasActivationCondition ;
+    rdfs:label "has context condition"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:ContextCondition ;
+    rdfs:comment "Links a directive to a reified contextual condition relevant to its activation."@en ;
+    skos:definition "Relates a directive to a first-class contextual condition instance that captures the situational or environmental configuration required for the directive to apply."@en .
+
+odd:hasEpistemicCondition a owl:ObjectProperty ;
+    rdfs:subPropertyOf odd:hasActivationCondition ;
+    rdfs:label "has epistemic condition"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:EpistemicCondition ;
+    rdfs:comment "Links a directive to a reified epistemic condition relevant to its activation."@en ;
+    skos:definition "Relates a directive to a first-class epistemic condition instance that captures the knowledge-related requirement needed for the directive to apply."@en .
+
+odd:hasTemporalCondition a owl:ObjectProperty ;
+    rdfs:subPropertyOf odd:hasActivationCondition ;
+    rdfs:label "has temporal condition"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:TemporalCondition ;
+    rdfs:comment "Links a directive to a reified temporal condition constraining when it applies."@en ;
+    skos:definition "Relates a directive to a first-class temporal condition instance that specifies the temporal applicability, persistence, sequencing, or expiry of the directive."@en .
+
+odd:refersToContext a owl:ObjectProperty ;
+    rdfs:label "refers to context"@en ;
+    rdfs:domain odd:ContextCondition ;
+    rdfs:range hi:Context ;
+    rdfs:comment "Links a contextual condition to the Hybrid Intelligence context it reifies or refers to."@en ;
+    skos:definition "Relates a reified contextual condition to the underlying HI context whose situational properties ground the condition."@en .
+
+odd:refersToEpistemicState a owl:ObjectProperty ;
+    rdfs:label "refers to epistemic state"@en ;
+    rdfs:domain odd:EpistemicCondition ;
+    rdfs:range odd:EpistemicState ;
+    rdfs:comment "Links an epistemic condition to the epistemic state it reifies or refers to."@en ;
+    skos:definition "Relates a reified epistemic condition to the underlying epistemic state representing the relevant knowledge, assumption, belief, or uncertainty."@en .
+
+odd:refersToTemporalReference a owl:ObjectProperty ;
+    rdfs:label "refers to temporal reference"@en ;
+    rdfs:domain odd:TemporalCondition ;
+    rdfs:comment "Links a temporal condition to the temporal entity, phase, interval, or reference structure it depends on."@en ;
+    skos:definition "Relates a temporal condition to the temporal reference used to specify when a directive becomes applicable, remains active, or expires."@en .
+
+odd:hasNormativeStatus a owl:ObjectProperty ;
+    rdfs:label "has normative status"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:NormativeStatus ;
+    rdfs:comment "Associates a directive with the deontic qualification it assigns to the execution it regulates."@en ;
+    skos:definition "Relates a directive to the normative status, such as obligatory, permitted, or prohibited, that it imposes on its regulated execution."@en .
+
+odd:hasNormativeEffect a owl:ObjectProperty ;
+    rdfs:label "has normative effect"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:NormativeEffect ;
+    rdfs:comment "Links a directive to a reified representation of its deontic effect."@en ;
+    skos:definition "Relates a directive to an explicit normative effect entity used to represent its regulatory consequence in a more structured way."@en .
+
+odd:isKnownBy a owl:ObjectProperty ;
+    rdfs:label "is known by"@en ;
+    rdfs:domain odd:EpistemicState ;
+    rdfs:range hi:Agent ;
+    rdfs:comment "Links an epistemic state to the agent whose informational position it represents."@en ;
+    skos:definition "Relates an epistemic state to the agent that holds the represented knowledge, assumption, or belief."@en .
+
+odd:hasEpistemicContent a owl:ObjectProperty ;
+    rdfs:label "has epistemic content"@en ;
+    rdfs:domain odd:EpistemicState ;
+    rdfs:comment "Specifies the informational content of an epistemic state."@en ;
+    skos:definition "Relates an epistemic state to the fact, proposition, condition, or execution-related content that is known, assumed, believed, or uncertain."@en .
+
+odd:hasExecutionOutcome a owl:ObjectProperty ;
+    rdfs:label "has execution outcome"@en ;
+    rdfs:domain hi:TaskExecution ;
+    rdfs:range odd:ExecutionOutcome ;
+    rdfs:comment "Specifies what actually happened to a task execution."@en ;
+    skos:definition "Relates a task execution to its realised operational outcome, such as performed, suppressed, attempted, or aborted."@en .
+
+odd:appliesToExecution a owl:ObjectProperty ;
+    rdfs:label "applies to execution"@en ;
+    rdfs:domain odd:ComplianceAssessment ;
+    rdfs:range hi:TaskExecution ;
+    rdfs:comment "Links a compliance assessment to the task execution being evaluated."@en ;
+    skos:definition "Relates a compliance assessment to the concrete task execution whose regulatory acceptability is being determined."@en .
+
+odd:triggeredByDirective a owl:ObjectProperty ;
+    rdfs:label "triggered by directive"@en ;
+    rdfs:domain odd:ComplianceAssessment ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Identifies the directive that grounds the compliance assessment."@en ;
+    skos:definition "Relates a compliance assessment to the directive whose applicability motivates the assessment."@en .
+
+odd:hasComplianceStatus a owl:ObjectProperty ;
+    rdfs:label "has compliance status"@en ;
+    rdfs:domain odd:ComplianceAssessment ;
+    rdfs:range odd:ComplianceStatus ;
+    rdfs:comment "Associates a compliance assessment with its outcome."@en ;
+    skos:definition "Relates a compliance assessment to its resulting compliance status, such as compliant, non-compliant, or underdetermined."@en .
+
+odd:violatesDirective a owl:ObjectProperty ;
+    rdfs:label "violates directive"@en ;
+    rdfs:domain odd:Violation ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Links a violation to the directive whose requirement has been breached."@en ;
+    skos:definition "Relates a violation to the directive that was not satisfied by the realised execution outcome."@en .
+
+odd:concernsExecution a owl:ObjectProperty ;
+    rdfs:label "concerns execution"@en ;
+    rdfs:domain odd:Violation ;
+    rdfs:range hi:TaskExecution ;
+    rdfs:comment "Links a violation to the task execution involved in the breach."@en ;
+    skos:definition "Relates a violation to the task execution whose actual outcome conflicts with an applicable directive."@en .
+
+odd:hasJustification a owl:ObjectProperty ;
+    rdfs:label "has justification"@en ;
+    rdfs:domain odd:ComplianceAssessment ;
+    rdfs:range odd:Justification ;
+    rdfs:comment "Associates a compliance assessment with an explanatory justification."@en ;
+    skos:definition "Relates a compliance assessment to the traceability entity that records why the assessment holds."@en .
+
+odd:justifiesAssessment a owl:ObjectProperty ;
+    rdfs:label "justifies assessment"@en ;
+    rdfs:domain odd:Justification ;
+    rdfs:range odd:ComplianceAssessment ;
+    rdfs:comment "Links a justification to the compliance assessment it explains."@en ;
+    skos:definition "Relates a justification to the compliance assessment whose reasoning basis it records."@en .
+
+odd:refersToDirective a owl:ObjectProperty ;
+    rdfs:label "refers to directive"@en ;
+    rdfs:domain odd:Justification ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Links a justification to the directive involved in the assessment."@en ;
+    skos:definition "Relates a justification to the directive whose activation and normative force are part of the explanation."@en .
+
+odd:refersToCondition a owl:ObjectProperty ;
+    rdfs:label "refers to condition"@en ;
+    rdfs:domain odd:Justification ;
+    rdfs:range odd:Condition ;
+    rdfs:comment "Links a justification to a condition relevant to directive activation or assessment."@en ;
+    skos:definition "Relates a justification to one or more contextual, epistemic, or temporal conditions that explain why a directive applied."@en .
+
+odd:refersToExecution a owl:ObjectProperty ;
+    rdfs:label "refers to execution"@en ;
+    rdfs:domain odd:Justification ;
+    rdfs:range hi:TaskExecution ;
+    rdfs:comment "Links a justification to the execution whose outcome is being explained."@en ;
+    skos:definition "Relates a justification to the task execution whose realised outcome is evaluated in the compliance process."@en .
+
+odd:hasCurrentContextCondition a owl:ObjectProperty ;
+    rdfs:label "has current context condition"@en ;
+    rdfs:domain hi:TaskExecution ;
+    rdfs:range odd:ContextCondition ;
+    rdfs:comment "Links a task execution to the contextual condition instances currently relevant to its regulation."@en ;
+    skos:definition "Relates a task execution to the reified contextual conditions that are presently satisfied or applicable in the situation in which the execution is being regulated."@en .
+
+odd:hasCurrentEpistemicCondition a owl:ObjectProperty ;
+    rdfs:label "has current epistemic condition"@en ;
+    rdfs:domain hi:TaskExecution ;
+    rdfs:range odd:EpistemicCondition ;
+    rdfs:comment "Links a task execution to the epistemic condition instances currently relevant to its regulation."@en ;
+    skos:definition "Relates a task execution to the reified epistemic conditions that are presently satisfied with respect to the relevant agents' knowledge, assumptions, or uncertainty."@en .
+
+odd:hasCurrentTemporalCondition a owl:ObjectProperty ;
+    rdfs:label "has current temporal condition"@en ;
+    rdfs:domain hi:TaskExecution ;
+    rdfs:range odd:TemporalCondition ;
+    rdfs:comment "Links a task execution to the temporal condition instances currently constraining its regulation."@en ;
+    skos:definition "Relates a task execution to the reified temporal conditions that are presently satisfied and govern its activation, persistence, or expiry within a regulatory context."@en .
+
+odd:conflictsWithDirective a owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:label "conflicts with directive"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Identifies a symmetric conflict relationship between two directives whose normative effects are mutually incompatible."@en ;
+    skos:definition "Relates a directive to another directive with which it is in normative conflict, such that both cannot be simultaneously active without contradiction."@en .
+
+odd:hasHigherPriorityThan a owl:ObjectProperty ;
+    rdfs:label "has higher priority than"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Establishes a priority ordering between directives, indicating which should be preferred in cases of conflict."@en ;
+    skos:definition "Relates a directive to another directive that it outranks in terms of priority, used for conflict resolution and directive activation ordering."@en .
+
+odd:overridesDirective a owl:ObjectProperty ;
+    rdfs:label "overrides directive"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range odd:Directive ;
+    rdfs:comment "Indicates that one directive's normative force supersedes or suspends another directive's effect."@en ;
+    skos:definition "Relates a directive to another directive whose regulatory force it overrides, typically on the basis of priority, authority, or contextual precedence."@en .
+
+##################################################
+# DATA PROPERTIES
+##################################################
+
+odd:hasPriorityValue a owl:DatatypeProperty ;
+    rdfs:label "has priority value"@en ;
+    rdfs:domain odd:Directive ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Associates a directive with a numeric priority value used to rank competing directives or feasible actions."@en ;
+    skos:definition "A datatype property specifying the relative priority of a directive for use in conflict resolution or action prioritisation."@en .
+
+odd:hasTraceText a owl:DatatypeProperty ;
+    rdfs:label "has trace text"@en ;
+    rdfs:domain odd:Justification ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Stores a textual explanation or trace associated with a justification."@en ;
+    skos:definition "A datatype property used to record a human-readable explanation of why a directive applied or why an execution was assessed in a certain way."@en .
